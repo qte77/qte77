@@ -29,6 +29,8 @@
 ---
 
 <!-- BLOG-POST-LIST:START -->
+- [Transformer distiled, Part 1 of 2](https://qte77.github.io/Transformer-distiled-1/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Transformer-distiled-2/)
 <!-- BLOG-POST-LIST:END -->
 
 
