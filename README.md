@@ -5,6 +5,13 @@
 
 ---
 
+<!-- BLOG-POST-LIST:START -->
+- [Transformer distiled, Part 1 of 2](https://qte77.github.io/Transformer-distiled-1/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Transformer-distiled-2/)
+<!-- BLOG-POST-LIST:END -->
+
+---
+
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original-wordmark.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/pytorch/pytorch-original-wordmark.svg" title="Pytorch" alt="Pytorch" width="40" height="40"/>&nbsp;
@@ -25,12 +32,3 @@
 <!--
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
 -->
-
----
-
-<!-- BLOG-POST-LIST:START -->
-- [Transformer distiled, Part 1 of 2](https://qte77.github.io/Transformer-distiled-1/)
-- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Transformer-distiled-2/)
-<!-- BLOG-POST-LIST:END -->
-
-
