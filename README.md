@@ -41,6 +41,6 @@ Stats
 -->
 
 <div align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=react" alt="qte77's Github Stats" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=react&line_height=27&layout=compact" alt="qte77's Top Langs" />
+  <img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=react" alt="qte77's Github Stats" />
 </div>
