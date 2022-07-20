@@ -36,13 +36,15 @@ Tools
 Stats
 ---
 
-<!-- https://github.com/anuraghazra/github-readme-stats -->
-<!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 <!--
 [![wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=qte77)](https://github.com/anuraghazra/github-readme-stats)
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
 -->
+<!-- https://github.com/athul/waka-readme -->
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 
+<!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 <!-- light mode -->
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity"/>](./#gh-light-mode-only)
