@@ -9,6 +9,9 @@ Posts
 ---
 
 <!-- BLOG-POST-LIST:START -->
+- [Covariance Shift and Inductive Priors](https://qte77.github.io/Covar-Shift-Inductive-Priors/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Matmul-vs-Einsum/)
+- [Transformer pro and contra](https://qte77.github.io/Transfomer-pro-con/)
 - [Transformer distiled, Part 1 of 2](https://qte77.github.io/Transformer-distiled-1/)
 - [Transformer distiled, Part 2 of 2](https://qte77.github.io/Transformer-distiled-2/)
 <!-- BLOG-POST-LIST:END -->
