@@ -10,7 +10,7 @@ Posts
 
 <!-- BLOG-POST-LIST:START -->
 - [Python Comprehension vs map&lpar;&rpar;](https://qte77.github.io/python-comprehension-vs-map/)
-- [Static-sites with GH-Pages, Jekyll, Sphinx and ReadTheDocs](https://qte77.github.io/static-sites-jekyll-sphinx-readthedocs/)
+- [Static-sites on GH-Pages](https://qte77.github.io/static-sites-jekyll-sphinx-readthedocs/)
 - [Python Closures and Decorators](https://qte77.github.io/python-closure-decorator/)
 - [Transformer distiled, Part 1 of 2](https://qte77.github.io/ml-transformer-distiled-1/)
 <!-- BLOG-POST-LIST:END -->
