@@ -61,6 +61,11 @@
 -->
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
+
+```text
+No activity tracked
+```
+
 <!--END_SECTION:waka-->
 
 <!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
