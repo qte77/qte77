@@ -1,22 +1,27 @@
-Topics
----
+<!-- markdownlint-disable-file MD033 - Inline HTML -->
+<!-- https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md033 -->
+
+# qte77
+
+## Topics
 
 - ML, inductive priors
 - ML pipelines
 - Data centric vs model centric
 
-Posts
----
+## Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [Python Comprehension vs map&lpar;&rpar;](https://qte77.github.io/python-comprehension-vs-map/)
-- [Static-sites on GH-Pages](https://qte77.github.io/static-sites-jekyll-sphinx-readthedocs/)
-- [Python Closures and Decorators](https://qte77.github.io/python-closure-decorator/)
-- [Transformer distiled, Part 1 of 2](https://qte77.github.io/ml-transformer-distiled-1/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/jekyll-sphinx-readthedocs/)
+- [Python decorator function](https://qte77.github.io/python-decorator/)
+- [Covariance Shift and Inductive Priors](https://qte77.github.io/Covar-Shift-Inductive-Priors/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Matmul-vs-Einsum/)
+- [Transformer pro and contra](https://qte77.github.io/Transfomer-pro-con/)
+- [Transformer distiled, Part 1 of 2](https://qte77.github.io/Transformer-distiled-1/)
+- [Transformer distiled, Part 2 of 2](https://qte77.github.io/Transformer-distiled-2/)
 <!-- BLOG-POST-LIST:END -->
 
-Tools
----
+## Tools
 
 <div style="align: left;">
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
@@ -35,21 +40,28 @@ Tools
   <img src="https://github.com/devicons/devicon/blob/master/icons/googlecloud/googlecloud-plain.svg" title="Google Cloud" alt="Google Cloud" width="40" height="40"/>&nbsp;
  </div>
 
-Stats
----
+## Stats
 
 <!--
 [![wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=qte77)](https://github.com/anuraghazra/github-readme-stats)
+-->
+<!-- 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
+-->
+<!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
+
+<!-- light mode -->
+[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
+[<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity" />](./#gh-light-mode-only)
+<!-- waka
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-light-mode-only)
+-->
+<!-- dark mode -->
+[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
+[<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=github_dark" alt="qte77's Github Activity" />](./#gh-dark-mode-only)
+<!-- waka 
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-dark-mode-only)
 -->
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
-
-<!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
-<!-- light mode -->
-[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
-[<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity"/>](./#gh-light-mode-only)
-<!-- dark mode -->
-[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
-[<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=github_dark" alt="qte77's Github Activity"/>](./#gh-dark-mode-only)
