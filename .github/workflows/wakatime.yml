@@ -14,10 +14,7 @@ jobs:
     steps:
       - uses: athul/waka-readme@master
         with:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SHOW_TITLE: true
-          # optional, By default, it will automatically use
-          # the repository which is executing the workflow.
-          # REPOSITORY: <username/username> 
+          TIME_RANGE: last_30_days
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
 ...

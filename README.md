@@ -5,9 +5,9 @@
 
 ## Topics
 
-- ML, inductive priors
-- ML pipelines
-- Data centric vs model centric
+- ML, Inductive Priors
+- ML Pipelines
+- Data Centric vs Model Centric
 
 ## Posts
 
@@ -47,26 +47,22 @@
 -->
 <!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 
+<!-- https://github.com/athul/waka-readme -->
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 <!-- light mode -->
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
+<!--
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity" />](./#gh-light-mode-only)
-<!-- waka
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-light-mode-only)
 -->
 <!-- dark mode -->
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
+<!--
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=github_dark" alt="qte77's Github Activity" />](./#gh-dark-mode-only)
-<!-- waka 
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-dark-mode-only)
 -->
-<!-- https://github.com/athul/waka-readme -->
-<!--START_SECTION:waka-->
-
-```text
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
 
 <!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
 <details>
