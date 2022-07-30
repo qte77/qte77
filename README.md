@@ -65,3 +65,6 @@
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
+
+<!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
+[<img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&bg=#fff&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" />](./#gh-dark-mode-only)
