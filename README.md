@@ -12,10 +12,6 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [Python Comprehension vs map&lpar;&rpar;](https://qte77.github.io/python-comprehension-vs-map/)
-- [Static-sites on GH-Pages](https://qte77.github.io/static-sites-jekyll-sphinx-readthedocs/)
-- [Python Closures and Decorators](https://qte77.github.io/python-closure-decorator/)
-- [Transformer distiled, Part 1 of 2](https://qte77.github.io/ml-transformer-distiled-1/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
@@ -64,4 +60,7 @@
 <!--END_SECTION:waka-->
 
 <!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
-[<img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&bg=#fff&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" />](./#gh-dark-mode-only)
+<details>
+  <summary>CodersRank.io Skills Chart</summary>
+  <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml&show-other-skills=true" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" />
+</details>
