@@ -6,7 +6,8 @@
 ## Topics
 
 - ML, Inductive Priors
-- ML Pipelines
+- QML, Barren Plateaus
+- Pipelines, Workflows
 - Data Centric vs Model Centric
 
 ## Posts
