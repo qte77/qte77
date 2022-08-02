@@ -50,15 +50,11 @@
 
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
-
-```text
-No activity tracked
-```
-
 <!--END_SECTION:waka-->
 
 <!-- light mode -->
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
+
 <!--
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity" />](./#gh-light-mode-only)
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-light-mode-only)
@@ -70,10 +66,16 @@ No activity tracked
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-dark-mode-only)
 -->
 
-<!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
 <details>
-  <summary>CodersRank.io Skills Chart</summary>
+  <summary>Languages over time</summary>
+  <!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
+  <!-- CodersRanks try later for data to be provided
   <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml&show-other-skills=true" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" />
+  -->
+  <!-- light -->
+  <img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/e2ecd6b7-e9a6-41e6-962d-752f68603418.svg#gh-light-mode-only" alt="qte77's wakatime languages" width="55%" height="55%" />
+  <!-- dark -->
+  <img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/d2495005-a4af-4df0-a240-97a37c8c52cd.svg#gh-dark-mode-only" alt="qte77's wakatime languages" width="55%" height="55%" />
 </details>
 
 ## TODO
