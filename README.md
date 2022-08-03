@@ -50,6 +50,18 @@
 
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
+
+```text
+From: 26 July 2022 - To: 02 August 2022
+
+Python             6 hrs 41 mins   ████████▓░░░░░░░░░░░░░░░░   34.19 %
+Markdown           4 hrs 38 mins   ██████░░░░░░░░░░░░░░░░░░░   23.70 %
+TOML               3 hrs 14 mins   ████░░░░░░░░░░░░░░░░░░░░░   16.55 %
+YAML               3 hrs 2 mins    ████░░░░░░░░░░░░░░░░░░░░░   15.55 %
+Batchfile          53 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.52 %
+Other              32 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.73 %
+```
+
 <!--END_SECTION:waka-->
 
 <!-- light mode -->
