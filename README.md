@@ -6,6 +6,7 @@
 ## Topics
 
 - ML, Inductive Priors
+- Automatic Differentiation
 - QML, Barren Plateaus
 - Pipelines, Workflows
 - Data Centric vs Model Centric
@@ -51,7 +52,7 @@
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
 
-`last_7_days`
+**last_7_days**
 
 ```text
 From: 26 July 2022 - To: 02 August 2022
@@ -66,7 +67,7 @@ Other              32 mins         ▓░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
-`Profile total`
+**Profile total**
 
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
@@ -91,6 +92,8 @@ Other              32 mins         ▓░░░░░░░░░░░░░░
 ## TODO
 
 - Kaggle Playgrounds
-- Kaggle Competition
+- Kaggle Competitions
 - Codewars Python
 - Coursera Julia
+- IBM Qiskit
+- XanaduAI Pennylane
