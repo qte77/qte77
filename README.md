@@ -52,17 +52,15 @@
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
 
-**last_7_days**
-
 ```text
-From: 26 July 2022 - To: 02 August 2022
+From: 27 July 2022 - To: 03 August 2022
 
-Python             6 hrs 41 mins   ████████▓░░░░░░░░░░░░░░░░   34.19 %
-Markdown           4 hrs 38 mins   ██████░░░░░░░░░░░░░░░░░░░   23.70 %
-TOML               3 hrs 14 mins   ████░░░░░░░░░░░░░░░░░░░░░   16.55 %
-YAML               3 hrs 2 mins    ████░░░░░░░░░░░░░░░░░░░░░   15.55 %
-Batchfile          53 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.52 %
-Other              32 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.73 %
+Python             7 hrs 21 mins   ███████▓░░░░░░░░░░░░░░░░░   30.65 %
+Markdown           5 hrs 33 mins   █████▓░░░░░░░░░░░░░░░░░░░   23.14 %
+YAML               3 hrs 34 mins   ███▓░░░░░░░░░░░░░░░░░░░░░   14.92 %
+TOML               3 hrs 23 mins   ███▓░░░░░░░░░░░░░░░░░░░░░   14.15 %
+Batchfile          2 hrs 27 mins   ██▓░░░░░░░░░░░░░░░░░░░░░░   10.27 %
+INI                41 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.89 %
 ```
 
 <!--END_SECTION:waka-->
