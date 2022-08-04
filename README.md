@@ -92,6 +92,7 @@ INI                41 mins         ▓░░░░░░░░░░░░░░
 - Kaggle Playgrounds
 - Kaggle Competitions
 - Codewars Python
+- adventofcode
 - Coursera Julia
 - IBM Qiskit
 - XanaduAI Pennylane
