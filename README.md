@@ -52,6 +52,7 @@
 `last_30_days`
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
+
 ```text
 From: 31 July 2022 - To: 07 August 2022
 
