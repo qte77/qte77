@@ -49,9 +49,9 @@
 -->
 <!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 
+`last_30_days`
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
-
 ```text
 From: 31 July 2022 - To: 07 August 2022
 
@@ -65,7 +65,7 @@ Other              1 hr 22 mins    ▓░░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
-**Profile total**
+`profile total`
 
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
