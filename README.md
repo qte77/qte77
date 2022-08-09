@@ -49,7 +49,7 @@
 -->
 <!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 
-`last_30_days`
+`last_7_days`
 <!-- https://github.com/athul/waka-readme -->
 <!--START_SECTION:waka-->
 
