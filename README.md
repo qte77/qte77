@@ -54,7 +54,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 17 July 2022 - To: 16 August 2022
+From: 18 July 2022 - To: 17 August 2022
 
 Python             50 hrs 9 mins   ██████████████▓░░░░░░░░░░   58.67 %
 Markdown           13 hrs 11 mins  ████░░░░░░░░░░░░░░░░░░░░░   15.44 %
