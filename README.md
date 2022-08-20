@@ -90,11 +90,11 @@ https://docs.codersrank.io/widgets/skills-chart-widget
 
 ## TODO
 
-- Kaggle Playgrounds
-- Kaggle Competitions
-- Codewars Python
-- Coding Katas
-- AdventOfcode
-- Coursera Julia
-- IBM Qiskit
-- XanaduAI Pennylane
+- [ ] Kaggle Playgrounds
+- [ ] Kaggle Competitions
+- [ ] Codewars Python
+- [ ] Coding Katas
+- [ ] AdventOfcode
+- [ ] Coursera Julia
+- [ ] IBM Qiskit
+- [ ] XanaduAI Pennylane
