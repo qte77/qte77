@@ -43,10 +43,9 @@
 
 <!--
 [![wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=qte77)](https://github.com/anuraghazra/github-readme-stats)
--->
-<!-- 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
 -->
+
 <!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
 
 `last_30_days`
@@ -78,22 +77,24 @@ Other              1 hr 49 mins    ▓░░░░░░░░░░░░░░
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-light-mode-only)
 -->
 <!-- dark mode -->
-<!--
+<!-- 
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/d2495005-a4af-4df0-a240-97a37c8c52cd.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="45%" height="45%" />](./#gh-dark-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=github_dark" alt="qte77's Github Activity" />](./#gh-dark-mode-only)
 [<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-dark-mode-only)
 -->
-<!-- https://docs.codersrank.io/widgets/skills-chart-widget -->
-<!-- CodersRanks try later for data to be provided
-<img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml&show-other-skills=true" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" />
+<!-- 
+CodersRanks try later for data to be provided
+https://docs.codersrank.io/widgets/skills-chart-widget
 -->
+<!-- <img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=qte77&skills=python,jupyter,shell,batchfile,makefile,markdown,html,json,yaml&show-other-skills=true" alt="qte77's CodersRank.io Skills Chart Widget" width="55%" height="55%" /> -->
 
 ## TODO
 
 - Kaggle Playgrounds
 - Kaggle Competitions
 - Codewars Python
-- adventofcode
+- Coding Katas
+- AdventOfcode
 - Coursera Julia
 - IBM Qiskit
 - XanaduAI Pennylane
