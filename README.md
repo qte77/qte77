@@ -95,6 +95,7 @@ https://docs.codersrank.io/widgets/skills-chart-widget
 - [ ] Codewars Python
 - [ ] Coding Katas
 - [ ] AdventOfcode
+- [ ] Blind75
 - [ ] Coursera Julia
 - [ ] IBM Qiskit
 - [ ] XanaduAI Pennylane
