@@ -53,14 +53,14 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 18 August 2022 - To: 17 September 2022
+From: 19 August 2022 - To: 18 September 2022
 
-Python       57 hrs 4 mins   ██████████████░░░░░░░░░░░   56.52 %
-YAML         12 hrs 3 mins   ███░░░░░░░░░░░░░░░░░░░░░░   11.95 %
-Markdown     11 hrs 33 mins  ███░░░░░░░░░░░░░░░░░░░░░░   11.44 %
-Batchfile    7 hrs 58 mins   ██░░░░░░░░░░░░░░░░░░░░░░░   07.89 %
-JSON         3 hrs 2 mins    ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.01 %
-TOML         2 hrs 31 mins   ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.50 %
+Python       60 hrs 12 mins  █████████████░░░░░░░░░░░░   52.56 %
+YAML         12 hrs 31 mins  ██▓░░░░░░░░░░░░░░░░░░░░░░   10.93 %
+Markdown     11 hrs 40 mins  ██▓░░░░░░░░░░░░░░░░░░░░░░   10.19 %
+Batchfile    7 hrs 58 mins   █▓░░░░░░░░░░░░░░░░░░░░░░░   06.96 %
+Makefile     7 hrs 11 mins   █▓░░░░░░░░░░░░░░░░░░░░░░░   06.28 %
+JSON         3 hrs 33 mins   ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.10 %
 ```
 
 <!--END_SECTION:waka-->
