@@ -53,7 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 24 September 2022 - To: 24 October 2022
+From: 25 September 2022 - To: 25 October 2022
 
 Bash       1 hr 24 mins    ████████░░░░░░░░░░░░░░░░░   32.46 %
 Python     53 mins         █████▒░░░░░░░░░░░░░░░░░░░   20.68 %
