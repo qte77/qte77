@@ -53,7 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 01 October 2022 - To: 31 October 2022
+From: 02 October 2022 - To: 01 November 2022
 
 Bash       1 hr 24 mins    ███████▓░░░░░░░░░░░░░░░░░   30.10 %
 Markdown   1 hr 9 mins     ██████▒░░░░░░░░░░░░░░░░░░   24.99 %
