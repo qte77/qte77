@@ -53,14 +53,14 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 03 October 2022 - To: 02 November 2022
+From: 04 October 2022 - To: 03 November 2022
 
-Markdown     1 hr 42 mins    ██████▓░░░░░░░░░░░░░░░░░░   26.90 %
-Bash         1 hr 24 mins    █████▓░░░░░░░░░░░░░░░░░░░   22.01 %
-Python       1 hr 7 mins     ████▒░░░░░░░░░░░░░░░░░░░░   17.79 %
-Makefile     44 mins         ███░░░░░░░░░░░░░░░░░░░░░░   11.77 %
-Docker       42 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   11.13 %
-TOML         20 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.37 %
+Markdown     1 hr 51 mins    ███████░░░░░░░░░░░░░░░░░░   28.54 %
+Bash         1 hr 24 mins    █████▒░░░░░░░░░░░░░░░░░░░   21.60 %
+Python       1 hr 7 mins     ████▒░░░░░░░░░░░░░░░░░░░░   17.45 %
+Docker       42 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.91 %
+Makefile     34 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   08.75 %
+TOML         22 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.73 %
 ```
 
 <!--END_SECTION:waka-->
