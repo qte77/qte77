@@ -53,14 +53,14 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 06 October 2022 - To: 05 November 2022
+From: 07 October 2022 - To: 06 November 2022
 
-Markdown     1 hr 33 mins    ██████████▒░░░░░░░░░░░░░░   41.78 %
-Python       1 hr 3 mins     ███████░░░░░░░░░░░░░░░░░░   28.46 %
-Makefile     29 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   13.27 %
-TOML         22 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   09.93 %
-YAML         7 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.16 %
-Git Config   3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.38 %
+Markdown     1 hr 27 mins    ████████████▓░░░░░░░░░░░░   50.81 %
+Makefile     29 mins         ████▒░░░░░░░░░░░░░░░░░░░░   17.39 %
+TOML         22 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   13.02 %
+Python       17 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.18 %
+YAML         7 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.14 %
+Git Config   3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
 ```
 
 <!--END_SECTION:waka-->
