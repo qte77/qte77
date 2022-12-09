@@ -53,7 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 06 November 2022 - To: 06 December 2022
+From: 07 November 2022 - To: 07 December 2022
 
 Python     51 mins         ██████████████▒░░░░░░░░░░   57.03 %
 CSV        22 mins         ██████▒░░░░░░░░░░░░░░░░░░   24.99 %
