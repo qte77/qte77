@@ -53,7 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 11 December 2022 - To: 10 January 2023
+From: 12 December 2022 - To: 11 January 2023
 
 Markdown     1 hr 7 mins     ████████████████▓░░░░░░░░   66.05 %
 CSV          10 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   09.97 %
