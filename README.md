@@ -53,10 +53,13 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 30 December 2022 - To: 29 January 2023
+From: 31 December 2022 - To: 30 January 2023
 
-Markdown     19 mins         █████████████████░░░░░░░░   68.58 %
-Other        3 mins          ██▓░░░░░░░░░░░░░░░░░░░░░░   10.49 %
+Python       1 min           █████████░░░░░░░░░░░░░░░░   36.08 %
+JSON         1 min           ████████▓░░░░░░░░░░░░░░░░   35.27 %
+HTML         0 secs          ███▓░░░░░░░░░░░░░░░░░░░░░   14.48 %
+Git Config   0 secs          ██░░░░░░░░░░░░░░░░░░░░░░░   08.40 %
+Other        0 secs          █░░░░░░░░░░░░░░░░░░░░░░░░   03.49 %
 ```
 
 <!--END_SECTION:waka-->
