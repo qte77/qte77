@@ -53,13 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 31 December 2022 - To: 30 January 2023
-
-Python       1 min           █████████░░░░░░░░░░░░░░░░   36.08 %
-JSON         1 min           ████████▓░░░░░░░░░░░░░░░░   35.27 %
-HTML         0 secs          ███▓░░░░░░░░░░░░░░░░░░░░░   14.48 %
-Git Config   0 secs          ██░░░░░░░░░░░░░░░░░░░░░░░   08.40 %
-Other        0 secs          █░░░░░░░░░░░░░░░░░░░░░░░░   03.49 %
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
