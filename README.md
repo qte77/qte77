@@ -53,7 +53,7 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 01 March 2023 - To: 31 March 2023
+From: 02 March 2023 - To: 01 April 2023
 
 No activity tracked
 ```
