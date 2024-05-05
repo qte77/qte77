@@ -14,10 +14,10 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
-- [Transformer distiled, Part 2 of 2](https://qte77.github.io/ml-transformer-distiled-2/)
-- [Python Comprehension vs map&lpar;&rpar;](https://qte77.github.io/python-comprehension-vs-map/)
-- [Static-sites on GH-Pages](https://qte77.github.io/static-sites-jekyll-sphinx-readthedocs/)
-- [Python Closures and Decorators](https://qte77.github.io/python-closure-decorator/)
+- [SegFormer Part 1, Description](https://qte77.github.io/SegFormer-Part1-Description/)
+- [SegFormer Part 2, PoC Difficulties and Errors](https://qte77.github.io/SegFormer-Part2-PoC-Difficulties/)
+- [SegFormer Part 2, Quantization Description](https://qte77.github.io/SegFormer-Part3-Quantization-Description/)
+- [SegFormer Part 4, Quantization Difficulties and Errors Part 1](https://qte77.github.io/SegFormer-Part4-Quantization-Difficulties-Part1/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
