@@ -44,21 +44,9 @@
 <!--
 [![wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=qte77)](https://github.com/anuraghazra/github-readme-stats)
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
+https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+https://github.com/athul/waka-readme
 -->
-
-<!-- https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md -->
-
-`last_30_days`
-<!-- https://github.com/athul/waka-readme -->
-<!--START_SECTION:waka-->
-
-```txt
-From: 19 April 2024 - To: 19 May 2024
-
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
 
 `profile total`
 
