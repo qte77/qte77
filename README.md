@@ -73,12 +73,7 @@ https://docs.codersrank.io/widgets/skills-chart-widget
 
 ## TODO
 
-- [ ] Kaggle Playgrounds
-- [ ] Kaggle Competitions
+- [x] Kaggle Playgrounds
+- [x] Kaggle Competitions
 - [ ] Codewars Python
-- [ ] Coding Katas
 - [ ] AdventOfcode
-- [ ] Blind75
-- [ ] Coursera Julia
-- [ ] IBM Qiskit
-- [ ] XanaduAI Pennylane
