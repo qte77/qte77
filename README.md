@@ -14,10 +14,10 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Segformerbaseline Finetuning Results](https://qte77.github.io/SegFormerBaseline-FineTuning-results/)
 - [Collection of Tools for ML](https://qte77.github.io/ML-Tooling/)
 - [SegFormer Part 1, Description](https://qte77.github.io/SegFormer-Part1-Description/)
 - [SegFormer Part 2, PoC Difficulties and Errors](https://qte77.github.io/SegFormer-Part2-PoC-Difficulties/)
-- [SegFormer Part 3, Quantization Description](https://qte77.github.io/SegFormer-Part3-Quantization-Description/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
