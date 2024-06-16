@@ -5,11 +5,12 @@
 
 ## Topics
 
+- Pipelines, Workflows
+- DevOps, IaC, CaC
 - ML, Inductive Priors
 - Automatic Differentiation
-- QML, Barren Plateaus
-- Pipelines, Workflows
 - Data Centric vs Model Centric
+- QML, Barren Plateaus
 
 ## Posts
 
