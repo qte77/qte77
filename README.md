@@ -15,10 +15,10 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [AI Agents Tools List](https://qte77.github.io/ai-agents-tools-list/)
+- [AI Coding Tools List](https://qte77.github.io/ai-coding-tools-list/)
 - [Segformerbaseline Finetuning Results](https://qte77.github.io/SegFormerBaseline-FineTuning-results/)
 - [Collection of Tools for ML](https://qte77.github.io/ML-Tooling/)
-- [SegFormer Part 1, Description](https://qte77.github.io/SegFormer-Part1-Description/)
-- [SegFormer Part 2, PoC Difficulties and Errors](https://qte77.github.io/SegFormer-Part2-PoC-Difficulties/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
