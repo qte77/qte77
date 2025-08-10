@@ -15,10 +15,10 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Ai Agents Eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
+- [Ai Agents Eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
 - [AI Agents Tools List](https://qte77.github.io/ai-agents-tools-list/)
 - [AI Coding Tools List](https://qte77.github.io/ai-coding-tools-list/)
-- [Segformerbaseline Finetuning Results](https://qte77.github.io/SegFormerBaseline-FineTuning-results/)
-- [Collection of Tools for ML](https://qte77.github.io/ML-Tooling/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
