@@ -15,10 +15,10 @@
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
 - [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
 - [AI Agents-eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
 - [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
-- [AI Agents Tools List](https://qte77.github.io/ai-agents-tools-list/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Tools
