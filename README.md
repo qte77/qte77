@@ -42,8 +42,10 @@
 
 ## Stats
 
-<!--
+<!-- offline
 [![wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=qte77)](https://github.com/anuraghazra/github-readme-stats)
+-->
+<!-- 
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=qte77&theme=dark&background=000000)](https://git.io/streak-stats)
 https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 https://github.com/athul/waka-readme
@@ -51,21 +53,22 @@ https://github.com/athul/waka-readme
 
 `profile total`
 
-[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
-[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
-
 <!-- light mode -->
-<!--
-[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/e2ecd6b7-e9a6-41e6-962d-752f68603418.svg" alt="qte77's wakatime languages" width="45%" height="45%" />](./#gh-light-mode-only)
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/e2ecd6b7-e9a6-41e6-962d-752f68603418.svg" alt="qte77's wakatime languages" width="30%" height="30%" />](./#gh-light-mode-only)
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="30%" height="30%" />](./#gh-light-mode-only)
+<!-- offline
+[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=default&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-light-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=default" alt="qte77's Github Activity" />](./#gh-light-mode-only)
-[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/c8eacc2b-cc27-4e65-ac0c-b0b45c1824ab.svg" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-light-mode-only)
 -->
+
 <!-- dark mode -->
-<!-- 
-[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/d2495005-a4af-4df0-a240-97a37c8c52cd.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="45%" height="45%" />](./#gh-dark-mode-only)
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/d2495005-a4af-4df0-a240-97a37c8c52cd.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="30%" height="30%" />](./#gh-dark-mode-only)
+[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="30%" height="30%" />](./#gh-dark-mode-only)
+<!-- offline
+[<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qte77&theme=github_dark&line_height=27&layout=compact" alt="qte77's Top Langs" />](./#gh-dark-mode-only)
 [<img src="https://github-readme-stats.vercel.app/api?username=qte77&show_icons=true&line_height=21&theme=github_dark" alt="qte77's Github Activity" />](./#gh-dark-mode-only)
-[<img src="https://wakatime.com/share/@2955a10c-2c10-4666-a24d-1313cab9be94/99acefaa-aa24-4429-aa92-13bb19cdffab.svg" alt="qte77's Github Activity" alt="qte77's wakatime" width="50%" height="50%" />](./#gh-dark-mode-only)
 -->
+
 <!-- 
 CodersRanks try later for data to be provided
 https://docs.codersrank.io/widgets/skills-chart-widget
