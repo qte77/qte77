@@ -5,7 +5,7 @@
 
 ## Project Ecosystem
 
-<img src="assets/images/architecture.svg" alt="Project Architecture" width="80%" />
+<img src="assets/images/architecture.svg" alt="Project Architecture" width="100%" />
 
 ## Topics
 
