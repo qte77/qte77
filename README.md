@@ -50,3 +50,4 @@
 - [x] Kaggle Competitions
 - [ ] Codewars Python
 - [ ] AdventOfcode
+- [ ] Add repo interconnections graph to profile

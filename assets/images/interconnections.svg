@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 780 500" width="780" height="500">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; rx: 5; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2328; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .legend-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .legend-label { fill: #8b949e; }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+
+    <marker id="a-blue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#4493f8"/>
+    </marker>
+    <marker id="a-green" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#3fb950"/>
+    </marker>
+    <marker id="a-orange" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#d29922"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="780" height="500" rx="8"/>
+  <text class="title" x="390" y="24" text-anchor="middle">Repo Interconnections</text>
+
+  <!-- ===== Nodes ===== -->
+
+  <!-- Row 1: Agents-eval (top-left), coding-agents-research (top-right) -->
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <rect class="box" x="55" y="50" width="170" height="48" rx="5"/>
+    <text class="repo-name" x="140" y="70" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="140" y="85" text-anchor="middle">3-tier MAS evaluation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agents-research">
+    <rect class="box" x="530" y="50" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="625" y="70" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="625" y="85" text-anchor="middle">Claude Code research</text>
+  </a>
+
+  <!-- Row 2: ralph-loop (left), cc-utils-plugin (center) -->
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <rect class="box" x="55" y="170" width="170" height="48" rx="5"/>
+    <text class="repo-name" x="140" y="190" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="140" y="205" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <rect class="box" x="300" y="170" width="170" height="48" rx="5"/>
+    <text class="repo-name" x="385" y="190" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="385" y="205" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <!-- Row 3: polyforge (center), CABIO (right) -->
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <rect class="box" x="300" y="300" width="170" height="48" rx="5"/>
+    <text class="repo-name" x="385" y="320" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="385" y="335" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/CABIO-test">
+    <rect class="box" x="540" y="300" width="170" height="48" rx="5"/>
+    <text class="repo-name" x="625" y="320" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="625" y="335" text-anchor="middle">business workflows</text>
+  </a>
+
+  <!-- Row 4: market-research (left), codebase-to-report (right) -->
+  <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
+    <rect class="box" x="140" y="410" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="235" y="430" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="235" y="445" text-anchor="middle">AI market research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
+    <rect class="box" x="400" y="410" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="495" y="430" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="495" y="445" text-anchor="middle">scientific report gen</text>
+  </a>
+
+  <!-- ===== Arrows ===== -->
+  <!-- Convention: A → B means "A uses / depends on B". Line ends at arrowhead base. -->
+
+  <!-- 1. Agents-eval → ralph-loop (uses submodule) -->
+  <path d="M 140,98 L 140,170" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 2. Agents-eval → cc-utils-plugin (uses) -->
+  <path d="M 210,98 C 260,140 320,140 350,170" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 3. ralph → cc-utils-plugin (uses skills) -->
+  <path d="M 225,194 L 300,194" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 4. ralph → coding-agents-research (uses research) -->
+  <path d="M 225,178 C 350,150 480,120 530,74" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 5. cc-utils-plugin → coding-agents-research (uses research) -->
+  <path d="M 450,178 C 480,160 510,130 530,82" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 6. ralph → polyforge (runs inside) -->
+  <path d="M 160,218 C 180,270 290,290 300,314" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 7. CABIO → polyforge (runs inside) -->
+  <path d="M 540,324 L 470,324" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 8. ralph → CABIO (creates/updates) -->
+  <path d="M 225,210 C 340,260 500,270 580,300" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+
+  <!-- 9. market-research → polyforge (runs inside) -->
+  <path d="M 280,410 C 310,380 340,360 365,348" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 10. codebase-to-report → polyforge (runs inside) -->
+  <path d="M 450,410 C 430,380 410,360 400,348" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- ===== Legend ===== -->
+  <line x1="200" y1="480" x2="230" y2="480" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <text class="legend-label" x="238" y="484">uses / depends on</text>
+
+  <line x1="370" y1="480" x2="400" y2="480" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <text class="legend-label" x="408" y="484">runs inside</text>
+
+  <line x1="510" y1="480" x2="540" y2="480" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <text class="legend-label" x="548" y="484">creates / updates</text>
+</svg>
