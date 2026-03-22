@@ -3,6 +3,10 @@
 
 # qte77
 
+## Project Ecosystem
+
+<img src="assets/images/architecture.svg" alt="Project Architecture" width="80%" />
+
 ## Topics
 
 - Pipelines, Workflows

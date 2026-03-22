@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 528" width="900" height="528">
+  <defs>
+    <style>
+      /* Light mode (default) */
+      .page-bg { fill: #ffffff; }
+      .layer-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .layer-label { fill: #8b949e; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+  </defs>
+
+  <!-- Page background -->
+  <rect class="page-bg" width="900" height="528" rx="8"/>
+
+  <!-- Title -->
+  <text class="title" x="450" y="24" text-anchor="middle">qte77 — Project Ecosystem</text>
+
+  <!-- ===== Layer 1: AI Agent Evaluation ===== -->
+  <rect class="layer-bg" x="10" y="38" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="52">AI AGENT EVALUATION</text>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
+    <rect class="box" x="66" y="56" width="180" height="48" rx="5"/>
+    <text class="repo-name" x="156" y="75" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="156" y="90" text-anchor="middle">3-tier MAS evaluation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
+    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
+    <rect class="box" x="262" y="56" width="180" height="48" rx="5"/>
+    <text class="repo-name" x="352" y="75" text-anchor="middle">MAS-GraphJudge</text>
+    <text class="repo-desc" x="352" y="90" text-anchor="middle">graph-based benchmarking</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
+    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
+    <rect class="box" x="458" y="56" width="180" height="48" rx="5"/>
+    <text class="repo-name" x="548" y="75" text-anchor="middle">TestBehaveAlign</text>
+    <text class="repo-desc" x="548" y="90" text-anchor="middle">TDD/BDD test quality</text>
+  </a>
+
+  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
+    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
+    <rect class="box" x="654" y="56" width="180" height="48" rx="5" stroke-dasharray="4 2"/>
+    <text class="repo-name" x="744" y="75" text-anchor="middle">BulletproofProtocol*</text>
+    <text class="repo-desc" x="744" y="90" text-anchor="middle">adversarial R&amp;D audit</text>
+  </a>
+
+  <!-- ===== Layer 2: Agent Development Tooling ===== -->
+  <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="132">AGENT DEVELOPMENT TOOLING</text>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph-loop template — Autonomous development loop with Claude Code</title>
+    <rect class="box" x="25" y="136" width="162" height="48" rx="5"/>
+    <text class="repo-name" x="106" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="106" y="170" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <title>claude-code-utils-plugin — CC plugin marketplace with 11 plugins and 21 skills</title>
+    <rect class="box" x="197" y="136" width="162" height="48" rx="5"/>
+    <text class="repo-name" x="278" y="155" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="278" y="170" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <title>polyforge — Multi-repo AI agent orchestration</title>
+    <rect class="box" x="369" y="136" width="162" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="450" y="170" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/CABIO-test">
+    <title>CABIO-test — Context-Aware Business Intelligence Orchestration</title>
+    <rect class="box" x="541" y="136" width="162" height="48" rx="5"/>
+    <text class="repo-name" x="622" y="155" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="622" y="170" text-anchor="middle">business workflows</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agents-research">
+    <title>coding-agents-research — Claude Code field research and feature analysis</title>
+    <rect class="box" x="713" y="136" width="162" height="48" rx="5"/>
+    <text class="repo-name" x="794" y="155" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="794" y="170" text-anchor="middle">Claude Code research</text>
+  </a>
+
+  <!-- ===== Layer 3: Agent Applications ===== -->
+  <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="212">AGENT APPLICATIONS</text>
+
+  <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
+    <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
+    <rect class="box" x="220" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="330" y="235" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="330" y="250" text-anchor="middle">AI market research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
+    <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
+    <rect class="box" x="460" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="570" y="235" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="570" y="250" text-anchor="middle">scientific report gen</text>
+  </a>
+
+  <!-- ===== Layer 4: GitHub Actions ===== -->
+  <rect class="layer-bg" x="10" y="278" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="292">GITHUB ACTIONS</text>
+
+  <a xlink:href="https://github.com/qte77/gha-ai-changelog">
+    <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
+    <rect class="box" x="25" y="296" width="198" height="48" rx="5"/>
+    <text class="repo-name" x="124" y="315" text-anchor="middle">gha-ai-changelog</text>
+    <text class="repo-desc" x="124" y="330" text-anchor="middle">AI-powered changelogs</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
+    <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
+    <rect class="box" x="237" y="296" width="198" height="48" rx="5"/>
+    <text class="repo-name" x="336" y="315" text-anchor="middle">gha-contribution-ascii</text>
+    <text class="repo-desc" x="336" y="330" text-anchor="middle">contribution graph art</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
+    <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
+    <rect class="box" x="449" y="296" width="198" height="48" rx="5"/>
+    <text class="repo-name" x="548" y="315" text-anchor="middle">gha-dirtree-to-readme</text>
+    <text class="repo-desc" x="548" y="330" text-anchor="middle">dir tree to README</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/arxiv-stats-action">
+    <title>arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
+    <rect class="box" x="661" y="296" width="198" height="48" rx="5"/>
+    <text class="repo-name" x="760" y="315" text-anchor="middle">arxiv-stats-action</text>
+    <text class="repo-desc" x="760" y="330" text-anchor="middle">arXiv daily paper stats</text>
+  </a>
+
+  <!-- ===== Layer 5: ML / DL Foundations ===== -->
+  <rect class="layer-bg" x="10" y="358" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="372">ML / DL FOUNDATIONS</text>
+
+  <a xlink:href="https://github.com/qte77/App-BERT-Benchmark">
+    <title>App-BERT-Benchmark — BERT configuration benchmarking with HF and W&amp;B</title>
+    <rect class="box" x="220" y="376" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="330" y="395" text-anchor="middle">App-BERT-Benchmark</text>
+    <text class="repo-desc" x="330" y="410" text-anchor="middle">BERT config benchmarks</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/HybridRAG-eval">
+    <title>HybridRAG-eval — Classic vs Hybrid RAG evaluation</title>
+    <rect class="box" x="460" y="376" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="570" y="395" text-anchor="middle">HybridRAG-eval</text>
+    <text class="repo-desc" x="570" y="410" text-anchor="middle">RAG evaluation</text>
+  </a>
+
+  <!-- ===== Layer 6: Infrastructure ===== -->
+  <rect class="layer-bg" x="10" y="438" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="452">INFRASTRUCTURE</text>
+
+  <a xlink:href="https://github.com/qte77/dotfiles">
+    <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
+    <rect class="box" x="350" y="454" width="200" height="38" rx="5"/>
+    <text class="repo-name" x="450" y="469" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="450" y="483" text-anchor="middle">dev environment config</text>
+  </a>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="518">* pat-tax/ org</text>
+  <text class="note" x="880" y="518" text-anchor="end">18 original repositories</text>
+</svg>
