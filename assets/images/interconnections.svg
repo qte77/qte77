@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 580" width="860" height="580">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; rx: 5; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2328; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .legend-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .legend-label { fill: #8b949e; }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+
+    <marker id="a-blue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#4493f8"/>
+    </marker>
+    <marker id="a-green" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#3fb950"/>
+    </marker>
+    <marker id="a-orange" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#d29922"/>
+    </marker>
+    <marker id="a-purple" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#a371f7"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="860" height="580" rx="8"/>
+  <text class="title" x="430" y="24" text-anchor="middle">Repo Interconnections</text>
+
+  <!-- ===== Nodes ===== -->
+
+  <!-- Row 1: Evaluation layer -->
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <rect class="box" x="30" y="50" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="118" y="70" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="118" y="85" text-anchor="middle">3-tier MAS evaluation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agent-eval">
+    <rect class="box" x="240" y="50" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="328" y="70" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="328" y="85" text-anchor="middle">CC evaluation harness</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
+    <rect class="box" x="450" y="50" width="195" height="48" rx="5"/>
+    <text class="repo-name" x="548" y="70" text-anchor="middle">multi-tasking-quality</text>
+    <text class="repo-desc" x="548" y="85" text-anchor="middle">WakaTime quality correlation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agents-research">
+    <rect class="box" x="670" y="50" width="165" height="48" rx="5"/>
+    <text class="repo-name" x="753" y="70" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="753" y="85" text-anchor="middle">CC field research</text>
+  </a>
+
+  <!-- Row 2: Tooling layer -->
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <rect class="box" x="30" y="190" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="118" y="210" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="118" y="225" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
+    <rect class="box" x="240" y="190" width="195" height="48" rx="5"/>
+    <text class="repo-name" x="338" y="210" text-anchor="middle">cc-recursive-team-mode</text>
+    <text class="repo-desc" x="338" y="225" text-anchor="middle">recursive CC subprocess</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <rect class="box" x="470" y="190" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="558" y="210" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="558" y="225" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <!-- Row 3: Orchestration layer -->
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <rect class="box" x="240" y="330" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="328" y="350" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="328" y="365" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/CABIO-test">
+    <rect class="box" x="470" y="330" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="558" y="350" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="558" y="365" text-anchor="middle">business workflows</text>
+  </a>
+
+  <!-- Row 4: Applications -->
+  <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
+    <rect class="box" x="80" y="450" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="180" y="470" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="180" y="485" text-anchor="middle">AI market research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/dotfiles">
+    <rect class="box" x="560" y="450" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="648" y="470" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="648" y="485" text-anchor="middle">dev environment config</text>
+  </a>
+
+  <!-- ===== Arrows ===== -->
+
+  <!-- Blue: uses / depends on -->
+  <!-- Green: runs inside -->
+  <!-- Orange: creates / updates -->
+  <!-- Purple: feeds research into -->
+
+  <!-- 1. Agents-eval → ralph-loop (submodule) -->
+  <path d="M 118,98 L 118,190" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 2. Agents-eval → cc-utils-plugin (uses) -->
+  <path d="M 195,98 C 300,140 440,160 480,190" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 3. coding-agent-eval → cc-recursive-team-mode (depends on) -->
+  <path d="M 328,98 L 338,190" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 4. coding-agent-eval → coding-agents-research (submodule) -->
+  <path d="M 415,62 L 670,62" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 5. coding-agents-research → cc-recursive-team-mode (feeds research) -->
+  <path d="M 700,98 C 620,150 460,170 430,190" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+
+  <!-- 6. coding-agents-research → coding-agent-eval (feeds research) -->
+  <path d="M 670,86 C 560,100 450,90 415,80" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+
+  <!-- 7. coding-agents-research → multi-tasking-quality (feeds research) -->
+  <path d="M 670,74 L 645,74" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+
+  <!-- 8. coding-agents-research → cc-utils-plugin (feeds research) -->
+  <path d="M 720,98 C 680,150 620,170 620,190" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+
+  <!-- 9. ralph → cc-utils-plugin (uses skills) -->
+  <path d="M 205,214 L 470,214" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- 10. ralph → polyforge (runs inside) -->
+  <path d="M 140,238 C 170,290 250,310 270,330" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 11. CABIO → polyforge (runs inside) -->
+  <path d="M 470,354 L 415,354" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 12. ralph → CABIO (creates/updates) -->
+  <path d="M 205,228 C 310,280 430,300 510,330" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+
+  <!-- 13. market-research → polyforge (runs inside) -->
+  <path d="M 230,450 C 270,415 300,390 310,378" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+
+  <!-- 14. dotfiles → all devcontainers (used by) -->
+  <path d="M 600,450 C 530,410 430,390 380,378" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+
+  <!-- ===== Legend ===== -->
+  <line x1="120" y1="555" x2="150" y2="555" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <text class="legend-label" x="158" y="559">uses / depends on</text>
+
+  <line x1="300" y1="555" x2="330" y2="555" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <text class="legend-label" x="338" y="559">runs inside</text>
+
+  <line x1="440" y1="555" x2="470" y2="555" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <text class="legend-label" x="478" y="559">creates / updates</text>
+
+  <line x1="600" y1="555" x2="630" y2="555" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <text class="legend-label" x="638" y="559">feeds research</text>
+</svg>
