@@ -131,16 +131,23 @@
 
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
-    <rect class="box" x="220" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="330" y="235" text-anchor="middle">market-research-to-gtm</text>
-    <text class="repo-desc" x="330" y="250" text-anchor="middle">AI market research</text>
+    <rect class="box" x="120" y="216" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="220" y="235" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="220" y="250" text-anchor="middle">AI market research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
+    <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
+    <rect class="box" x="340" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="235" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="450" y="250" text-anchor="middle">scientific report gen</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/React-Playground">
     <title>React-Playground — Research-backed AI safety testing for mental health applications</title>
-    <rect class="box" x="460" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="570" y="235" text-anchor="middle">React-Playground</text>
-    <text class="repo-desc" x="570" y="250" text-anchor="middle">AI safety testing</text>
+    <rect class="box" x="580" y="216" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="680" y="235" text-anchor="middle">React-Playground</text>
+    <text class="repo-desc" x="680" y="250" text-anchor="middle">AI safety testing</text>
   </a>
 
   <!-- ===== Layer 4: GitHub Actions ===== -->
@@ -220,5 +227,5 @@
 
   <!-- Footer -->
   <text class="note" x="20" y="518">* pat-tax/ org</text>
-  <text class="note" x="880" y="518" text-anchor="end">22 original repositories</text>
+  <text class="note" x="880" y="518" text-anchor="end">23 original repositories</text>
 </svg>
