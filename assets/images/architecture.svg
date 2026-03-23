@@ -142,37 +142,37 @@
 
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
     <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
-    <rect class="box" x="18" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="85" y="315" text-anchor="middle">ai-changelog</text>
-    <text class="repo-desc" x="85" y="330" text-anchor="middle">AI-powered changelogs</text>
+    <rect class="box" x="91" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="158" y="315" text-anchor="middle">ai-changelog</text>
+    <text class="repo-desc" x="158" y="330" text-anchor="middle">AI-powered changelogs</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
     <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
-    <rect class="box" x="164" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="231" y="315" text-anchor="middle">contribution-ascii</text>
-    <text class="repo-desc" x="231" y="330" text-anchor="middle">contribution graph art</text>
+    <rect class="box" x="237" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="304" y="315" text-anchor="middle">contribution-ascii</text>
+    <text class="repo-desc" x="304" y="330" text-anchor="middle">contribution graph art</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
     <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
-    <rect class="box" x="310" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="377" y="315" text-anchor="middle">dirtree-to-readme</text>
-    <text class="repo-desc" x="377" y="330" text-anchor="middle">dir tree to README</text>
+    <rect class="box" x="383" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="315" text-anchor="middle">dirtree-to-readme</text>
+    <text class="repo-desc" x="450" y="330" text-anchor="middle">dir tree to README</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
     <title>gha-arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
-    <rect class="box" x="456" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="523" y="315" text-anchor="middle">arxiv-stats-action</text>
-    <text class="repo-desc" x="523" y="330" text-anchor="middle">arXiv daily paper stats</text>
+    <rect class="box" x="529" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="596" y="315" text-anchor="middle">arxiv-stats-action</text>
+    <text class="repo-desc" x="596" y="330" text-anchor="middle">arXiv daily paper stats</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Synchronize issues across repositories</title>
-    <rect class="box" x="602" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="669" y="315" text-anchor="middle">cross-repo-issue-sync</text>
-    <text class="repo-desc" x="669" y="330" text-anchor="middle">issue synchronization</text>
+    <rect class="box" x="675" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="742" y="315" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="742" y="330" text-anchor="middle">issue synchronization</text>
   </a>
 
   <!-- ===== Layer 5: ML / DL Foundations ===== -->
