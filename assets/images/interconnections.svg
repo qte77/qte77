@@ -139,8 +139,8 @@
   <path d="M 420,65 L 440,65" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
   <!-- 7. coding-agents-research → multi-tasking-quality (feeds research) -->
-  <!-- From research right (420,80) curving right to multi-tasking left (635,80) -->
-  <path d="M 420,80 C 500,95 570,95 635,80" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <!-- From research top-right (420,55) arcing above coding-agent-eval to multi-tasking top-left (635,55) -->
+  <path d="M 420,55 C 480,30 580,30 635,55" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
   <!-- 8. ralph → polyforge (runs inside) -->
   <!-- From ralph bottom (235,208) to polyforge top (430,270) — diagonal through open space -->
