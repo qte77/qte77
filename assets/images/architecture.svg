@@ -39,30 +39,44 @@
 
   <a xlink:href="https://github.com/qte77/Agents-eval">
     <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
-    <rect class="box" x="66" y="56" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="156" y="75" text-anchor="middle">Agents-eval</text>
-    <text class="repo-desc" x="156" y="90" text-anchor="middle">3-tier MAS evaluation</text>
+    <rect class="box" x="18" y="56" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="75" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="85" y="90" text-anchor="middle">3-tier MAS evaluation</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
     <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
-    <rect class="box" x="262" y="56" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="352" y="75" text-anchor="middle">MAS-GraphJudge</text>
-    <text class="repo-desc" x="352" y="90" text-anchor="middle">graph-based benchmarking</text>
+    <rect class="box" x="164" y="56" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="75" text-anchor="middle">MAS-GraphJudge</text>
+    <text class="repo-desc" x="231" y="90" text-anchor="middle">graph benchmarking</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
     <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
-    <rect class="box" x="458" y="56" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="548" y="75" text-anchor="middle">TestBehaveAlign</text>
-    <text class="repo-desc" x="548" y="90" text-anchor="middle">TDD/BDD test quality</text>
+    <rect class="box" x="310" y="56" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="75" text-anchor="middle">TestBehaveAlign</text>
+    <text class="repo-desc" x="377" y="90" text-anchor="middle">TDD/BDD test quality</text>
   </a>
 
   <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
     <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
-    <rect class="box" x="654" y="56" width="180" height="48" rx="5" stroke-dasharray="4 2"/>
-    <text class="repo-name" x="744" y="75" text-anchor="middle">BulletproofProtocol*</text>
-    <text class="repo-desc" x="744" y="90" text-anchor="middle">adversarial R&amp;D audit</text>
+    <rect class="box" x="456" y="56" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
+    <text class="repo-name" x="523" y="75" text-anchor="middle">BulletproofProtocol*</text>
+    <text class="repo-desc" x="523" y="90" text-anchor="middle">adversarial R&amp;D audit</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agent-eval">
+    <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
+    <rect class="box" x="602" y="56" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="669" y="75" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="669" y="90" text-anchor="middle">CC evaluation harness</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
+    <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
+    <rect class="box" x="748" y="56" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="815" y="75" text-anchor="middle">multi-tasking-quality</text>
+    <text class="repo-desc" x="815" y="90" text-anchor="middle">WakaTime correlation</text>
   </a>
 
   <!-- ===== Layer 2: Agent Development Tooling ===== -->
@@ -71,37 +85,44 @@
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code</title>
-    <rect class="box" x="25" y="136" width="162" height="48" rx="5"/>
-    <text class="repo-name" x="106" y="155" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="106" y="170" text-anchor="middle">autonomous dev loop</text>
+    <rect class="box" x="18" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="85" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <title>claude-code-utils-plugin — CC plugin marketplace with 11 plugins and 21 skills</title>
-    <rect class="box" x="197" y="136" width="162" height="48" rx="5"/>
-    <text class="repo-name" x="278" y="155" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="278" y="170" text-anchor="middle">plugins &amp; skills</text>
+    <title>claude-code-utils-plugin — CC plugin marketplace with skills and rules</title>
+    <rect class="box" x="164" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="155" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="231" y="170" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
+    <title>cc-recursive-team-mode — Claude Code subprocess wrapper and artifact parser</title>
+    <rect class="box" x="310" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="155" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="377" y="170" text-anchor="middle">CC subprocess wrapper</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Multi-repo AI agent orchestration</title>
-    <rect class="box" x="369" y="136" width="162" height="48" rx="5"/>
-    <text class="repo-name" x="450" y="155" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="450" y="170" text-anchor="middle">multi-repo orchestration</text>
+    <rect class="box" x="456" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="523" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="523" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
     <title>CABIO-test — Context-Aware Business Intelligence Orchestration</title>
-    <rect class="box" x="541" y="136" width="162" height="48" rx="5"/>
-    <text class="repo-name" x="622" y="155" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="622" y="170" text-anchor="middle">business workflows</text>
+    <rect class="box" x="602" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="669" y="155" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="669" y="170" text-anchor="middle">business workflows</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/coding-agents-research">
     <title>coding-agents-research — Claude Code field research and feature analysis</title>
-    <rect class="box" x="713" y="136" width="162" height="48" rx="5"/>
-    <text class="repo-name" x="794" y="155" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="794" y="170" text-anchor="middle">Claude Code research</text>
+    <rect class="box" x="748" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="815" y="155" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="815" y="170" text-anchor="middle">Claude Code research</text>
   </a>
 
   <!-- ===== Layer 3: Agent Applications ===== -->
@@ -110,16 +131,9 @@
 
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
-    <rect class="box" x="220" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="330" y="235" text-anchor="middle">market-research-to-gtm</text>
-    <text class="repo-desc" x="330" y="250" text-anchor="middle">AI market research</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
-    <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
-    <rect class="box" x="460" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="570" y="235" text-anchor="middle">codebase-to-report</text>
-    <text class="repo-desc" x="570" y="250" text-anchor="middle">scientific report gen</text>
+    <rect class="box" x="340" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="235" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="450" y="250" text-anchor="middle">AI market research</text>
   </a>
 
   <!-- ===== Layer 4: GitHub Actions ===== -->
@@ -128,30 +142,37 @@
 
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
     <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
-    <rect class="box" x="25" y="296" width="198" height="48" rx="5"/>
-    <text class="repo-name" x="124" y="315" text-anchor="middle">gha-ai-changelog</text>
-    <text class="repo-desc" x="124" y="330" text-anchor="middle">AI-powered changelogs</text>
+    <rect class="box" x="18" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="315" text-anchor="middle">ai-changelog</text>
+    <text class="repo-desc" x="85" y="330" text-anchor="middle">AI-powered changelogs</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
     <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
-    <rect class="box" x="237" y="296" width="198" height="48" rx="5"/>
-    <text class="repo-name" x="336" y="315" text-anchor="middle">gha-contribution-ascii</text>
-    <text class="repo-desc" x="336" y="330" text-anchor="middle">contribution graph art</text>
+    <rect class="box" x="164" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="315" text-anchor="middle">contribution-ascii</text>
+    <text class="repo-desc" x="231" y="330" text-anchor="middle">contribution graph art</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
     <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
-    <rect class="box" x="449" y="296" width="198" height="48" rx="5"/>
-    <text class="repo-name" x="548" y="315" text-anchor="middle">gha-dirtree-to-readme</text>
-    <text class="repo-desc" x="548" y="330" text-anchor="middle">dir tree to README</text>
+    <rect class="box" x="310" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="315" text-anchor="middle">dirtree-to-readme</text>
+    <text class="repo-desc" x="377" y="330" text-anchor="middle">dir tree to README</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/arxiv-stats-action">
-    <title>arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
-    <rect class="box" x="661" y="296" width="198" height="48" rx="5"/>
-    <text class="repo-name" x="760" y="315" text-anchor="middle">arxiv-stats-action</text>
-    <text class="repo-desc" x="760" y="330" text-anchor="middle">arXiv daily paper stats</text>
+  <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
+    <title>gha-arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
+    <rect class="box" x="456" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="523" y="315" text-anchor="middle">arxiv-stats-action</text>
+    <text class="repo-desc" x="523" y="330" text-anchor="middle">arXiv daily paper stats</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
+    <title>gha-cross-repo-issue-sync — Synchronize issues across repositories</title>
+    <rect class="box" x="602" y="296" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="669" y="315" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="669" y="330" text-anchor="middle">issue synchronization</text>
   </a>
 
   <!-- ===== Layer 5: ML / DL Foundations ===== -->
@@ -185,5 +206,5 @@
 
   <!-- Footer -->
   <text class="note" x="20" y="518">* pat-tax/ org</text>
-  <text class="note" x="880" y="518" text-anchor="end">18 original repositories</text>
+  <text class="note" x="880" y="518" text-anchor="end">20 original repositories</text>
 </svg>
