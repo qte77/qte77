@@ -131,23 +131,16 @@
 
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
-    <rect class="box" x="120" y="216" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="220" y="235" text-anchor="middle">market-research-to-gtm</text>
-    <text class="repo-desc" x="220" y="250" text-anchor="middle">AI market research</text>
+    <rect class="box" x="220" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="330" y="235" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="330" y="250" text-anchor="middle">AI market research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
     <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
-    <rect class="box" x="340" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="450" y="235" text-anchor="middle">codebase-to-report</text>
-    <text class="repo-desc" x="450" y="250" text-anchor="middle">scientific report gen</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/React-Playground">
-    <title>React-Playground — Research-backed AI safety testing for mental health applications</title>
-    <rect class="box" x="580" y="216" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="680" y="235" text-anchor="middle">React-Playground</text>
-    <text class="repo-desc" x="680" y="250" text-anchor="middle">AI safety testing</text>
+    <rect class="box" x="460" y="216" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="570" y="235" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="570" y="250" text-anchor="middle">scientific report gen</text>
   </a>
 
   <!-- ===== Layer 4: GitHub Actions ===== -->
@@ -157,21 +150,21 @@
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
     <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
     <rect class="box" x="18" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="85" y="315" text-anchor="middle">gha-ai-changelog</text>
+    <text class="repo-name" x="85" y="315" text-anchor="middle">ai-changelog</text>
     <text class="repo-desc" x="85" y="330" text-anchor="middle">AI-powered changelogs</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
     <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
     <rect class="box" x="164" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="231" y="315" text-anchor="middle">gha-contribution-ascii</text>
+    <text class="repo-name" x="231" y="315" text-anchor="middle">contribution-ascii</text>
     <text class="repo-desc" x="231" y="330" text-anchor="middle">contribution graph art</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
     <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
     <rect class="box" x="310" y="296" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="377" y="315" text-anchor="middle">gha-dirtree-to-readme</text>
+    <text class="repo-name" x="377" y="315" text-anchor="middle">dirtree-to-readme</text>
     <text class="repo-desc" x="377" y="330" text-anchor="middle">dir tree to README</text>
   </a>
 
@@ -227,5 +220,5 @@
 
   <!-- Footer -->
   <text class="note" x="20" y="518">* pat-tax/ org</text>
-  <text class="note" x="880" y="518" text-anchor="end">23 original repositories</text>
+  <text class="note" x="880" y="518" text-anchor="end">22 original repositories</text>
 </svg>
