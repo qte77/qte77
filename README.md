@@ -7,6 +7,10 @@
 
 <img src="assets/images/architecture.svg" alt="Project Architecture" width="100%" />
 
+### Interconnections
+
+<img src="assets/images/interconnections.svg" alt="Repo Interconnections" width="100%" />
+
 ## Topics
 
 - Pipelines, Workflows
@@ -50,4 +54,4 @@
 - [x] Kaggle Competitions
 - [ ] Codewars Python
 - [ ] AdventOfcode
-- [ ] Add repo interconnections graph to profile
+- [x] Add repo interconnections graph to profile
