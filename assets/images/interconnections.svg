@@ -1,18 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 370" width="860" height="370">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 500" width="860" height="500">
   <defs>
     <style>
+      /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; rx: 5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2328; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
       .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .legend-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
 
+      /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
+        .layer-label { fill: #8b949e; }
         .repo-name { fill: #e6edf3; }
         .repo-desc { fill: #8b949e; }
         .legend-label { fill: #8b949e; }
@@ -34,140 +38,149 @@
     </marker>
   </defs>
 
-  <rect class="page-bg" width="860" height="370" rx="8"/>
-  <text class="title" x="430" y="24" text-anchor="middle">Repo Interconnections</text>
+  <rect class="page-bg" width="860" height="500" rx="8"/>
+  <text class="title" x="430" y="24" text-anchor="middle">Agentic Lifecycle Orchestration</text>
 
-  <!-- ===== Row 1: Research + Evaluation (y=50) ===== -->
-  <!-- 4 boxes: Agents-eval (left), coding-agents-research (center-left), coding-agent-eval (center-right), multi-tasking-quality (right) -->
-  <!-- w=175, gap=20. Total: 4*175+3*20=760. Start: (860-760)/2=50 -->
+  <!-- ===== Row A: Hands-off E2E Coding (1 box, centered) ===== -->
+  <!-- w=200, center at 430. Box: x=330 -->
+  <text class="layer-label" x="50" y="55">HANDS-OFF E2E CODING</text>
 
-  <a xlink:href="https://github.com/qte77/Agents-eval">
-    <rect class="box" x="50" y="50" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="138" y="70" text-anchor="middle">Agents-eval</text>
-    <text class="repo-desc" x="138" y="85" text-anchor="middle">3-tier MAS evaluation</text>
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <rect class="box" x="330" y="42" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="62" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="430" y="77" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <!-- ===== Row B: Project / Product / Company Steering (2 boxes) ===== -->
+  <!-- w=200, gap=40. Total=440. start=(860-440)/2=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <text class="layer-label" x="50" y="130">PROJECT / PRODUCT STEERING</text>
+
+  <a xlink:href="https://github.com/qte77/CABIO-test">
+    <rect class="box" x="210" y="137" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="157" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="310" y="172" text-anchor="middle">business orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/sdlc-lcm-manager">
+    <rect class="box" x="450" y="137" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="157" text-anchor="middle">sdlc-lcm-manager</text>
+    <text class="repo-desc" x="550" y="172" text-anchor="middle">SDLC lifecycle tracking</text>
+  </a>
+
+  <!-- ===== Row C: Multi-Repo Orchestration (2 boxes) ===== -->
+  <!-- w=200, gap=40. start=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <text class="layer-label" x="50" y="225">MULTI-REPO ORCHESTRATION</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <rect class="box" x="210" y="232" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="252" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="310" y="267" text-anchor="middle">parallel multi-repo work</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
+    <rect class="box" x="450" y="232" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="252" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="550" y="267" text-anchor="middle">issue synchronization</text>
+  </a>
+
+  <!-- ===== Row D: Research & Evaluation (3 boxes) ===== -->
+  <!-- w=175, gap=20. Total=565. start=(860-565)/2=148. Boxes: 148, 343, 538. Centers: 235, 430, 625 -->
+  <text class="layer-label" x="50" y="320">RESEARCH &amp; EVALUATION</text>
+
+  <a xlink:href="https://github.com/qte77/coding-agent-eval">
+    <rect class="box" x="148" y="327" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="235" y="347" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="235" y="362" text-anchor="middle">agent evaluation harness</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/coding-agents-research">
-    <rect class="box" x="245" y="50" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="333" y="70" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="333" y="85" text-anchor="middle">CC field research</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/coding-agent-eval">
-    <rect class="box" x="440" y="50" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="528" y="70" text-anchor="middle">coding-agent-eval</text>
-    <text class="repo-desc" x="528" y="85" text-anchor="middle">CC evaluation harness</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
-    <rect class="box" x="635" y="50" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="723" y="70" text-anchor="middle">multi-tasking-quality</text>
-    <text class="repo-desc" x="723" y="85" text-anchor="middle">WakaTime correlation</text>
-  </a>
-
-  <!-- ===== Row 2: Tooling (y=160) ===== -->
-  <!-- 3 boxes: ralph-loop, cc-utils-plugin, cc-recursive-team. w=175, gap=20. Total: 565. Start: 148 -->
-
-  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
-    <rect class="box" x="148" y="160" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="235" y="180" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="235" y="195" text-anchor="middle">autonomous dev loop</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <rect class="box" x="343" y="160" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="180" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="430" y="195" text-anchor="middle">plugins &amp; skills</text>
+    <rect class="box" x="343" y="327" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="347" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="430" y="362" text-anchor="middle">CC field research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
-    <rect class="box" x="538" y="160" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="625" y="180" text-anchor="middle">cc-recursive-team</text>
-    <text class="repo-desc" x="625" y="195" text-anchor="middle">CC subprocess wrapper</text>
+    <rect class="box" x="538" y="327" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="625" y="347" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="625" y="362" text-anchor="middle">recursive agent spawning</text>
   </a>
 
-  <!-- ===== Row 3: Orchestration (y=270) ===== -->
-  <!-- 3 boxes: market-research, polyforge, CABIO. w=175, gap=20. Total: 565. Start: 148 -->
+  <!-- ===== Row E: Helpers & Infrastructure (2 boxes) ===== -->
+  <!-- w=200, gap=40. start=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <text class="layer-label" x="50" y="415">HELPERS &amp; INFRASTRUCTURE</text>
 
-  <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
-    <rect class="box" x="148" y="270" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="235" y="290" text-anchor="middle">market-research-to-gtm</text>
-    <text class="repo-desc" x="235" y="305" text-anchor="middle">AI market research</text>
+  <a xlink:href="https://github.com/qte77/dotfiles">
+    <rect class="box" x="210" y="422" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="442" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="310" y="457" text-anchor="middle">dev environment config</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/polyforge">
-    <rect class="box" x="343" y="270" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="290" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="430" y="305" text-anchor="middle">multi-repo orchestration</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/CABIO-test">
-    <rect class="box" x="538" y="270" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="625" y="290" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="625" y="305" text-anchor="middle">business workflows</text>
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <rect class="box" x="450" y="422" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="442" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="550" y="457" text-anchor="middle">plugins &amp; skills</text>
   </a>
 
   <!-- ===== Arrows ===== -->
+  <!-- Blue: uses / scales via -->
+  <!-- Green: configures / bootstraps -->
+  <!-- Orange: creates / syncs -->
+  <!-- Purple: feeds back into -->
 
-  <!-- Blue: uses / depends on -->
-  <!-- Green: runs inside -->
-  <!-- Orange: creates / updates -->
-  <!-- Purple: feeds research into -->
+  <!-- 1. ralph-loop → CABIO-test (drives) -->
+  <!-- From ralph bottom-left (380,90) to CABIO top (310,137) -->
+  <path d="M 380,90 C 360,110 330,125 310,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
-  <!-- 1. Agents-eval → ralph-loop (submodule) -->
-  <!-- From (138,98) down to (235,160) — diagonal through open space -->
-  <path d="M 138,98 L 235,160" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- 2. ralph-loop → sdlc-lcm-manager (tracks via) -->
+  <!-- From ralph bottom-right (480,90) to sdlc top (550,137) -->
+  <path d="M 480,90 C 500,110 530,125 550,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
-  <!-- 2. Agents-eval → cc-utils-plugin (uses) -->
-  <!-- From (180,98) curving right-down to (430,160) — open space between R1 and R2 -->
-  <path d="M 180,98 C 280,130 380,150 430,160" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- 3. ralph-loop → polyforge (scales via) -->
+  <!-- From ralph bottom (430,90) curving down to polyforge top (310,232) -->
+  <path d="M 430,90 C 430,150 350,200 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
-  <!-- 3. coding-agent-eval → cc-recursive-team (depends on) -->
-  <!-- From (528,98) down to (625,160) — diagonal through open space -->
-  <path d="M 545,98 L 625,160" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- 4. CABIO-test → sdlc-lcm-manager (feeds lifecycle) -->
+  <!-- Short horizontal right from CABIO right (410,161) to sdlc left (450,161) -->
+  <path d="M 410,161 L 450,161" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 4. coding-agent-eval → coding-agents-research (submodule) -->
-  <!-- Short horizontal left from (440,74) to (420,74) -->
-  <path d="M 440,74 L 420,74" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- 5. polyforge → cross-repo-issue-sync (creates issues) -->
+  <!-- Short horizontal right from polyforge right (410,256) to sync left (450,256) -->
+  <path d="M 410,256 L 450,256" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
-  <!-- 5. ralph → cc-utils-plugin (uses skills) -->
-  <!-- Short horizontal right from (323,184) to (343,184) -->
-  <path d="M 323,184 L 343,184" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- 6. coding-agent-eval → ralph-loop (eval improves) -->
+  <!-- From eval top (235,327) curving up-right to ralph bottom-left (370,90) -->
+  <path d="M 235,327 C 200,250 280,130 370,90" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 6. coding-agents-research → coding-agent-eval (feeds research) -->
-  <!-- Short horizontal right from (420,65) to (440,65) — parallel to arrow 4, offset vertically -->
-  <path d="M 420,65 L 440,65" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <!-- 7. coding-agents-research → cc-utils-plugin (research improves) -->
+  <!-- From research bottom (430,375) curving down to plugin top (550,422) -->
+  <path d="M 430,375 C 460,395 520,410 550,422" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 7. coding-agents-research → multi-tasking-quality (feeds research) -->
-  <!-- From research top-right (420,55) arcing above coding-agent-eval to multi-tasking top-left (635,55) -->
-  <path d="M 420,55 C 480,30 580,30 635,55" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <!-- 8. cc-recursive-team → coding-agent-eval (feeds eval) -->
+  <!-- Short horizontal left from recursive left (538,351) to eval right (323,351) -->
+  <path d="M 538,351 L 323,351" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 8. ralph → polyforge (runs inside) -->
-  <!-- From ralph bottom (235,208) to polyforge top (430,270) — diagonal through open space -->
-  <path d="M 260,208 C 310,240 390,260 430,270" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <!-- 9. dotfiles → ralph-loop (bootstraps) -->
+  <!-- From dotfiles top (310,422) curving up to ralph bottom-left (350,90) -->
+  <path d="M 310,422 C 280,320 300,150 350,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 9. CABIO → polyforge (runs inside) -->
-  <!-- Short horizontal left from CABIO left (538,294) to polyforge right (518,294) -->
-  <path d="M 538,294 L 518,294" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <!-- 10. cc-utils-plugin → ralph-loop (configures) -->
+  <!-- From plugin top (550,422) curving up to ralph bottom-right (500,90) -->
+  <path d="M 550,422 C 580,320 540,150 500,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 10. market-research → polyforge (runs inside) -->
-  <!-- Short horizontal right from market right (323,294) to polyforge left (343,294) -->
-  <path d="M 323,294 L 343,294" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
-
-  <!-- 11. ralph → CABIO (creates/updates) -->
-  <!-- From ralph bottom-right (290,208) curving right-down to CABIO top (625,270) — open space -->
-  <path d="M 290,208 C 400,240 560,260 625,270" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <!-- 11. cross-repo-issue-sync → sdlc-lcm-manager (syncs to) -->
+  <!-- From sync top (550,232) curving up to sdlc bottom (550,185) -->
+  <path d="M 550,232 L 550,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
   <!-- ===== Legend ===== -->
-  <line x1="120" y1="345" x2="150" y2="345" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-  <text class="legend-label" x="158" y="349">uses / depends on</text>
+  <line x1="100" y1="488" x2="130" y2="488" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <text class="legend-label" x="138" y="492">uses / scales via</text>
 
-  <line x1="300" y1="345" x2="330" y2="345" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
-  <text class="legend-label" x="338" y="349">runs inside</text>
+  <line x1="280" y1="488" x2="310" y2="488" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <text class="legend-label" x="318" y="492">configures / bootstraps</text>
 
-  <line x1="440" y1="345" x2="470" y2="345" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
-  <text class="legend-label" x="478" y="349">creates / updates</text>
+  <line x1="470" y1="488" x2="500" y2="488" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <text class="legend-label" x="508" y="492">creates / syncs</text>
 
-  <line x1="600" y1="345" x2="630" y2="345" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
-  <text class="legend-label" x="638" y="349">feeds research</text>
+  <line x1="630" y1="488" x2="660" y2="488" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <text class="legend-label" x="668" y="492">feeds back into</text>
 </svg>
