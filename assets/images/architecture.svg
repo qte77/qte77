@@ -87,46 +87,46 @@
   <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="212">AI AGENT EVALUATION</text>
 
-  <a xlink:href="https://github.com/qte77/Agents-eval">
-    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
-    <rect class="box" x="18" y="216" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="85" y="235" text-anchor="middle">Agents-eval</text>
-    <text class="repo-desc" x="85" y="250" text-anchor="middle">3-tier MAS evaluation</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
-    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
-    <rect class="box" x="164" y="216" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="231" y="235" text-anchor="middle">MAS-GraphJudge</text>
-    <text class="repo-desc" x="231" y="250" text-anchor="middle">graph benchmarking</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
-    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
-    <rect class="box" x="310" y="216" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="377" y="235" text-anchor="middle">TestBehaveAlign</text>
-    <text class="repo-desc" x="377" y="250" text-anchor="middle">TDD/BDD test quality</text>
-  </a>
-
-  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
-    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
-    <rect class="box" x="456" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
-    <text class="repo-name" x="523" y="235" text-anchor="middle">BulletproofProtocol*</text>
-    <text class="repo-desc" x="523" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
-  </a>
-
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
     <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
-    <rect class="box" x="602" y="216" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="669" y="235" text-anchor="middle">coding-agent-eval</text>
-    <text class="repo-desc" x="669" y="250" text-anchor="middle">CC evaluation harness</text>
+    <rect class="box" x="18" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="235" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="85" y="250" text-anchor="middle">CC evaluation harness</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
     <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
+    <rect class="box" x="164" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="235" text-anchor="middle">multi-tasking-quality</text>
+    <text class="repo-desc" x="231" y="250" text-anchor="middle">WakaTime correlation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
+    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
+    <rect class="box" x="310" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="235" text-anchor="middle">MAS-GraphJudge</text>
+    <text class="repo-desc" x="377" y="250" text-anchor="middle">graph benchmarking</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
+    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
+    <rect class="box" x="456" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="523" y="235" text-anchor="middle">TestBehaveAlign</text>
+    <text class="repo-desc" x="523" y="250" text-anchor="middle">TDD/BDD test quality</text>
+  </a>
+
+  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
+    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
+    <rect class="box" x="602" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
+    <text class="repo-name" x="669" y="235" text-anchor="middle">BulletproofProtocol*</text>
+    <text class="repo-desc" x="669" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
     <rect class="box" x="748" y="216" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="815" y="235" text-anchor="middle">multi-tasking-quality</text>
-    <text class="repo-desc" x="815" y="250" text-anchor="middle">WakaTime correlation</text>
+    <text class="repo-name" x="815" y="235" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="815" y="250" text-anchor="middle">3-tier MAS evaluation</text>
   </a>
 
   <!-- ===== Layer 4: GitHub Actions (7 boxes, w=112, gap=10, start=28) ===== -->
