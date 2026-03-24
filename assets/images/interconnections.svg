@@ -51,20 +51,14 @@
     <text class="repo-desc" x="430" y="77" text-anchor="middle">autonomous dev loop</text>
   </a>
 
-  <!-- ===== Row B: Project / Product / Company Steering (2 boxes) ===== -->
-  <!-- w=200, gap=40. Total=440. start=(860-440)/2=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <!-- ===== Row B: Project / Product / Company Steering (1 box, centered) ===== -->
+  <!-- w=200, center at 430. Box: x=330 -->
   <text class="layer-label" x="50" y="130">PROJECT / PRODUCT STEERING</text>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
-    <rect class="box" x="210" y="137" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="157" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="310" y="172" text-anchor="middle">business orchestration</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/sdlc-lcm-manager">
-    <rect class="box" x="450" y="137" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="157" text-anchor="middle">sdlc-lcm-manager</text>
-    <text class="repo-desc" x="550" y="172" text-anchor="middle">SDLC lifecycle tracking</text>
+    <rect class="box" x="330" y="137" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="157" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="430" y="172" text-anchor="middle">business &amp; lifecycle mgmt</text>
   </a>
 
   <!-- ===== Row C: Multi-Repo Orchestration (2 boxes) ===== -->
@@ -128,48 +122,40 @@
   <!-- Purple: feeds back into -->
 
   <!-- 1. ralph-loop → CABIO-test (drives) -->
-  <!-- From ralph bottom-left (380,90) to CABIO top (310,137) -->
-  <path d="M 380,90 C 360,110 330,125 310,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- From ralph bottom (430,90) to CABIO top (430,137) -->
+  <path d="M 430,90 L 430,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
-  <!-- 2. ralph-loop → sdlc-lcm-manager (tracks via) -->
-  <!-- From ralph bottom-right (480,90) to sdlc top (550,137) -->
-  <path d="M 480,90 C 500,110 530,125 550,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-
-  <!-- 3. ralph-loop → polyforge (scales via) -->
-  <!-- From ralph bottom (430,90) curving down to polyforge top (310,232) -->
-  <path d="M 430,90 C 430,150 350,200 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-
-  <!-- 4. CABIO-test → sdlc-lcm-manager (feeds lifecycle) -->
-  <!-- Short horizontal right from CABIO right (410,161) to sdlc left (450,161) -->
-  <path d="M 410,161 L 450,161" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <!-- 2. ralph-loop → polyforge (scales via) -->
+  <!-- From ralph bottom-left (380,90) curving down to polyforge top (310,232) -->
+  <path d="M 380,90 C 360,150 330,200 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
   <!-- 5. polyforge → cross-repo-issue-sync (creates issues) -->
   <!-- Short horizontal right from polyforge right (410,256) to sync left (450,256) -->
   <path d="M 410,256 L 450,256" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
-  <!-- 6. coding-agent-eval → ralph-loop (eval improves) -->
+  <!-- 5. coding-agent-eval → ralph-loop (eval improves) -->
   <!-- From eval top (235,327) curving up-right to ralph bottom-left (370,90) -->
   <path d="M 235,327 C 200,250 280,130 370,90" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 7. coding-agents-research → cc-utils-plugin (research improves) -->
+  <!-- 6. coding-agents-research → cc-utils-plugin (research improves) -->
   <!-- From research bottom (430,375) curving down to plugin top (550,422) -->
   <path d="M 430,375 C 460,395 520,410 550,422" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 8. cc-recursive-team → coding-agent-eval (feeds eval) -->
+  <!-- 7. cc-recursive-team → coding-agent-eval (feeds eval) -->
   <!-- Short horizontal left from recursive left (538,351) to eval right (323,351) -->
   <path d="M 538,351 L 323,351" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 9. dotfiles → ralph-loop (bootstraps) -->
+  <!-- 8. dotfiles → ralph-loop (bootstraps) -->
   <!-- From dotfiles top (310,422) curving up to ralph bottom-left (350,90) -->
   <path d="M 310,422 C 280,320 300,150 350,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 10. cc-utils-plugin → ralph-loop (configures) -->
+  <!-- 9. cc-utils-plugin → ralph-loop (configures) -->
   <!-- From plugin top (550,422) curving up to ralph bottom-right (500,90) -->
   <path d="M 550,422 C 580,320 540,150 500,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 11. cross-repo-issue-sync → sdlc-lcm-manager (syncs to) -->
-  <!-- From sync top (550,232) curving up to sdlc bottom (550,185) -->
-  <path d="M 550,232 L 550,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <!-- 10. cross-repo-issue-sync → CABIO-test (syncs to) -->
+  <!-- From sync top (550,232) curving up to CABIO bottom-right (490,185) -->
+  <path d="M 550,232 C 540,210 510,195 490,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
   <!-- ===== Legend ===== -->
   <line x1="100" y1="488" x2="130" y2="488" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>

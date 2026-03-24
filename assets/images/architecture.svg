@@ -79,57 +79,50 @@
     <text class="repo-desc" x="815" y="90" text-anchor="middle">WakaTime correlation</text>
   </a>
 
-  <!-- ===== Layer 2: Agent Development Tooling (7 boxes, w=112, gap=10, start=28) ===== -->
+  <!-- ===== Layer 2: Agent Development Tooling (6 boxes, w=134, gap=12, start=18) ===== -->
   <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="132">AGENT DEVELOPMENT TOOLING</text>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code</title>
-    <rect class="box" x="28" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="84" y="155" text-anchor="middle">ralph-loop</text>
-    <text class="repo-desc" x="84" y="170" text-anchor="middle">autonomous dev loop</text>
+    <rect class="box" x="18" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="85" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
     <title>claude-code-utils-plugin — CC plugin marketplace with skills and rules</title>
-    <rect class="box" x="150" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="206" y="155" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="206" y="170" text-anchor="middle">plugins &amp; skills</text>
+    <rect class="box" x="164" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="155" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="231" y="170" text-anchor="middle">plugins &amp; skills</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
     <title>cc-recursive-team-mode — Claude Code subprocess wrapper and artifact parser</title>
-    <rect class="box" x="272" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="328" y="155" text-anchor="middle">cc-recursive-team</text>
-    <text class="repo-desc" x="328" y="170" text-anchor="middle">CC subprocess wrapper</text>
+    <rect class="box" x="310" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="155" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="377" y="170" text-anchor="middle">CC subprocess wrapper</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Multi-repo AI agent orchestration</title>
-    <rect class="box" x="394" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="450" y="155" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="450" y="170" text-anchor="middle">multi-repo orchestration</text>
+    <rect class="box" x="456" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="523" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="523" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
     <title>CABIO-test — Context-Aware Business Intelligence Orchestration</title>
-    <rect class="box" x="516" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="572" y="155" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="572" y="170" text-anchor="middle">business workflows</text>
+    <rect class="box" x="602" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="669" y="155" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="669" y="170" text-anchor="middle">business orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/coding-agents-research">
     <title>coding-agents-research — Claude Code field research and feature analysis</title>
-    <rect class="box" x="638" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="694" y="155" text-anchor="middle">agents-research</text>
-    <text class="repo-desc" x="694" y="170" text-anchor="middle">Claude Code research</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/sdlc-lcm-manager">
-    <title>sdlc-lcm-manager — SDLC lifecycle management and tracking</title>
-    <rect class="box" x="760" y="136" width="112" height="48" rx="5"/>
-    <text class="repo-name" x="816" y="155" text-anchor="middle">sdlc-lcm-manager</text>
-    <text class="repo-desc" x="816" y="170" text-anchor="middle">lifecycle management</text>
+    <rect class="box" x="748" y="136" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="815" y="155" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="815" y="170" text-anchor="middle">Claude Code research</text>
   </a>
 
   <!-- ===== Layer 3: Agent Applications (3 boxes, w=220, gap=30, start=90) ===== -->
@@ -241,5 +234,5 @@
 
   <!-- Footer -->
   <text class="note" x="20" y="518">* pat-tax/ org</text>
-  <text class="note" x="880" y="518" text-anchor="end">24 repositories</text>
+  <text class="note" x="880" y="518" text-anchor="end">23 repositories</text>
 </svg>
