@@ -36,45 +36,45 @@
   <text class="title" x="430" y="20" text-anchor="middle">Hands-off Agentic Lifecycle Management</text>
   <text class="subtitle" x="430" y="36" text-anchor="middle">Multi-repo orchestration — agents code, steer, scale, and improve autonomously</text>
 
-  <!-- ===== Layer 1: Autonomous Coding (1 box, centered) ===== -->
+  <!-- ===== Layer 1: Product & Business Steering (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="62">AUTONOMOUS CODING</text>
-
-  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
-    <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
-    <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="85" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="430" y="100" text-anchor="middle">hands-off e2e dev loop</text>
-  </a>
-
-  <!-- ===== Layer 2: Product & Business Steering (1 box, centered) ===== -->
-  <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="142">PRODUCT &amp; BUSINESS STEERING</text>
+  <text class="layer-label" x="20" y="62">PRODUCT &amp; BUSINESS STEERING</text>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
     <title>CABIO-test — Context-Aware Business Intelligence Orchestration and lifecycle management</title>
-    <rect class="box" x="330" y="146" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="165" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="430" y="180" text-anchor="middle">business &amp; lifecycle mgmt</text>
+    <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="85" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="430" y="100" text-anchor="middle">business &amp; lifecycle mgmt</text>
   </a>
 
-  <!-- ===== Layer 3: Multi-Repo Orchestration (2 boxes) ===== -->
+  <!-- ===== Layer 2: Multi-Repo Orchestration (2 boxes) ===== -->
   <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
-  <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="222">MULTI-REPO ORCHESTRATION</text>
+  <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="142">MULTI-REPO ORCHESTRATION</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
-    <rect class="box" x="210" y="226" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="245" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="310" y="260" text-anchor="middle">parallel multi-repo work</text>
+    <rect class="box" x="210" y="146" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="165" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="310" y="180" text-anchor="middle">parallel multi-repo work</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Bidirectional issue synchronization across repositories</title>
-    <rect class="box" x="450" y="226" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="245" text-anchor="middle">cross-repo-issue-sync</text>
-    <text class="repo-desc" x="550" y="260" text-anchor="middle">issue synchronization</text>
+    <rect class="box" x="450" y="146" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="165" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="550" y="180" text-anchor="middle">issue synchronization</text>
+  </a>
+
+  <!-- ===== Layer 3: Autonomous Coding (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="222">AUTONOMOUS CODING</text>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
+    <rect class="box" x="330" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="245" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="430" y="260" text-anchor="middle">hands-off e2e dev loop</text>
   </a>
 
   <!-- ===== Layer 4: Agent Research & Evaluation (3 boxes) ===== -->
