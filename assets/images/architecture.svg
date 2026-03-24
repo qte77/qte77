@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 596" width="900" height="596">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 518" width="900" height="518">
   <defs>
     <style>
       /* Light mode (default) */
@@ -28,7 +28,7 @@
   </defs>
 
   <!-- Page background -->
-  <rect class="page-bg" width="900" height="596" rx="8"/>
+  <rect class="page-bg" width="900" height="518" rx="8"/>
 
   <!-- Title -->
   <text class="title" x="450" y="24" text-anchor="middle">qte77 — Project Ecosystem</text>
@@ -58,36 +58,29 @@
     <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
   </a>
 
-  <!-- ===== Layer 2: Agentic Development Engine (4 boxes, w=180, gap=20, start=60) ===== -->
+  <!-- ===== Layer 2: Agentic Development Engine (3 boxes, w=220, gap=30, start=90) ===== -->
   <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="132">AGENTIC DEVELOPMENT ENGINE</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
-    <rect class="box" x="60" y="136" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="150" y="155" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="150" y="170" text-anchor="middle">multi-repo orchestration</text>
+    <rect class="box" x="90" y="136" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="200" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="200" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
-    <rect class="box" x="260" y="136" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="350" y="155" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="350" y="170" text-anchor="middle">autonomous dev loop</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
-    <rect class="box" x="460" y="136" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="155" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="550" y="170" text-anchor="middle">plugins &amp; skills</text>
+    <rect class="box" x="340" y="136" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="450" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/coding-agents-research">
     <title>coding-agents-research — Field research and feature analysis for Claude Code</title>
-    <rect class="box" x="660" y="136" width="180" height="48" rx="5"/>
-    <text class="repo-name" x="750" y="155" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="750" y="170" text-anchor="middle">CC field research</text>
+    <rect class="box" x="590" y="136" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="700" y="155" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="700" y="170" text-anchor="middle">CC field research</text>
   </a>
 
   <!-- ===== Layer 3: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
@@ -189,54 +182,43 @@
     <text class="repo-desc" x="816" y="330" text-anchor="middle">repo mirroring</text>
   </a>
 
-  <!-- ===== Layer 5: ML / DL Foundations (2 boxes, w=220) ===== -->
-  <rect class="layer-bg" x="10" y="358" width="880" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="372">ML / DL FOUNDATIONS</text>
-
-  <a xlink:href="https://github.com/qte77/App-BERT-Benchmark">
-    <title>App-BERT-Benchmark — BERT configuration benchmarking with HF and W&amp;B</title>
-    <rect class="box" x="220" y="376" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="330" y="395" text-anchor="middle">App-BERT-Benchmark</text>
-    <text class="repo-desc" x="330" y="410" text-anchor="middle">BERT config benchmarks</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/HybridRAG-eval">
-    <title>HybridRAG-eval — Classic vs Hybrid RAG evaluation</title>
-    <rect class="box" x="460" y="376" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="570" y="395" text-anchor="middle">HybridRAG-eval</text>
-    <text class="repo-desc" x="570" y="410" text-anchor="middle">RAG evaluation</text>
-  </a>
-
-  <!-- ===== Layer 6: Infrastructure (1 box) ===== -->
-  <rect class="layer-bg" x="10" y="438" width="880" height="62" rx="6"/>
-  <text class="layer-label" x="20" y="452">INFRASTRUCTURE</text>
+  <!-- ===== Layer 5: Infrastructure (2 boxes, w=220, gap=40, start=210) ===== -->
+  <rect class="layer-bg" x="10" y="358" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="372">INFRASTRUCTURE</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
     <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
-    <rect class="box" x="350" y="454" width="200" height="38" rx="5"/>
-    <text class="repo-name" x="450" y="469" text-anchor="middle">dotfiles</text>
-    <text class="repo-desc" x="450" y="483" text-anchor="middle">dev environment config</text>
+    <rect class="box" x="210" y="374" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="320" y="389" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="320" y="403" text-anchor="middle">dev environment config</text>
   </a>
 
-  <!-- ===== Layer 7: Experimental (2 boxes, w=220, gap=40, start=210) ===== -->
-  <rect class="layer-bg" x="10" y="506" width="880" height="62" rx="6"/>
-  <text class="layer-label" x="20" y="520">EXPERIMENTAL</text>
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
+    <rect class="box" x="470" y="374" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="580" y="389" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="580" y="403" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <!-- ===== Layer 6: Experimental (2 boxes, w=220, gap=40, start=210) ===== -->
+  <rect class="layer-bg" x="10" y="426" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="440">EXPERIMENTAL</text>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
     <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
-    <rect class="box" x="210" y="522" width="220" height="38" rx="5"/>
-    <text class="repo-name" x="320" y="537" text-anchor="middle">cc-recursive-team</text>
-    <text class="repo-desc" x="320" y="551" text-anchor="middle">recursive agent spawning</text>
+    <rect class="box" x="210" y="442" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="320" y="457" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="320" y="471" text-anchor="middle">recursive agent spawning</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
     <title>liminal-flux — Self-evolving agent-operated GitHub account (Lim Sid)</title>
-    <rect class="box" x="470" y="522" width="220" height="38" rx="5"/>
-    <text class="repo-name" x="580" y="537" text-anchor="middle">liminal-flux</text>
-    <text class="repo-desc" x="580" y="551" text-anchor="middle">agent-operated GH account</text>
+    <rect class="box" x="470" y="442" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="580" y="457" text-anchor="middle">liminal-flux</text>
+    <text class="repo-desc" x="580" y="471" text-anchor="middle">agent-operated GH account</text>
   </a>
 
   <!-- Footer -->
-  <text class="note" x="20" y="586">* pat-tax/ org</text>
-  <text class="note" x="880" y="586" text-anchor="end">23 repositories</text>
+  <text class="note" x="20" y="506">* pat-tax/ org</text>
+  <text class="note" x="880" y="506" text-anchor="end">21 repositories</text>
 </svg>
