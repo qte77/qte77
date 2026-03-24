@@ -122,40 +122,40 @@
   <!-- Purple: feeds back into -->
 
   <!-- 1. ralph-loop → CABIO-test (drives) -->
-  <!-- From ralph bottom (430,90) to CABIO top (430,137) -->
+  <!-- Straight vertical: ralph bottom center → CABIO top center -->
   <path d="M 430,90 L 430,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
   <!-- 2. ralph-loop → polyforge (scales via) -->
-  <!-- From ralph bottom-left (380,90) curving down to polyforge top (310,232) -->
-  <path d="M 380,90 C 360,150 330,200 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
+  <!-- Route LEFT of CABIO (x<330): ralph left edge → curve left → polyforge top center -->
+  <path d="M 330,90 C 200,120 200,210 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
 
-  <!-- 5. polyforge → cross-repo-issue-sync (creates issues) -->
-  <!-- Short horizontal right from polyforge right (410,256) to sync left (450,256) -->
+  <!-- 3. polyforge → cross-repo-issue-sync (creates issues) -->
+  <!-- Horizontal gap between boxes: polyforge right → sync left -->
   <path d="M 410,256 L 450,256" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
-  <!-- 5. coding-agent-eval → ralph-loop (eval improves) -->
-  <!-- From eval top (235,327) curving up-right to ralph bottom-left (370,90) -->
-  <path d="M 235,327 C 200,250 280,130 370,90" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <!-- 4. coding-agent-eval → ralph-loop (eval improves) -->
+  <!-- Route FAR LEFT (x≈100) to avoid polyforge + CABIO: eval left edge → far-left channel → ralph left edge -->
+  <path d="M 148,351 C 100,320 100,100 330,90" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 6. coding-agents-research → cc-utils-plugin (research improves) -->
-  <!-- From research bottom (430,375) curving down to plugin top (550,422) -->
+  <!-- 5. coding-agents-research → cc-utils-plugin (research improves) -->
+  <!-- Diagonal down through gap between rows D and E -->
   <path d="M 430,375 C 460,395 520,410 550,422" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 7. cc-recursive-team → coding-agent-eval (feeds eval) -->
-  <!-- Short horizontal left from recursive left (538,351) to eval right (323,351) -->
-  <path d="M 538,351 L 323,351" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
+  <!-- 6. cc-recursive-team → coding-agent-eval (feeds eval) -->
+  <!-- ARC ABOVE row D (y≈300) to avoid crossing research box -->
+  <path d="M 538,327 C 490,295 370,295 323,327" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
 
-  <!-- 8. dotfiles → ralph-loop (bootstraps) -->
-  <!-- From dotfiles top (310,422) curving up to ralph bottom-left (350,90) -->
-  <path d="M 310,422 C 280,320 300,150 350,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <!-- 7. dotfiles → ralph-loop (bootstraps) -->
+  <!-- Route FAR LEFT (x≈100) to avoid eval + polyforge + CABIO: dotfiles left edge → far-left → ralph left edge -->
+  <path d="M 210,446 C 100,400 100,90 330,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 9. cc-utils-plugin → ralph-loop (configures) -->
-  <!-- From plugin top (550,422) curving up to ralph bottom-right (500,90) -->
-  <path d="M 550,422 C 580,320 540,150 500,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
+  <!-- 8. cc-utils-plugin → ralph-loop (configures) -->
+  <!-- Route FAR RIGHT (x≈760) to avoid recursive + cross-repo + CABIO: plugin right edge → far-right → ralph right edge -->
+  <path d="M 650,446 C 760,400 760,90 530,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
 
-  <!-- 10. cross-repo-issue-sync → CABIO-test (syncs to) -->
-  <!-- From sync top (550,232) curving up to CABIO bottom-right (490,185) -->
-  <path d="M 550,232 C 540,210 510,195 490,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
+  <!-- 9. cross-repo-issue-sync → CABIO-test (syncs to) -->
+  <!-- Diagonal up through gap between rows C and B: sync top → CABIO bottom-right -->
+  <path d="M 550,232 C 540,210 510,195 530,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
 
   <!-- ===== Legend ===== -->
   <line x1="100" y1="488" x2="130" y2="488" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
