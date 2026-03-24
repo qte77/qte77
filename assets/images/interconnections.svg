@@ -1,172 +1,127 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 500" width="860" height="500">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
-      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; rx: 5; }
-      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #1f2328; }
+      .layer-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
       .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
-      .legend-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
         .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
         .layer-label { fill: #8b949e; }
         .repo-name { fill: #e6edf3; }
         .repo-desc { fill: #8b949e; }
-        .legend-label { fill: #8b949e; }
+        .note { fill: #484f58; }
         a:hover .box { stroke: #e6edf3; }
       }
     </style>
-
-    <marker id="a-blue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#4493f8"/>
-    </marker>
-    <marker id="a-green" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#3fb950"/>
-    </marker>
-    <marker id="a-orange" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#d29922"/>
-    </marker>
-    <marker id="a-purple" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="5" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#a371f7"/>
-    </marker>
   </defs>
 
-  <rect class="page-bg" width="860" height="500" rx="8"/>
-  <text class="title" x="430" y="24" text-anchor="middle">Agentic Lifecycle Orchestration</text>
+  <!-- Page background -->
+  <rect class="page-bg" width="860" height="468" rx="8"/>
 
-  <!-- ===== Row A: Hands-off E2E Coding (1 box, centered) ===== -->
-  <!-- w=200, center at 430. Box: x=330 -->
-  <text class="layer-label" x="50" y="55">HANDS-OFF E2E CODING</text>
+  <!-- Title + subtitle -->
+  <text class="title" x="430" y="20" text-anchor="middle">Hands-off Agentic Lifecycle Management</text>
+  <text class="subtitle" x="430" y="36" text-anchor="middle">Multi-repo orchestration — agents code, steer, scale, and improve autonomously</text>
+
+  <!-- ===== Layer 1: Autonomous Coding (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="62">AUTONOMOUS CODING</text>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
-    <rect class="box" x="330" y="42" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="62" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="430" y="77" text-anchor="middle">autonomous dev loop</text>
+    <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
+    <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="85" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="430" y="100" text-anchor="middle">hands-off e2e dev loop</text>
   </a>
 
-  <!-- ===== Row B: Project / Product / Company Steering (1 box, centered) ===== -->
-  <!-- w=200, center at 430. Box: x=330 -->
-  <text class="layer-label" x="50" y="130">PROJECT / PRODUCT STEERING</text>
+  <!-- ===== Layer 2: Product & Business Steering (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="142">PRODUCT &amp; BUSINESS STEERING</text>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
-    <rect class="box" x="330" y="137" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="157" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="430" y="172" text-anchor="middle">business &amp; lifecycle mgmt</text>
+    <title>CABIO-test — Context-Aware Business Intelligence Orchestration and lifecycle management</title>
+    <rect class="box" x="330" y="146" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="165" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="430" y="180" text-anchor="middle">business &amp; lifecycle mgmt</text>
   </a>
 
-  <!-- ===== Row C: Multi-Repo Orchestration (2 boxes) ===== -->
-  <!-- w=200, gap=40. start=210. Boxes: 210, 450. Centers: 310, 550 -->
-  <text class="layer-label" x="50" y="225">MULTI-REPO ORCHESTRATION</text>
+  <!-- ===== Layer 3: Multi-Repo Orchestration (2 boxes) ===== -->
+  <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="222">MULTI-REPO ORCHESTRATION</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
-    <rect class="box" x="210" y="232" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="252" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="310" y="267" text-anchor="middle">parallel multi-repo work</text>
+    <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
+    <rect class="box" x="210" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="245" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="310" y="260" text-anchor="middle">parallel multi-repo work</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
-    <rect class="box" x="450" y="232" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="252" text-anchor="middle">cross-repo-issue-sync</text>
-    <text class="repo-desc" x="550" y="267" text-anchor="middle">issue synchronization</text>
+    <title>gha-cross-repo-issue-sync — Bidirectional issue synchronization across repositories</title>
+    <rect class="box" x="450" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="245" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="550" y="260" text-anchor="middle">issue synchronization</text>
   </a>
 
-  <!-- ===== Row D: Research & Evaluation (3 boxes) ===== -->
-  <!-- w=175, gap=20. Total=565. start=(860-565)/2=148. Boxes: 148, 343, 538. Centers: 235, 430, 625 -->
-  <text class="layer-label" x="50" y="320">RESEARCH &amp; EVALUATION</text>
+  <!-- ===== Layer 4: Agent Research & Evaluation (3 boxes) ===== -->
+  <!-- w=175, gap=20. Total=565. start=(840-565)/2+10=148. Boxes: 148, 343, 538. Centers: 235, 430, 625 -->
+  <rect class="layer-bg" x="10" y="288" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="302">AGENT RESEARCH &amp; EVALUATION</text>
 
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
-    <rect class="box" x="148" y="327" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="235" y="347" text-anchor="middle">coding-agent-eval</text>
-    <text class="repo-desc" x="235" y="362" text-anchor="middle">agent evaluation harness</text>
+    <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
+    <rect class="box" x="148" y="306" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="235" y="325" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="235" y="340" text-anchor="middle">agent evaluation harness</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/coding-agents-research">
-    <rect class="box" x="343" y="327" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="347" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="430" y="362" text-anchor="middle">CC field research</text>
+    <title>coding-agents-research — Field research and feature analysis for Claude Code</title>
+    <rect class="box" x="343" y="306" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="325" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="430" y="340" text-anchor="middle">CC field research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
-    <rect class="box" x="538" y="327" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="625" y="347" text-anchor="middle">cc-recursive-team</text>
-    <text class="repo-desc" x="625" y="362" text-anchor="middle">recursive agent spawning</text>
+    <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
+    <rect class="box" x="538" y="306" width="175" height="48" rx="5"/>
+    <text class="repo-name" x="625" y="325" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="625" y="340" text-anchor="middle">recursive agent spawning</text>
   </a>
 
-  <!-- ===== Row E: Helpers & Infrastructure (2 boxes) ===== -->
+  <!-- ===== Layer 5: Tooling & Infrastructure (2 boxes) ===== -->
   <!-- w=200, gap=40. start=210. Boxes: 210, 450. Centers: 310, 550 -->
-  <text class="layer-label" x="50" y="415">HELPERS &amp; INFRASTRUCTURE</text>
+  <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="382">TOOLING &amp; INFRASTRUCTURE</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
-    <rect class="box" x="210" y="422" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="442" text-anchor="middle">dotfiles</text>
-    <text class="repo-desc" x="310" y="457" text-anchor="middle">dev environment config</text>
+    <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
+    <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="405" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="310" y="420" text-anchor="middle">dev environment config</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <rect class="box" x="450" y="422" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="442" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="550" y="457" text-anchor="middle">plugins &amp; skills</text>
+    <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
+    <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="550" y="420" text-anchor="middle">plugins &amp; skills</text>
   </a>
 
-  <!-- ===== Arrows ===== -->
-  <!-- Blue: uses / scales via -->
-  <!-- Green: configures / bootstraps -->
-  <!-- Orange: creates / syncs -->
-  <!-- Purple: feeds back into -->
-
-  <!-- 1. ralph-loop → CABIO-test (drives) -->
-  <!-- Straight vertical: ralph bottom center → CABIO top center -->
-  <path d="M 430,90 L 430,137" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-
-  <!-- 2. ralph-loop → polyforge (scales via) -->
-  <!-- Route LEFT of CABIO (x<330): ralph left edge → curve left → polyforge top center -->
-  <path d="M 330,90 C 200,120 200,210 310,232" fill="none" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-
-  <!-- 3. polyforge → cross-repo-issue-sync (creates issues) -->
-  <!-- Horizontal gap between boxes: polyforge right → sync left -->
-  <path d="M 410,256 L 450,256" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
-
-  <!-- 4. coding-agent-eval → ralph-loop (eval improves) -->
-  <!-- Route FAR LEFT (x≈100) to avoid polyforge + CABIO: eval left edge → far-left channel → ralph left edge -->
-  <path d="M 148,351 C 100,320 100,100 330,90" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
-
-  <!-- 5. coding-agents-research → cc-utils-plugin (research improves) -->
-  <!-- Diagonal down through gap between rows D and E -->
-  <path d="M 430,375 C 460,395 520,410 550,422" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
-
-  <!-- 6. cc-recursive-team → coding-agent-eval (feeds eval) -->
-  <!-- ARC ABOVE row D (y≈300) to avoid crossing research box -->
-  <path d="M 538,327 C 490,295 370,295 323,327" fill="none" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
-
-  <!-- 7. dotfiles → ralph-loop (bootstraps) -->
-  <!-- Route FAR LEFT (x≈100) to avoid eval + polyforge + CABIO: dotfiles left edge → far-left → ralph left edge -->
-  <path d="M 210,446 C 100,400 100,90 330,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
-
-  <!-- 8. cc-utils-plugin → ralph-loop (configures) -->
-  <!-- Route FAR RIGHT (x≈760) to avoid recursive + cross-repo + CABIO: plugin right edge → far-right → ralph right edge -->
-  <path d="M 650,446 C 760,400 760,90 530,90" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
-
-  <!-- 9. cross-repo-issue-sync → CABIO-test (syncs to) -->
-  <!-- Diagonal up through gap between rows C and B: sync top → CABIO bottom-right -->
-  <path d="M 550,232 C 540,210 510,195 530,185" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
-
-  <!-- ===== Legend ===== -->
-  <line x1="100" y1="488" x2="130" y2="488" stroke="#4493f8" stroke-width="1.5" marker-end="url(#a-blue)"/>
-  <text class="legend-label" x="138" y="492">uses / scales via</text>
-
-  <line x1="280" y1="488" x2="310" y2="488" stroke="#3fb950" stroke-width="1.5" marker-end="url(#a-green)"/>
-  <text class="legend-label" x="318" y="492">configures / bootstraps</text>
-
-  <line x1="470" y1="488" x2="500" y2="488" stroke="#d29922" stroke-width="1.5" marker-end="url(#a-orange)"/>
-  <text class="legend-label" x="508" y="492">creates / syncs</text>
-
-  <line x1="630" y1="488" x2="660" y2="488" stroke="#a371f7" stroke-width="1.5" marker-end="url(#a-purple)"/>
-  <text class="legend-label" x="668" y="492">feeds back into</text>
+  <!-- Footer -->
+  <text class="note" x="840" y="458" text-anchor="end">9 repositories — higher layers use lower layers</text>
 </svg>
