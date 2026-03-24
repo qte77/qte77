@@ -33,121 +33,121 @@
   <!-- Title -->
   <text class="title" x="450" y="24" text-anchor="middle">qte77 — Project Ecosystem</text>
 
-  <!-- ===== Layer 1: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
+  <!-- ===== Layer 1: Product & Business Steering (3 boxes, w=220, gap=30, start=90) ===== -->
   <rect class="layer-bg" x="10" y="38" width="880" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="52">AI AGENT EVALUATION</text>
-
-  <a xlink:href="https://github.com/qte77/Agents-eval">
-    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
-    <rect class="box" x="18" y="56" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="85" y="75" text-anchor="middle">Agents-eval</text>
-    <text class="repo-desc" x="85" y="90" text-anchor="middle">3-tier MAS evaluation</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
-    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
-    <rect class="box" x="164" y="56" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="231" y="75" text-anchor="middle">MAS-GraphJudge</text>
-    <text class="repo-desc" x="231" y="90" text-anchor="middle">graph benchmarking</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
-    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
-    <rect class="box" x="310" y="56" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="377" y="75" text-anchor="middle">TestBehaveAlign</text>
-    <text class="repo-desc" x="377" y="90" text-anchor="middle">TDD/BDD test quality</text>
-  </a>
-
-  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
-    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
-    <rect class="box" x="456" y="56" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
-    <text class="repo-name" x="523" y="75" text-anchor="middle">BulletproofProtocol*</text>
-    <text class="repo-desc" x="523" y="90" text-anchor="middle">adversarial R&amp;D audit</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/coding-agent-eval">
-    <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
-    <rect class="box" x="602" y="56" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="669" y="75" text-anchor="middle">coding-agent-eval</text>
-    <text class="repo-desc" x="669" y="90" text-anchor="middle">CC evaluation harness</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
-    <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
-    <rect class="box" x="748" y="56" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="815" y="75" text-anchor="middle">multi-tasking-quality</text>
-    <text class="repo-desc" x="815" y="90" text-anchor="middle">WakaTime correlation</text>
-  </a>
-
-  <!-- ===== Layer 2: Agent Development Tooling (6 boxes, w=134, gap=12, start=18) ===== -->
-  <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="132">AGENT DEVELOPMENT TOOLING</text>
-
-  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
-    <title>ralph-loop template — Autonomous development loop with Claude Code</title>
-    <rect class="box" x="18" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="85" y="155" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="85" y="170" text-anchor="middle">autonomous dev loop</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <title>claude-code-utils-plugin — CC plugin marketplace with skills and rules</title>
-    <rect class="box" x="164" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="231" y="155" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="231" y="170" text-anchor="middle">plugins &amp; skills</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
-    <title>cc-recursive-team-mode — Claude Code subprocess wrapper and artifact parser</title>
-    <rect class="box" x="310" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="377" y="155" text-anchor="middle">cc-recursive-team</text>
-    <text class="repo-desc" x="377" y="170" text-anchor="middle">CC subprocess wrapper</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/polyforge">
-    <title>polyforge — Multi-repo AI agent orchestration</title>
-    <rect class="box" x="456" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="523" y="155" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="523" y="170" text-anchor="middle">multi-repo orchestration</text>
-  </a>
+  <text class="layer-label" x="20" y="52">PRODUCT &amp; BUSINESS STEERING</text>
 
   <a xlink:href="https://github.com/qte77/CABIO-test">
-    <title>CABIO-test — Context-Aware Business Intelligence Orchestration</title>
-    <rect class="box" x="602" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="669" y="155" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="669" y="170" text-anchor="middle">business orchestration</text>
+    <title>CABIO-test — Context-Aware Business Intelligence Orchestration and lifecycle management</title>
+    <rect class="box" x="90" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="200" y="75" text-anchor="middle">CABIO-test</text>
+    <text class="repo-desc" x="200" y="90" text-anchor="middle">business &amp; lifecycle mgmt</text>
   </a>
-
-  <a xlink:href="https://github.com/qte77/coding-agents-research">
-    <title>coding-agents-research — Claude Code field research and feature analysis</title>
-    <rect class="box" x="748" y="136" width="134" height="48" rx="5"/>
-    <text class="repo-name" x="815" y="155" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="815" y="170" text-anchor="middle">Claude Code research</text>
-  </a>
-
-  <!-- ===== Layer 3: Agent Applications (3 boxes, w=220, gap=30, start=90) ===== -->
-  <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="212">AGENT APPLICATIONS</text>
 
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
-    <rect class="box" x="90" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="200" y="235" text-anchor="middle">market-research-to-gtm</text>
-    <text class="repo-desc" x="200" y="250" text-anchor="middle">AI market research</text>
+    <rect class="box" x="340" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="75" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="450" y="90" text-anchor="middle">AI market research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
     <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
-    <rect class="box" x="340" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="450" y="235" text-anchor="middle">codebase-to-report</text>
-    <text class="repo-desc" x="450" y="250" text-anchor="middle">scientific report gen</text>
+    <rect class="box" x="590" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="700" y="75" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
+  </a>
+
+  <!-- ===== Layer 2: Agentic Development Engine (5 boxes, w=150, gap=15, start=45) ===== -->
+  <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="132">AGENTIC DEVELOPMENT ENGINE</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
+    <rect class="box" x="45" y="136" width="150" height="48" rx="5"/>
+    <text class="repo-name" x="120" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="120" y="170" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
+    <rect class="box" x="210" y="136" width="150" height="48" rx="5"/>
+    <text class="repo-name" x="285" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="285" y="170" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
+    <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
+    <rect class="box" x="375" y="136" width="150" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="155" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="450" y="170" text-anchor="middle">recursive agent spawning</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
+    <rect class="box" x="540" y="136" width="150" height="48" rx="5"/>
+    <text class="repo-name" x="615" y="155" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="615" y="170" text-anchor="middle">plugins &amp; skills</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agents-research">
+    <title>coding-agents-research — Field research and feature analysis for Claude Code</title>
+    <rect class="box" x="705" y="136" width="150" height="48" rx="5"/>
+    <text class="repo-name" x="780" y="155" text-anchor="middle">coding-agents-research</text>
+    <text class="repo-desc" x="780" y="170" text-anchor="middle">CC field research</text>
+  </a>
+
+  <!-- ===== Layer 3: AI Agent Evaluation (7 boxes, w=112, gap=10, start=28) ===== -->
+  <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="212">AI AGENT EVALUATION</text>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
+    <rect class="box" x="28" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="84" y="235" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="84" y="250" text-anchor="middle">3-tier MAS evaluation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
+    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
+    <rect class="box" x="150" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="206" y="235" text-anchor="middle">MAS-GraphJudge</text>
+    <text class="repo-desc" x="206" y="250" text-anchor="middle">graph benchmarking</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
+    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
+    <rect class="box" x="272" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="328" y="235" text-anchor="middle">TestBehaveAlign</text>
+    <text class="repo-desc" x="328" y="250" text-anchor="middle">TDD/BDD test quality</text>
+  </a>
+
+  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
+    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
+    <rect class="box" x="394" y="216" width="112" height="48" rx="5" stroke-dasharray="4 2"/>
+    <text class="repo-name" x="450" y="235" text-anchor="middle">BulletproofProtocol*</text>
+    <text class="repo-desc" x="450" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/coding-agent-eval">
+    <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
+    <rect class="box" x="516" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="572" y="235" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="572" y="250" text-anchor="middle">CC evaluation harness</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
+    <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
+    <rect class="box" x="638" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="694" y="235" text-anchor="middle">multi-tasking-quality</text>
+    <text class="repo-desc" x="694" y="250" text-anchor="middle">WakaTime correlation</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
-    <title>liminal-flux — Self-evolving agent-operated GitHub account (Lim Sid)</title>
-    <rect class="box" x="590" y="216" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="700" y="235" text-anchor="middle">liminal-flux</text>
-    <text class="repo-desc" x="700" y="250" text-anchor="middle">agent-operated GH account</text>
+    <title>liminal-flux — Self-evolving agent-operated GitHub account (experimental)</title>
+    <rect class="box" x="760" y="216" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="816" y="235" text-anchor="middle">liminal-flux</text>
+    <text class="repo-desc" x="816" y="250" text-anchor="middle">experimental GH account</text>
   </a>
 
   <!-- ===== Layer 4: GitHub Actions (7 boxes, w=112, gap=10, start=28) ===== -->
@@ -203,7 +203,7 @@
     <text class="repo-desc" x="816" y="330" text-anchor="middle">repo mirroring</text>
   </a>
 
-  <!-- ===== Layer 5: ML / DL Foundations (2 boxes, w=220, unchanged) ===== -->
+  <!-- ===== Layer 5: ML / DL Foundations (2 boxes, w=220) ===== -->
   <rect class="layer-bg" x="10" y="358" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="372">ML / DL FOUNDATIONS</text>
 
@@ -221,7 +221,7 @@
     <text class="repo-desc" x="570" y="410" text-anchor="middle">RAG evaluation</text>
   </a>
 
-  <!-- ===== Layer 6: Infrastructure (1 box, unchanged) ===== -->
+  <!-- ===== Layer 6: Infrastructure (1 box) ===== -->
   <rect class="layer-bg" x="10" y="438" width="880" height="62" rx="6"/>
   <text class="layer-label" x="20" y="452">INFRASTRUCTURE</text>
 
