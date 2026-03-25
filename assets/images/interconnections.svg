@@ -89,11 +89,11 @@
     <text class="repo-desc" x="235" y="340" text-anchor="middle">agent evaluation harness</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/coding-agents-research">
-    <title>coding-agents-research — Field research and feature analysis for Claude Code</title>
+  <a xlink:href="https://github.com/qte77/ai-agents-research">
+    <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
     <rect class="box" x="343" y="306" width="175" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="325" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="430" y="340" text-anchor="middle">CC field research</text>
+    <text class="repo-name" x="430" y="325" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="430" y="340" text-anchor="middle">AI agent field research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">

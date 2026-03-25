@@ -76,11 +76,11 @@
     <text class="repo-desc" x="450" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/coding-agents-research">
-    <title>coding-agents-research — Field research and feature analysis for Claude Code</title>
+  <a xlink:href="https://github.com/qte77/ai-agents-research">
+    <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
     <rect class="box" x="590" y="136" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="700" y="155" text-anchor="middle">coding-agents-research</text>
-    <text class="repo-desc" x="700" y="170" text-anchor="middle">CC field research</text>
+    <text class="repo-name" x="700" y="155" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="700" y="170" text-anchor="middle">AI agent field research</text>
   </a>
 
   <!-- ===== Layer 3: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
