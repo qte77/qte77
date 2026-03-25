@@ -40,11 +40,11 @@
   <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="62">PRODUCT &amp; BUSINESS STEERING</text>
 
-  <a xlink:href="https://github.com/qte77/CABIO-test">
-    <title>CABIO-test — Context-Aware Business Intelligence Orchestration and lifecycle management</title>
+  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
+    <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
     <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="85" text-anchor="middle">CABIO-test</text>
-    <text class="repo-desc" x="430" y="100" text-anchor="middle">business &amp; lifecycle mgmt</text>
+    <text class="repo-name" x="430" y="85" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="repo-desc" x="430" y="100" text-anchor="middle">BRD → PRD → FRP specs</text>
   </a>
 
   <!-- ===== Layer 2: Multi-Repo Orchestration (2 boxes) ===== -->
