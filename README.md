@@ -3,13 +3,13 @@
 
 # qte77
 
-## Project Ecosystem
+## Repository Landscape
 
-<img src="assets/images/architecture.svg" alt="Project Architecture" width="100%" />
+<img src="assets/images/architecture.svg" alt="Repository Landscape" width="100%" />
 
-### Interconnections
+### Agentic Lifecycle Stack
 
-<img src="assets/images/interconnections.svg" alt="Repo Interconnections" width="100%" />
+<img src="assets/images/interconnections.svg" alt="Agentic Lifecycle Stack" width="100%" />
 
 ## Topics
 
