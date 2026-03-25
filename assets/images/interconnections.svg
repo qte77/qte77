@@ -1,17 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
+    <filter id="hover-glow-light" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#d0d7de" flood-opacity="0.5"/>
+    </filter>
+    <filter id="hover-glow-dark" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#388bfd" flood-opacity="0.35"/>
+    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
-      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; transition: filter 0.2s; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
       .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
-      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; filter: url(#hover-glow-light); }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
@@ -24,7 +30,7 @@
         .repo-name { fill: #e6edf3; }
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
-        a:hover .box { stroke: #e6edf3; }
+        a:hover .box { stroke: #e6edf3; filter: url(#hover-glow-dark); }
       }
     </style>
   </defs>
