@@ -1,5 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
+    <filter id="accent-l1" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#3fb950" flood-opacity="0.18"/>
+    </filter>
+    <filter id="accent-l2" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#58a6ff" flood-opacity="0.18"/>
+    </filter>
+    <filter id="accent-l3" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#bc8cff" flood-opacity="0.18"/>
+    </filter>
+    <filter id="accent-l4" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f0883e" flood-opacity="0.18"/>
+    </filter>
+    <filter id="accent-l5" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#39d2c0" flood-opacity="0.18"/>
+    </filter>
+    <filter id="accent-l6" x="-6%" y="-12%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f778ba" flood-opacity="0.18"/>
+    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
@@ -42,7 +60,7 @@
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
     <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
-    <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
+    <rect class="box" x="330" y="66" width="200" height="48" rx="5" filter="url(#accent-l1)"/>
     <text class="repo-name" x="430" y="85" text-anchor="middle">RAPID-spec-forge</text>
     <text class="repo-desc" x="430" y="100" text-anchor="middle">BRD → PRD → FRP specs</text>
   </a>
@@ -54,14 +72,14 @@
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
-    <rect class="box" x="210" y="146" width="200" height="48" rx="5"/>
+    <rect class="box" x="210" y="146" width="200" height="48" rx="5" filter="url(#accent-l2)"/>
     <text class="repo-name" x="310" y="165" text-anchor="middle">polyforge</text>
     <text class="repo-desc" x="310" y="180" text-anchor="middle">parallel multi-repo work</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Bidirectional issue synchronization across repositories</title>
-    <rect class="box" x="450" y="146" width="200" height="48" rx="5"/>
+    <rect class="box" x="450" y="146" width="200" height="48" rx="5" filter="url(#accent-l2)"/>
     <text class="repo-name" x="550" y="165" text-anchor="middle">cross-repo-issue-sync</text>
     <text class="repo-desc" x="550" y="180" text-anchor="middle">issue synchronization</text>
   </a>
@@ -72,7 +90,7 @@
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
-    <rect class="box" x="330" y="226" width="200" height="48" rx="5"/>
+    <rect class="box" x="330" y="226" width="200" height="48" rx="5" filter="url(#accent-l3)"/>
     <text class="repo-name" x="430" y="245" text-anchor="middle">ralph-loop template</text>
     <text class="repo-desc" x="430" y="260" text-anchor="middle">hands-off e2e dev loop</text>
   </a>
@@ -84,21 +102,21 @@
 
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
     <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
-    <rect class="box" x="148" y="306" width="175" height="48" rx="5"/>
+    <rect class="box" x="148" y="306" width="175" height="48" rx="5" filter="url(#accent-l4)"/>
     <text class="repo-name" x="235" y="325" text-anchor="middle">coding-agent-eval</text>
     <text class="repo-desc" x="235" y="340" text-anchor="middle">agent evaluation harness</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
-    <rect class="box" x="343" y="306" width="175" height="48" rx="5"/>
+    <rect class="box" x="343" y="306" width="175" height="48" rx="5" filter="url(#accent-l4)"/>
     <text class="repo-name" x="430" y="325" text-anchor="middle">ai-agents-research</text>
     <text class="repo-desc" x="430" y="340" text-anchor="middle">AI agent field research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
     <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
-    <rect class="box" x="538" y="306" width="175" height="48" rx="5"/>
+    <rect class="box" x="538" y="306" width="175" height="48" rx="5" filter="url(#accent-l4)"/>
     <text class="repo-name" x="625" y="325" text-anchor="middle">cc-recursive-team</text>
     <text class="repo-desc" x="625" y="340" text-anchor="middle">recursive agent spawning</text>
   </a>
@@ -110,14 +128,14 @@
 
   <a xlink:href="https://github.com/qte77/dotfiles">
     <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
-    <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
+    <rect class="box" x="210" y="386" width="200" height="48" rx="5" filter="url(#accent-l5)"/>
     <text class="repo-name" x="310" y="405" text-anchor="middle">dotfiles</text>
     <text class="repo-desc" x="310" y="420" text-anchor="middle">dev environment config</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
     <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
-    <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
+    <rect class="box" x="450" y="386" width="200" height="48" rx="5" filter="url(#accent-l5)"/>
     <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
     <text class="repo-desc" x="550" y="420" text-anchor="middle">plugins &amp; skills</text>
   </a>
