@@ -1,5 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
+    <linearGradient id="glass-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="glass-shine-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.03"/>
+    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
@@ -12,6 +24,7 @@
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      .glass-overlay { fill: url(#glass-shine); pointer-events: none; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
@@ -25,6 +38,7 @@
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
         a:hover .box { stroke: #e6edf3; }
+        .glass-overlay { fill: url(#glass-shine-dark); }
       }
     </style>
   </defs>
@@ -43,6 +57,7 @@
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
     <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
     <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="330" y="66" width="200" height="48" rx="5"/>
     <text class="repo-name" x="430" y="85" text-anchor="middle">RAPID-spec-forge</text>
     <text class="repo-desc" x="430" y="100" text-anchor="middle">BRD → PRD → FRP specs</text>
   </a>
@@ -55,6 +70,7 @@
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
     <rect class="box" x="210" y="146" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="210" y="146" width="200" height="48" rx="5"/>
     <text class="repo-name" x="310" y="165" text-anchor="middle">polyforge</text>
     <text class="repo-desc" x="310" y="180" text-anchor="middle">parallel multi-repo work</text>
   </a>
@@ -62,6 +78,7 @@
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Bidirectional issue synchronization across repositories</title>
     <rect class="box" x="450" y="146" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="450" y="146" width="200" height="48" rx="5"/>
     <text class="repo-name" x="550" y="165" text-anchor="middle">cross-repo-issue-sync</text>
     <text class="repo-desc" x="550" y="180" text-anchor="middle">issue synchronization</text>
   </a>
@@ -73,6 +90,7 @@
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
     <rect class="box" x="330" y="226" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="330" y="226" width="200" height="48" rx="5"/>
     <text class="repo-name" x="430" y="245" text-anchor="middle">ralph-loop template</text>
     <text class="repo-desc" x="430" y="260" text-anchor="middle">hands-off e2e dev loop</text>
   </a>
@@ -85,6 +103,7 @@
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
     <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
     <rect class="box" x="148" y="306" width="175" height="48" rx="5"/>
+    <rect class="glass-overlay" x="148" y="306" width="175" height="48" rx="5"/>
     <text class="repo-name" x="235" y="325" text-anchor="middle">coding-agent-eval</text>
     <text class="repo-desc" x="235" y="340" text-anchor="middle">agent evaluation harness</text>
   </a>
@@ -92,6 +111,7 @@
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
     <rect class="box" x="343" y="306" width="175" height="48" rx="5"/>
+    <rect class="glass-overlay" x="343" y="306" width="175" height="48" rx="5"/>
     <text class="repo-name" x="430" y="325" text-anchor="middle">ai-agents-research</text>
     <text class="repo-desc" x="430" y="340" text-anchor="middle">AI agent field research</text>
   </a>
@@ -99,6 +119,7 @@
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
     <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
     <rect class="box" x="538" y="306" width="175" height="48" rx="5"/>
+    <rect class="glass-overlay" x="538" y="306" width="175" height="48" rx="5"/>
     <text class="repo-name" x="625" y="325" text-anchor="middle">cc-recursive-team</text>
     <text class="repo-desc" x="625" y="340" text-anchor="middle">recursive agent spawning</text>
   </a>
@@ -111,6 +132,7 @@
   <a xlink:href="https://github.com/qte77/dotfiles">
     <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
     <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="210" y="386" width="200" height="48" rx="5"/>
     <text class="repo-name" x="310" y="405" text-anchor="middle">dotfiles</text>
     <text class="repo-desc" x="310" y="420" text-anchor="middle">dev environment config</text>
   </a>
@@ -118,6 +140,7 @@
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
     <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
     <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
+    <rect class="glass-overlay" x="450" y="386" width="200" height="48" rx="5"/>
     <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
     <text class="repo-desc" x="550" y="420" text-anchor="middle">plugins &amp; skills</text>
   </a>

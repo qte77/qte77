@@ -1,28 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 518" width="900" height="518">
   <defs>
+    <linearGradient id="glass-edge-light" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8bfc6"/>
+      <stop offset="50%" stop-color="#d0d7de"/>
+      <stop offset="100%" stop-color="#e8ecf0"/>
+    </linearGradient>
+    <linearGradient id="glass-edge-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#484f58"/>
+      <stop offset="50%" stop-color="#30363d"/>
+      <stop offset="100%" stop-color="#21262d"/>
+    </linearGradient>
+    <linearGradient id="glass-shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="glass-shine-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.03"/>
+    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
-      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
       .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      .glass-overlay { fill: url(#glass-shine); pointer-events: none; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
-        .box { fill: #0d1117; stroke: #30363d; }
+        .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
         .title { fill: #e6edf3; }
         .layer-label { fill: #8b949e; }
         .repo-name { fill: #e6edf3; }
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
         a:hover .box { stroke: #e6edf3; }
+        .glass-overlay { fill: url(#glass-shine-dark); }
       }
     </style>
   </defs>
@@ -40,6 +64,7 @@
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
     <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
     <rect class="box" x="90" y="56" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="90" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="200" y="75" text-anchor="middle">RAPID-spec-forge</text>
     <text class="repo-desc" x="200" y="90" text-anchor="middle">BRD → PRD → FRP specs</text>
   </a>
@@ -47,6 +72,7 @@
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
     <rect class="box" x="340" y="56" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="340" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="450" y="75" text-anchor="middle">market-research-to-gtm</text>
     <text class="repo-desc" x="450" y="90" text-anchor="middle">AI market research</text>
   </a>
@@ -54,6 +80,7 @@
   <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
     <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
     <rect class="box" x="590" y="56" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="590" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="700" y="75" text-anchor="middle">codebase-to-report</text>
     <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
   </a>
@@ -65,6 +92,7 @@
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
     <rect class="box" x="90" y="136" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="90" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="200" y="155" text-anchor="middle">polyforge</text>
     <text class="repo-desc" x="200" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
@@ -72,6 +100,7 @@
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
     <rect class="box" x="340" y="136" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="340" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="450" y="155" text-anchor="middle">ralph-loop template</text>
     <text class="repo-desc" x="450" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
@@ -79,6 +108,7 @@
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
     <rect class="box" x="590" y="136" width="220" height="48" rx="5"/>
+    <rect class="glass-overlay" x="590" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="700" y="155" text-anchor="middle">ai-agents-research</text>
     <text class="repo-desc" x="700" y="170" text-anchor="middle">AI agent field research</text>
   </a>
@@ -90,6 +120,7 @@
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
     <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
     <rect class="box" x="18" y="216" width="134" height="48" rx="5"/>
+    <rect class="glass-overlay" x="18" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="85" y="235" text-anchor="middle">coding-agent-eval</text>
     <text class="repo-desc" x="85" y="250" text-anchor="middle">CC evaluation harness</text>
   </a>
@@ -97,6 +128,7 @@
   <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
     <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
     <rect class="box" x="164" y="216" width="134" height="48" rx="5"/>
+    <rect class="glass-overlay" x="164" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="231" y="235" text-anchor="middle">multi-tasking-quality</text>
     <text class="repo-desc" x="231" y="250" text-anchor="middle">WakaTime correlation</text>
   </a>
@@ -104,6 +136,7 @@
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
     <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
     <rect class="box" x="310" y="216" width="134" height="48" rx="5"/>
+    <rect class="glass-overlay" x="310" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="377" y="235" text-anchor="middle">MAS-GraphJudge</text>
     <text class="repo-desc" x="377" y="250" text-anchor="middle">graph benchmarking</text>
   </a>
@@ -111,6 +144,7 @@
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
     <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
     <rect class="box" x="456" y="216" width="134" height="48" rx="5"/>
+    <rect class="glass-overlay" x="456" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="523" y="235" text-anchor="middle">TestBehaveAlign</text>
     <text class="repo-desc" x="523" y="250" text-anchor="middle">TDD/BDD test quality</text>
   </a>
@@ -118,6 +152,7 @@
   <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
     <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
     <rect class="box" x="602" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
+    <rect class="glass-overlay" x="602" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="669" y="235" text-anchor="middle">BulletproofProtocol*</text>
     <text class="repo-desc" x="669" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
   </a>
@@ -125,6 +160,7 @@
   <a xlink:href="https://github.com/qte77/Agents-eval">
     <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
     <rect class="box" x="748" y="216" width="134" height="48" rx="5"/>
+    <rect class="glass-overlay" x="748" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="815" y="235" text-anchor="middle">Agents-eval</text>
     <text class="repo-desc" x="815" y="250" text-anchor="middle">3-tier MAS evaluation</text>
   </a>
@@ -136,6 +172,7 @@
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
     <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
     <rect class="box" x="28" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="28" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="84" y="315" text-anchor="middle">ai-changelog</text>
     <text class="repo-desc" x="84" y="330" text-anchor="middle">AI-powered changelogs</text>
   </a>
@@ -143,6 +180,7 @@
   <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
     <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
     <rect class="box" x="150" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="150" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="206" y="315" text-anchor="middle">contribution-ascii</text>
     <text class="repo-desc" x="206" y="330" text-anchor="middle">contribution graph art</text>
   </a>
@@ -150,6 +188,7 @@
   <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
     <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
     <rect class="box" x="272" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="272" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="328" y="315" text-anchor="middle">dirtree-to-readme</text>
     <text class="repo-desc" x="328" y="330" text-anchor="middle">dir tree to README</text>
   </a>
@@ -157,6 +196,7 @@
   <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
     <title>gha-arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
     <rect class="box" x="394" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="394" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="450" y="315" text-anchor="middle">arxiv-stats-action</text>
     <text class="repo-desc" x="450" y="330" text-anchor="middle">arXiv daily paper stats</text>
   </a>
@@ -164,6 +204,7 @@
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Synchronize issues across repositories</title>
     <rect class="box" x="516" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="516" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="572" y="315" text-anchor="middle">issue-sync</text>
     <text class="repo-desc" x="572" y="330" text-anchor="middle">cross-repo issues</text>
   </a>
@@ -171,6 +212,7 @@
   <a xlink:href="https://github.com/qte77/gha-arbitrary-repo-timeline">
     <title>gha-arbitrary-repo-timeline — Generate timeline visualizations for any repo</title>
     <rect class="box" x="638" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="638" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="694" y="315" text-anchor="middle">repo-timeline</text>
     <text class="repo-desc" x="694" y="330" text-anchor="middle">repo timeline viz</text>
   </a>
@@ -178,6 +220,7 @@
   <a xlink:href="https://github.com/qte77/gha-github-mirror-action">
     <title>gha-github-mirror-action — Mirror repositories across GitHub accounts</title>
     <rect class="box" x="760" y="296" width="112" height="48" rx="5"/>
+    <rect class="glass-overlay" x="760" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="816" y="315" text-anchor="middle">github-mirror</text>
     <text class="repo-desc" x="816" y="330" text-anchor="middle">repo mirroring</text>
   </a>
@@ -189,6 +232,7 @@
   <a xlink:href="https://github.com/qte77/dotfiles">
     <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
     <rect class="box" x="210" y="374" width="220" height="38" rx="5"/>
+    <rect class="glass-overlay" x="210" y="374" width="220" height="38" rx="5"/>
     <text class="repo-name" x="320" y="389" text-anchor="middle">dotfiles</text>
     <text class="repo-desc" x="320" y="403" text-anchor="middle">dev environment config</text>
   </a>
@@ -196,6 +240,7 @@
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
     <title>claude-code-utils-plugin — CC plugin marketplace with skills, rules, and scripts</title>
     <rect class="box" x="470" y="374" width="220" height="38" rx="5"/>
+    <rect class="glass-overlay" x="470" y="374" width="220" height="38" rx="5"/>
     <text class="repo-name" x="580" y="389" text-anchor="middle">cc-utils-plugin</text>
     <text class="repo-desc" x="580" y="403" text-anchor="middle">plugins &amp; skills</text>
   </a>
@@ -207,6 +252,7 @@
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
     <title>cc-recursive-team-mode — Claude Code subprocess wrapper, recursive spawning, and artifact parser</title>
     <rect class="box" x="210" y="442" width="220" height="38" rx="5"/>
+    <rect class="glass-overlay" x="210" y="442" width="220" height="38" rx="5"/>
     <text class="repo-name" x="320" y="457" text-anchor="middle">cc-recursive-team</text>
     <text class="repo-desc" x="320" y="471" text-anchor="middle">recursive agent spawning</text>
   </a>
@@ -214,6 +260,7 @@
   <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
     <title>liminal-flux — Self-evolving agent-operated GitHub account (Lim Sid)</title>
     <rect class="box" x="470" y="442" width="220" height="38" rx="5"/>
+    <rect class="glass-overlay" x="470" y="442" width="220" height="38" rx="5"/>
     <text class="repo-name" x="580" y="457" text-anchor="middle">liminal-flux</text>
     <text class="repo-desc" x="580" y="471" text-anchor="middle">agent-operated GH account</text>
   </a>
