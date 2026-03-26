@@ -1,10 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
+    <linearGradient id="glass-edge-light" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8bfc6"/>
+      <stop offset="50%" stop-color="#d0d7de"/>
+      <stop offset="100%" stop-color="#e8ecf0"/>
+    </linearGradient>
+    <linearGradient id="glass-edge-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#484f58"/>
+      <stop offset="50%" stop-color="#30363d"/>
+      <stop offset="100%" stop-color="#21262d"/>
+    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
-      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
@@ -17,7 +27,7 @@
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
-        .box { fill: #0d1117; stroke: #30363d; }
+        .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
         .title { fill: #e6edf3; }
         .subtitle { fill: #8b949e; }
         .layer-label { fill: #8b949e; }
