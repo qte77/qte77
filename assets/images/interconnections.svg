@@ -1,27 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
-    <filter id="line-glow-light" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="line-glow-dark" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="layer-glow-light" x="-2%" y="-10%" width="104%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.82  0 0 0 0 0.84  0 0 0 0 0.87  0 0 0 0.18 0" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="layer-glow-dark" x="-2%" y="-10%" width="104%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.12  0 0 0 0 0.43  0 0 0 0 0.99  0 0 0 0.12 0" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
-      .layer-bg { fill: #f6f8fa; filter: url(#layer-glow-light); }
+      .layer-bg { fill: #f6f8fa; }
       .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
@@ -30,12 +12,11 @@
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
-      .conn { stroke: #d0d7de; stroke-width: 1; fill: none; stroke-dasharray: 4 3; filter: url(#line-glow-light); opacity: 0.5; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
-        .layer-bg { fill: #161b22; filter: url(#layer-glow-dark); }
+        .layer-bg { fill: #161b22; }
         .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
         .subtitle { fill: #8b949e; }
@@ -44,7 +25,6 @@
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
         a:hover .box { stroke: #e6edf3; }
-        .conn { stroke: #58a6ff; stroke-opacity: 0.6; filter: url(#line-glow-dark); opacity: 0.6; }
       }
     </style>
   </defs>

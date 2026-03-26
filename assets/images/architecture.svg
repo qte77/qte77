@@ -1,37 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 518" width="900" height="518">
   <defs>
-    <filter id="accent-l1" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#3fb950" flood-opacity="0.18"/>
-    </filter>
-    <filter id="accent-l2" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#58a6ff" flood-opacity="0.18"/>
-    </filter>
-    <filter id="accent-l3" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#bc8cff" flood-opacity="0.18"/>
-    </filter>
-    <filter id="accent-l4" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f0883e" flood-opacity="0.18"/>
-    </filter>
-    <filter id="accent-l5" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#39d2c0" flood-opacity="0.18"/>
-    </filter>
-    <filter id="accent-l6" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f778ba" flood-opacity="0.18"/>
-    </filter>
-    <filter id="layer-glow-light" x="-2%" y="-10%" width="104%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.82  0 0 0 0 0.84  0 0 0 0 0.87  0 0 0 0.18 0" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="layer-glow-dark" x="-2%" y="-10%" width="104%" height="120%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.12  0 0 0 0 0.43  0 0 0 0 0.99  0 0 0 0.12 0" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
-      .layer-bg { fill: #f6f8fa; filter: url(#layer-glow-light); }
+      .layer-bg { fill: #f6f8fa; }
       .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
@@ -43,7 +15,7 @@
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
-        .layer-bg { fill: #161b22; filter: url(#layer-glow-dark); }
+        .layer-bg { fill: #161b22; }
         .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
         .layer-label { fill: #8b949e; }
@@ -67,21 +39,21 @@
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
     <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
-    <rect class="box" x="90" y="56" width="220" height="48" rx="5" filter="url(#accent-l1)"/>
+    <rect class="box" x="90" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="200" y="75" text-anchor="middle">RAPID-spec-forge</text>
     <text class="repo-desc" x="200" y="90" text-anchor="middle">BRD → PRD → FRP specs</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
     <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
-    <rect class="box" x="340" y="56" width="220" height="48" rx="5" filter="url(#accent-l1)"/>
+    <rect class="box" x="340" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="450" y="75" text-anchor="middle">market-research-to-gtm</text>
     <text class="repo-desc" x="450" y="90" text-anchor="middle">AI market research</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
     <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
-    <rect class="box" x="590" y="56" width="220" height="48" rx="5" filter="url(#accent-l1)"/>
+    <rect class="box" x="590" y="56" width="220" height="48" rx="5"/>
     <text class="repo-name" x="700" y="75" text-anchor="middle">codebase-to-report</text>
     <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
   </a>
@@ -92,21 +64,21 @@
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
-    <rect class="box" x="90" y="136" width="220" height="48" rx="5" filter="url(#accent-l2)"/>
+    <rect class="box" x="90" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="200" y="155" text-anchor="middle">polyforge</text>
     <text class="repo-desc" x="200" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
-    <rect class="box" x="340" y="136" width="220" height="48" rx="5" filter="url(#accent-l2)"/>
+    <rect class="box" x="340" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="450" y="155" text-anchor="middle">ralph-loop template</text>
     <text class="repo-desc" x="450" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
-    <rect class="box" x="590" y="136" width="220" height="48" rx="5" filter="url(#accent-l2)"/>
+    <rect class="box" x="590" y="136" width="220" height="48" rx="5"/>
     <text class="repo-name" x="700" y="155" text-anchor="middle">ai-agents-research</text>
     <text class="repo-desc" x="700" y="170" text-anchor="middle">AI agent field research</text>
   </a>
@@ -117,42 +89,42 @@
 
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
     <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
-    <rect class="box" x="18" y="216" width="134" height="48" rx="5" filter="url(#accent-l3)"/>
+    <rect class="box" x="18" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="85" y="235" text-anchor="middle">coding-agent-eval</text>
     <text class="repo-desc" x="85" y="250" text-anchor="middle">CC evaluation harness</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
     <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
-    <rect class="box" x="164" y="216" width="134" height="48" rx="5" filter="url(#accent-l3)"/>
+    <rect class="box" x="164" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="231" y="235" text-anchor="middle">multi-tasking-quality</text>
     <text class="repo-desc" x="231" y="250" text-anchor="middle">WakaTime correlation</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
     <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
-    <rect class="box" x="310" y="216" width="134" height="48" rx="5" filter="url(#accent-l3)"/>
+    <rect class="box" x="310" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="377" y="235" text-anchor="middle">MAS-GraphJudge</text>
     <text class="repo-desc" x="377" y="250" text-anchor="middle">graph benchmarking</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
     <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
-    <rect class="box" x="456" y="216" width="134" height="48" rx="5" filter="url(#accent-l3)"/>
+    <rect class="box" x="456" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="523" y="235" text-anchor="middle">TestBehaveAlign</text>
     <text class="repo-desc" x="523" y="250" text-anchor="middle">TDD/BDD test quality</text>
   </a>
 
   <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
     <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
-    <rect class="box" x="602" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2" filter="url(#accent-l3)"/>
+    <rect class="box" x="602" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
     <text class="repo-name" x="669" y="235" text-anchor="middle">BulletproofProtocol*</text>
     <text class="repo-desc" x="669" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/Agents-eval">
     <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
-    <rect class="box" x="748" y="216" width="134" height="48" rx="5" filter="url(#accent-l3)"/>
+    <rect class="box" x="748" y="216" width="134" height="48" rx="5"/>
     <text class="repo-name" x="815" y="235" text-anchor="middle">Agents-eval</text>
     <text class="repo-desc" x="815" y="250" text-anchor="middle">3-tier MAS evaluation</text>
   </a>
@@ -163,42 +135,42 @@
 
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
     <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
-    <rect class="box" x="28" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="28" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="84" y="315" text-anchor="middle">ai-changelog</text>
     <text class="repo-desc" x="84" y="330" text-anchor="middle">AI-powered changelogs</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
     <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
-    <rect class="box" x="150" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="150" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="206" y="315" text-anchor="middle">contribution-ascii</text>
     <text class="repo-desc" x="206" y="330" text-anchor="middle">contribution graph art</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
     <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
-    <rect class="box" x="272" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="272" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="328" y="315" text-anchor="middle">dirtree-to-readme</text>
     <text class="repo-desc" x="328" y="330" text-anchor="middle">dir tree to README</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
     <title>gha-arxiv-stats-action — Logs daily stats of papers submitted to arxiv.org</title>
-    <rect class="box" x="394" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="394" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="450" y="315" text-anchor="middle">arxiv-stats-action</text>
     <text class="repo-desc" x="450" y="330" text-anchor="middle">arXiv daily paper stats</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
     <title>gha-cross-repo-issue-sync — Synchronize issues across repositories</title>
-    <rect class="box" x="516" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="516" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="572" y="315" text-anchor="middle">issue-sync</text>
     <text class="repo-desc" x="572" y="330" text-anchor="middle">cross-repo issues</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-arbitrary-repo-timeline">
     <title>gha-arbitrary-repo-timeline — Generate timeline visualizations for any repo</title>
-    <rect class="box" x="638" y="296" width="112" height="48" rx="5" filter="url(#accent-l4)"/>
+    <rect class="box" x="638" y="296" width="112" height="48" rx="5"/>
     <text class="repo-name" x="694" y="315" text-anchor="middle">repo-timeline</text>
     <text class="repo-desc" x="694" y="330" text-anchor="middle">repo timeline viz</text>
   </a>
