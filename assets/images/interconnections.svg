@@ -1,5 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
+    <filter id="line-glow-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="line-glow-dark" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
@@ -12,6 +20,7 @@
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      .conn { stroke: #d0d7de; stroke-width: 1; fill: none; stroke-dasharray: 4 3; filter: url(#line-glow-light); opacity: 0.5; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
@@ -25,6 +34,7 @@
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
         a:hover .box { stroke: #e6edf3; }
+        .conn { stroke: #58a6ff; stroke-opacity: 0.6; filter: url(#line-glow-dark); opacity: 0.6; }
       }
     </style>
   </defs>
@@ -121,6 +131,30 @@
     <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
     <text class="repo-desc" x="550" y="420" text-anchor="middle">plugins &amp; skills</text>
   </a>
+
+  <!-- Connection lines -->
+  <g class="conn-group">
+    <!-- RAPID-spec-forge → polyforge -->
+    <line class="conn" x1="430" y1="114" x2="310" y2="146"/>
+    <!-- RAPID-spec-forge → cross-repo-issue-sync -->
+    <line class="conn" x1="430" y1="114" x2="550" y2="146"/>
+    <!-- polyforge → ralph-loop -->
+    <line class="conn" x1="310" y1="194" x2="430" y2="226"/>
+    <!-- cross-repo-issue-sync → ralph-loop -->
+    <line class="conn" x1="550" y1="194" x2="430" y2="226"/>
+    <!-- ralph-loop → coding-agent-eval -->
+    <line class="conn" x1="430" y1="274" x2="235" y2="306"/>
+    <!-- ralph-loop → ai-agents-research -->
+    <line class="conn" x1="430" y1="274" x2="430" y2="306"/>
+    <!-- ralph-loop → cc-recursive-team -->
+    <line class="conn" x1="430" y1="274" x2="625" y2="306"/>
+    <!-- coding-agent-eval → dotfiles -->
+    <line class="conn" x1="235" y1="354" x2="310" y2="386"/>
+    <!-- coding-agent-eval → cc-utils-plugin -->
+    <line class="conn" x1="235" y1="354" x2="550" y2="386"/>
+    <!-- cc-recursive-team → cc-utils-plugin -->
+    <line class="conn" x1="625" y1="354" x2="550" y2="386"/>
+  </g>
 
   <!-- Footer -->
   <text class="note" x="840" y="458" text-anchor="end">9 repositories — higher layers use lower layers</text>
