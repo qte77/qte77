@@ -10,10 +10,25 @@
       <stop offset="50%" stop-color="#30363d"/>
       <stop offset="100%" stop-color="#21262d"/>
     </linearGradient>
+    <linearGradient id="sheen-light" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sheen-dark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
+      .layer-sheen { fill: url(#sheen-light); pointer-events: none; }
       .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
@@ -26,6 +41,7 @@
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
+        .layer-sheen { fill: url(#sheen-dark); }
         .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
         .title { fill: #e6edf3; }
         .layer-label { fill: #8b949e; }
@@ -45,6 +61,7 @@
 
   <!-- ===== Layer 1: Product & Business Steering (3 boxes, w=220, gap=30, start=90) ===== -->
   <rect class="layer-bg" x="10" y="38" width="880" height="74" rx="6"/>
+  <rect class="layer-sheen" x="10" y="38" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="52">PRODUCT &amp; BUSINESS STEERING</text>
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
@@ -70,6 +87,7 @@
 
   <!-- ===== Layer 2: Agentic Development Engine (3 boxes, w=220, gap=30, start=90) ===== -->
   <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
+  <rect class="layer-sheen" x="10" y="118" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="132">AGENTIC DEVELOPMENT ENGINE</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
@@ -95,6 +113,7 @@
 
   <!-- ===== Layer 3: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
   <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
+  <rect class="layer-sheen" x="10" y="198" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="212">AI AGENT EVALUATION</text>
 
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
@@ -141,6 +160,7 @@
 
   <!-- ===== Layer 4: GitHub Actions (7 boxes, w=112, gap=10, start=28) ===== -->
   <rect class="layer-bg" x="10" y="278" width="880" height="74" rx="6"/>
+  <rect class="layer-sheen" x="10" y="278" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="292">GITHUB ACTIONS</text>
 
   <a xlink:href="https://github.com/qte77/gha-ai-changelog">
@@ -194,6 +214,7 @@
 
   <!-- ===== Layer 5: Infrastructure (2 boxes, w=220, gap=40, start=210) ===== -->
   <rect class="layer-bg" x="10" y="358" width="880" height="62" rx="6"/>
+  <rect class="layer-sheen" x="10" y="358" width="880" height="62" rx="6"/>
   <text class="layer-label" x="20" y="372">INFRASTRUCTURE</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
@@ -212,6 +233,7 @@
 
   <!-- ===== Layer 6: Experimental (2 boxes, w=220, gap=40, start=210) ===== -->
   <rect class="layer-bg" x="10" y="426" width="880" height="62" rx="6"/>
+  <rect class="layer-sheen" x="10" y="426" width="880" height="62" rx="6"/>
   <text class="layer-label" x="20" y="440">EXPERIMENTAL</text>
 
   <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
