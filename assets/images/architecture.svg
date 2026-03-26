@@ -35,7 +35,7 @@
     </linearGradient>
     <style>
       /* Light mode (default) */
-      .page-bg { fill: #ffffff; }
+      .page-bg { fill: #ffffff; filter: url(#frost-texture); }
       .layer-bg { fill: #f6f8fa; }
       .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
@@ -48,7 +48,7 @@
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
-        .page-bg { fill: #0d1117; }
+        .page-bg { fill: #0d1117; filter: url(#frost-texture); }
         .layer-bg { fill: #161b22; }
         .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
         .title { fill: #e6edf3; }
