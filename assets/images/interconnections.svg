@@ -15,9 +15,6 @@
     <filter id="accent-l5" x="-6%" y="-12%" width="112%" height="124%">
       <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#39d2c0" flood-opacity="0.18"/>
     </filter>
-    <filter id="accent-l6" x="-6%" y="-12%" width="112%" height="124%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#f778ba" flood-opacity="0.18"/>
-    </filter>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
