@@ -27,6 +27,9 @@ Autonomous agentic lifecycle management — from strategic goals to merged PRs a
 - Goal-Driven Lifecycle Management, OKR Traceability
 - GitHub Actions, CI/CD Automation
 - Claude Code Plugins, MCP Integrations
+- Inductive Priors, Automatic Differentiation
+- Data Centric vs Model Centric
+- QML, Barren Plateaus
 
 ## Posts
 
