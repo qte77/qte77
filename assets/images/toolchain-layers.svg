@@ -1,35 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 548" width="860" height="548">
   <defs>
-    <linearGradient id="glass-edge-light" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#b8bfc6"/>
-      <stop offset="50%" stop-color="#d0d7de"/>
-      <stop offset="100%" stop-color="#e8ecf0"/>
-    </linearGradient>
-    <linearGradient id="glass-edge-dark" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#484f58"/>
-      <stop offset="50%" stop-color="#30363d"/>
-      <stop offset="100%" stop-color="#21262d"/>
-    </linearGradient>
-    <linearGradient id="sheen-light" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>
-      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="sheen-dark" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
-      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
-      .layer-sheen { fill: url(#sheen-light); pointer-events: none; }
-      .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
@@ -44,8 +19,7 @@
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
-        .layer-sheen { fill: url(#sheen-dark); }
-        .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
+        .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
         .subtitle { fill: #8b949e; }
         .layer-label { fill: #8b949e; }
@@ -74,7 +48,6 @@
 
   <!-- ===== Layer 1: Goals & Northstar (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="48" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="62">GOALS &amp; NORTHSTAR</text>
 
   <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
@@ -83,7 +56,6 @@
 
   <!-- ===== Layer 2: Spec Generation (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="128" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="142">SPEC GENERATION</text>
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
@@ -96,7 +68,6 @@
   <!-- ===== Layer 3: Orchestration (3 boxes) ===== -->
   <!-- w=200, gap=20. Total=640. start=(840-640)/2+10=110. Boxes: 110, 330, 550. Centers: 210, 430, 650 -->
   <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="208" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="222">ORCHESTRATION &amp; TRACKING</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
@@ -122,7 +93,6 @@
 
   <!-- ===== Layer 4: Autonomous Execution (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="288" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="288" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="302">AUTONOMOUS EXECUTION</text>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
@@ -135,7 +105,6 @@
   <!-- ===== Layer 5: Insight Capture (2 boxes) ===== -->
   <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
   <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="368" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="382">INSIGHT CAPTURE</text>
 
   <a xlink:href="https://github.com/qte77/ai-agents-research">
@@ -154,7 +123,6 @@
 
   <!-- ===== Layer 6: Infrastructure (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="448" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="448" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="462">INFRASTRUCTURE</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
