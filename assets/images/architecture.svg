@@ -58,29 +58,36 @@
     <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
   </a>
 
-  <!-- ===== Layer 2: Agentic Development Engine (3 boxes, w=220, gap=30, start=90) ===== -->
+  <!-- ===== Layer 2: Agentic Development Engine (4 boxes, w=190, gap=20, start=40) ===== -->
   <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
   <text class="layer-label" x="20" y="132">AGENTIC DEVELOPMENT ENGINE</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
     <title>polyforge — Polyrepo dev forge for parallel AI agent workflows across multiple repositories</title>
-    <rect class="box" x="90" y="136" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="200" y="155" text-anchor="middle">polyforge</text>
-    <text class="repo-desc" x="200" y="170" text-anchor="middle">multi-repo orchestration</text>
+    <rect class="box" x="40" y="136" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="135" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="135" y="170" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge">
+    <title>office-forge — Parallel AI agent sessions across office projects (invoices, contracts, reports)</title>
+    <rect class="box" x="250" y="136" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="345" y="155" text-anchor="middle">office-forge</text>
+    <text class="repo-desc" x="345" y="170" text-anchor="middle">office project orchestration</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — Autonomous development loop with Claude Code, TDD, and kanban</title>
-    <rect class="box" x="340" y="136" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="450" y="155" text-anchor="middle">ralph-loop template</text>
-    <text class="repo-desc" x="450" y="170" text-anchor="middle">autonomous dev loop</text>
+    <rect class="box" x="460" y="136" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="555" y="155" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="555" y="170" text-anchor="middle">autonomous dev loop</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
-    <rect class="box" x="590" y="136" width="220" height="48" rx="5"/>
-    <text class="repo-name" x="700" y="155" text-anchor="middle">ai-agents-research</text>
-    <text class="repo-desc" x="700" y="170" text-anchor="middle">AI agent field research</text>
+    <rect class="box" x="670" y="136" width="190" height="48" rx="5"/>
+    <text class="repo-name" x="765" y="155" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="765" y="170" text-anchor="middle">AI agent field research</text>
   </a>
 
   <!-- ===== Layer 3: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
@@ -220,5 +227,5 @@
 
   <!-- Footer -->
   <text class="note" x="20" y="506">* pat-tax/ org</text>
-  <text class="note" x="880" y="506" text-anchor="end">21 repositories</text>
+  <text class="note" x="880" y="506" text-anchor="end">22 repositories</text>
 </svg>
