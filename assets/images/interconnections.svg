@@ -1,35 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 468" width="860" height="468">
   <defs>
-    <linearGradient id="glass-edge-light" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#b8bfc6"/>
-      <stop offset="50%" stop-color="#d0d7de"/>
-      <stop offset="100%" stop-color="#e8ecf0"/>
-    </linearGradient>
-    <linearGradient id="glass-edge-dark" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#484f58"/>
-      <stop offset="50%" stop-color="#30363d"/>
-      <stop offset="100%" stop-color="#21262d"/>
-    </linearGradient>
-    <linearGradient id="sheen-light" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>
-      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="sheen-dark" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="35%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
-      <stop offset="65%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
-      .layer-sheen { fill: url(#sheen-light); pointer-events: none; }
-      .box { fill: #ffffff; stroke: url(#glass-edge-light); stroke-width: 1.5; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
@@ -42,8 +17,7 @@
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
-        .layer-sheen { fill: url(#sheen-dark); }
-        .box { fill: #0d1117; stroke: url(#glass-edge-dark); stroke-width: 1.5; }
+        .box { fill: #0d1117; stroke: #30363d; }
         .title { fill: #e6edf3; }
         .subtitle { fill: #8b949e; }
         .layer-label { fill: #8b949e; }
@@ -64,7 +38,6 @@
 
   <!-- ===== Layer 1: Product & Business Steering (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="48" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="62">PRODUCT &amp; BUSINESS STEERING</text>
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
@@ -77,7 +50,6 @@
   <!-- ===== Layer 2: Multi-Repo Orchestration (2 boxes) ===== -->
   <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
   <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="128" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="142">MULTI-REPO ORCHESTRATION</text>
 
   <a xlink:href="https://github.com/qte77/polyforge">
@@ -96,7 +68,6 @@
 
   <!-- ===== Layer 3: Autonomous Coding (1 box, centered) ===== -->
   <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="208" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="222">AUTONOMOUS CODING</text>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
@@ -109,7 +80,6 @@
   <!-- ===== Layer 4: Agent Research & Evaluation (3 boxes) ===== -->
   <!-- w=175, gap=20. Total=565. start=(840-565)/2+10=148. Boxes: 148, 343, 538. Centers: 235, 430, 625 -->
   <rect class="layer-bg" x="10" y="288" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="288" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="302">AGENT RESEARCH &amp; EVALUATION</text>
 
   <a xlink:href="https://github.com/qte77/coding-agent-eval">
@@ -136,7 +106,6 @@
   <!-- ===== Layer 5: Tooling & Infrastructure (2 boxes) ===== -->
   <!-- w=200, gap=40. start=210. Boxes: 210, 450. Centers: 310, 550 -->
   <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
-  <rect class="layer-sheen" x="10" y="368" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="382">TOOLING &amp; INFRASTRUCTURE</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
