@@ -11,10 +11,6 @@ Autonomous agentic lifecycle management — from strategic goals to merged PRs a
 
 <img src="assets/images/architecture.svg" alt="Repository Landscape" width="100%" />
 
-### Agentic Lifecycle Stack
-
-<img src="assets/images/interconnections.svg" alt="Agentic Lifecycle Stack" width="100%" />
-
 ### Toolchain Layers
 
 <img src="assets/images/toolchain-layers.svg" alt="Toolchain Layers" width="100%" />
