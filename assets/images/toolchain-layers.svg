@@ -132,16 +132,24 @@
     <text class="repo-desc" x="430" y="340" text-anchor="middle">goal → story → code → PR</text>
   </a>
 
-  <!-- ===== Layer 5: Insight Capture (1 box, centered) ===== -->
+  <!-- ===== Layer 5: Insight Capture (2 boxes) ===== -->
+  <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
   <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
   <rect class="layer-sheen" x="10" y="368" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="382">INSIGHT CAPTURE</text>
 
+  <a xlink:href="https://github.com/qte77/ai-agents-research">
+    <title>ai-agents-research — Learnings, external input, field research</title>
+    <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="405" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="310" y="420" text-anchor="middle">learnings + external input</text>
+  </a>
+
   <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <title>cc-utils-plugin — bigpicture synthesis + context compaction → session summaries</title>
-    <rect class="box" x="330" y="386" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="405" text-anchor="middle">cc-utils-plugin</text>
-    <text class="repo-desc" x="430" y="420" text-anchor="middle">bigpicture + compaction</text>
+    <title>cc-utils-plugin — Modular skills, rules, and workspace plugins</title>
+    <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="550" y="420" text-anchor="middle">skills + rules + workspaces</text>
   </a>
 
   <!-- ===== Layer 6: Infrastructure (1 box, centered) ===== -->
