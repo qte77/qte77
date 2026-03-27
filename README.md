@@ -3,20 +3,27 @@
 
 # qte77
 
-## Project Ecosystem
+Autonomous agentic lifecycle management — from strategic goals to merged PRs and processed invoices, hands-off. Set a goal, RAPID writes the specs, Ralph codes and ships, Polyforge and Office-forge coordinate across repos and projects, issues sync, progress traces back to the goal.
+
+> No existing system connects a committed goal artifact through automated spec generation, autonomous implementation across dev and office domains, cross-repo issue aggregation, and progress rollback — end to end.
+
+## Repository Landscape
 
 <img src="assets/images/architecture.svg" alt="Repository Landscape" width="100%" />
 
-### Agentic Lifecycle Management
+### Toolchain Layers
 
-<img src="assets/images/interconnections.svg" alt="Agentic Lifecycle Stack" width="100%" />
+<img src="assets/images/toolchain-layers.svg" alt="Toolchain Layers" width="100%" />
 
 ## Topics
 
-- Pipelines, Workflows
-- DevOps, IaC, CaC
-- ML, Inductive Priors
-- Automatic Differentiation
+- Agentic Software Development, Autonomous Coding
+- Multi-Repo Orchestration, Cross-Repo Issue Sync
+- AI Agent Evaluation, MAS Benchmarking
+- Goal-Driven Lifecycle Management, OKR Traceability
+- GitHub Actions, CI/CD Automation
+- Claude Code Plugins, MCP Integrations
+- Inductive Priors, Automatic Differentiation
 - Data Centric vs Model Centric
 - QML, Barren Plateaus
 

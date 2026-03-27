@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 548" width="860" height="548">
+  <defs>
+    <style>
+      /* Light mode (default) */
+      .page-bg { fill: #ffffff; }
+      .layer-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      .arrow { stroke: #b0b8c1; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead-light); }
+
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
+        .layer-label { fill: #8b949e; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        .arrow { stroke: #484f58; marker-end: url(#arrowhead-dark); }
+
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+    <marker id="arrowhead-light" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b0b8c1" stroke-width="1"/>
+    </marker>
+    <marker id="arrowhead-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Page background -->
+  <rect class="page-bg" width="860" height="548" rx="8"/>
+
+  <!-- Title + subtitle -->
+  <text class="title" x="430" y="20" text-anchor="middle">Goal-to-Delivery Toolchain</text>
+  <text class="subtitle" x="430" y="36" text-anchor="middle">From strategic intent to merged PRs and processed documents — traced end to end</text>
+
+  <!-- ===== Layer 1: Goals & Northstar (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="62">GOALS &amp; NORTHSTAR</text>
+
+  <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
+  <text class="repo-name" x="430" y="85" text-anchor="middle">goals.json</text>
+  <text class="repo-desc" x="430" y="100" text-anchor="middle">SOT for strategic intent</text>
+
+  <!-- ===== Layer 2: Spec Generation (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="142">SPEC GENERATION</text>
+
+  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
+    <title>RAPID-spec-forge — BRD → PRD → FRD spec generation referencing goal IDs</title>
+    <rect class="box" x="330" y="146" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="165" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="repo-desc" x="430" y="180" text-anchor="middle">BRD → PRD → FRD</text>
+  </a>
+
+  <!-- ===== Layer 3: Orchestration (3 boxes) ===== -->
+  <!-- w=200, gap=20. Total=640. start=(840-640)/2+10=110. Boxes: 110, 330, 550. Centers: 210, 430, 650 -->
+  <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="222">ORCHESTRATION &amp; TRACKING</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge">
+    <title>polyforge — Parallel AI agent sessions across dev repos</title>
+    <rect class="box" x="110" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="210" y="245" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="210" y="260" text-anchor="middle">dev repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge">
+    <title>office-forge — Parallel AI agent sessions across office projects</title>
+    <rect class="box" x="330" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="245" text-anchor="middle">office-forge</text>
+    <text class="repo-desc" x="430" y="260" text-anchor="middle">office project orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
+    <title>gha-cross-repo-issue-sync — Cross-repo issue sync with goal ID labels</title>
+    <rect class="box" x="550" y="226" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="650" y="245" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="650" y="260" text-anchor="middle">issue tracking + GHA sync</text>
+  </a>
+
+  <!-- ===== Layer 4: Autonomous Execution (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="288" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="302">AUTONOMOUS EXECUTION</text>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph-loop template — goal → story → code → test → PR, hands-off</title>
+    <rect class="box" x="330" y="306" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="325" text-anchor="middle">ralph-loop template</text>
+    <text class="repo-desc" x="430" y="340" text-anchor="middle">goal → story → code → PR</text>
+  </a>
+
+  <!-- ===== Layer 5: Insight Capture (2 boxes) ===== -->
+  <!-- w=200, gap=40. Total=440. start=(840-440)/2+10=210. Boxes: 210, 450. Centers: 310, 550 -->
+  <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="382">INSIGHT CAPTURE</text>
+
+  <a xlink:href="https://github.com/qte77/ai-agents-research">
+    <title>ai-agents-research — Learnings, external input, field research</title>
+    <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="405" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="310" y="420" text-anchor="middle">learnings + external input</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
+    <title>cc-utils-plugin — Modular skills, rules, and workspace plugins</title>
+    <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="405" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-desc" x="550" y="420" text-anchor="middle">skills + rules + workspaces</text>
+  </a>
+
+  <!-- ===== Layer 6: Infrastructure (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="448" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="462">INFRASTRUCTURE</text>
+
+  <a xlink:href="https://github.com/qte77/dotfiles">
+    <title>dotfiles — Dev environment config for Codespaces and devcontainers</title>
+    <rect class="box" x="330" y="466" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="485" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="430" y="500" text-anchor="middle">dev environment config</text>
+  </a>
+
+  <!-- ===== Arrows: downward flow ===== -->
+  <line class="arrow" x1="430" y1="114" x2="430" y2="146"/>
+  <line class="arrow" x1="430" y1="194" x2="430" y2="226"/>
+  <line class="arrow" x1="430" y1="274" x2="430" y2="306"/>
+  <line class="arrow" x1="430" y1="354" x2="430" y2="386"/>
+  <line class="arrow" x1="430" y1="434" x2="430" y2="466"/>
+
+  <!-- Footer -->
+  <text class="note" x="840" y="538" text-anchor="end">goals flow down — insights flow back up</text>
+</svg>
