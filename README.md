@@ -3,9 +3,9 @@
 
 # qte77
 
-Autonomous agentic lifecycle management — from strategic goals to merged PRs and processed invoices, hands-off. Set a goal, RAPID writes the specs, Ralph codes and ships, Polyforge and Office-forge coordinate across repos and projects, issues sync, progress traces back to the goal.
+Goal-driven development with AI agents — from specs to merged PRs across dev and office repos. RAPID generates specs, Ralph implements via TDD, Polyforge and Office-forge orchestrate across repos, issues sync cross-repo, progress traces back to goals.
 
-> No existing system connects a committed goal artifact through automated spec generation, autonomous implementation across dev and office domains, cross-repo issue aggregation, and progress rollback — end to end.
+> This ecosystem connects a goal artifact through spec generation, autonomous implementation, cross-repo coordination, and traceability — end to end.
 
 ## Repository Landscape
 
@@ -18,11 +18,14 @@ Autonomous agentic lifecycle management — from strategic goals to merged PRs a
 ## Topics
 
 - Agentic Software Development, Autonomous Coding
+- Self-Evolving Agents, Compound Learning
 - Multi-Repo Orchestration, Cross-Repo Issue Sync
 - AI Agent Evaluation, MAS Benchmarking
 - Goal-Driven Lifecycle Management, OKR Traceability
-- GitHub Actions, CI/CD Automation
+- GitHub Actions, CI/CD Automation (REGISTRY → OBSERVE → TRANSFORM → ORCHESTRATE → DISTRIBUTE → IMPLEMENT)
 - Claude Code Plugins, MCP Integrations
+- Agent UI (AG-UI/A2UI), Voice (TTS/STT)
+- Robotics, Bio-Lab Automation
 - Inductive Priors, Automatic Differentiation
 - Data Centric vs Model Centric
 - QML, Barren Plateaus

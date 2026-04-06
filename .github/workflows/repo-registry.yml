@@ -1,0 +1,23 @@
+---
+name: Update Repo Registry
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly, Monday 6am UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  models: read
+
+jobs:
+  update-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: qte77/gha-repo-index@main
+        with:
+          OWNER: qte77
+          OUTPUT_DIR: registry
+          CREATE_PR: "true"
