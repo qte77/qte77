@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .layer-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      .arrow { stroke: #b0b8c1; stroke-width: 1.2; fill: none; marker-end: url(#ah-l); }
+      .arrow-feedback { stroke: #b0b8c1; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-l); }
+
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
+        .layer-label { fill: #8b949e; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        .arrow { stroke: #484f58; marker-end: url(#ah-d); }
+        .arrow-feedback { stroke: #484f58; marker-end: url(#ah-d); }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+    <marker id="ah-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b0b8c1" stroke-width="1"/>
+    </marker>
+    <marker id="ah-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="860" height="520" rx="8"/>
+
+  <text class="title" x="430" y="20" text-anchor="middle">GHA Automation Pipeline</text>
+  <text class="subtitle" x="430" y="36" text-anchor="middle">REGISTRY → OBSERVE → TRANSFORM → ORCHESTRATE → DISTRIBUTE → IMPLEMENT</text>
+
+  <!-- ===== Layer 0: REGISTRY (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="48" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="62">REGISTRY — what exists</text>
+
+  <a xlink:href="https://github.com/qte77/gha-repo-index">
+    <title>gha-repo-index — indexes all repos into registry/index.json (SOT)</title>
+    <rect class="box" x="310" y="68" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="84" text-anchor="middle">gha-repo-index</text>
+    <text class="repo-desc" x="430" y="98" text-anchor="middle">registry/index.json → SOT for all layers</text>
+  </a>
+
+  <!-- ===== Layer 1: OBSERVE (3 boxes) ===== -->
+  <rect class="layer-bg" x="10" y="120" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="134">OBSERVE — what happens</text>
+
+  <a xlink:href="https://github.com/qte77/gha-arbitrary-repo-timeline">
+    <title>gha-arbitrary-repo-timeline — issues, PRs, commits per repo over time</title>
+    <rect class="box" x="70" y="140" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="180" y="156" text-anchor="middle">repo-timeline</text>
+    <text class="repo-desc" x="180" y="170" text-anchor="middle">issues, PRs, commits over time</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
+    <title>gha-arxiv-stats-action — daily arXiv paper stats by category</title>
+    <rect class="box" x="320" y="140" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="156" text-anchor="middle">arxiv-stats</text>
+    <text class="repo-desc" x="430" y="170" text-anchor="middle">daily arXiv paper stats</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-biorxiv-stats-action">
+    <title>gha-biorxiv-stats-action — daily bioRxiv paper stats by category</title>
+    <rect class="box" x="570" y="140" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="680" y="156" text-anchor="middle">biorxiv-stats</text>
+    <text class="repo-desc" x="680" y="170" text-anchor="middle">daily bioRxiv paper stats</text>
+  </a>
+
+  <!-- ===== Layer 2: TRANSFORM (2 boxes) ===== -->
+  <rect class="layer-bg" x="10" y="192" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="206">TRANSFORM — summarize</text>
+
+  <a xlink:href="https://github.com/qte77/gha-ai-changelog">
+    <title>gha-ai-changelog — PR commits → AI-generated changelog entries</title>
+    <rect class="box" x="160" y="212" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="280" y="228" text-anchor="middle">ai-changelog</text>
+    <text class="repo-desc" x="280" y="242" text-anchor="middle">PR commits → AI changelog</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
+    <title>gha-dirtree-to-readme — directory tree → README structure snapshot</title>
+    <rect class="box" x="460" y="212" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="580" y="228" text-anchor="middle">dirtree-to-readme</text>
+    <text class="repo-desc" x="580" y="242" text-anchor="middle">file tree → README snapshot</text>
+  </a>
+
+  <!-- ===== Layer 3: ORCHESTRATE (1 box) ===== -->
+  <rect class="layer-bg" x="10" y="264" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="278">ORCHESTRATE — coordinate</text>
+
+  <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
+    <title>gha-cross-repo-issue-sync — bidirectional issue sync across repos</title>
+    <rect class="box" x="310" y="284" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="300" text-anchor="middle">cross-repo-issue-sync</text>
+    <text class="repo-desc" x="430" y="314" text-anchor="middle">bidirectional issue sync</text>
+  </a>
+
+  <!-- ===== Layer 4: DISTRIBUTE (2 boxes) ===== -->
+  <rect class="layer-bg" x="10" y="336" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="350">DISTRIBUTE — replicate</text>
+
+  <a xlink:href="https://github.com/qte77/gha-github-mirror-action">
+    <title>gha-github-mirror-action — mirror repos to GitLab/Codeberg</title>
+    <rect class="box" x="160" y="356" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="280" y="372" text-anchor="middle">github-mirror</text>
+    <text class="repo-desc" x="280" y="386" text-anchor="middle">repos → GitLab / Codeberg</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
+    <title>gha-contribution-ascii — write ASCII art onto contribution graph</title>
+    <rect class="box" x="460" y="356" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="580" y="372" text-anchor="middle">contribution-ascii</text>
+    <text class="repo-desc" x="580" y="386" text-anchor="middle">contribution graph art</text>
+  </a>
+
+  <!-- ===== Layer 5: IMPLEMENT (3 boxes) ===== -->
+  <rect class="layer-bg" x="10" y="408" width="840" height="66" rx="6"/>
+  <text class="layer-label" x="20" y="422">IMPLEMENT — act on it</text>
+
+  <a xlink:href="https://github.com/qte77/learnings-ralphy">
+    <title>learnings-ralphy — distills LEARNINGS patterns into TDD improvements (Thu)</title>
+    <rect class="box" x="50" y="428" width="230" height="38" rx="5"/>
+    <text class="repo-name" x="165" y="444" text-anchor="middle">learnings-ralphy</text>
+    <text class="repo-desc" x="165" y="458" text-anchor="middle">patterns → TDD improvements (Thu)</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/research-ralphy">
+    <title>research-ralphy — turns discoveries into TDD implementations (Wed)</title>
+    <rect class="box" x="315" y="428" width="230" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="444" text-anchor="middle">research-ralphy</text>
+    <text class="repo-desc" x="430" y="458" text-anchor="middle">discoveries → implementations (Wed)</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph self-improve — digests offspring learnings, improves loop engine (Fri)</title>
+    <rect class="box" x="580" y="428" width="230" height="38" rx="5"/>
+    <text class="repo-name" x="695" y="444" text-anchor="middle">ralph self-improve</text>
+    <text class="repo-desc" x="695" y="458" text-anchor="middle">loop engine evolution (Fri)</text>
+  </a>
+
+  <!-- ===== Downward arrows between layers ===== -->
+  <line class="arrow" x1="430" y1="106" x2="430" y2="140"/>
+  <line class="arrow" x1="430" y1="178" x2="430" y2="212"/>
+  <line class="arrow" x1="430" y1="250" x2="430" y2="284"/>
+  <line class="arrow" x1="430" y1="322" x2="430" y2="356"/>
+  <line class="arrow" x1="430" y1="394" x2="430" y2="428"/>
+
+  <!-- ===== Feedback arrow: IMPLEMENT → REGISTRY (right side, dashed) ===== -->
+  <path class="arrow-feedback" d="M 820,448 L 820,87 L 560,87"/>
+
+  <!-- ===== index.json label on first arrow ===== -->
+  <text class="note" x="445" y="127">index.json</text>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="502">9 GitHub Actions + 3 consumers</text>
+  <text class="note" x="840" y="502" text-anchor="end">feedback: learnings flow back to registry via compound writeback</text>
+</svg>

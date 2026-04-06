@@ -104,6 +104,15 @@ Task arrives
 | Plan approval | No | Yes — teammates plan, lead approves |
 | Best for | Automated batch implementation | Interactive multi-agent collaboration |
 
+## GHA Automation Pipeline
+
+<details>
+<summary>6-layer pipeline: REGISTRY → OBSERVE → TRANSFORM → ORCHESTRATE → DISTRIBUTE → IMPLEMENT</summary>
+
+<img src="../assets/images/pipeline-layers.svg" alt="GHA Automation Pipeline" width="100%" />
+
+</details>
+
 ## Inter-Project: Multi-Repo Contribution
 
 ### Fork Workflow
