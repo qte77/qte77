@@ -37,6 +37,7 @@ Orchestrator (polyforge)
 | ------ | --------- | --------------- |
 | Prompt templates | Orchestrator → agent | Cross-repo context (targets, issues, skills, priorities) |
 | Git state | Agent → orchestrator | Commits, branches, PRs (read via status scripts) |
+| contributions.json | Execution ↔ orchestrator | Cross-project task state, plan index (git-tracked) |
 | Compound learnings | Agent ↔ agent | Shared patterns via ai-agents-research/docs/learnings/ |
 | CC plans | Session → session | Decisions persist at ~/.claude/plans/, loaded on next session |
 | CC memory | Session → session | Per-project MEMORY.md, auto-loaded on conversation start |
@@ -45,7 +46,8 @@ Orchestrator (polyforge)
 
 - Prompt templates are the primary cross-repo context injection mechanism
 - Per-repo CLAUDE.md stays lean (repo-specific only, not orchestration-level)
-- Compound learnings hub (ai-agents-research) is the shared state store
+- Compound learnings hub (ai-agents-research) is the shared knowledge store
+- `contributions.json` is the shared task state store (cross-project, git-tracked)
 - `learnings_sync` bridges local CC session data to the git-committed hub
 - Results aggregate via git, not shared memory
 

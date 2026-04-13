@@ -1,36 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 628" width="860" height="628">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 860 788" width="860" height="788">
   <defs>
     <style>
       /* Light mode (default) */
       .page-bg { fill: #ffffff; }
       .layer-bg { fill: #f6f8fa; }
       .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .box-new { fill: #ffffff; stroke: #1f6feb; stroke-width: 1.5; }
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
       .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .layer-role { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; letter-spacing: 1px; }
       .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
       .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
       .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
       .arrow { stroke: #b0b8c1; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead-light); }
       .arrow-feedback { stroke: #b0b8c1; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; marker-end: url(#arrowhead-light); }
+      .arrow-state { stroke: #1f6feb; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead-blue-light); }
+      .arrow-state-back { stroke: #1f6feb; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; marker-end: url(#arrowhead-blue-light); }
 
       a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      a:hover .box-new { stroke: #1f6feb; stroke-width: 2; }
 
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         .page-bg { fill: #0d1117; }
         .layer-bg { fill: #161b22; }
         .box { fill: #0d1117; stroke: #30363d; }
+        .box-new { fill: #0d1117; stroke: #388bfd; stroke-width: 1.5; }
         .title { fill: #e6edf3; }
         .subtitle { fill: #8b949e; }
         .layer-label { fill: #8b949e; }
+        .layer-role { fill: #484f58; }
         .repo-name { fill: #e6edf3; }
         .repo-desc { fill: #8b949e; }
         .note { fill: #484f58; }
         .arrow { stroke: #484f58; marker-end: url(#arrowhead-dark); }
         .arrow-feedback { stroke: #484f58; marker-end: url(#arrowhead-dark); }
+        .arrow-state { stroke: #388bfd; marker-end: url(#arrowhead-blue-dark); }
+        .arrow-state-back { stroke: #388bfd; marker-end: url(#arrowhead-blue-dark); }
 
         a:hover .box { stroke: #e6edf3; }
+        a:hover .box-new { stroke: #388bfd; stroke-width: 2; }
       }
     </style>
     <marker id="arrowhead-light" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
@@ -39,37 +49,50 @@
     <marker id="arrowhead-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
     </marker>
+    <marker id="arrowhead-blue-light" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#1f6feb" stroke-width="1"/>
+    </marker>
+    <marker id="arrowhead-blue-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#388bfd" stroke-width="1"/>
+    </marker>
   </defs>
 
   <!-- Page background -->
-  <rect class="page-bg" width="860" height="628" rx="8"/>
+  <rect class="page-bg" width="860" height="788" rx="8"/>
 
   <!-- Title + subtitle -->
   <text class="title" x="430" y="20" text-anchor="middle">Goal-to-Delivery Toolchain</text>
-  <text class="subtitle" x="430" y="36" text-anchor="middle">From strategic intent to merged PRs and processed documents — traced end to end</text>
+  <text class="subtitle" x="430" y="36" text-anchor="middle">From strategic intent to merged PRs — traced end to end, state persisted across sessions</text>
 
-  <!-- ===== Layer 1: Goals & Northstar ===== -->
+  <!-- ===== Layer 1: WHY — Goals & Northstar ===== -->
   <rect class="layer-bg" x="10" y="48" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="62">GOALS &amp; NORTHSTAR</text>
+  <text class="layer-role" x="840" y="62" text-anchor="end">WHY</text>
 
   <rect class="box" x="330" y="66" width="200" height="48" rx="5"/>
   <text class="repo-name" x="430" y="85" text-anchor="middle">goals.json</text>
   <text class="repo-desc" x="430" y="100" text-anchor="middle">SOT for strategic intent</text>
 
-  <!-- ===== Layer 2: Spec Generation ===== -->
+  <!-- ===== Layer 2: WHAT — Spec Generation ===== -->
   <rect class="layer-bg" x="10" y="128" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="142">SPEC GENERATION</text>
+  <text class="layer-role" x="840" y="142" text-anchor="end">WHAT</text>
 
   <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
     <title>RAPID-spec-forge — BRD → PRD → FRD spec generation referencing goal IDs</title>
-    <rect class="box" x="330" y="146" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="165" text-anchor="middle">RAPID-spec-forge</text>
-    <text class="repo-desc" x="430" y="180" text-anchor="middle">BRD → PRD → FRD</text>
+    <rect class="box" x="230" y="146" width="180" height="48" rx="5"/>
+    <text class="repo-name" x="320" y="165" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="repo-desc" x="320" y="180" text-anchor="middle">BRD → PRD → FRD</text>
   </a>
 
-  <!-- ===== Layer 3: Orchestration & Tracking (3 boxes) ===== -->
+  <rect class="box" x="450" y="146" width="180" height="48" rx="5"/>
+  <text class="repo-name" x="540" y="165" text-anchor="middle">prd.json</text>
+  <text class="repo-desc" x="540" y="180" text-anchor="middle">per-repo task decomposition</text>
+
+  <!-- ===== Layer 3: HOW — Orchestration ===== -->
   <rect class="layer-bg" x="10" y="208" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="222">ORCHESTRATION &amp; TRACKING</text>
+  <text class="layer-label" x="20" y="222">ORCHESTRATION</text>
+  <text class="layer-role" x="840" y="222" text-anchor="end">HOW</text>
 
   <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
     <title>polyforge-orchestrator — Parallel AI agent sessions across dev repos</title>
@@ -92,9 +115,10 @@
     <text class="repo-desc" x="650" y="260" text-anchor="middle">issue tracking + GHA sync</text>
   </a>
 
-  <!-- ===== Layer 4: Autonomous Execution ===== -->
+  <!-- ===== Layer 4: EXECUTE — Autonomous Execution ===== -->
   <rect class="layer-bg" x="10" y="288" width="840" height="74" rx="6"/>
   <text class="layer-label" x="20" y="302">AUTONOMOUS EXECUTION</text>
+  <text class="layer-role" x="840" y="302" text-anchor="end">EXECUTE</text>
 
   <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
     <title>ralph-loop template — goal → story → code → test → PR, hands-off</title>
@@ -103,65 +127,117 @@
     <text class="repo-desc" x="430" y="340" text-anchor="middle">goal → story → code → PR</text>
   </a>
 
-  <!-- ===== Layer 5: Self-Evolving Agents (NEW — 2 boxes) ===== -->
+  <!-- ===== Layer 5: STATE — Persistence & Tracking (NEW) ===== -->
   <rect class="layer-bg" x="10" y="368" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="382">SELF-EVOLVING AGENTS</text>
+  <text class="layer-label" x="20" y="382">PERSISTENCE &amp; TRACKING</text>
+  <text class="layer-role" x="840" y="382" text-anchor="end">STATE</text>
+
+  <rect class="box-new" x="70" y="386" width="170" height="48" rx="5"/>
+  <text class="repo-name" x="155" y="405" text-anchor="middle">contributions.json</text>
+  <text class="repo-desc" x="155" y="420" text-anchor="middle">cross-project task state</text>
+
+  <rect class="box-new" x="260" y="386" width="170" height="48" rx="5"/>
+  <text class="repo-name" x="345" y="405" text-anchor="middle">ontology.json</text>
+  <text class="repo-desc" x="345" y="420" text-anchor="middle">entity graph + storage map</text>
+
+  <rect class="box" x="450" y="386" width="170" height="48" rx="5"/>
+  <text class="repo-name" x="535" y="405" text-anchor="middle">GitHub Issues</text>
+  <text class="repo-desc" x="535" y="420" text-anchor="middle">canonical task SOT</text>
+
+  <rect class="box" x="640" y="386" width="170" height="48" rx="5"/>
+  <text class="repo-name" x="725" y="405" text-anchor="middle">plans/</text>
+  <text class="repo-desc" x="725" y="420" text-anchor="middle">session decisions (ephemeral)</text>
+
+  <!-- ===== Layer 6: EVOLVE — Self-Evolving Agents ===== -->
+  <rect class="layer-bg" x="10" y="448" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="462">SELF-EVOLVING AGENTS</text>
+  <text class="layer-role" x="840" y="462" text-anchor="end">EVOLVE</text>
 
   <a xlink:href="https://github.com/qte77/learnings-ralphy">
     <title>learnings-ralphy — Self-evolving ralph offspring distilling operational patterns</title>
-    <rect class="box" x="210" y="386" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="405" text-anchor="middle">learnings-ralphy</text>
-    <text class="repo-desc" x="310" y="420" text-anchor="middle">patterns → improvements</text>
+    <rect class="box" x="210" y="466" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="310" y="485" text-anchor="middle">learnings-ralphy</text>
+    <text class="repo-desc" x="310" y="500" text-anchor="middle">patterns → improvements</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/research-ralphy">
     <title>research-ralphy — Self-evolving ralph offspring implementing research discoveries</title>
-    <rect class="box" x="450" y="386" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="405" text-anchor="middle">research-ralphy</text>
-    <text class="repo-desc" x="550" y="420" text-anchor="middle">discoveries → implementations</text>
+    <rect class="box" x="450" y="466" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="550" y="485" text-anchor="middle">research-ralphy</text>
+    <text class="repo-desc" x="550" y="500" text-anchor="middle">discoveries → implementations</text>
   </a>
 
-  <!-- ===== Layer 6: Insight Capture (2 boxes) ===== -->
-  <rect class="layer-bg" x="10" y="448" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="462">INSIGHT CAPTURE</text>
+  <!-- ===== Layer 7: LEARN — Insight Capture ===== -->
+  <rect class="layer-bg" x="10" y="528" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="542">INSIGHT CAPTURE</text>
+  <text class="layer-role" x="840" y="542" text-anchor="end">LEARN</text>
 
   <a xlink:href="https://github.com/qte77/ai-agents-research">
     <title>ai-agents-research — Learnings, external input, field research</title>
-    <rect class="box" x="210" y="466" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="310" y="485" text-anchor="middle">ai-agents-research</text>
-    <text class="repo-desc" x="310" y="500" text-anchor="middle">learnings + external input</text>
+    <rect class="box" x="110" y="546" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="210" y="565" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="210" y="580" text-anchor="middle">learnings hub (CRLA)</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-plugins">
     <title>cc-plugins — Modular skills, rules, and workspace plugins</title>
-    <rect class="box" x="450" y="466" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="485" text-anchor="middle">cc-plugins</text>
-    <text class="repo-desc" x="550" y="500" text-anchor="middle">skills + rules + workspaces</text>
+    <rect class="box" x="330" y="546" width="200" height="48" rx="5"/>
+    <text class="repo-name" x="430" y="565" text-anchor="middle">cc-plugins</text>
+    <text class="repo-desc" x="430" y="580" text-anchor="middle">skills + rules + workspaces</text>
   </a>
 
-  <!-- ===== Layer 7: Infrastructure ===== -->
-  <rect class="layer-bg" x="10" y="528" width="840" height="74" rx="6"/>
-  <text class="layer-label" x="20" y="542">INFRASTRUCTURE</text>
+  <rect class="box" x="550" y="546" width="200" height="48" rx="5"/>
+  <text class="repo-name" x="650" y="565" text-anchor="middle">AGENT_LEARNINGS.md</text>
+  <text class="repo-desc" x="650" y="580" text-anchor="middle">per-repo compound learning</text>
+
+  <!-- ===== Layer 8: INFRA — Infrastructure ===== -->
+  <rect class="layer-bg" x="10" y="608" width="840" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="622">INFRASTRUCTURE</text>
+  <text class="layer-role" x="840" y="622" text-anchor="end">INFRA</text>
 
   <a xlink:href="https://github.com/qte77/dotfiles">
     <title>dotfiles — Dev environment config for Codespaces and devcontainers</title>
-    <rect class="box" x="330" y="546" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="430" y="565" text-anchor="middle">dotfiles</text>
-    <text class="repo-desc" x="430" y="580" text-anchor="middle">dev environment config</text>
+    <rect class="box" x="230" y="626" width="180" height="48" rx="5"/>
+    <text class="repo-name" x="320" y="645" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="320" y="660" text-anchor="middle">dev environment config</text>
   </a>
 
-  <!-- ===== Arrows: downward flow ===== -->
+  <rect class="box" x="450" y="626" width="180" height="48" rx="5"/>
+  <text class="repo-name" x="540" y="645" text-anchor="middle">repos.conf</text>
+  <text class="repo-desc" x="540" y="660" text-anchor="middle">repo registry SOT</text>
+
+  <!-- ===== Arrows: downward flow (goals → delivery) ===== -->
   <line class="arrow" x1="430" y1="114" x2="430" y2="146"/>
   <line class="arrow" x1="430" y1="194" x2="430" y2="226"/>
   <line class="arrow" x1="430" y1="274" x2="430" y2="306"/>
   <line class="arrow" x1="430" y1="354" x2="430" y2="386"/>
   <line class="arrow" x1="430" y1="434" x2="430" y2="466"/>
   <line class="arrow" x1="430" y1="514" x2="430" y2="546"/>
+  <line class="arrow" x1="430" y1="594" x2="430" y2="626"/>
+
+  <!-- State write-back arrows (blue, left side) -->
+  <path class="arrow-state-back" d="M 50,340 L 50,400 L 70,400"/>
+  <path class="arrow-state-back" d="M 50,260 L 50,400"/>
 
   <!-- Feedback arrow: insights flow back up (dashed, right side) -->
-  <path class="arrow-feedback" d="M 770,490 L 770,90 L 540,90"/>
+  <path class="arrow-feedback" d="M 800,570 L 800,90 L 540,90"/>
+
+  <!-- Learnings sync arrow (dashed, right side) -->
+  <path class="arrow-feedback" d="M 790,420 L 790,550 L 760,550"/>
 
   <!-- Footer -->
-  <text class="note" x="20" y="618" >goals flow down — insights flow back up</text>
-  <text class="note" x="840" y="618" text-anchor="end">feedback loop: learnings compound into next cycle</text>
+  <text class="note" x="20" y="700">goals flow down — insights flow back up</text>
+  <text class="note" x="840" y="700" text-anchor="end">feedback loop: learnings compound into next cycle</text>
+  <text class="note" x="20" y="716">blue borders = new artifacts — contributions.json + ontology.json</text>
+  <text class="note" x="840" y="716" text-anchor="end">blue arrows = state write-back from execution → persistence</text>
+
+  <!-- Legend -->
+  <rect class="layer-bg" x="10" y="728" width="840" height="50" rx="6"/>
+  <text class="layer-label" x="20" y="748">PERSISTENCE</text>
+  <rect class="box" x="120" y="738" width="12" height="12" rx="2"/>
+  <text class="note" x="138" y="749">git-tracked (survives rebuild)</text>
+  <rect class="box-new" x="310" y="738" width="12" height="12" rx="2"/>
+  <text class="note" x="328" y="749">new artifact (git-tracked)</text>
+  <rect x="500" y="738" width="12" height="12" rx="2" fill="none" stroke="#b0b8c1" stroke-dasharray="3 2"/>
+  <text class="note" x="518" y="749">ephemeral (dies with container)</text>
 </svg>
