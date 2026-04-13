@@ -132,10 +132,10 @@
     <text class="repo-desc" x="310" y="500" text-anchor="middle">learnings + external input</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/claude-code-utils-plugin">
-    <title>cc-utils-plugin — Modular skills, rules, and workspace plugins</title>
+  <a xlink:href="https://github.com/qte77/claude-code-plugins">
+    <title>cc-plugins — Modular skills, rules, and workspace plugins</title>
     <rect class="box" x="450" y="466" width="200" height="48" rx="5"/>
-    <text class="repo-name" x="550" y="485" text-anchor="middle">cc-utils-plugin</text>
+    <text class="repo-name" x="550" y="485" text-anchor="middle">cc-plugins</text>
     <text class="repo-desc" x="550" y="500" text-anchor="middle">skills + rules + workspaces</text>
   </a>
 
