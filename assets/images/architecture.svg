@@ -69,8 +69,8 @@
     <text class="repo-desc" x="90" y="170" text-anchor="middle">multi-repo orchestration</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/office-forge">
-    <title>office-forge — Parallel AI agent sessions across office projects</title>
+  <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
+    <title>office-forge-orchestrator — Parallel AI agent sessions across office projects</title>
     <rect class="box" x="169" y="136" width="130" height="48" rx="5"/>
     <text class="repo-name" x="234" y="155" text-anchor="middle">office-forge</text>
     <text class="repo-desc" x="234" y="170" text-anchor="middle">office orchestration</text>
