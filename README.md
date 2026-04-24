@@ -22,13 +22,13 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 - Multi-Repo Orchestration, Cross-Repo Issue Sync
 - AI Agent Evaluation, MAS Benchmarking
 - Goal-Driven Lifecycle Management, OKR Traceability
-- GitHub Actions, CI/CD Automation
 - Claude Code Plugins, MCP Integrations
 - Agent UI (AG-UI/A2UI), Voice (TTS/STT)
 - Robotics, Bio-Lab Automation
 
 ### Interests
 
+- GitHub Actions, CI/CD Automation
 - Inductive Priors, Automatic Differentiation
 - Data Centric vs Model Centric
 - QML, Barren Plateaus
