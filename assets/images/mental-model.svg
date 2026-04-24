@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 620" width="900" height="620">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .band-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .box-star { fill: #ffffff; stroke: #1f6feb; stroke-width: 1.5; stroke-dasharray: 4 3; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
+      .band-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #1f2328; }
+      .box-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      .arrow { stroke: #b0b8c1; stroke-width: 1.4; fill: none; marker-end: url(#ah-l); }
+      .arrow-feedback { stroke: #1f6feb; stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; marker-end: url(#ah-blue-l); }
+
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+      a:hover .box-star { stroke: #1f6feb; stroke-width: 2; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .band-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .box-star { fill: #0d1117; stroke: #388bfd; stroke-dasharray: 4 3; }
+        .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
+        .band-label { fill: #8b949e; }
+        .box-title { fill: #e6edf3; }
+        .box-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        .arrow { stroke: #484f58; marker-end: url(#ah-d); }
+        .arrow-feedback { stroke: #388bfd; marker-end: url(#ah-blue-d); }
+        a:hover .box { stroke: #e6edf3; }
+        a:hover .box-star { stroke: #388bfd; }
+      }
+    </style>
+    <marker id="ah-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b0b8c1" stroke-width="1"/>
+    </marker>
+    <marker id="ah-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
+    </marker>
+    <marker id="ah-blue-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#1f6feb" stroke-width="1"/>
+    </marker>
+    <marker id="ah-blue-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#388bfd" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="900" height="620" rx="8"/>
+
+  <!-- Title + subtitle -->
+  <text class="title" x="450" y="22" text-anchor="middle">qte77 — Mental Model</text>
+  <text class="subtitle" x="450" y="38" text-anchor="middle">Goals flow down  ·  learnings flow back  ·  support layer underneath</text>
+
+  <!-- ===== NORTH STAR (top, dashed) ===== -->
+  <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
+    <title>liminal-flux — self-evolving agent-operated GitHub account (directional goal)</title>
+    <rect class="box-star" x="340" y="54" width="220" height="38" rx="5"/>
+    <text class="box-title" x="450" y="70" text-anchor="middle">NORTH STAR</text>
+    <text class="box-desc" x="450" y="84" text-anchor="middle">liminal-flux  ·  agent-operated account</text>
+  </a>
+
+  <!-- ===== SPECS ===== -->
+  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
+    <title>RAPID-spec-forge — BRD → PRD → FRD spec generation</title>
+    <rect class="box" x="340" y="118" width="220" height="40" rx="5"/>
+    <text class="box-title" x="450" y="135" text-anchor="middle">SPECS</text>
+    <text class="box-desc" x="450" y="149" text-anchor="middle">RAPID-spec-forge  ·  BRD → PRD → FRD</text>
+  </a>
+
+  <!-- Arrow: NORTH STAR → SPECS -->
+  <line class="arrow" x1="450" y1="92" x2="450" y2="118"/>
+
+  <!-- ===== ORCHESTRATE (DEV | OFFICE) ===== -->
+  <rect class="band-bg" x="10" y="180" width="880" height="78" rx="6"/>
+  <text class="band-label" x="20" y="195">ORCHESTRATE</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>DEV orchestration: polyforge + ralph-loop + 2 ralphy offspring + ai-agents-research</title>
+    <rect class="box" x="60" y="202" width="360" height="48" rx="5"/>
+    <text class="box-title" x="240" y="221" text-anchor="middle">DEV  ·  polyforge</text>
+    <text class="box-desc" x="240" y="236" text-anchor="middle">+ ralph-loop  ·  2 ralphy offspring  ·  ai-agents-research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
+    <title>OFFICE orchestration: office-forge-orchestrator + doc-pipeline-engine</title>
+    <rect class="box" x="480" y="202" width="360" height="48" rx="5"/>
+    <text class="box-title" x="660" y="221" text-anchor="middle">OFFICE  ·  office-forge</text>
+    <text class="box-desc" x="660" y="236" text-anchor="middle">+ doc-pipeline-engine</text>
+  </a>
+
+  <!-- Arrow: SPECS → ORCHESTRATE (splits into DEV + OFFICE) -->
+  <line class="arrow" x1="450" y1="158" x2="450" y2="175"/>
+  <path class="arrow" d="M 450,175 L 240,175 L 240,202"/>
+  <path class="arrow" d="M 450,175 L 660,175 L 660,202"/>
+
+  <!-- ===== IMPLEMENT & EVOLVE ===== -->
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>Implement and evolve: ralph-loop + ralphy offspring weekly cycle</title>
+    <rect class="box" x="290" y="278" width="320" height="44" rx="5"/>
+    <text class="box-title" x="450" y="296" text-anchor="middle">IMPLEMENT &amp; EVOLVE</text>
+    <text class="box-desc" x="450" y="311" text-anchor="middle">weekly cycle: Mon → Wed → Thu → Fri → Sat</text>
+  </a>
+
+  <!-- Arrows: DEV/OFFICE → IMPLEMENT -->
+  <path class="arrow" d="M 240,250 L 240,275 L 370,275 L 370,278"/>
+  <path class="arrow" d="M 660,250 L 660,275 L 530,275 L 530,278"/>
+
+  <!-- ===== EVALUATE | PAPER RESEARCH ===== -->
+  <rect class="band-bg" x="10" y="344" width="880" height="78" rx="6"/>
+  <text class="band-label" x="20" y="359">MEASURE</text>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Evaluation: Agents-eval flagship + 4 siblings + 1 external</title>
+    <rect class="box" x="60" y="366" width="360" height="48" rx="5"/>
+    <text class="box-title" x="240" y="385" text-anchor="middle">EVALUATE  ·  Agents-eval</text>
+    <text class="box-desc" x="240" y="400" text-anchor="middle">+ 4 siblings  ·  1 external (pat-tax)</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/paperverse">
+    <title>Paper research: paperverse + arxiv/biorxiv helper GHAs</title>
+    <rect class="box" x="480" y="366" width="360" height="48" rx="5"/>
+    <text class="box-title" x="660" y="385" text-anchor="middle">PAPER  ·  paperverse</text>
+    <text class="box-desc" x="660" y="400" text-anchor="middle">+ arxiv-stats  ·  biorxiv-stats (helpers)</text>
+  </a>
+
+  <!-- Arrow: IMPLEMENT → MEASURE band -->
+  <line class="arrow" x1="450" y1="322" x2="450" y2="344"/>
+
+  <!-- ===== SUPPORT: AUTOMATE | INFRASTRUCTURE | INTERFACES ===== -->
+  <rect class="band-bg" x="10" y="446" width="880" height="78" rx="6"/>
+  <text class="band-label" x="20" y="461">SUPPORT</text>
+
+  <a xlink:href="https://github.com/qte77/qte77/blob/main/assets/images/pipeline-layers.svg">
+    <title>11 GitHub Actions forming the 6-layer pipeline — see pipeline-layers.svg</title>
+    <rect class="box" x="30" y="468" width="260" height="48" rx="5"/>
+    <text class="box-title" x="160" y="487" text-anchor="middle">AUTOMATE  ·  13 GHAs</text>
+    <text class="box-desc" x="160" y="502" text-anchor="middle">6-layer pipeline → pipeline-layers.svg</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-plugins">
+    <title>Infrastructure: dotfiles, cc-plugins, cc-recursive-team, eyerest-theme, diagramforge, polyfetch-scrape</title>
+    <rect class="box" x="315" y="468" width="260" height="48" rx="5"/>
+    <text class="box-title" x="445" y="487" text-anchor="middle">INFRASTRUCTURE  ·  6 repos</text>
+    <text class="box-desc" x="445" y="502" text-anchor="middle">dotfiles  ·  cc-plugins  ·  diagramforge  ·  …</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agenthud-agui-a2ui">
+    <title>Interfaces: agenthud-agui-a2ui, cc-voice-plugin, so101-biolab</title>
+    <rect class="box" x="600" y="468" width="260" height="48" rx="5"/>
+    <text class="box-title" x="730" y="487" text-anchor="middle">INTERFACES  ·  UI · Voice · Robot</text>
+    <text class="box-desc" x="730" y="502" text-anchor="middle">agenthud  ·  cc-voice  ·  so101-biolab</text>
+  </a>
+
+  <!-- Support layer sits under everything — visualize with short stubs down from ORCHESTRATE + MEASURE -->
+  <line class="arrow" x1="450" y1="422" x2="450" y2="446"/>
+
+  <!-- ===== Feedback: learnings flow back from MEASURE to SPECS (blue dashed, right) ===== -->
+  <path class="arrow-feedback" d="M 870,390 L 870,138 L 560,138"/>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="555">— gray arrows: goals flow down (north star → specs → orchestrate → implement → measure)</text>
+  <text class="note" x="20" y="570">— blue dashed: feedback loop — learnings flow back to specs for next cycle</text>
+  <text class="note" x="20" y="585">— SUPPORT band underneath everything (shared substrate for all flows above)</text>
+  <text class="note" x="880" y="605" text-anchor="end">drill down via pipeline-layers.svg or individual repos</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 420" width="900" height="420">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .band-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
+      .tier-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #1f2328; }
+      .box-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; fill: #656d76; }
+      .box-note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      .arrow { stroke: #b0b8c1; stroke-width: 1.4; fill: none; marker-end: url(#ah-l); }
+
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .band-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
+        .tier-label { fill: #8b949e; }
+        .box-title { fill: #e6edf3; }
+        .box-desc { fill: #8b949e; }
+        .box-note { fill: #484f58; }
+        .note { fill: #484f58; }
+        .arrow { stroke: #484f58; marker-end: url(#ah-d); }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+    <marker id="ah-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b0b8c1" stroke-width="1"/>
+    </marker>
+    <marker id="ah-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="900" height="420" rx="8"/>
+
+  <!-- Title + subtitle -->
+  <text class="title" x="450" y="22" text-anchor="middle">qte77 — Authority Chain</text>
+  <text class="subtitle" x="450" y="38" text-anchor="middle">Where each decision lives  ·  one source of truth per tier  ·  DRY across the workspace</text>
+
+  <!-- ===== Tier 1: META / POLICY (qte77) ===== -->
+  <rect class="band-bg" x="10" y="54" width="880" height="92" rx="6"/>
+  <text class="tier-label" x="20" y="69">TIER 1  ·  META / POLICY</text>
+
+  <a xlink:href="https://github.com/qte77/qte77">
+    <title>qte77/qte77 — workspace meta: AGENTS.md, project-workflows.md, cross-repo hygiene policy</title>
+    <rect class="box" x="260" y="78" width="380" height="58" rx="5"/>
+    <text class="box-title" x="450" y="97" text-anchor="middle">qte77/qte77</text>
+    <text class="box-desc" x="450" y="113" text-anchor="middle">workspace meta  ·  AGENTS.md  ·  project-workflows.md</text>
+    <text class="box-note" x="450" y="127" text-anchor="middle">policy: "what to do and why" — no mechanism</text>
+  </a>
+
+  <!-- Arrow from Tier 1 to Tier 2 -->
+  <line class="arrow" x1="450" y1="146" x2="450" y2="170"/>
+
+  <!-- ===== Tier 2: TOOL / MECHANISM (polyforge) ===== -->
+  <rect class="band-bg" x="10" y="172" width="880" height="92" rx="6"/>
+  <text class="tier-label" x="20" y="187">TIER 2  ·  TOOL / MECHANISM</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>polyforge-orchestrator — the tool: flags, cc-parallel.sh, context-hygiene.md, recipes</title>
+    <rect class="box" x="260" y="196" width="380" height="58" rx="5"/>
+    <text class="box-title" x="450" y="215" text-anchor="middle">polyforge-orchestrator</text>
+    <text class="box-desc" x="450" y="231" text-anchor="middle">the tool  ·  cc-parallel.sh  ·  docs/context-hygiene.md</text>
+    <text class="box-note" x="450" y="245" text-anchor="middle">mechanism: flags, recipes, scripts — how to do it</text>
+  </a>
+
+  <!-- Arrow from Tier 2 to Tier 3 -->
+  <line class="arrow" x1="450" y1="264" x2="450" y2="288"/>
+
+  <!-- ===== Tier 3: CONSUMERS (siblings) ===== -->
+  <rect class="band-bg" x="10" y="290" width="880" height="92" rx="6"/>
+  <text class="tier-label" x="20" y="305">TIER 3  ·  CONSUMERS</text>
+
+  <a xlink:href="https://github.com/qte77">
+    <title>30+ sibling repos — consume polyforge; inherit workspace policy; stay rules-light</title>
+    <rect class="box" x="160" y="314" width="580" height="58" rx="5"/>
+    <text class="box-title" x="450" y="333" text-anchor="middle">30+ sibling repos</text>
+    <text class="box-desc" x="450" y="349" text-anchor="middle">Agents-eval  ·  ralph-loop  ·  ai-agents-research  ·  paperverse  ·  …</text>
+    <text class="box-note" x="450" y="363" text-anchor="middle">operands: no new hygiene docs  ·  stay rules-light  ·  run under polyforge</text>
+  </a>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="402">policy ≠ mechanism ≠ operand  ·  each concern lives in exactly one tier</text>
+  <text class="note" x="880" y="402" text-anchor="end">DRY across 30+ repos: one AGENTS.md rule  ·  one tool doc  ·  no sibling duplication</text>
+</svg>
