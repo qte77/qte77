@@ -45,6 +45,7 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 ## Tools
 
 <div style="align: left;">
+  <img src="https://cdn.simpleicons.org/claude/D97757" title="Claude" alt="Claude" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/pytorch/pytorch-original.svg" title="Pytorch" alt="Pytorch" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/jupyter/jupyter-original.svg" title="Jupyter" alt="Jupyter" width="40" height="40"/>&nbsp;
