@@ -7,9 +7,9 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 
 > This ecosystem connects a goal artifact through spec generation, autonomous implementation, cross-repo coordination, and traceability — end to end.
 
-## Universe
+## Mental Model
 
-<img src="assets/images/universe.svg" alt="qte77 Universe — big picture" width="100%" />
+<img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
 ### GHA Pipeline
 
