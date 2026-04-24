@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 580" width="900" height="580">
+  <defs>
+    <style>
+      /* Light mode (default) */
+      .page-bg { fill: #ffffff; }
+      .layer-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .repo-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #1f2328; }
+      .repo-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .layer-label { fill: #8b949e; }
+        .repo-name { fill: #e6edf3; }
+        .repo-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+  </defs>
+
+  <!-- Page background -->
+  <rect class="page-bg" width="900" height="580" rx="8"/>
+
+  <!-- Title -->
+  <text class="title" x="450" y="24" text-anchor="middle">qte77 — Project Ecosystem</text>
+
+  <!-- ===== Layer 1: Product & Business Steering (3 boxes, w=220, gap=30, start=90) ===== -->
+  <rect class="layer-bg" x="10" y="38" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="52">PRODUCT &amp; BUSINESS STEERING</text>
+
+  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
+    <title>RAPID-spec-forge — BRD → PRD → FRP spec generation for AI agent workflows</title>
+    <rect class="box" x="90" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="200" y="75" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="repo-desc" x="200" y="90" text-anchor="middle">BRD → PRD → FRP specs</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agentic-market-research-to-gtm">
+    <title>agentic-market-research-to-gtm — Automated market research and GTM pipeline</title>
+    <rect class="box" x="340" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="75" text-anchor="middle">market-research-to-gtm</text>
+    <text class="repo-desc" x="450" y="90" text-anchor="middle">AI market research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agentic-codebase-to-scientific-report">
+    <title>agentic-codebase-to-scientific-report — Automated scientific report generation from codebases</title>
+    <rect class="box" x="590" y="56" width="220" height="48" rx="5"/>
+    <text class="repo-name" x="700" y="75" text-anchor="middle">codebase-to-report</text>
+    <text class="repo-desc" x="700" y="90" text-anchor="middle">scientific report gen</text>
+  </a>
+
+  <!-- ===== Layer 2: Agentic Development Engine (6 boxes, w=130, gap=14, start=25) ===== -->
+  <rect class="layer-bg" x="10" y="118" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="132">AGENTIC DEVELOPMENT ENGINE</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>polyforge-orchestrator — Multi-repo dev forge for parallel AI agent workflows</title>
+    <rect class="box" x="25" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="90" y="155" text-anchor="middle">polyforge</text>
+    <text class="repo-desc" x="90" y="170" text-anchor="middle">multi-repo orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
+    <title>office-forge-orchestrator — Parallel AI agent sessions across office projects</title>
+    <rect class="box" x="169" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="234" y="155" text-anchor="middle">office-forge</text>
+    <text class="repo-desc" x="234" y="170" text-anchor="middle">office orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
+    <title>ralph-loop template — Autonomous development loop with TDD and kanban</title>
+    <rect class="box" x="313" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="378" y="155" text-anchor="middle">ralph-loop</text>
+    <text class="repo-desc" x="378" y="170" text-anchor="middle">autonomous dev loop</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/ai-agents-research">
+    <title>ai-agents-research — Field research and feature analysis for AI coding agents</title>
+    <rect class="box" x="457" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="522" y="155" text-anchor="middle">ai-agents-research</text>
+    <text class="repo-desc" x="522" y="170" text-anchor="middle">AI agent field research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/learnings-ralphy">
+    <title>learnings-ralphy — Self-evolving ralph offspring distilling operational patterns</title>
+    <rect class="box" x="601" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="666" y="155" text-anchor="middle">learnings-ralphy</text>
+    <text class="repo-desc" x="666" y="170" text-anchor="middle">self-evolving patterns</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/research-ralphy">
+    <title>research-ralphy — Self-evolving ralph offspring implementing research discoveries</title>
+    <rect class="box" x="745" y="136" width="130" height="48" rx="5"/>
+    <text class="repo-name" x="810" y="155" text-anchor="middle">research-ralphy</text>
+    <text class="repo-desc" x="810" y="170" text-anchor="middle">self-evolving research</text>
+  </a>
+
+  <!-- ===== Layer 3: AI Agent Evaluation (6 boxes, w=134, gap=12, start=18) ===== -->
+  <rect class="layer-bg" x="10" y="198" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="212">AI AGENT EVALUATION</text>
+
+  <a xlink:href="https://github.com/qte77/coding-agent-eval">
+    <title>coding-agent-eval — Hands-off coding agent comparison harness</title>
+    <rect class="box" x="18" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="85" y="235" text-anchor="middle">coding-agent-eval</text>
+    <text class="repo-desc" x="85" y="250" text-anchor="middle">CC evaluation harness</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/multi-tasking-quality-benchmark">
+    <title>multi-tasking-quality-benchmark — WakaTime activity vs code quality correlation</title>
+    <rect class="box" x="164" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="231" y="235" text-anchor="middle">multi-tasking-quality</text>
+    <text class="repo-desc" x="231" y="250" text-anchor="middle">WakaTime correlation</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-MAS-GraphJudge">
+    <title>MAS-GraphJudge — Graph-based agent collaboration benchmarking</title>
+    <rect class="box" x="310" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="377" y="235" text-anchor="middle">MAS-GraphJudge</text>
+    <text class="repo-desc" x="377" y="250" text-anchor="middle">graph benchmarking</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/RDI-AgentBeats-TestBehaveAlign">
+    <title>TestBehaveAlign — Test quality evaluation for coding agents</title>
+    <rect class="box" x="456" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="523" y="235" text-anchor="middle">TestBehaveAlign</text>
+    <text class="repo-desc" x="523" y="250" text-anchor="middle">TDD/BDD test quality</text>
+  </a>
+
+  <a xlink:href="https://github.com/pat-tax/RDI-AgentBeats-TheBulletproofProtocol">
+    <title>TheBulletproofProtocol — Adversarial agent system for R&amp;D tax credit audit (pat-tax org)</title>
+    <rect class="box" x="602" y="216" width="134" height="48" rx="5" stroke-dasharray="4 2"/>
+    <text class="repo-name" x="669" y="235" text-anchor="middle">BulletproofProtocol*</text>
+    <text class="repo-desc" x="669" y="250" text-anchor="middle">adversarial R&amp;D audit</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Agents-eval — Flagship MAS evaluation framework with 3-tier scoring</title>
+    <rect class="box" x="748" y="216" width="134" height="48" rx="5"/>
+    <text class="repo-name" x="815" y="235" text-anchor="middle">Agents-eval</text>
+    <text class="repo-desc" x="815" y="250" text-anchor="middle">3-tier MAS evaluation</text>
+  </a>
+
+  <!-- ===== Layer 4: GitHub Actions (7 boxes, w=112, gap=10, start=28) ===== -->
+  <rect class="layer-bg" x="10" y="278" width="880" height="74" rx="6"/>
+  <text class="layer-label" x="20" y="292">GITHUB ACTIONS</text>
+
+  <a xlink:href="https://github.com/qte77/gha-repo-index">
+    <title>gha-repo-index — Registry SOT: indexes all repos into registry/index.json</title>
+    <rect class="box" x="28" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="84" y="315" text-anchor="middle">repo-index</text>
+    <text class="repo-desc" x="84" y="330" text-anchor="middle">registry SOT</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-ai-changelog">
+    <title>gha-ai-changelog — AI-powered changelog generation from PRs</title>
+    <rect class="box" x="150" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="206" y="315" text-anchor="middle">ai-changelog</text>
+    <text class="repo-desc" x="206" y="330" text-anchor="middle">AI changelogs</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-contribution-ascii">
+    <title>gha-contribution-ascii — Write ASCII art onto GitHub contribution graph</title>
+    <rect class="box" x="272" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="328" y="315" text-anchor="middle">contrib-ascii</text>
+    <text class="repo-desc" x="328" y="330" text-anchor="middle">graph art</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-dirtree-to-readme">
+    <title>gha-dirtree-to-readme — Auto-insert directory tree into README</title>
+    <rect class="box" x="394" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="450" y="315" text-anchor="middle">dirtree-readme</text>
+    <text class="repo-desc" x="450" y="330" text-anchor="middle">dir tree sync</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-cross-repo-issue-sync">
+    <title>gha-cross-repo-issue-sync — Synchronize issues across repositories</title>
+    <rect class="box" x="516" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="572" y="315" text-anchor="middle">issue-sync</text>
+    <text class="repo-desc" x="572" y="330" text-anchor="middle">cross-repo issues</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-arbitrary-repo-timeline">
+    <title>gha-arbitrary-repo-timeline — Generate timeline visualizations for any repo</title>
+    <rect class="box" x="638" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="694" y="315" text-anchor="middle">repo-timeline</text>
+    <text class="repo-desc" x="694" y="330" text-anchor="middle">timeline viz</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/gha-github-mirror-action">
+    <title>gha-github-mirror-action — Mirror repositories across platforms</title>
+    <rect class="box" x="760" y="296" width="112" height="48" rx="5"/>
+    <text class="repo-name" x="816" y="315" text-anchor="middle">github-mirror</text>
+    <text class="repo-desc" x="816" y="330" text-anchor="middle">repo mirroring</text>
+  </a>
+
+  <!-- ===== Layer 5: Infrastructure & Plugins (4 boxes, w=190, gap=20, start=40) ===== -->
+  <rect class="layer-bg" x="10" y="358" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="372">INFRASTRUCTURE &amp; PLUGINS</text>
+
+  <a xlink:href="https://github.com/qte77/dotfiles">
+    <title>dotfiles — Personal dev environment config for Codespaces and devcontainers</title>
+    <rect class="box" x="40" y="374" width="190" height="38" rx="5"/>
+    <text class="repo-name" x="135" y="389" text-anchor="middle">dotfiles</text>
+    <text class="repo-desc" x="135" y="403" text-anchor="middle">dev environment config</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-plugins">
+    <title>claude-code-plugins — CC plugin marketplace with 24 plugins, 60 skills</title>
+    <rect class="box" x="250" y="374" width="190" height="38" rx="5"/>
+    <text class="repo-name" x="345" y="389" text-anchor="middle">cc-plugins</text>
+    <text class="repo-desc" x="345" y="403" text-anchor="middle">24 plugins, 60 skills</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/cc-recursive-team-mode">
+    <title>cc-recursive-team-mode — Claude Code subprocess wrapper and recursive spawning</title>
+    <rect class="box" x="460" y="374" width="190" height="38" rx="5"/>
+    <text class="repo-name" x="555" y="389" text-anchor="middle">cc-recursive-team</text>
+    <text class="repo-desc" x="555" y="403" text-anchor="middle">recursive agent spawning</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/eyerest-vscode-theme">
+    <title>eyerest-vscode-theme — Eye-friendly VS Code themes with zero blue light</title>
+    <rect class="box" x="670" y="374" width="190" height="38" rx="5"/>
+    <text class="repo-name" x="765" y="389" text-anchor="middle">eyerest-vscode-theme</text>
+    <text class="repo-desc" x="765" y="403" text-anchor="middle">eye-friendly VS Code</text>
+  </a>
+
+  <!-- ===== Layer 6: Agent UI, Voice & Robotics (3 boxes, w=220, gap=30, start=90) ===== -->
+  <rect class="layer-bg" x="10" y="426" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="440">AGENT UI, VOICE &amp; ROBOTICS</text>
+
+  <a xlink:href="https://github.com/qte77/agenthud-agui-a2ui">
+    <title>agenthud-agui-a2ui — AG-UI event replay and A2UI component rendering</title>
+    <rect class="box" x="90" y="442" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="200" y="457" text-anchor="middle">agenthud-agui-a2ui</text>
+    <text class="repo-desc" x="200" y="471" text-anchor="middle">AG-UI + A2UI rendering</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/cc-voice-plugin-prototype">
+    <title>cc-voice-plugin-prototype — End-to-end voice for Claude Code: TTS + STT</title>
+    <rect class="box" x="340" y="442" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="450" y="457" text-anchor="middle">cc-voice-plugin</text>
+    <text class="repo-desc" x="450" y="471" text-anchor="middle">TTS + STT for Claude Code</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/so101-biolab-automation">
+    <title>so101-biolab-automation — Dual SO-101 robotic arm bio-lab automation</title>
+    <rect class="box" x="590" y="442" width="220" height="38" rx="5"/>
+    <text class="repo-name" x="700" y="457" text-anchor="middle">so101-biolab</text>
+    <text class="repo-desc" x="700" y="471" text-anchor="middle">robotic arm bio-lab</text>
+  </a>
+
+  <!-- ===== Layer 7: Experimental (1 box, centered) ===== -->
+  <rect class="layer-bg" x="10" y="494" width="880" height="62" rx="6"/>
+  <text class="layer-label" x="20" y="508">EXPERIMENTAL</text>
+
+  <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
+    <title>liminal-flux — Self-evolving agent-operated GitHub account (North Star)</title>
+    <rect class="box" x="330" y="510" width="240" height="38" rx="5"/>
+    <text class="repo-name" x="450" y="525" text-anchor="middle">liminal-flux</text>
+    <text class="repo-desc" x="450" y="539" text-anchor="middle">agent-operated GH account</text>
+  </a>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="572">* pat-tax/ org</text>
+  <text class="note" x="880" y="572" text-anchor="end">30 repositories</text>
+</svg>
