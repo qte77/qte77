@@ -7,13 +7,6 @@ Unified decision flow for intra-project execution and inter-project orchestratio
 CC agents load context from the repo they run in — CLAUDE.md, settings, rules, hooks,
 and plugins are per-repo. Cross-repo work requires separate sessions.
 
-<details>
-<summary>Per-repo isolation model and 5 bridges across sessions</summary>
-
-<img src="../assets/images/agent-architecture.svg" alt="Multi-Repo Agent Architecture" width="100%" />
-
-</details>
-
 ```text
 Orchestrator (polyforge)
 │
@@ -51,12 +44,7 @@ Orchestrator (polyforge)
 
 ## Decision Flow
 
-<details>
-<summary>Route tasks by scope: multi-repo → Plan Mode → Ralph → Agent Teams → interactive</summary>
-
-<img src="../assets/images/decision-flow.svg" alt="Workflow Decision Flow" width="100%" />
-
-</details>
+Route tasks by scope: multi-repo → Plan Mode → Ralph → Agent Teams → interactive.
 
 ```text
 Task arrives
@@ -182,12 +170,7 @@ STRATEGIC (steer direction)
 
 ## Compound Learning
 
-<details>
-<summary>Mon monitors → Wed/Thu ralphys implement → Fri ralph self-improves → cycle repeats</summary>
-
-<img src="../assets/images/weekly-cycle.svg" alt="Compound Learning Weekly Cycle" width="100%" />
-
-</details>
+Mon monitors → Wed/Thu ralphys implement → Fri ralph self-improves → cycle repeats.
 
 ### Learnings Sync
 

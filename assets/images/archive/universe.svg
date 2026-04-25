@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 430" width="900" height="430">
+  <defs>
+    <style>
+      /* Light mode (default) */
+      .page-bg { fill: #ffffff; }
+      .layer-bg { fill: #f6f8fa; }
+      .cluster { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .layer-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .cluster-name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #1f2328; }
+      .cluster-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9px; fill: #8b949e; }
+      a:hover .cluster { stroke: #1f2328; stroke-width: 1.5; }
+
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .layer-bg { fill: #161b22; }
+        .cluster { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .layer-label { fill: #8b949e; }
+        .cluster-name { fill: #e6edf3; }
+        .cluster-desc { fill: #8b949e; }
+        .note { fill: #484f58; }
+        a:hover .cluster { stroke: #e6edf3; }
+      }
+    </style>
+  </defs>
+
+  <rect class="page-bg" width="900" height="430" rx="8"/>
+
+  <!-- Title -->
+  <text class="title" x="450" y="22" text-anchor="middle">qte77 — Universe</text>
+
+  <!-- ===== Row 1: SPECS ===== -->
+  <rect class="layer-bg" x="10" y="36" width="880" height="60" rx="6"/>
+  <text class="layer-label" x="20" y="50">SPECS</text>
+
+  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
+    <title>RAPID-spec-forge — BRD → PRD → FRD spec generation</title>
+    <rect class="cluster" x="300" y="56" width="300" height="34" rx="5"/>
+    <text class="cluster-name" x="450" y="72" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="cluster-desc" x="450" y="85" text-anchor="middle">BRD → PRD → FRD</text>
+  </a>
+
+  <!-- ===== Row 2: ORCHESTRATE (DEV | OFFICE) ===== -->
+  <rect class="layer-bg" x="10" y="102" width="880" height="76" rx="6"/>
+  <text class="layer-label" x="20" y="116">ORCHESTRATE</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>DEV orchestration: polyforge + ralph-loop + 2 ralphy offspring + ai-agents-research (5 repos)</title>
+    <rect class="cluster" x="30" y="124" width="410" height="48" rx="5"/>
+    <text class="cluster-name" x="235" y="143" text-anchor="middle">DEV  ·  polyforge</text>
+    <text class="cluster-desc" x="235" y="158" text-anchor="middle">+ ralph-loop  ·  2 ralphy offspring  ·  ai-agents-research</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
+    <title>OFFICE orchestration: office-forge-orchestrator + doc-pipeline-engine (2 repos)</title>
+    <rect class="cluster" x="460" y="124" width="410" height="48" rx="5"/>
+    <text class="cluster-name" x="665" y="143" text-anchor="middle">OFFICE  ·  office-forge</text>
+    <text class="cluster-desc" x="665" y="158" text-anchor="middle">+ doc-pipeline-engine</text>
+  </a>
+
+  <!-- ===== Row 3: EVALUATE | PAPER RESEARCH ===== -->
+  <rect class="layer-bg" x="10" y="184" width="880" height="76" rx="6"/>
+  <text class="layer-label" x="20" y="198">EVALUATE  ·  PAPER RESEARCH</text>
+
+  <a xlink:href="https://github.com/qte77/Agents-eval">
+    <title>Evaluation cluster: Agents-eval (flagship) + 4 siblings + 1 external (6 repos total)</title>
+    <rect class="cluster" x="30" y="206" width="410" height="48" rx="5"/>
+    <text class="cluster-name" x="235" y="225" text-anchor="middle">EVALUATE  ·  Agents-eval (flagship)</text>
+    <text class="cluster-desc" x="235" y="240" text-anchor="middle">+ 4 siblings + 1 external (pat-tax)</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/paperverse">
+    <title>Paper research: paperverse + arxiv-stats + biorxiv-stats GHA helpers</title>
+    <rect class="cluster" x="460" y="206" width="410" height="48" rx="5"/>
+    <text class="cluster-name" x="665" y="225" text-anchor="middle">PAPER  ·  paperverse</text>
+    <text class="cluster-desc" x="665" y="240" text-anchor="middle">+ arxiv-stats  ·  biorxiv-stats (helper GHAs)</text>
+  </a>
+
+  <!-- ===== Row 4: AUTOMATE | INFRA & PLUGINS | INTERFACES ===== -->
+  <rect class="layer-bg" x="10" y="266" width="880" height="76" rx="6"/>
+  <text class="layer-label" x="20" y="280">AUTOMATE  ·  SUBSTRATE  ·  INTERFACES</text>
+
+  <a xlink:href="https://github.com/qte77/qte77/blob/main/assets/images/pipeline-layers.svg">
+    <title>11 GitHub Actions forming the 6-layer pipeline — see pipeline-layers.svg</title>
+    <rect class="cluster" x="30" y="288" width="270" height="48" rx="5"/>
+    <text class="cluster-name" x="165" y="307" text-anchor="middle">AUTOMATE  ·  11 GHAs</text>
+    <text class="cluster-desc" x="165" y="322" text-anchor="middle">6-layer pipeline → pipeline-layers.svg</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/claude-code-plugins">
+    <title>Infrastructure + plugins: dotfiles, cc-plugins (24/60), cc-recursive-team, eyerest-theme, diagramforge, polyfetch-scrape</title>
+    <rect class="cluster" x="315" y="288" width="270" height="48" rx="5"/>
+    <text class="cluster-name" x="450" y="307" text-anchor="middle">SUBSTRATE  ·  6 repos</text>
+    <text class="cluster-desc" x="450" y="322" text-anchor="middle">dotfiles  ·  cc-plugins  ·  diagramforge  ·  …</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/agenthud-agui-a2ui">
+    <title>Interfaces: agenthud-agui-a2ui, cc-voice-plugin, so101-biolab</title>
+    <rect class="cluster" x="600" y="288" width="270" height="48" rx="5"/>
+    <text class="cluster-name" x="735" y="307" text-anchor="middle">INTERFACES  ·  UI · Voice · Robot</text>
+    <text class="cluster-desc" x="735" y="322" text-anchor="middle">agenthud  ·  cc-voice  ·  so101-biolab</text>
+  </a>
+
+  <!-- ===== Row 5: NORTH STAR ===== -->
+  <rect class="layer-bg" x="10" y="348" width="880" height="60" rx="6"/>
+  <text class="layer-label" x="20" y="362">NORTH STAR</text>
+
+  <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
+    <title>liminal-flux — self-evolving agent-operated GitHub account</title>
+    <rect class="cluster" x="300" y="368" width="300" height="34" rx="5"/>
+    <text class="cluster-name" x="450" y="384" text-anchor="middle">liminal-flux</text>
+    <text class="cluster-desc" x="450" y="397" text-anchor="middle">agent-operated GitHub account</text>
+  </a>
+
+  <!-- Footer -->
+  <text class="note" x="20" y="424">10 clusters  ·  39 repos  ·  drill down via individual repos</text>
+  <text class="note" x="880" y="424" text-anchor="end">links clickable in direct SVG view (GitHub strips them in README)</text>
+</svg>

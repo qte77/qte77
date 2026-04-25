@@ -7,13 +7,13 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 
 > This ecosystem connects a goal artifact through spec generation, autonomous implementation, cross-repo coordination, and traceability — end to end.
 
-## Repository Landscape
+## Mental Model
 
-<img src="assets/images/architecture.svg" alt="Repository Landscape" width="100%" />
+<img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
-### Toolchain Layers
+### GHA Pipeline
 
-<img src="assets/images/toolchain-layers.svg" alt="Toolchain Layers" width="100%" />
+<img src="assets/images/pipeline-layers.svg" alt="GHA Automation Pipeline" width="100%" />
 
 ## Topics
 
@@ -22,10 +22,13 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 - Multi-Repo Orchestration, Cross-Repo Issue Sync
 - AI Agent Evaluation, MAS Benchmarking
 - Goal-Driven Lifecycle Management, OKR Traceability
-- GitHub Actions, CI/CD Automation (REGISTRY → OBSERVE → TRANSFORM → ORCHESTRATE → DISTRIBUTE → IMPLEMENT)
 - Claude Code Plugins, MCP Integrations
 - Agent UI (AG-UI/A2UI), Voice (TTS/STT)
 - Robotics, Bio-Lab Automation
+
+### Interests
+
+- GitHub Actions, CI/CD Automation
 - Inductive Priors, Automatic Differentiation
 - Data Centric vs Model Centric
 - QML, Barren Plateaus
@@ -56,6 +59,7 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
   <img src="https://github.com/devicons/devicon/blob/master/icons/azure/azure-original.svg#gh-dark-mode-only" title="Azure" alt="Azure" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" title="AWS" alt="AWS" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/googlecloud/googlecloud-plain.svg" title="Google Cloud" alt="Google Cloud" width="40" height="40"/>&nbsp;
+  <img src="https://cdn.simpleicons.org/claude/D97757" title="Claude" alt="Claude" width="40" height="40"/>&nbsp;
  </div>
 
 ## TODO
