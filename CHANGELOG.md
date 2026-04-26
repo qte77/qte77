@@ -22,12 +22,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `brand/.gitignore`: brand-local ignore rules so `brand/` is self-contained (PR #47)
 - `brand/Makefile`: `IMAGES`/`FONTS`/`DIST`/`SCRIPTS` path constants; help target expands them at print time (PR #47)
 - Tracking issue [#44](https://github.com/qte77/qte77/issues/44): graduate `docs/gh-endpoints/` to a standalone `qte77/gh-endpoints` repo once it has 3+ documented endpoints
+- `brand/scripts/render_wordmark.py`: rasterizes `logo-wordmark.paths.<font>.svg` to `wordmark_{dark,light}.<font>.png` (960×320) via resvg (PR #55)
+- Root `Makefile`: thin delegator forwarding brand targets to `brand/Makefile` (PR #55)
+- `brand/images/wordmark_{dark,light}.dejavu.png`: 960×320 rasters for embedding where SVG can't be used (PR #55)
 
 ### Changed
 
 - Profile `README.md`: wordmark centered horizontally via `<p align="center">`, updated to `brand/images/` paths (PR #47)
 - `brand/README.md`, `docs/github-image-theming.md`: live-example paths updated to `brand/images/` (PR #47)
 - `brand/scripts/render_avatar.py`: `BRAND` constant + `IMAGES` resolve to subfolder (PR #47)
+- Brand artifact naming: font-suffixed (`*.paths.dejavu.svg`, `*_{dark,light}.dejavu.png`) so multiple bake fonts can coexist; `FONT ?= dejavu` parameterizes the pipeline (PR #55)
+- Canonical bake font switched to DejaVu Sans Mono Bold (clean `7` glyph, matches Linux fontconfig fallback for the `.text.svg` font-family chain) (PR #55)
+- `brand/images/logo-mark.text.svg`: `q7_` composition centered in 80×80 canvas using DejaVu metrics (PR #55)
+- `brand/images/logo-wordmark.text.svg`: underscore aligned to visible glyph edges of `t` (left) and last `7` (right) (PR #55)
+- `brand/Makefile` / root `Makefile`: `.SILENT` + `.ONESHELL` for cleaner recipes (PR #55)
+
+### Fixed
+
+- `brand/scripts/svg_text_to_paths.py`: honor `letter-spacing` attribute when shaping; previously paths SVGs spaced glyphs further apart than the canonical text SVG (PR #55)
 
 ## [0.3.0] - 2026-04-26
 
