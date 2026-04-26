@@ -1,0 +1,18 @@
+# Social preview generator config
+# Used by scripts/generate_social.py
+# Add one [[repo]] block per repository to brand.
+
+[defaults]
+# 1280x640 — GitHub social preview spec (Open Graph)
+width  = 1280
+height = 640
+theme  = "dark"        # "dark" | "light"
+# accent: omit to use deterministic hash(repo_name) -> hue mapping;
+# set explicitly to override per repo.
+
+[[repo]]
+name     = "qte77"
+title    = "qte77"
+subtitle = "profile · meta"
+tagline  = "AI engineering, agentic systems, structured chaos."
+accent   = "#388bfd"

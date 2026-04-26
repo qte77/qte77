@@ -1,0 +1,21 @@
+# qte77 brand palette
+# GitHub Primer color tokens (matches assets/images/*.svg)
+# Used by scripts/generate_social.py and brand/logo-*.svg
+
+[light]
+bg          = "#ffffff"
+surface     = "#f6f8fa"
+border      = "#d0d7de"
+text        = "#1f2328"
+text_muted  = "#656d76"
+accent      = "#1f6feb"
+accent_warm = "#d97757"  # Claude orange (accent for AI-related repos)
+
+[dark]
+bg          = "#0d1117"
+surface     = "#161b22"
+border      = "#30363d"
+text        = "#e6edf3"
+text_muted  = "#8b949e"
+accent      = "#388bfd"
+accent_warm = "#d97757"
