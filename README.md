@@ -2,7 +2,7 @@
 <!-- https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md033 -->
 
 <p align="center">
-  <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="100%" />
+  <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="320" />
 </p>
 
 Turn goals into merged PRs across many repos at once. Agents handle dev and office work end to end, in parallel.
