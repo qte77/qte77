@@ -79,4 +79,4 @@ See also: [GHA automation pipeline](assets/images/pipeline-layers.svg) — the G
 
 ## Lineage
 
-The spec-generation pillar descends from [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (created 2025-07-06; CABIO vision introduced 2025-08-11), where the BRD → PRD → FRP pipeline originated. [`RAPID-spec-forge`](https://github.com/qte77/RAPID-spec-forge) continued that line until archived 2026-04-26; the spec methodology is heading to [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
+The spec-generation pillar descends from [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (created 2025-07-06; CABIO vision introduced 2025-08-11), where the BRD → PRD → FRD pipeline originated. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) continued that line until archived 2026-04-26; the spec methodology is heading to [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
