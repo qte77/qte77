@@ -4,7 +4,7 @@
 > GitHub publishes no specification for this endpoint. Everything below
 > is inferred from inspecting the live Settings page form, Rails web-app
 > conventions, and prior community reverse-engineering. The live form
-> is the source of truth — `scripts/upload_social_preview.py` parses
+> is the source of truth — `brand/scripts/upload_social_preview.py` parses
 > the actual form action URL and CSRF token at runtime rather than
 > trusting hardcoded paths. If the script logs different values than
 > this document describes, **update the document**.
@@ -12,7 +12,7 @@
 GitHub provides **no public API** for setting a repository's social
 preview image. The Settings UI is the only supported mechanism. This
 document records the undocumented internal endpoint that the UI uses,
-so that `scripts/upload_social_preview.py` can call it directly.
+so that `brand/scripts/upload_social_preview.py` can call it directly.
 
 > **Use at your own risk.** This endpoint is not part of the GitHub
 > REST/GraphQL API. It can change shape, move, or start enforcing
@@ -166,7 +166,7 @@ but doesn't help if the field-name or cookie shape shifts.
 After upload, check propagation:
 
 ```bash
-uv run scripts/upload_social_preview.py qte77/qte77 --verify-only
+uv run brand/scripts/upload_social_preview.py qte77/qte77 --verify-only
 ```
 
 This calls the public REST endpoint and prints the CDN URL. Open it in

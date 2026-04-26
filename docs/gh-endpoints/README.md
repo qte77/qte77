@@ -37,7 +37,7 @@ git subtree split --prefix=docs/gh-endpoints -b extract/gh-endpoints
 git pull <qte77/qte77 path> extract/gh-endpoints
 ```
 
-`scripts/upload_social_preview.py` would migrate at the same time.
+`brand/scripts/upload_social_preview.py` would migrate at the same time.
 
 ## Scope and ethics
 

@@ -19,7 +19,7 @@ Each row is a capability the web UI offers that REST, GraphQL, and/or
 
 - **Row 1** is the only one with a documented internal endpoint here.
   See [`social-preview.md`](social-preview.md) and the upload script
-  in `scripts/upload_social_preview.py`.
+  in `brand/scripts/upload_social_preview.py`.
 - **Row 2** is partial — read of list names/IDs works via GraphQL
   `viewer { lists }`; writes do not.
 - **Row 4** is REST-only — workflows that already use GraphQL have a
