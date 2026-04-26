@@ -65,6 +65,38 @@ GitHub Issues are the source of truth for persistent state.
 If an AR entry persists beyond a few sessions, file it as an Issue and
 remove the AR entry.
 
+## Cross-repo agent hygiene
+
+Workspace-level policy for agents operating across multiple repos. Mechanism
+(CLI flags, scripts, recipes) lives in
+[polyforge-orchestrator/docs/context-hygiene.md][polyforge-context-hygiene] —
+this section is policy only, per the META → MECHANISM authority split.
+
+![qte77 authority chain](assets/images/authority-chain.svg)
+
+**Plumbing vs content editing:**
+
+- **Plumbing** (PRs, branches, merges, status checks, metadata) — use CLI-only
+  tools (`gh`, `git`). Never `Read` a sibling repo's file from the
+  orchestrator session; the implicit `CLAUDE.md` cascade fires on `Read`, not
+  on shell ops, and cross-repo reads silently pull in the sibling's rules.
+- **Content editing** (changes to a sibling repo's files) — open a dedicated
+  Claude Code session inside the target repo, **or** delegate to a subagent in
+  a nested worktree. Never edit child-repo files directly from the parent
+  orchestrator session.
+
+**Cascade discipline:**
+
+Never run with implicit `CLAUDE.md` cascade enabled when orchestrating across
+repos. Use polyforge presets or `--bare` to dial cascade behavior explicitly.
+The mechanism doc carries the flag tables, recipes, and the
+`--bare` dial-not-a-switch model.
+
+**DRY:** do not inline flag tables, scripts, or recipes here. Mechanism stays
+in polyforge per the authority chain.
+
+[polyforge-context-hygiene]: https://github.com/qte77/polyforge-orchestrator/blob/main/docs/context-hygiene.md
+
 ## Agent Neutrality Requirements
 
 **ALL AI AGENTS MUST MAINTAIN STRICT NEUTRALITY AND REQUIREMENT-DRIVEN DESIGN:**
