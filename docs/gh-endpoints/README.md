@@ -25,8 +25,8 @@ the web UI uses to provide it.
 
 This folder is sized to graduate into its own repo (e.g.
 `qte77/gh-endpoints`) once it has 3+ documented endpoints or the upload
-tooling matures. Tracking issue: **#TBD** (replace with the actual
-number after opening).
+tooling matures. Tracking issue:
+[qte77/qte77#44](https://github.com/qte77/qte77/issues/44).
 
 When extracting:
 
