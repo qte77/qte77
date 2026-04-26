@@ -68,10 +68,10 @@
   <rect class="band-bg" x="10" y="116" width="880" height="68" rx="6"/>
   <text class="band-label" x="20" y="131">SPECS</text>
 
-  <a xlink:href="https://github.com/qte77/RAPID-spec-forge">
-    <title>RAPID-spec-forge — BRD → PRD → FRD spec generation</title>
+  <a xlink:href="https://github.com/qte77/qte77/issues/50">
+    <title>spec-forge — BRD → PRD → FRD spec generation</title>
     <rect class="box" x="330" y="136" width="240" height="40" rx="5"/>
-    <text class="box-title" x="450" y="153" text-anchor="middle">RAPID-spec-forge</text>
+    <text class="box-title" x="450" y="153" text-anchor="middle">spec-forge</text>
     <text class="box-desc" x="450" y="167" text-anchor="middle">BRD → PRD → FRD</text>
   </a>
 
@@ -157,7 +157,7 @@
     <title>Infrastructure: dotfiles, cc-plugins, cc-recursive-team, eyerest-theme, diagramforge, polyfetch-scrape</title>
     <rect class="box" x="315" y="590" width="260" height="48" rx="5"/>
     <text class="box-title" x="445" y="609" text-anchor="middle">INFRASTRUCTURE  ·  6 repos</text>
-    <text class="box-desc" x="445" y="624" text-anchor="middle">dotfiles  ·  cc-plugins  ·  diagramforge  ·  …</text>
+    <text class="box-desc" x="445" y="624" text-anchor="middle">dotfiles  ·  claude-code-plugins  ·  diagramforge  ·  …</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agenthud-agui-a2ui">
