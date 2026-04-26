@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist
+- `.markdownlint.jsonc`: project policy disabling MD013/MD041/MD060, allowing inline HTML
+- `lychee.toml`: link-check config with bot-blocking accept codes and exclusion patterns
 - `brand/scripts/upload_social_preview.py`: experimental CLI uploader that targets the undocumented internal endpoint used by the Settings UI; auth via `GH_USER_SESSION` cookie, GitHub provides no public API for this (PR #43)
 - `docs/gh-endpoints/`: catalog of GitHub functionality not covered by REST/GraphQL/`gh` CLI; `INDEX.md` lists 7 confirmed gaps with first-party citations, `HOWTO.md` documents the methodology, `social-preview.md` reverse-engineers the upload endpoint (PR #43)
 - `brand/images/`: containment subfolder for visual assets — `logo-mark.svg`, `logo-wordmark.svg`, `avatar_dark.png`, `avatar_light.png` (PR #47)

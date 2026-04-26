@@ -1,11 +1,14 @@
 # Agent Instructions
 
 **Behavioral rules, compliance requirements, and decision frameworks for AI coding
-agents.** For project overview, see [README.md](README.md). For brand tooling
-specifics, see [brand/README.md](brand/README.md).
+agents.** For technical workflows, lint/commit conventions, and the documentation
+hierarchy, see [CONTRIBUTING.md](CONTRIBUTING.md). For project overview, see
+[README.md](README.md). For brand tooling specifics, see
+[brand/README.md](brand/README.md).
 
 **External References:**
 
+- @CONTRIBUTING.md - Workflows, coding standards, doc hygiene
 - @AGENT_REQUESTS.md - Escalation and human collaboration
 - @AGENT_LEARNINGS.md - Pattern discovery and knowledge sharing
 - @CHANGELOG.md - Notable changes by version
