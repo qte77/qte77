@@ -44,6 +44,14 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - **Humans** — approve goals, review PRs, and steer the orchestrators. Agents propose; humans decide.
 - **Where to look** — start with [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) for the dev loop or [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) for the office loop. 30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
 
+## Get started
+
+- Dev loop → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator)
+- Office loop → [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator)
+- Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
+
+Each repo carries its own quickstart.
+
 ## Profile
 
 ### Topics
@@ -99,14 +107,6 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - [x] Kaggle Competitions
 - [ ] Codewars Python
 - [ ] Advent of Code
-
-## Get started
-
-- Dev loop → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator)
-- Office loop → [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator)
-- Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
-
-Each repo carries its own quickstart.
 
 ## Lineage
 
