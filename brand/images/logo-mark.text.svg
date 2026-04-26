@@ -11,7 +11,7 @@
   </style>
   <rect class="mark-bg" x="0" y="0" width="80" height="80" rx="12"/>
   <text x="40" y="48"
-        font-family="JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-family="Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="28" font-weight="700" text-anchor="middle"
         font-feature-settings="'onum' 1">
     <tspan class="mark-fg">q7</tspan><tspan class="mark-accent" dy="-5">_</tspan>

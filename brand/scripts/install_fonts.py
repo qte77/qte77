@@ -2,9 +2,13 @@
 # requires-python = ">=3.11"
 # dependencies = []
 # ///
-"""Download Inter and JetBrains Mono fonts into brand/fonts/.
+"""Download Inter, JetBrains Mono, and Cascadia Mono fonts into brand/fonts/.
 
-Both are SIL OFL 1.1 licensed and free to redistribute.
+Inter and JetBrains Mono are SIL OFL 1.1 licensed; Cascadia Mono is
+SIL OFL 1.1 (also MIT-derived release from Microsoft). All three are
+free to redistribute. Cascadia Mono is used for the brand mark/wordmark
+because it's the closest OSS Consolas-alike (same designer, similar
+optical proportions).
 """
 
 from __future__ import annotations
@@ -24,6 +28,8 @@ FONTS = {
         "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-400-normal.ttf",
     "JetBrainsMono-Bold.ttf":
         "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-700-normal.ttf",
+    "CascadiaMono-Bold.ttf":
+        "https://cdn.jsdelivr.net/fontsource/fonts/cascadia-mono@latest/latin-700-normal.ttf",
 }
 
 
