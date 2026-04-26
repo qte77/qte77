@@ -16,10 +16,7 @@ Turn goals into merged PRs across many repos at once. Agents handle dev and offi
 
 Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
 
-<details>
-  <summary>Diagram: clusters, flow, feedback loop</summary>
-  <img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
-</details>
+<img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
 ### Authority Chain
 
@@ -35,7 +32,15 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
   <img src="assets/images/pipeline-layers.svg" alt="GHA automation pipeline — layers across the ecosystem" width="100%" />
 </details>
 
-## Topics
+### What this means concretely
+
+- **Agents** — Claude Code (and compatible LLM coding agents) running per-repo, coordinated by orchestrators in this workspace.
+- **Office work** — non-code tasks an agent can drive end-to-end (drafting, scheduling, triage, ops glue), handled by the office-forge orchestrator alongside the dev forges.
+- **Where to look** — orchestrators (`polyforge-orchestrator`, `office-forge-orchestrator`) and 30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
+
+## Profile
+
+### Topics
 
 - Agentic Software Development, Autonomous Coding
 - Self-Evolving Agents, Compound Learning
@@ -53,7 +58,7 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - Data Centric vs Model Centric
 - QML, Barren Plateaus
 
-## Posts
+### Posts
 
 <!-- BLOG-POST-LIST:START -->
 - [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
@@ -62,7 +67,7 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
 <!-- BLOG-POST-LIST:END -->
 
-## Tools
+### Tools
 
 <div style="align: left;">
   <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
@@ -82,7 +87,7 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
   <img src="https://cdn.simpleicons.org/claude/D97757" title="Claude" alt="Claude" width="40" height="40"/>&nbsp;
  </div>
 
-## TODO
+### TODO
 
 - [x] Kaggle Playgrounds
 - [x] Kaggle Competitions
@@ -91,4 +96,6 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 
 ## Lineage
 
-The spec-generation pillar descends from [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (created 2025-07-06; CABIO vision introduced 2025-08-11), where the BRD → PRD → FRD pipeline originated. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) continued that line until archived 2026-04-26; the spec methodology is heading to [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
+How the current system got here — proof of work, not required reading.
+
+The spec-generation pillar started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26). The methodology is now landing in [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
