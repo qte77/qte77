@@ -54,36 +54,29 @@
     <text class="repo-desc" x="430" y="98" text-anchor="middle">registry/index.json → SOT for all layers</text>
   </a>
 
-  <!-- ===== Layer 1: OBSERVE (4 boxes) ===== -->
+  <!-- ===== Layer 1: OBSERVE (3 boxes) ===== -->
   <rect class="layer-bg" x="10" y="120" width="840" height="66" rx="6"/>
   <text class="layer-label" x="20" y="134">OBSERVE — what happens</text>
 
   <a xlink:href="https://github.com/qte77/gha-arbitrary-repo-timeline">
     <title>gha-arbitrary-repo-timeline — issues, PRs, commits per repo over time</title>
-    <rect class="box" x="20" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="117" y="156" text-anchor="middle">repo-timeline</text>
-    <text class="repo-desc" x="117" y="170" text-anchor="middle">issues/PRs/commits over time</text>
+    <rect class="box" x="123" y="140" width="195" height="38" rx="5"/>
+    <text class="repo-name" x="220" y="156" text-anchor="middle">repo-timeline</text>
+    <text class="repo-desc" x="220" y="170" text-anchor="middle">issues/PRs/commits over time</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
     <title>gha-arxiv-stats-action — daily arXiv paper stats by category</title>
-    <rect class="box" x="230" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="327" y="156" text-anchor="middle">arxiv-stats</text>
-    <text class="repo-desc" x="327" y="170" text-anchor="middle">daily arXiv paper stats</text>
+    <rect class="box" x="333" y="140" width="195" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="156" text-anchor="middle">arxiv-stats</text>
+    <text class="repo-desc" x="430" y="170" text-anchor="middle">daily arXiv paper stats</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/gha-biorxiv-stats-action">
     <title>gha-biorxiv-stats-action — daily bioRxiv paper stats by category</title>
-    <rect class="box" x="440" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="537" y="156" text-anchor="middle">biorxiv-stats</text>
-    <text class="repo-desc" x="537" y="170" text-anchor="middle">daily bioRxiv paper stats</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/parse-git-log-action">
-    <title>parse-git-log-action — parse git log into structured events</title>
-    <rect class="box" x="650" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="747" y="156" text-anchor="middle">parse-git-log</text>
-    <text class="repo-desc" x="747" y="170" text-anchor="middle">git log → structured events</text>
+    <rect class="box" x="543" y="140" width="195" height="38" rx="5"/>
+    <text class="repo-name" x="640" y="156" text-anchor="middle">biorxiv-stats</text>
+    <text class="repo-desc" x="640" y="170" text-anchor="middle">daily bioRxiv paper stats</text>
   </a>
 
   <!-- ===== Layer 2: TRANSFORM (4 boxes) ===== -->
@@ -154,29 +147,15 @@
     <text class="repo-desc" x="580" y="386" text-anchor="middle">contribution graph art</text>
   </a>
 
-  <!-- ===== Layer 5: IMPLEMENT (3 boxes) ===== -->
+  <!-- ===== Layer 5: IMPLEMENT (single generic consumer box) ===== -->
   <rect class="layer-bg" x="10" y="408" width="840" height="66" rx="6"/>
   <text class="layer-label" x="20" y="422">IMPLEMENT — act on it</text>
 
-  <a xlink:href="https://github.com/qte77/learnings-ralphy">
-    <title>learnings-ralphy — distills LEARNINGS patterns into TDD improvements (Thu)</title>
-    <rect class="box" x="50" y="428" width="230" height="38" rx="5"/>
-    <text class="repo-name" x="165" y="444" text-anchor="middle">learnings-ralphy</text>
-    <text class="repo-desc" x="165" y="458" text-anchor="middle">patterns → TDD improvements (Thu)</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/research-ralphy">
-    <title>research-ralphy — turns discoveries into TDD implementations (Wed)</title>
-    <rect class="box" x="315" y="428" width="230" height="38" rx="5"/>
-    <text class="repo-name" x="430" y="444" text-anchor="middle">research-ralphy</text>
-    <text class="repo-desc" x="430" y="458" text-anchor="middle">discoveries → implementations (Wed)</text>
-  </a>
-
-  <a xlink:href="https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template">
-    <title>ralph self-improve — digests offspring learnings, improves loop engine (Fri)</title>
-    <rect class="box" x="580" y="428" width="230" height="38" rx="5"/>
-    <text class="repo-name" x="695" y="444" text-anchor="middle">ralph self-improve</text>
-    <text class="repo-desc" x="695" y="458" text-anchor="middle">loop engine evolution (Fri)</text>
+  <a xlink:href="https://github.com/qte77">
+    <title>consumer repos — sibling projects that run these GHAs and act on their outputs</title>
+    <rect class="box" x="160" y="428" width="540" height="38" rx="5"/>
+    <text class="repo-name" x="430" y="444" text-anchor="middle">consumer repos</text>
+    <text class="repo-desc" x="430" y="458" text-anchor="middle">Agents-eval  ·  paperverse  ·  ralphy offspring  ·  …</text>
   </a>
 
   <!-- ===== Downward arrows between layers ===== -->
@@ -193,6 +172,6 @@
   <text class="note" x="445" y="127">index.json</text>
 
   <!-- Footer -->
-  <text class="note" x="20" y="502">13 GitHub Actions + 3 consumers</text>
+  <text class="note" x="20" y="502">GitHub Actions + consumers</text>
   <text class="note" x="840" y="502" text-anchor="end">feedback: learnings flow back to registry via compound writeback</text>
 </svg>

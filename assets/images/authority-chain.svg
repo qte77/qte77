@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 420" width="900" height="420">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 660" width="900" height="660">
   <defs>
     <style>
       .page-bg { fill: #ffffff; }
@@ -38,15 +38,15 @@
     </marker>
   </defs>
 
-  <rect class="page-bg" width="900" height="420" rx="8"/>
+  <rect class="page-bg" width="900" height="660" rx="8"/>
 
   <!-- Title + subtitle -->
   <text class="title" x="450" y="22" text-anchor="middle">qte77 — Authority Chain</text>
   <text class="subtitle" x="450" y="38" text-anchor="middle">Where each decision lives  ·  one source of truth per tier  ·  DRY across the workspace</text>
 
-  <!-- ===== Tier 1: META / POLICY (qte77) ===== -->
+  <!-- ===== Band 1: META · POLICY (qte77) ===== -->
   <rect class="band-bg" x="10" y="54" width="880" height="92" rx="6"/>
-  <text class="tier-label" x="20" y="69">TIER 1  ·  META / POLICY</text>
+  <text class="tier-label" x="20" y="69">META  ·  POLICY</text>
 
   <a xlink:href="https://github.com/qte77/qte77">
     <title>qte77/qte77 — workspace meta: AGENTS.md, project-workflows.md, cross-repo hygiene policy</title>
@@ -56,37 +56,72 @@
     <text class="box-note" x="450" y="127" text-anchor="middle">policy: "what to do and why" — no mechanism</text>
   </a>
 
-  <!-- Arrow from Tier 1 to Tier 2 -->
+  <!-- Arrow META → KERNEL -->
   <line class="arrow" x1="450" y1="146" x2="450" y2="170"/>
 
-  <!-- ===== Tier 2: TOOL / MECHANISM (polyforge) ===== -->
+  <!-- ===== Band 2: KERNEL · PACKAGES (claude-code-plugins) ===== -->
   <rect class="band-bg" x="10" y="172" width="880" height="92" rx="6"/>
-  <text class="tier-label" x="20" y="187">TIER 2  ·  TOOL / MECHANISM</text>
+  <text class="tier-label" x="20" y="187">KERNEL  ·  PACKAGES</text>
 
-  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
-    <title>polyforge-orchestrator — the tool: flags, cc-parallel.sh, context-hygiene.md, recipes</title>
+  <a xlink:href="https://github.com/qte77/claude-code-plugins">
+    <title>claude-code-plugins — canonical kernel: rules, skills, plugins (the package source consumed by all repos)</title>
     <rect class="box" x="260" y="196" width="380" height="58" rx="5"/>
-    <text class="box-title" x="450" y="215" text-anchor="middle">polyforge-orchestrator</text>
-    <text class="box-desc" x="450" y="231" text-anchor="middle">the tool  ·  cc-parallel.sh  ·  docs/context-hygiene.md</text>
-    <text class="box-note" x="450" y="245" text-anchor="middle">mechanism: flags, recipes, scripts — how to do it</text>
+    <text class="box-title" x="450" y="215" text-anchor="middle">claude-code-plugins</text>
+    <text class="box-desc" x="450" y="231" text-anchor="middle">the kernel  ·  rules  ·  skills  ·  plugins</text>
+    <text class="box-note" x="450" y="245" text-anchor="middle">package source: distributed via marketplace</text>
   </a>
 
-  <!-- Arrow from Tier 2 to Tier 3 -->
+  <!-- Arrow KERNEL → MECHANISM -->
   <line class="arrow" x1="450" y1="264" x2="450" y2="288"/>
 
-  <!-- ===== Tier 3: CONSUMERS (siblings) ===== -->
+  <!-- ===== Band 3: TOOL · MECHANISM (polyforge + office-forge side-by-side) ===== -->
   <rect class="band-bg" x="10" y="290" width="880" height="92" rx="6"/>
-  <text class="tier-label" x="20" y="305">TIER 3  ·  CONSUMERS</text>
+  <text class="tier-label" x="20" y="305">TOOL  ·  MECHANISM</text>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>polyforge-orchestrator — DEV mechanism: cc-parallel.sh, context-hygiene.md, recipes</title>
+    <rect class="box" x="80" y="314" width="380" height="58" rx="5"/>
+    <text class="box-title" x="270" y="333" text-anchor="middle">polyforge-orchestrator</text>
+    <text class="box-desc" x="270" y="349" text-anchor="middle">DEV  ·  cc-parallel.sh  ·  recipes</text>
+    <text class="box-note" x="270" y="363" text-anchor="middle">mechanism for dev orchestration</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
+    <title>office-forge-orchestrator — OFFICE mechanism: doc-pipeline-engine, MCP, /loop</title>
+    <rect class="box" x="480" y="314" width="380" height="58" rx="5"/>
+    <text class="box-title" x="670" y="333" text-anchor="middle">office-forge-orchestrator</text>
+    <text class="box-desc" x="670" y="349" text-anchor="middle">OFFICE  ·  doc-pipeline-engine</text>
+    <text class="box-note" x="670" y="363" text-anchor="middle">mechanism for office orchestration</text>
+  </a>
+
+  <!-- Arrow MECHANISM → STATE -->
+  <line class="arrow" x1="450" y1="382" x2="450" y2="406"/>
+
+  <!-- ===== Band 4: STATE · TRACKING ===== -->
+  <rect class="band-bg" x="10" y="408" width="880" height="92" rx="6"/>
+  <text class="tier-label" x="20" y="423">STATE  ·  TRACKING</text>
+
+  <rect class="box" x="160" y="432" width="580" height="58" rx="5"/>
+  <text class="box-title" x="450" y="451" text-anchor="middle">contributions.json  ·  GitHub Issues  ·  TODO.md</text>
+  <text class="box-desc" x="450" y="467" text-anchor="middle">cross-project state  ·  canonical task state  ·  curated backlog</text>
+  <text class="box-note" x="450" y="481" text-anchor="middle">state lives here, not in mechanism — read+written by both layers above and below</text>
+
+  <!-- Arrow STATE → CONSUMERS -->
+  <line class="arrow" x1="450" y1="500" x2="450" y2="524"/>
+
+  <!-- ===== Band 5: CONSUMERS (siblings) ===== -->
+  <rect class="band-bg" x="10" y="526" width="880" height="92" rx="6"/>
+  <text class="tier-label" x="20" y="541">CONSUMERS</text>
 
   <a xlink:href="https://github.com/qte77">
     <title>30+ sibling repos — consume polyforge; inherit workspace policy; stay rules-light</title>
-    <rect class="box" x="160" y="314" width="580" height="58" rx="5"/>
-    <text class="box-title" x="450" y="333" text-anchor="middle">30+ sibling repos</text>
-    <text class="box-desc" x="450" y="349" text-anchor="middle">Agents-eval  ·  ralph-loop  ·  ai-agents-research  ·  paperverse  ·  …</text>
-    <text class="box-note" x="450" y="363" text-anchor="middle">operands: no new hygiene docs  ·  stay rules-light  ·  run under polyforge</text>
+    <rect class="box" x="160" y="550" width="580" height="58" rx="5"/>
+    <text class="box-title" x="450" y="569" text-anchor="middle">30+ sibling repos</text>
+    <text class="box-desc" x="450" y="585" text-anchor="middle">Agents-eval  ·  ralph-loop  ·  ai-agents-research  ·  paperverse  ·  …</text>
+    <text class="box-note" x="450" y="599" text-anchor="middle">operands: no new hygiene docs  ·  stay rules-light  ·  run under polyforge</text>
   </a>
 
   <!-- Footer -->
-  <text class="note" x="20" y="402">policy ≠ mechanism ≠ operand  ·  each concern lives in exactly one tier</text>
-  <text class="note" x="880" y="402" text-anchor="end">DRY across 30+ repos: one AGENTS.md rule  ·  one tool doc  ·  no sibling duplication</text>
+  <text class="note" x="20" y="638">policy ≠ mechanism ≠ operand  ·  each concern lives in exactly one tier</text>
+  <text class="note" x="880" y="638" text-anchor="end">DRY across 30+ repos: one AGENTS.md rule  ·  one tool doc  ·  no sibling duplication</text>
 </svg>

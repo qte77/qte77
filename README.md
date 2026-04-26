@@ -2,20 +2,26 @@
 <!-- https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md033 -->
 
 <p align="center">
-  <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="320" />
+  <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="100%" />
 </p>
 
-Goal-driven development with AI agents — from specs to merged PRs across dev and office repos. RAPID generates specs, Ralph implements via TDD, Polyforge and Office-forge orchestrate across repos, issues sync cross-repo, progress traces back to goals.
+Turn goals into merged PRs across many repos at once. Agents handle dev and office work end to end, in parallel.
 
-> This ecosystem connects a goal artifact through spec generation, autonomous implementation, cross-repo coordination, and traceability — end to end.
+> Without coordination, agentic work across many repos drifts — learnings get lost, work duplicates, goals lose their thread. qte77 keeps the goal → spec → build → learn loop compounding, not forgetting.
 
 ## Mental Model
 
+Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
+
 <img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
-### GHA Pipeline
+### Authority Chain
 
-<img src="assets/images/pipeline-layers.svg" alt="GHA Automation Pipeline" width="100%" />
+Policy, mechanism, and state get confused and duplicated across repos. Naming where each decision lives prevents the drift and keeps 30+ repos DRY.
+
+<img src="assets/images/authority-chain.svg" alt="qte77 Authority Chain — META, KERNEL, MECHANISM, STATE, CONSUMERS" width="100%" />
+
+See also: [GHA automation pipeline](assets/images/pipeline-layers.svg) — the GitHub Actions running across the ecosystem.
 
 ## Topics
 
