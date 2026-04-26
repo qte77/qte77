@@ -1,31 +1,20 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = [
-#     "resvg-py>=0.1",
-#     "uharfbuzz>=0.40",
-#     "fonttools>=4.50",
-#     "defusedxml>=0.7",
-# ]
+# dependencies = ["resvg-py>=0.1"]
 # ///
-"""Rasterize brand/images/logo-mark.text.svg to brand/images/avatar_{dark,light}.png at 920x920.
+"""Rasterize brand/images/logo-mark.paths.<font>.svg to brand/images/avatar_{dark,light}.<font>.png at 920x920.
 
-The canonical SVG keeps its <text> element (font-driven, editable). For
-rasterization we derive an in-memory path-only SVG via
-scripts/svg_text_to_paths.py — uharfbuzz shapes the text exactly as
-browsers do, and fontTools extracts glyph outlines as SVG paths. resvg
-then renders those paths predictably; the PNG matches what a browser
-would draw.
+Reads the path-baked SVG (font geometry already converted to <path>
+elements). No font lookup needed at render time — geometry is pure
+and renders identically across all consumers.
 
 Light variant is produced by substituting the three fill values to match
 the SVG's @media (prefers-color-scheme: light) block, since resvg has
 no browser color-scheme context.
 
-GitHub avatars are static — viewer theme does not switch them. We render
-both variants so you can pick which one to upload (Settings -> Profile
--> Change avatar; UI-only per docs/gh-endpoints/INDEX row 3).
-
 Usage:
-    uv run scripts/render_avatar.py            # writes both variants
+    uv run scripts/render_avatar.py                  # font=dejavu (default)
+    uv run scripts/render_avatar.py --font cascadia  # use a different bake
     uv run scripts/render_avatar.py --only light
     uv run scripts/render_avatar.py --only dark
 """
@@ -36,18 +25,11 @@ import argparse
 import sys
 from pathlib import Path
 
-# scripts/ on sys.path so we can import the sibling module.
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
 import resvg_py
-from svg_text_to_paths import text_to_paths
 
 BRAND = Path(__file__).resolve().parent.parent
 IMAGES = BRAND / "images"
-SRC = IMAGES / "logo-mark.text.svg"
-OUT_DARK = IMAGES / "avatar_dark.png"
-OUT_LIGHT = IMAGES / "avatar_light.png"
-FONTS_DIR = BRAND / "fonts"
+DEFAULT_FONT = "dejavu"
 SIZE = 920  # 2x of GitHub's 460 minimum, crisp at all display sizes
 
 
@@ -64,48 +46,34 @@ def to_light(svg: str) -> str:
 
 
 def render(svg: str, dst: Path, label: str) -> None:
-    png = resvg_py.svg_to_bytes(
-        svg_string=svg,
-        width=SIZE,
-        height=SIZE,
-        font_dirs=[str(FONTS_DIR)],
-    )
+    png = resvg_py.svg_to_bytes(svg_string=svg, width=SIZE, height=SIZE)
     dst.write_bytes(bytes(png))
     print(f"wrote {dst} ({SIZE}x{SIZE}, {label})")
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument(
-        "--only",
-        choices=["dark", "light"],
-        help="render only one variant (default: render both)",
-    )
+    ap.add_argument("--font", default=DEFAULT_FONT,
+                    help=f"font key suffix on the source paths SVG (default: {DEFAULT_FONT})")
+    ap.add_argument("--only", choices=["dark", "light"])
     args = ap.parse_args()
 
-    if not SRC.exists():
-        print(f"missing source: {SRC}", file=sys.stderr)
-        return 1
-    if not FONTS_DIR.exists() or not any(FONTS_DIR.glob("*.ttf")):
+    src = IMAGES / f"logo-mark.paths.{args.font}.svg"
+    out_dark = IMAGES / f"avatar_dark.{args.font}.png"
+    out_light = IMAGES / f"avatar_light.{args.font}.png"
+
+    if not src.exists():
         print(
-            f"missing fonts: {FONTS_DIR}\n"
-            f"run: uv run scripts/install_fonts.py",
+            f"missing source: {src}\nrun: make -C brand brand_paths",
             file=sys.stderr,
         )
         return 1
 
-    # Convert canonical text SVG to a path-only derivative for predictable
-    # rasterization. uharfbuzz handles shaping the same way browsers do.
-    font = FONTS_DIR / "JetBrainsMono-Bold.ttf"
-    if not font.exists():
-        print(f"missing font: {font}", file=sys.stderr)
-        return 1
-    svg = text_to_paths(SRC.read_text(), font)
-
+    svg = src.read_text()
     if args.only != "light":
-        render(svg, OUT_DARK, "dark")
+        render(svg, out_dark, "dark")
     if args.only != "dark":
-        render(to_light(svg), OUT_LIGHT, "light")
+        render(to_light(svg), out_light, "light")
     return 0
 
 

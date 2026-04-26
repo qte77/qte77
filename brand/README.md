@@ -5,9 +5,9 @@ Source palette, logo, and font references for qte77 visual identity.
 ## Files
 
 - `palette.toml` — color tokens (GitHub Primer, light + dark variants)
-- `images/logo-mark.text.svg` / `logo-mark.paths.svg` — square mark; canonical text + path-baked variant
-- `images/logo-wordmark.text.svg` / `logo-wordmark.paths.svg` — wordmark; same pair
-- `images/avatar_dark.png` / `images/avatar_light.png` — 920×920 PNG
+- `images/logo-mark.text.svg` / `logo-mark.paths.dejavu.svg` — square mark; canonical text + path-baked variant
+- `images/logo-wordmark.text.svg` / `logo-wordmark.paths.dejavu.svg` — wordmark; same pair
+- `images/avatar_dark.dejavu.png` / `images/avatar_light.dejavu.png` — 920×920 PNG
   rasters of the mark for use as a GitHub account avatar (rendered by
   `scripts/render_avatar.py`)
 - `fonts/` — typography (downloaded by `scripts/install_fonts.py`, gitignored)
@@ -16,30 +16,30 @@ Source palette, logo, and font references for qte77 visual identity.
 - `Makefile` — entry point for all the above; see `make -C brand help`
 
 <details>
-<summary>Preview: <code>images/logo-mark.paths.svg</code></summary>
+<summary>Preview: <code>images/logo-mark.paths.dejavu.svg</code></summary>
 
-<img src="./images/logo-mark.paths.svg" alt="qte77 mark" width="120">
-
-</details>
-
-<details>
-<summary>Preview: <code>images/logo-wordmark.paths.svg</code></summary>
-
-<img src="./images/logo-wordmark.paths.svg" alt="qte77 wordmark" width="320">
+<img src="./images/logo-mark.paths.dejavu.svg" alt="qte77 mark" width="120">
 
 </details>
 
 <details>
-<summary>Preview: <code>images/avatar_dark.png</code></summary>
+<summary>Preview: <code>images/logo-wordmark.paths.dejavu.svg</code></summary>
 
-<img src="./images/avatar_dark.png" alt="qte77 avatar (dark)" width="200">
+<img src="./images/logo-wordmark.paths.dejavu.svg" alt="qte77 wordmark" width="320">
 
 </details>
 
 <details>
-<summary>Preview: <code>images/avatar_light.png</code></summary>
+<summary>Preview: <code>images/avatar_dark.dejavu.png</code></summary>
 
-<img src="./images/avatar_light.png" alt="qte77 avatar (light)" width="200">
+<img src="./images/avatar_dark.dejavu.png" alt="qte77 avatar (dark)" width="200">
+
+</details>
+
+<details>
+<summary>Preview: <code>images/avatar_light.dejavu.png</code></summary>
+
+<img src="./images/avatar_light.dejavu.png" alt="qte77 avatar (light)" width="200">
 
 </details>
 
@@ -97,16 +97,16 @@ make -C brand help            # list targets
 make -C brand setup_brand_fonts
 make -C brand brand_avatar    # avatar_{dark,light}.png
 make -C brand brand_social    # dist/<repo>-social.png
-make -C brand brand_paths     # logo-mark.paths.svg (text -> path derivation)
+make -C brand brand_paths     # logo-mark.paths.dejavu.svg (text -> path derivation)
 make -C brand brand           # all of the above (full refresh)
 ```
 
 Or `cd brand && make <target>`. Output:
 
-- `images/avatar_{dark,light}.png` — for GitHub account avatar (UI-only upload)
-- `dist/<repo>-social.png` — for repo social preview (UI-only upload)
-- `images/logo-mark.paths.svg` — derived path-only SVG used by the
-  rasterizer (gitignored)
+- `images/avatar_{dark,light}.dejavu.png` — for GitHub account avatar (UI-only upload)
+- `images/wordmark_{dark,light}.dejavu.png` — for inline embedding where SVG can't be used
+- `images/logo-{mark,wordmark}.paths.dejavu.svg` — path-baked SVG used by the rasterizer; renders identically across all consumers
+- `dist/<repo>-social.png` — for repo social preview (UI-only upload, gitignored)
 
 GitHub provides no API for setting either avatar or social preview;
 both are UI-only. See [`docs/gh-endpoints/INDEX.md`](../docs/gh-endpoints/INDEX.md).
