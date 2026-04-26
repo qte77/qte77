@@ -56,7 +56,7 @@ brand_avatar: $(IMAGES)/logo-mark.paths.$(FONT).svg  ## Rasterize $(IMAGES)/logo
 	echo "Rendering avatar ($(FONT)) ..."
 	uv run $(SCRIPTS)/render_avatar.py --font $(FONT) $(if $(ONLY),--only $(ONLY))
 
-brand_wordmark: $(IMAGES)/logo-wordmark.paths.$(FONT).svg  ## Rasterize $(IMAGES)/logo-wordmark.paths.$(FONT).svg -> $(IMAGES)/wordmark_{dark,light}.$(FONT).png (960x320). Flags: FONT=<key>, ONLY=dark|light
+brand_wordmark: $(IMAGES)/logo-wordmark.paths.$(FONT).svg  ## Rasterize $(IMAGES)/logo-wordmark.paths.$(FONT).svg -> $(IMAGES)/wordmark_{dark,light}.$(FONT).png (608x320). Flags: FONT=<key>, ONLY=dark|light
 	echo "Rendering wordmark ($(FONT)) ..."
 	uv run $(SCRIPTS)/render_wordmark.py --font $(FONT) $(if $(ONLY),--only $(ONLY))
 
