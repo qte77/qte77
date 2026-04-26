@@ -18,7 +18,7 @@ https://github.com/orgs/community/discussions/172072
 
 Authentication: requires the user_session cookie from your authenticated
 browser session — a personal access token does NOT work because this
-endpoint is part of the web UI, not the API. See docs/social-preview-endpoint.md
+endpoint is part of the web UI, not the API. See docs/gh-endpoints/social-preview.md
 for how to extract the cookie.
 
 Usage:
@@ -167,7 +167,7 @@ def main() -> int:
     if not cookie:
         sys.exit(
             "set GH_USER_SESSION env var to your user_session cookie value\n"
-            "see docs/social-preview-endpoint.md for how to extract it"
+            "see docs/gh-endpoints/social-preview.md for how to extract it"
         )
 
     s = session_from_cookie(cookie)
