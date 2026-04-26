@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["resvg-py>=0.1"]
 # ///
-"""Rasterize brand/images/logo-wordmark.paths.<font>.svg to brand/images/wordmark_{dark,light}.<font>.png at 960x320.
+"""Rasterize brand/images/logo-wordmark.paths.<font>.svg to brand/images/wordmark_{dark,light}.<font>.png at 608x320.
 
 Reads the path-baked SVG. No font lookup at render time.
 
@@ -23,7 +23,7 @@ import resvg_py
 BRAND = Path(__file__).resolve().parent.parent
 IMAGES = BRAND / "images"
 DEFAULT_FONT = "dejavu"
-WIDTH, HEIGHT = 960, 320  # 4x the 240x80 viewBox
+WIDTH, HEIGHT = 608, 320  # 4x the 152x80 viewBox
 
 
 def to_light(svg: str) -> str:
