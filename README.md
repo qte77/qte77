@@ -21,7 +21,7 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 
 <img src="assets/images/authority-chain.svg" alt="qte77 Authority Chain — META, KERNEL, MECHANISM, STATE, CONSUMERS" width="100%" />
 
-See also: [GHA automation pipeline](assets/images/pipeline-layers.svg) — the 13 GitHub Actions running across the ecosystem.
+See also: [GHA automation pipeline](assets/images/pipeline-layers.svg) — the GitHub Actions running across the ecosystem.
 
 ## Topics
 
