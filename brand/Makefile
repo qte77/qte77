@@ -33,15 +33,15 @@ brand:  ## Refresh all brand artifacts (fonts + avatar + social previews)
 	$(MAKE) -s brand_avatar
 	$(MAKE) -s brand_social
 
-brand_paths:  ## Convert canonical $(IMAGES)/logo-mark.svg -> $(IMAGES)/logo-mark.paths.svg (path-only, for inspection)
+brand_paths:  ## Convert canonical $(IMAGES)/logo-mark.text.svg -> $(IMAGES)/logo-mark.paths.svg (path-only, for inspection)
 	echo "Converting text -> paths ..."
 	uv run $(SCRIPTS)/svg_text_to_paths.py \
 		--font $(FONTS)/JetBrainsMono-Bold.ttf \
-		< $(IMAGES)/logo-mark.svg \
+		< $(IMAGES)/logo-mark.text.svg \
 		> $(IMAGES)/logo-mark.paths.svg
 	echo "wrote $(IMAGES)/logo-mark.paths.svg"
 
-brand_avatar:  ## Rasterize $(IMAGES)/logo-mark.svg -> $(IMAGES)/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
+brand_avatar:  ## Rasterize $(IMAGES)/logo-mark.text.svg -> $(IMAGES)/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
 	echo "Rendering avatar ..."
 	uv run $(SCRIPTS)/render_avatar.py $(if $(ONLY),--only $(ONLY))
 

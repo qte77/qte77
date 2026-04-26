@@ -7,7 +7,7 @@
 #     "defusedxml>=0.7",
 # ]
 # ///
-"""Rasterize brand/images/logo-mark.svg to brand/images/avatar_{dark,light}.png at 920x920.
+"""Rasterize brand/images/logo-mark.text.svg to brand/images/avatar_{dark,light}.png at 920x920.
 
 The canonical SVG keeps its <text> element (font-driven, editable). For
 rasterization we derive an in-memory path-only SVG via
@@ -44,7 +44,7 @@ from svg_text_to_paths import text_to_paths
 
 BRAND = Path(__file__).resolve().parent.parent
 IMAGES = BRAND / "images"
-SRC = IMAGES / "logo-mark.svg"
+SRC = IMAGES / "logo-mark.text.svg"
 OUT_DARK = IMAGES / "avatar_dark.png"
 OUT_LIGHT = IMAGES / "avatar_light.png"
 FONTS_DIR = BRAND / "fonts"
