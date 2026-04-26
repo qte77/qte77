@@ -186,6 +186,6 @@
   <text class="note" x="445" y="127">index.json</text>
 
   <!-- Footer -->
-  <text class="note" x="20" y="502">12 GitHub Actions + 3 consumers</text>
+  <text class="note" x="20" y="502">GitHub Actions + consumers</text>
   <text class="note" x="840" y="502" text-anchor="end">feedback: learnings flow back to registry via compound writeback</text>
 </svg>
