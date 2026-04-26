@@ -116,7 +116,7 @@ External contributions follow fork-first:
 
 **Triage** — explore codebase, assess issue complexity, post analysis comment on upstream.
 
-**Implement** — strict TDD (Red-Green-Refactor), create branch, conventional commits, PR to upstream.
+**Implement** — strict TDD (Red-Green-Refactor), create branch, conventional commits (GPG-signed; see [gpg-signing.md](gpg-signing.md)), PR to upstream.
 
 **Review** — check out open PR, review diff, run tests, post comment-only review.
 
