@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-label="qte77 wordmark">
+  <style>
+    .wm-fg { fill: #e6edf3; }
+    .wm-accent { fill: #388bfd; }
+    @media (prefers-color-scheme: light) {
+      .wm-fg { fill: #1f2328; }
+      .wm-accent { fill: #1f6feb; }
+    }
+  </style>
+  <text class="wm-fg" x="20" y="54"
+        font-family="JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="44" font-weight="700" letter-spacing="-1">qte77</text>
+  <!-- Underscore starts under "t" (2nd glyph) and extends to end of wordmark -->
+  <rect class="wm-accent" x="46" y="62" width="104" height="3" rx="1.5"/>
+</svg>
