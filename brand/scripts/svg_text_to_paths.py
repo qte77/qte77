@@ -21,7 +21,7 @@ Usage as module:
     new_svg = text_to_paths(svg_string, font_path)
 
 Usage as CLI (stdin -> stdout):
-    cat brand/logo-mark.svg | uv run scripts/svg_text_to_paths.py \\
+    cat brand/images/logo-mark.svg | uv run scripts/svg_text_to_paths.py \\
         --font brand/fonts/JetBrainsMono-Bold.ttf > out.svg
 """
 

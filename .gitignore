@@ -48,8 +48,3 @@
 /.claude/skills
 /.idea
 /.vscode
-
-# Brand build artifacts (regenerated on demand)
-/brand/dist/
-/brand/logo-mark.paths.svg
-/brand/scripts/__pycache__/

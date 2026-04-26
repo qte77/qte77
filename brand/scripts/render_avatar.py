@@ -7,7 +7,7 @@
 #     "defusedxml>=0.7",
 # ]
 # ///
-"""Rasterize brand/logo-mark.svg to brand/avatar_{dark,light}.png at 920x920.
+"""Rasterize brand/images/logo-mark.svg to brand/images/avatar_{dark,light}.png at 920x920.
 
 The canonical SVG keeps its <text> element (font-driven, editable). For
 rasterization we derive an in-memory path-only SVG via
@@ -43,9 +43,10 @@ import resvg_py
 from svg_text_to_paths import text_to_paths
 
 BRAND = Path(__file__).resolve().parent.parent
-SRC = BRAND / "logo-mark.svg"
-OUT_DARK = BRAND / "avatar_dark.png"
-OUT_LIGHT = BRAND / "avatar_light.png"
+IMAGES = BRAND / "images"
+SRC = IMAGES / "logo-mark.svg"
+OUT_DARK = IMAGES / "avatar_dark.png"
+OUT_LIGHT = IMAGES / "avatar_light.png"
 FONTS_DIR = BRAND / "fonts"
 SIZE = 920  # 2x of GitHub's 460 minimum, crisp at all display sizes
 
