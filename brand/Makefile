@@ -5,7 +5,7 @@
 .ONESHELL:
 .PHONY: \
 	setup_brand_fonts \
-	brand brand_paths brand_avatar brand_social brand_clean \
+	brand brand_paths brand_avatar brand_wordmark brand_social brand_clean \
 	help
 .DEFAULT_GOAL := help
 
@@ -28,22 +28,30 @@ setup_brand_fonts:  ## Download Inter + JetBrains Mono (OFL) into brand/fonts/
 # MARK: BRAND
 
 
-brand:  ## Refresh all brand artifacts (fonts + avatar + social previews)
+brand:  ## Refresh all brand artifacts (fonts + paths + avatar + wordmark + social)
 	$(MAKE) -s setup_brand_fonts
+	$(MAKE) -s brand_paths
 	$(MAKE) -s brand_avatar
+	$(MAKE) -s brand_wordmark
 	$(MAKE) -s brand_social
 
-brand_paths:  ## Convert canonical $(IMAGES)/logo-mark.svg -> $(IMAGES)/logo-mark.paths.svg (path-only, for inspection)
+brand_paths:  ## Convert canonical SVGs -> $(IMAGES)/{logo-mark,logo-wordmark}.paths.svg (font geometry baked in)
 	echo "Converting text -> paths ..."
-	uv run $(SCRIPTS)/svg_text_to_paths.py \
-		--font $(FONTS)/JetBrainsMono-Bold.ttf \
-		< $(IMAGES)/logo-mark.svg \
-		> $(IMAGES)/logo-mark.paths.svg
-	echo "wrote $(IMAGES)/logo-mark.paths.svg"
+	for src in logo-mark logo-wordmark; do \
+		uv run $(SCRIPTS)/svg_text_to_paths.py \
+			--font $(FONTS)/JetBrainsMono-Bold.ttf \
+			< $(IMAGES)/$$src.svg \
+			> $(IMAGES)/$$src.paths.svg; \
+		echo "wrote $(IMAGES)/$$src.paths.svg"; \
+	done
 
 brand_avatar:  ## Rasterize $(IMAGES)/logo-mark.svg -> $(IMAGES)/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
 	echo "Rendering avatar ..."
 	uv run $(SCRIPTS)/render_avatar.py $(if $(ONLY),--only $(ONLY))
+
+brand_wordmark:  ## Rasterize $(IMAGES)/logo-wordmark.svg -> $(IMAGES)/wordmark_{dark,light}.png (960x320). Flag: ONLY=dark|light
+	echo "Rendering wordmark ..."
+	uv run $(SCRIPTS)/render_wordmark.py $(if $(ONLY),--only $(ONLY))
 
 brand_social:  ## Generate $(DIST)/<repo>-social.png from social-previews.toml. Flags: ONLY=<repo>, LIGHT=1, DARK=1
 	echo "Rendering social preview cards ..."
@@ -52,10 +60,9 @@ brand_social:  ## Generate $(DIST)/<repo>-social.png from social-previews.toml. 
 		$(if $(filter 1,$(LIGHT)),--light) \
 		$(if $(filter 1,$(DARK)),--dark)
 
-brand_clean:  ## Remove $(DIST)/, derived path SVG, and downloaded fonts
+brand_clean:  ## Remove $(DIST)/ and downloaded fonts (paths SVGs and PNGs are committed artifacts)
 	echo "Cleaning brand artifacts ..."
 	rm -rf $(DIST)
-	rm -f $(IMAGES)/logo-mark.paths.svg
 	rm -f $(FONTS)/*.ttf $(FONTS)/*.otf
 
 

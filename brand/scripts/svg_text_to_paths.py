@@ -79,17 +79,23 @@ def _convert_text_element(text_el: ET.Element, hb_font: hb.Font, ttfont: TTFont)
     features = _parse_features(text_el.get("font-feature-settings"))
     scale = font_size / upem
 
-    # First pass: shape every tspan, collect glyph data + total advance
+    # First pass: shape every run (tspan or direct text), collect glyph data
     runs: list[tuple[float, float, list[tuple[int, float, float]]]] = []
     total_advance = 0.0
     cursor_x = 0.0
     cursor_y = 0.0  # relative to baseline y
 
-    for tspan in text_el.findall(f"{{{SVG_NS}}}tspan"):
-        cls = tspan.get("class", "")
-        dy = float(tspan.get("dy", 0))
+    tspans = text_el.findall(f"{{{SVG_NS}}}tspan")
+    if tspans:
+        # Text composed of one or more <tspan> children
+        run_inputs = [(tspan.get("class", ""), float(tspan.get("dy", 0)),
+                       tspan.text or "") for tspan in tspans]
+    else:
+        # No tspan; treat the <text> element's own text as a single run.
+        run_inputs = [(text_el.get("class", ""), 0.0, text_el.text or "")]
+
+    for cls, dy, text in run_inputs:
         cursor_y += dy
-        text = tspan.text or ""
         infos, positions = _shape(hb_font, text, features)
         glyphs: list[tuple[int, float, float]] = []
         for info, pos in zip(infos, positions):

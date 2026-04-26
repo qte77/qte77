@@ -13,11 +13,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist
-- `.markdownlint.jsonc`: project policy disabling MD013/MD041/MD060, allowing inline HTML
-- `lychee.toml`: link-check config with bot-blocking accept codes and exclusion patterns
+- `brand/images/logo-mark.paths.svg`, `brand/images/logo-wordmark.paths.svg` — derived path-only SVGs (JBM Bold geometry baked in via uharfbuzz + fontTools); committed so consumer surfaces that can't load `@font-face` from `<img>`-loaded SVGs (e.g., github.com README rendering) get correct typography
+- `brand/images/wordmark_dark.png`, `brand/images/wordmark_light.png` — 960×320 raster wordmark variants
+- `brand/scripts/render_wordmark.py` — wordmark rasterizer (mirrors `render_avatar.py`)
+- `brand/Makefile`: new `brand_wordmark` target; `brand_paths` now derives both mark and wordmark; `brand` (full refresh) includes paths + wordmark steps
+
+### Changed
+
+- Profile `README.md`: wordmark switched from `logo-wordmark.svg` to `logo-wordmark.paths.svg` so github.com renders JBM Bold geometry instead of system-monospace fallback
+- `brand/.gitignore`: paths SVGs no longer ignored — they're committed artifacts
+- `brand/README.md`: documents the three-format strategy (canonical SVG, paths SVG, PNG) with a "pick the right variant" matrix
+- `brand/scripts/svg_text_to_paths.py`: handles `<text>` with direct text content (no `<tspan>` children) — needed for the wordmark SVG
+
+## [0.4.0] - 2026-04-26
+
+### Added
+
+- `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist (PR #43)
+- `.markdownlint.jsonc`: project policy disabling MD013/MD041/MD060, allowing inline HTML (PR #43)
+- `lychee.toml`: link-check config with bot-blocking accept codes and exclusion patterns (PR #43)
 - `brand/scripts/upload_social_preview.py`: experimental CLI uploader that targets the undocumented internal endpoint used by the Settings UI; auth via `GH_USER_SESSION` cookie, GitHub provides no public API for this (PR #43)
 - `docs/gh-endpoints/`: catalog of GitHub functionality not covered by REST/GraphQL/`gh` CLI; `INDEX.md` lists 7 confirmed gaps with first-party citations, `HOWTO.md` documents the methodology, `social-preview.md` reverse-engineers the upload endpoint (PR #43)
+- `brand/scripts/svg_text_to_paths.py`: text-to-paths converter using uharfbuzz (browser-equivalent shaping) + fontTools (glyph-outline extraction) (PR #43)
 - `brand/images/`: containment subfolder for visual assets — `logo-mark.svg`, `logo-wordmark.svg`, `avatar_dark.png`, `avatar_light.png` (PR #47)
 - `brand/.gitignore`: brand-local ignore rules so `brand/` is self-contained (PR #47)
 - `brand/Makefile`: `IMAGES`/`FONTS`/`DIST`/`SCRIPTS` path constants; help target expands them at print time (PR #47)
@@ -26,8 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Profile `README.md`: wordmark centered horizontally via `<p align="center">`, updated to `brand/images/` paths (PR #47)
-- `brand/README.md`, `docs/github-image-theming.md`: live-example paths updated to `brand/images/` (PR #47)
-- `brand/scripts/render_avatar.py`: `BRAND` constant + `IMAGES` resolve to subfolder (PR #47)
+- `brand/scripts/render_avatar.py`: pipes the canonical SVG through `text_to_paths` before resvg, eliminating font-fallback risk in PNG output (PR #43); `BRAND` constant + `IMAGES` resolve to subfolder (PR #47)
+- `AGENTS.md`: forward to `CONTRIBUTING.md` for technical workflows (PR #43)
 
 ## [0.3.0] - 2026-04-26
 
