@@ -5,9 +5,9 @@
   <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="100%" />
 </p>
 
-Goal-driven development with AI agents — from specs to merged PRs across dev and office repos. RAPID generates specs, Ralph implements via TDD, Polyforge and Office-forge orchestrate across repos, issues sync cross-repo, progress traces back to goals.
+Turn goals into merged PRs across many repos at once. Agents handle dev and office work end to end, in parallel.
 
-> This ecosystem connects a goal artifact through spec generation, autonomous implementation, cross-repo coordination, and traceability — end to end.
+> Without coordination, agentic work across many repos drifts — learnings get lost, work duplicates, goals lose their thread. qte77 keeps the goal → spec → build → learn loop compounding, not forgetting.
 
 ## Mental Model
 
