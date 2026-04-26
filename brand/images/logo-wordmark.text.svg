@@ -11,12 +11,9 @@
         font-family="DejaVu Sans Mono, Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="44" font-weight="700" letter-spacing="-1">qte77</text>
   <!-- Underscore tuned for DejaVu Sans Mono Bold at font-size 44, letter-spacing=-1:
-       - Glyph advance: 1233/2048 em × 44 ≈ 26.49 viewBox units
-       - q starts at x=20 (text element x); per-char gap is letter-spacing (-1)
-       - t left edge: 45.49 (rect x)
-       - Last 7 right edge: 148.45 → rect right edge
-       - Width: 148.45 - 45.49 = 102.96
+       - Spans visible ink: from t's visible left edge (47.88) to last 7's
+         visible right edge (145.14). Width: 145.14 - 47.88 = 97.27
        - q glyph yMin = -426 → q ink bottom y = 54 + 426*44/2048 = 63.15
        - Rect bottom = q ink bottom → y = 63.15 - 3 = 60.15 -->
-  <rect class="wm-accent" x="45.49" y="60.15" width="102.96" height="3" rx="1.5"/>
+  <rect class="wm-accent" x="47.88" y="60.15" width="97.27" height="3" rx="1.5"/>
 </svg>
