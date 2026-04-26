@@ -1,6 +1,11 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["resvg-py>=0.1", "uharfbuzz>=0.40", "fonttools>=4.50"]
+# dependencies = [
+#     "resvg-py>=0.1",
+#     "uharfbuzz>=0.40",
+#     "fonttools>=4.50",
+#     "defusedxml>=0.7",
+# ]
 # ///
 """Rasterize brand/logo-mark.svg to brand/avatar_{dark,light}.png at 920x920.
 

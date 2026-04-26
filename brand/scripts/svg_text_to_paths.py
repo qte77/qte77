@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["uharfbuzz>=0.40", "fonttools>=4.50"]
+# dependencies = ["uharfbuzz>=0.40", "fonttools>=4.50", "defusedxml>=0.7"]
 # ///
 """Replace <text> elements in an SVG with equivalent <path> elements.
 
@@ -32,6 +32,11 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+# defusedxml hardens stdlib XML parsers against billion-laughs / external-entity
+# attacks. We only feed our own canonical SVGs through this code, but the
+# hardening is free.
+from defusedxml.ElementTree import fromstring as safe_fromstring
 
 import uharfbuzz as hb
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -131,7 +136,7 @@ def text_to_paths(svg_string: str, font_path: Path) -> str:
     hb_font = hb.Font(face)
     ttfont = TTFont(str(font_path))
 
-    root = ET.fromstring(svg_string)
+    root = safe_fromstring(svg_string)
     # Find all text elements (one or more)
     for parent in root.iter():
         for i, child in enumerate(list(parent)):

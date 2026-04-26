@@ -31,9 +31,14 @@ def download(url: str, dest: Path) -> None:
     if dest.exists():
         print(f"[skip] {dest.name} already present")
         return
+    # Reject anything that isn't an https URL (file://, http://, custom schemes).
+    # The FONTS map is hardcoded https; this guards against future edits.
+    if not url.startswith("https://"):
+        raise ValueError(f"refusing non-https URL: {url}")
     print(f"[get ] {dest.name}")
     req = urllib.request.Request(url, headers={"User-Agent": "qte77-fonts/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as r, dest.open("wb") as f:
+    # B310: scheme guarded above; URLs are hardcoded https constants
+    with urllib.request.urlopen(req, timeout=30) as r, dest.open("wb") as f:  # nosec B310
         f.write(r.read())
 
 
