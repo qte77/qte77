@@ -70,3 +70,7 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 - [x] Kaggle Competitions
 - [ ] Codewars Python
 - [ ] AdventOfcode
+
+## Lineage
+
+The spec-generation pillar descends from [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (created 2025-07-06; CABIO vision introduced 2025-08-11), where the BRD → PRD → FRP pipeline originated. [`RAPID-spec-forge`](https://github.com/qte77/RAPID-spec-forge) continued that line until archived 2026-04-26; the spec methodology is heading to [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
