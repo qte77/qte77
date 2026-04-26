@@ -1,4 +1,8 @@
 # Brand build artifacts (regenerated on demand)
 /dist/
-/images/logo-mark.paths.svg
 /scripts/__pycache__/
+
+# Fonts: directory is tracked via .gitkeep + README; binaries are downloaded
+/fonts/*
+!/fonts/.gitkeep
+!/fonts/README.md

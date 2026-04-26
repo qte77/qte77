@@ -5,8 +5,8 @@ Source palette, logo, and font references for qte77 visual identity.
 ## Files
 
 - `palette.toml` — color tokens (GitHub Primer, light + dark variants)
-- `images/logo-mark.svg` — square mark, adaptive light/dark
-- `images/logo-wordmark.svg` — full "qte77" wordmark, adaptive light/dark
+- `images/logo-mark.text.svg` / `logo-mark.paths.svg` — square mark; canonical text + path-baked variant
+- `images/logo-wordmark.text.svg` / `logo-wordmark.paths.svg` — wordmark; same pair
 - `images/avatar_dark.png` / `images/avatar_light.png` — 920×920 PNG
   rasters of the mark for use as a GitHub account avatar (rendered by
   `scripts/render_avatar.py`)
@@ -16,16 +16,16 @@ Source palette, logo, and font references for qte77 visual identity.
 - `Makefile` — entry point for all the above; see `make -C brand help`
 
 <details>
-<summary>Preview: <code>images/logo-mark.svg</code></summary>
+<summary>Preview: <code>images/logo-mark.paths.svg</code></summary>
 
-<img src="./images/logo-mark.svg" alt="qte77 mark" width="120">
+<img src="./images/logo-mark.paths.svg" alt="qte77 mark" width="120">
 
 </details>
 
 <details>
-<summary>Preview: <code>images/logo-wordmark.svg</code></summary>
+<summary>Preview: <code>images/logo-wordmark.paths.svg</code></summary>
 
-<img src="./images/logo-wordmark.svg" alt="qte77 wordmark" width="320">
+<img src="./images/logo-wordmark.paths.svg" alt="qte77 wordmark" width="320">
 
 </details>
 

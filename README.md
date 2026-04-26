@@ -2,7 +2,7 @@
 <!-- https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md033 -->
 
 <p align="center">
-  <img src="brand/images/logo-wordmark.svg" alt="qte77" width="320" />
+  <img src="brand/images/logo-wordmark.paths.svg" alt="qte77" width="320" />
 </p>
 
 Goal-driven development with AI agents — from specs to merged PRs across dev and office repos. RAPID generates specs, Ralph implements via TDD, Polyforge and Office-forge orchestrate across repos, issues sync cross-repo, progress traces back to goals.
@@ -70,3 +70,7 @@ Goal-driven development with AI agents — from specs to merged PRs across dev a
 - [x] Kaggle Competitions
 - [ ] Codewars Python
 - [ ] AdventOfcode
+
+## Lineage
+
+The spec-generation pillar descends from [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (created 2025-07-06; CABIO vision introduced 2025-08-11), where the BRD → PRD → FRP pipeline originated. [`RAPID-spec-forge`](https://github.com/qte77/RAPID-spec-forge) continued that line until archived 2026-04-26; the spec methodology is heading to [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.

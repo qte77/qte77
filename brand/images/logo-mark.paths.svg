@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="qte77 mark">
+  <style>
+    .mark-bg { fill: #0d1117; }
+    .mark-fg { fill: #e6edf3; }
+    .mark-accent { fill: #388bfd; }
+    @media (prefers-color-scheme: light) {
+      .mark-bg { fill: #ffffff; }
+      .mark-fg { fill: #1f2328; }
+      .mark-accent { fill: #1f6feb; }
+    }
+  </style>
+  <rect class="mark-bg" x="0" y="0" width="80" height="80" rx="12" />
+  <g><path d="M485 -20Q292 -20 185.5 119.5Q79 259 79 520Q79 787 186.0 933.5Q293 1080 487 1080Q608 1080 670.5 1027.5Q733 975 752 868H781L798 1060H1049V-460H778V164H752Q735 73 666.5 26.5Q598 -20 485 -20ZM778 539V544Q778 686 725.0 755.5Q672 825 565 825Q465 825 410.5 745.5Q356 666 356 520Q356 378 409.0 306.5Q462 235 565 235Q672 235 725.0 297.0Q778 359 778 482Z" transform="translate(23.5938,48.0000) scale(0.013672,-0.013672)" class="mark-fg" /><path d="M447 0 810 1177H360V872H95V1420H1171L716 0Z" transform="translate(40.0000,48.0000) scale(0.013672,-0.013672)" class="mark-fg" /></g><rect class="mark-accent" x="40" y="45" width="17" height="3" rx="1.5" />
+</svg>
