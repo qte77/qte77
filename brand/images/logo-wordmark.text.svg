@@ -8,8 +8,15 @@
     }
   </style>
   <text class="wm-fg" x="20" y="54"
-        font-family="Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-family="DejaVu Sans Mono, Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="44" font-weight="700" letter-spacing="-1">qte77</text>
-  <!-- Underscore starts under "t" (2nd glyph) and extends to end of wordmark -->
-  <rect class="wm-accent" x="46" y="62" width="104" height="3" rx="1.5"/>
+  <!-- Underscore tuned for DejaVu Sans Mono Bold at font-size 44, letter-spacing=-1:
+       - Glyph advance: 1233/2048 em × 44 ≈ 26.49 viewBox units
+       - q starts at x=20 (text element x); per-char gap is letter-spacing (-1)
+       - t left edge: 45.49 (rect x)
+       - Last 7 left edge: 121.96 → rect right edge
+       - Width: 121.96 - 45.49 = 76.47
+       - q glyph yMin = -426 → q ink bottom y = 54 + 426*44/2048 = 63.15
+       - Rect bottom = q ink bottom → y = 63.15 - 3 = 60.15 -->
+  <rect class="wm-accent" x="45.49" y="60.15" width="76.47" height="3" rx="1.5"/>
 </svg>

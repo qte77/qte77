@@ -22,7 +22,7 @@ Usage as module:
 
 Usage as CLI (stdin -> stdout):
     cat brand/images/logo-mark.text.svg | uv run scripts/svg_text_to_paths.py \\
-        --font brand/fonts/JetBrainsMono-Bold.ttf > out.svg
+        --font brand/fonts/CascadiaMono-Bold.ttf > out.svg
 """
 
 from __future__ import annotations

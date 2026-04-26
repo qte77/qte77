@@ -2,7 +2,7 @@
 <!-- https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md033 -->
 
 <p align="center">
-  <img src="brand/images/logo-wordmark.paths.svg" alt="qte77" width="320" />
+  <img src="brand/images/logo-wordmark.paths.dejavu.svg" alt="qte77" width="320" />
 </p>
 
 Goal-driven development with AI agents — from specs to merged PRs across dev and office repos. RAPID generates specs, Ralph implements via TDD, Polyforge and Office-forge orchestrate across repos, issues sync cross-repo, progress traces back to goals.

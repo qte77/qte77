@@ -11,10 +11,12 @@
   </style>
   <rect class="mark-bg" x="0" y="0" width="80" height="80" rx="12"/>
   <text class="mark-fg" x="40" y="48"
-        font-family="Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-family="DejaVu Sans Mono, Cascadia Mono, Cascadia Code, Consolas, ui-monospace, SFMono-Regular, Menlo, monospace"
         font-size="28" font-weight="700" text-anchor="middle"
         font-feature-settings="'onum' 1">q7</text>
-  <!-- Underscore as a rect; bottom at y=48 (text baseline = bottom of the 7).
-       Positioned beneath the 7 glyph (right half of the centered "q7"). -->
-  <rect class="mark-accent" x="40" y="45" width="17" height="3" rx="1.5"/>
+  <!-- Underscore as a rect; starts after the 7's right edge (x=56.4 in
+       Cascadia Mono Bold at font-size 28: advance 1200/2048 em x 28 ≈ 16.4
+       per glyph; "q7" centered at x=40 spans 23.6 to 56.4). Bottom at y=48
+       matches the text baseline = bottom of the 7. -->
+  <rect class="mark-accent" x="56.4" y="45" width="17" height="3" rx="1.5"/>
 </svg>

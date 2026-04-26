@@ -2,7 +2,6 @@
 /dist/
 /scripts/__pycache__/
 
-# Fonts: directory is tracked via .gitkeep + README; binaries are downloaded
+# Fonts: directory tracked via .gitkeep only; binaries downloaded on demand
 /fonts/*
 !/fonts/.gitkeep
-!/fonts/README.md
