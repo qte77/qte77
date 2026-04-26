@@ -77,6 +77,8 @@ def _convert_text_element(text_el: ET.Element, hb_font: hb.Font, ttfont: TTFont)
     font_size = float(text_el.get("font-size", 16))
     anchor = text_el.get("text-anchor", "start")
     features = _parse_features(text_el.get("font-feature-settings"))
+    # CSS letter-spacing: extra advance added after every glyph (user units).
+    letter_spacing = float(text_el.get("letter-spacing", 0) or 0)
     scale = font_size / upem
 
     # First pass: shape every run (tspan or direct text), collect glyph data
@@ -101,7 +103,7 @@ def _convert_text_element(text_el: ET.Element, hb_font: hb.Font, ttfont: TTFont)
             gx = cursor_x + pos.x_offset * scale
             gy = cursor_y - pos.y_offset * scale
             glyphs.append((info.codepoint, gx, gy))
-            cursor_x += pos.x_advance * scale
+            cursor_x += pos.x_advance * scale + letter_spacing
         run_advance = cursor_x  # cumulative
         runs.append((run_advance, cls, glyphs))
         total_advance = cursor_x
