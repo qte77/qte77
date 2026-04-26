@@ -8,13 +8,17 @@
   </picture>
 </p>
 
-Turn goals into merged PRs across many repos at once. Agents handle dev and office work end to end, in parallel.
+Turn goals into merged PRs across many repos. Agents drive the loop; humans can approve and steer; engines do the heavy lifting.
+
+qte77 is a GitHub account hosting a runtime-portable framework. Today: GitHub (Actions, Issues, PRs). Tomorrow: anywhere — air-gapped, BYOM, your stack.
 
 > Without coordination, agentic work across many repos drifts — learnings get lost, work duplicates, goals lose their thread. qte77 keeps the goal → spec → build → learn loop compounding, not forgetting.
 
 ## Mental Model
 
 Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
+
+Read it as: goals at the top feed specs, specs feed builds, builds emit learnings, and learnings flow back into the next goals.
 
 <img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
@@ -35,8 +39,10 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 ### What this means concretely
 
 - **Agents** — Claude Code (and compatible LLM coding agents) running per-repo, coordinated by orchestrators in this workspace.
-- **Office work** — non-code tasks an agent can drive end-to-end (drafting, scheduling, triage, ops glue), handled by the office-forge orchestrator alongside the dev forges.
-- **Where to look** — orchestrators (`polyforge-orchestrator`, `office-forge-orchestrator`) and 30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
+- **Office work** — real workflows where humans and agents collaborate, orchestrated by office-forge and powered by the wider qte77 framework (engines like doc-pipeline-engine handle the heavy lifting).
+- **Engines** — reusable components orchestrators compose: [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) (document processing) and [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape) (HTTP scraping with anti-bot fallback).
+- **Humans** — approve goals, review PRs, and steer the orchestrators. Agents propose; humans decide.
+- **Where to look** — start with [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) for the dev loop or [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) for the office loop. 30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
 
 ## Profile
 
@@ -92,10 +98,18 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - [x] Kaggle Playgrounds
 - [x] Kaggle Competitions
 - [ ] Codewars Python
-- [ ] AdventOfcode
+- [ ] Advent of Code
+
+## Get started
+
+- Dev loop → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator)
+- Office loop → [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator)
+- Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
+
+Each repo carries its own quickstart.
 
 ## Lineage
 
 How the current system got here — proof of work, not required reading.
 
-The spec-generation pillar started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26). The methodology is now landing in [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
+The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26). The methodology is now landing in [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
