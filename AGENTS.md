@@ -48,6 +48,21 @@ hierarchy > Project patterns > General best practices
 - Required information completely missing
 - Actions would significantly change project architecture
 
+## AR vs GitHub Issue
+
+`AGENT_REQUESTS.md` is for **ephemeral session-level escalations only** —
+something an agent surfaces *during* a session that needs human input *now* or
+*this session*. Once resolved (typically within a session or two), the entry
+is removed.
+
+Anything that will outlive the current session — long-running decisions,
+multi-step migrations, blockers requiring multiple discussions — must
+graduate to a **GitHub Issue**. Per the task-tracking authority chain,
+GitHub Issues are the source of truth for persistent state.
+
+If an AR entry persists beyond a few sessions, file it as an Issue and
+remove the AR entry.
+
 ## Agent Neutrality Requirements
 
 **ALL AI AGENTS MUST MAINTAIN STRICT NEUTRALITY AND REQUIREMENT-DRIVEN DESIGN:**
