@@ -14,9 +14,9 @@
        - Glyph advance: 1233/2048 em × 44 ≈ 26.49 viewBox units
        - q starts at x=20 (text element x); per-char gap is letter-spacing (-1)
        - t left edge: 45.49 (rect x)
-       - Last 7 left edge: 121.96 → rect right edge
-       - Width: 121.96 - 45.49 = 76.47
+       - Last 7 right edge: 148.45 → rect right edge
+       - Width: 148.45 - 45.49 = 102.96
        - q glyph yMin = -426 → q ink bottom y = 54 + 426*44/2048 = 63.15
        - Rect bottom = q ink bottom → y = 63.15 - 3 = 60.15 -->
-  <rect class="wm-accent" x="45.49" y="60.15" width="76.47" height="3" rx="1.5"/>
+  <rect class="wm-accent" x="45.49" y="60.15" width="102.96" height="3" rx="1.5"/>
 </svg>
