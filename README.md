@@ -16,15 +16,24 @@ Turn goals into merged PRs across many repos at once. Agents handle dev and offi
 
 Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
 
-<img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
+<details>
+  <summary>Diagram: clusters, flow, feedback loop</summary>
+  <img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
+</details>
 
 ### Authority Chain
 
 Policy, mechanism, and state get confused and duplicated across repos. Naming where each decision lives prevents the drift and keeps 30+ repos DRY.
 
-<img src="assets/images/authority-chain.svg" alt="qte77 Authority Chain — META, KERNEL, MECHANISM, STATE, CONSUMERS" width="100%" />
+<details>
+  <summary>Diagram: META, KERNEL, MECHANISM, STATE, CONSUMERS</summary>
+  <img src="assets/images/authority-chain.svg" alt="qte77 Authority Chain — META, KERNEL, MECHANISM, STATE, CONSUMERS" width="100%" />
+</details>
 
-See also: [GHA automation pipeline](assets/images/pipeline-layers.svg) — the GitHub Actions running across the ecosystem.
+<details>
+  <summary>GHA automation pipeline — the GitHub Actions running across the ecosystem</summary>
+  <img src="assets/images/pipeline-layers.svg" alt="GHA automation pipeline — layers across the ecosystem" width="100%" />
+</details>
 
 ## Topics
 
