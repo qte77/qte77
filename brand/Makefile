@@ -10,12 +10,19 @@
 .DEFAULT_GOAL := help
 
 
+# -- paths --
+IMAGES   := images
+FONTS    := fonts
+DIST     := dist
+SCRIPTS  := scripts
+
+
 # MARK: SETUP
 
 
 setup_brand_fonts:  ## Download Inter + JetBrains Mono (OFL) into brand/fonts/
 	echo "Installing brand fonts ..."
-	uv run scripts/install_fonts.py
+	uv run $(SCRIPTS)/install_fonts.py
 
 
 # MARK: BRAND
@@ -26,30 +33,30 @@ brand:  ## Refresh all brand artifacts (fonts + avatar + social previews)
 	$(MAKE) -s brand_avatar
 	$(MAKE) -s brand_social
 
-brand_paths:  ## Convert canonical images/logo-mark.svg -> images/logo-mark.paths.svg (path-only, for inspection)
+brand_paths:  ## Convert canonical $(IMAGES)/logo-mark.svg -> $(IMAGES)/logo-mark.paths.svg (path-only, for inspection)
 	echo "Converting text -> paths ..."
-	uv run scripts/svg_text_to_paths.py \
-		--font fonts/JetBrainsMono-Bold.ttf \
-		< images/logo-mark.svg \
-		> images/logo-mark.paths.svg
-	echo "wrote images/logo-mark.paths.svg"
+	uv run $(SCRIPTS)/svg_text_to_paths.py \
+		--font $(FONTS)/JetBrainsMono-Bold.ttf \
+		< $(IMAGES)/logo-mark.svg \
+		> $(IMAGES)/logo-mark.paths.svg
+	echo "wrote $(IMAGES)/logo-mark.paths.svg"
 
-brand_avatar:  ## Rasterize images/logo-mark.svg -> images/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
+brand_avatar:  ## Rasterize $(IMAGES)/logo-mark.svg -> $(IMAGES)/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
 	echo "Rendering avatar ..."
-	uv run scripts/render_avatar.py $(if $(ONLY),--only $(ONLY))
+	uv run $(SCRIPTS)/render_avatar.py $(if $(ONLY),--only $(ONLY))
 
-brand_social:  ## Generate dist/<repo>-social.png from social-previews.toml. Flags: ONLY=<repo>, LIGHT=1, DARK=1
+brand_social:  ## Generate $(DIST)/<repo>-social.png from social-previews.toml. Flags: ONLY=<repo>, LIGHT=1, DARK=1
 	echo "Rendering social preview cards ..."
-	uv run scripts/generate_social.py \
+	uv run $(SCRIPTS)/generate_social.py \
 		$(if $(ONLY),--only $(ONLY)) \
 		$(if $(filter 1,$(LIGHT)),--light) \
 		$(if $(filter 1,$(DARK)),--dark)
 
-brand_clean:  ## Remove dist/, derived path SVG, and downloaded fonts
+brand_clean:  ## Remove $(DIST)/, derived path SVG, and downloaded fonts
 	echo "Cleaning brand artifacts ..."
-	rm -rf dist
-	rm -f images/logo-mark.paths.svg
-	rm -f fonts/*.ttf fonts/*.otf
+	rm -rf $(DIST)
+	rm -f $(IMAGES)/logo-mark.paths.svg
+	rm -f $(FONTS)/*.ttf $(FONTS)/*.otf
 
 
 # MARK: HELP
@@ -58,7 +65,10 @@ brand_clean:  ## Remove dist/, derived path SVG, and downloaded fonts
 help:  ## Show available recipes grouped by section
 	@echo "Usage: make [recipe]"
 	@echo ""
-	@awk '/^# MARK:/ { \
+	@awk \
+		-v IMAGES="$(IMAGES)" -v FONTS="$(FONTS)" \
+		-v DIST="$(DIST)" -v SCRIPTS="$(SCRIPTS)" \
+	'/^# MARK:/ { \
 		section = substr($$0, index($$0, ":")+2); \
 		printf "\n\033[1m%s\033[0m\n", section \
 	} \
@@ -67,6 +77,11 @@ help:  ## Show available recipes grouped by section
 		if (helpMessage) { \
 			recipe = $$1; \
 			sub(/:/, "", recipe); \
-			printf "  \033[36m%-22s\033[0m %s\n", recipe, substr($$0, RSTART + 3, RLENGTH) \
+			msg = substr($$0, RSTART + 3, RLENGTH); \
+			gsub(/\$$\(IMAGES\)/,  IMAGES,  msg); \
+			gsub(/\$$\(FONTS\)/,   FONTS,   msg); \
+			gsub(/\$$\(DIST\)/,    DIST,    msg); \
+			gsub(/\$$\(SCRIPTS\)/, SCRIPTS, msg); \
+			printf "  \033[36m%-22s\033[0m %s\n", recipe, msg \
 		} \
 	}' $(MAKEFILE_LIST)
