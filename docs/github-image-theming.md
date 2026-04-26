@@ -95,8 +95,8 @@ Empirical evidence inside this repo:
 
 - `assets/images/mental-model.svg`
 - `assets/images/pipeline-layers.svg`
-- `brand/logo-mark.svg`
-- `brand/logo-wordmark.svg`
+- `brand/images/logo-mark.svg`
+- `brand/images/logo-wordmark.svg`
 
 All four are referenced from READMEs via plain `<img>` tags and adapt
 correctly in GitHub's light and dark themes.

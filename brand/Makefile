@@ -26,15 +26,15 @@ brand:  ## Refresh all brand artifacts (fonts + avatar + social previews)
 	$(MAKE) -s brand_avatar
 	$(MAKE) -s brand_social
 
-brand_paths:  ## Convert canonical logo-mark.svg -> brand/logo-mark.paths.svg (path-only, for inspection)
+brand_paths:  ## Convert canonical images/logo-mark.svg -> images/logo-mark.paths.svg (path-only, for inspection)
 	echo "Converting text -> paths ..."
 	uv run scripts/svg_text_to_paths.py \
 		--font fonts/JetBrainsMono-Bold.ttf \
-		< logo-mark.svg \
-		> logo-mark.paths.svg
-	echo "wrote logo-mark.paths.svg"
+		< images/logo-mark.svg \
+		> images/logo-mark.paths.svg
+	echo "wrote images/logo-mark.paths.svg"
 
-brand_avatar:  ## Rasterize logo-mark.svg -> avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
+brand_avatar:  ## Rasterize images/logo-mark.svg -> images/avatar_{dark,light}.png (920x920). Flag: ONLY=dark|light
 	echo "Rendering avatar ..."
 	uv run scripts/render_avatar.py $(if $(ONLY),--only $(ONLY))
 
@@ -48,7 +48,7 @@ brand_social:  ## Generate dist/<repo>-social.png from social-previews.toml. Fla
 brand_clean:  ## Remove dist/, derived path SVG, and downloaded fonts
 	echo "Cleaning brand artifacts ..."
 	rm -rf dist
-	rm -f logo-mark.paths.svg
+	rm -f images/logo-mark.paths.svg
 	rm -f fonts/*.ttf fonts/*.otf
 
 
