@@ -92,6 +92,7 @@ auto-adapts to viewer theme.
 ```
 
 Empirical evidence inside this repo:
+
 - `assets/images/mental-model.svg`
 - `assets/images/pipeline-layers.svg`
 - `brand/logo-mark.svg`
@@ -101,6 +102,7 @@ All four are referenced from READMEs via plain `<img>` tags and adapt
 correctly in GitHub's light and dark themes.
 
 First-party context for why this works:
+
 - A GitHub team member confirmed in
   [community#62430](https://github.com/orgs/community/discussions/62430)
   that GitHub itself handles `prefers-color-scheme` correctly; reported

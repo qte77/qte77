@@ -1,15 +1,14 @@
 # Agent Instructions
 
 **Behavioral rules, compliance requirements, and decision frameworks for AI coding
-agents.** For technical workflows and coding standards, see
-[CONTRIBUTING.md](CONTRIBUTING.md). For project overview, see
-[README.md](README.md).
+agents.** For project overview, see [README.md](README.md). For brand tooling
+specifics, see [brand/README.md](brand/README.md).
 
 **External References:**
 
-- @CONTRIBUTING.md - Command reference, testing guidelines, code style patterns
 - @AGENT_REQUESTS.md - Escalation and human collaboration
 - @AGENT_LEARNINGS.md - Pattern discovery and knowledge sharing
+- @CHANGELOG.md - Notable changes by version
 
 ## Claude Code Infrastructure
 
@@ -93,7 +92,7 @@ Gather more context or escalate to AGENT_REQUESTS.md
 
 **Pre-Task:**
 
-- Read AGENTS.md > CONTRIBUTING.md for technical details
+- Read AGENTS.md and the README of the surface you're touching (brand, docs, etc.)
 - Verify quality thresholds met
 
 **During Task:**

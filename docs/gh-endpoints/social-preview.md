@@ -77,7 +77,7 @@ re-extract.
 
 ### Step 1 — fetch the settings page
 
-```
+```http
 GET https://github.com/<owner>/<repo>/settings
 Cookie: user_session=<value>; __Host-user_session_same_site=<value>
 ```
@@ -99,7 +99,7 @@ form has:
 
 ### Step 3 — upload
 
-```
+```http
 POST <action>
 Cookie: user_session=<value>; __Host-user_session_same_site=<value>
 Origin: https://github.com
@@ -129,7 +129,7 @@ overrides via this hidden field.
 ### Expected response
 
 | Status | Meaning |
-|---|---|
+| ------ | ------- |
 | 302 / 303 redirect to `/<owner>/<repo>/settings` | Likely success |
 | 200 with HTML form re-rendered | Validation error (file too large, wrong type, CSRF mismatch) |
 | 422 | CSRF token rejected or file rejected by server validation |
@@ -139,7 +139,7 @@ overrides via this hidden field.
 There is no JSON success body — the UI relies on the redirect-to-settings
 pattern. To **confirm** the upload took effect, GET the public REST API:
 
-```
+```http
 GET https://api.github.com/repos/<owner>/<repo>
 ```
 
@@ -174,7 +174,7 @@ a browser to confirm the new image is being served.
 
 For external rendering check (Twitter/Slack/Discord card preview):
 
-- https://www.opengraph.xyz/url/https%3A%2F%2Fgithub.com%2Fqte77%2Fqte77
+- <https://www.opengraph.xyz/url/https%3A%2F%2Fgithub.com%2Fqte77%2Fqte77>
 - Slack: paste the repo URL into a channel, the unfurl shows current OG image
 - Twitter/X: paste into a draft tweet (don't post)
 
@@ -182,15 +182,15 @@ For external rendering check (Twitter/Slack/Discord card preview):
 
 This script is intended for:
 
-- ✅ Repos you own or have admin access to
-- ✅ Your own session cookie
-- ✅ Routine branding work (single-developer / small-org scope)
+- Repos you own or have admin access to
+- Your own session cookie
+- Routine branding work (single-developer / small-org scope)
 
 It is **not** for:
 
-- ❌ Repos you don't control
-- ❌ Hijacked sessions or shared cookies
-- ❌ Mass-uploading to many repos (would trigger rate limiting / bot detection
+- Repos you don't control
+- Hijacked sessions or shared cookies
+- Mass-uploading to many repos (would trigger rate limiting / bot detection
   even if technically allowed)
 
 The endpoint exists to support the official UI. Using it programmatically

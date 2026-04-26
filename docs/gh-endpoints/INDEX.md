@@ -5,8 +5,8 @@ Each row is a capability the web UI offers that REST, GraphQL, and/or
 `github.com/orgs/community/discussions`, `github.com/cli/cli/issues`,
 `github.com/github/rest-api-description`).
 
-| # | Capability | UI path | Missing in | Evidence | Detail |
-|---|------------|---------|------------|----------|--------|
+| #  | Capability | UI path | Missing in | Evidence | Detail |
+| -- | ---------- | ------- | ---------- | -------- | ------ |
 | 1 | Set repository social preview image | Settings → General → Social preview | REST, GraphQL, gh | [community#172072](https://github.com/orgs/community/discussions/172072), [community#52294](https://github.com/orgs/community/discussions/52294) | [social-preview.md](social-preview.md) |
 | 2 | Star lists: create, assign repos, delete | `/{user}?tab=stars` → Lists | REST (all), GraphQL (writes), gh | [community#8293](https://github.com/orgs/community/discussions/8293), [community#38693](https://github.com/orgs/community/discussions/38693), [cli/cli#13226](https://github.com/cli/cli/issues/13226) | tbd |
 | 3 | Upload user profile avatar | `/settings/profile` → Change avatar | REST, GraphQL | [community#65206](https://github.com/orgs/community/discussions/65206) | tbd |
