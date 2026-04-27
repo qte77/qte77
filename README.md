@@ -60,20 +60,7 @@ How the current system got here — proof of work, not required reading.
 
 The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26).
 
-## Profile
-
-More: [Topics, Interests, TODO](PROFILE.md).
-
-### Posts
-
-<!-- BLOG-POST-LIST:START -->
-- [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
-- [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
-- [AI Agents-eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
-- [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
-<!-- BLOG-POST-LIST:END -->
-
-### Tools
+## Tools
 
 <div><!--
   --><img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="32" height="32"/><!--
@@ -92,3 +79,16 @@ More: [Topics, Interests, TODO](PROFILE.md).
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/gh-models-dark.svg"><img src="assets/images/icons/gh-models-light.svg" title="GitHub Models" alt="GitHub Models" width="32" height="32"/></picture><!--
   --><img src="assets/images/icons/claude.svg" title="Claude" alt="Claude" width="32" height="32"/><!--
 --></div>
+
+## Posts
+
+<!-- BLOG-POST-LIST:START -->
+- [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
+- [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
+- [AI Agents-eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
+- [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
+<!-- BLOG-POST-LIST:END -->
+
+## Profile
+
+More: [Topics, Interests, TODO](PROFILE.md).
