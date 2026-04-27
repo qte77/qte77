@@ -8,11 +8,7 @@
   </picture>
 </p>
 
-Turn goals into merged PRs across many repos. Agents drive the loop; humans can approve and steer; engines do the heavy lifting.
-
-qte77 is a GitHub account hosting a runtime-portable framework. Today: GitHub (Actions, Issues, PRs). Tomorrow: anywhere — air-gapped, BYOM, your stack.
-
-> Without coordination, agentic work across many repos drifts — learnings get lost, work duplicates, goals lose their thread. qte77 keeps the goal → spec → build → learn loop compounding, not forgetting.
+**qte77** hosts a framework for compounding agentic work — keeping goals, specs, builds, and learnings in one feedback loop instead of drifting. Agents drive it; humans approve and steer. Proof: 30+ repos running on it here.
 
 ## Mental Model
 
