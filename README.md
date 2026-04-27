@@ -60,36 +60,7 @@ How the current system got here — proof of work, not required reading.
 
 The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26).
 
-## Profile
-
-### Topics
-
-- Agentic Software Development, Autonomous Coding
-- Self-Evolving Agents, Compound Learning
-- Multi-Repo Orchestration, Cross-Repo Issue Sync
-- AI Agent Evaluation, MAS Benchmarking
-- Goal-Driven Lifecycle Management, OKR Traceability
-- Claude Code Plugins, MCP Integrations
-- Agent UI (AG-UI/A2UI), Voice (TTS/STT)
-- Robotics, Bio-Lab Automation
-
-### Interests
-
-- GitHub Actions, CI/CD Automation
-- Inductive Priors, Automatic Differentiation
-- Data Centric vs Model Centric
-- QML, Barren Plateaus
-
-### Posts
-
-<!-- BLOG-POST-LIST:START -->
-- [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
-- [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
-- [AI Agents-eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
-- [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
-<!-- BLOG-POST-LIST:END -->
-
-### Tools
+## Tools
 
 <div><!--
   --><img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="32" height="32"/><!--
@@ -109,9 +80,15 @@ The spec-generation work started in [`context-engineering-template-legacy`](http
   --><img src="assets/images/icons/claude.svg" title="Claude" alt="Claude" width="32" height="32"/><!--
 --></div>
 
-### TODO
+## Posts
 
-- [x] Kaggle Playgrounds
-- [x] Kaggle Competitions
-- [ ] Codewars Python
-- [ ] Advent of Code
+<!-- BLOG-POST-LIST:START -->
+- [Agentx Agentbeats Writeup](https://qte77.github.io/agentx-agentbeats-writeup/)
+- [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
+- [AI Agents-eval Enhancement Recommendations](https://qte77.github.io/ai-agents-eval-enhancement-recommendations/)
+- [AI Agents-eval Papers Meta Review](https://qte77.github.io/ai-agents-eval-papers-meta-review/)
+<!-- BLOG-POST-LIST:END -->
+
+## Profile
+
+More: [Topics, Interests, TODO](PROFILE.md).
