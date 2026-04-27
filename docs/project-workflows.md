@@ -24,7 +24,7 @@ Orchestrator (polyforge)
 - Single session with `additionalDirectories` = only main repo's context loads
 - Subagents inherit parent's context, not the target repo's
 
-**Bridges across sessions:**
+**Bridges across sessions (CC session-to-session state):**
 
 | Bridge | Direction | What it carries |
 | ------ | --------- | --------------- |
@@ -33,6 +33,17 @@ Orchestrator (polyforge)
 | Compound learnings | Agent ↔ agent | Shared patterns via ai-agents-research/docs/learnings/ |
 | CC plans | Session → session | Decisions persist at ~/.claude/plans/, loaded on next session |
 | CC memory | Session → session | Per-project MEMORY.md, auto-loaded on conversation start |
+
+**Cross-repo task state (workspace persistence):**
+
+See [`AGENTS.md` § Task-tracking authority](../AGENTS.md#task-tracking-authority) for the full four-artifact model and writer policy. Quick reference:
+
+| Bridge | Direction | What it carries |
+| ------ | --------- | --------------- |
+| GitHub Issues | Human ↔ agent ↔ GHA | Canonical task SOT (per polyforge `ontology.json`) |
+| `contributions.json` | Polyforge → polyforge | Cross-repo plan execution; survives container rebuilds |
+| Private tracker | Repos ↔ tracker (bidir) | Per-repo tactical mirror; close/reopen/labels propagate via `gha-cross-repo-issue-sync` |
+| `goals.json` | Humans → orchestrators | Workspace OKRs / strategic goals (this repo's root) |
 
 **Design implications:**
 

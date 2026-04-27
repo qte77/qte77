@@ -65,6 +65,34 @@ GitHub Issues are the source of truth for persistent state.
 If an AR entry persists beyond a few sessions, file it as an Issue and
 remove the AR entry.
 
+## Task-tracking authority
+
+Workspace state lives across four artifacts with distinct, non-overlapping
+scopes. The canonical entity model is
+[`polyforge-orchestrator/config/ontology.json`][ontology] — this section
+quotes it; do not redefine the model here.
+
+| Artifact | Scope | Writers |
+| -------- | ----- | ------- |
+| **GitHub Issues** | Canonical task SOT (per `ontology.json`: `entity: issue`, `persisted: true`) | human, agent, GHA |
+| **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | machine-written by `cc-parallel.sh` |
+| **[`.github-private-project-tracker`][tracker]** | Per-repo tactical issue mirror; bidirectional sync via [`gha-cross-repo-issue-sync`][sync] (close/reopen/labels propagate) | tracker GHA + maintainers |
+| **`goals.json`** (this repo) | Workspace OKRs / strategic goals | humans only |
+
+**Rule:** GitHub Issues are the SOT for tasks. `contributions.json` and
+the tracker are derived state — never write tasks to them without a
+corresponding Issue. `goals.json` is meta to all of these (it describes
+*why* tasks exist, not which tasks).
+
+**DRY:** the entity definitions, storage, and writer/reader matrix live
+in `ontology.json`. Link out, do not duplicate. If the model changes,
+update the ontology in polyforge — this section reflects it.
+
+[ontology]: https://github.com/qte77/polyforge-orchestrator/blob/main/config/ontology.json
+[contrib]: https://github.com/qte77/polyforge-orchestrator/blob/main/config/contributions.json
+[tracker]: https://github.com/qte77/.github-private-project-tracker
+[sync]: https://github.com/qte77/gha-cross-repo-issue-sync
+
 ## Cross-repo agent hygiene
 
 Workspace-level policy for agents operating across multiple repos. Mechanism

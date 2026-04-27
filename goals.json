@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "0.1.0",
+  "updated": "2026-04-25",
+  "scope": "qte77 workspace OKRs / strategic goals — humans set these; orchestrators read them. Schema intentionally minimal until first cockpit/dashboard consumer pressure-tests it (see qte77/qte77#67).",
+  "goals": []
+}
