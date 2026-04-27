@@ -54,15 +54,21 @@
   <text class="title" x="450" y="22" text-anchor="middle">qte77 — Mental Model</text>
   <text class="subtitle" x="450" y="38" text-anchor="middle">Goals flow down  ·  learnings flow back  ·  support band underneath</text>
 
-  <!-- ===== NORTH STAR (dashed) ===== -->
+  <!-- ===== HUMANS (left) + NORTH STAR (right, dashed) — both feed SPECS ===== -->
+  <rect class="box" x="130" y="54" width="220" height="38" rx="5"/>
+  <text class="box-title" x="240" y="70" text-anchor="middle">HUMANS</text>
+  <text class="box-desc" x="240" y="84" text-anchor="middle">approve  ·  review PRs  ·  steer</text>
+
   <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
     <title>liminal-flux — self-evolving agent-operated GitHub account</title>
-    <rect class="box-star" x="340" y="54" width="220" height="38" rx="5"/>
-    <text class="box-title" x="450" y="70" text-anchor="middle">NORTH STAR</text>
-    <text class="box-desc" x="450" y="84" text-anchor="middle">liminal-flux  ·  agent-operated account</text>
+    <rect class="box-star" x="550" y="54" width="220" height="38" rx="5"/>
+    <text class="box-title" x="660" y="70" text-anchor="middle">NORTH STAR</text>
+    <text class="box-desc" x="660" y="84" text-anchor="middle">liminal-flux  ·  agent-operated account</text>
   </a>
 
-  <line class="arrow" x1="450" y1="92" x2="450" y2="116"/>
+  <!-- Both top boxes converge at a junction, then a single arrow into SPECS -->
+  <path class="arrow" d="M 240,92 L 240,104 L 450,104 L 450,116"/>
+  <path class="arrow" d="M 660,92 L 660,104 L 450,104 L 450,116"/>
 
   <!-- ===== SPECS (single item — no section-name repetition) ===== -->
   <rect class="band-bg" x="10" y="116" width="880" height="68" rx="6"/>

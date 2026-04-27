@@ -44,16 +44,16 @@
   <text class="title" x="450" y="22" text-anchor="middle">qte77 — Authority Chain</text>
   <text class="subtitle" x="450" y="38" text-anchor="middle">Where each decision lives  ·  one source of truth per tier  ·  DRY across the workspace</text>
 
-  <!-- ===== Band 1: META · POLICY (qte77) ===== -->
+  <!-- ===== Band 1: META · POLICY · HUMANS DECIDE (qte77) ===== -->
   <rect class="band-bg" x="10" y="54" width="880" height="92" rx="6"/>
-  <text class="tier-label" x="20" y="69">META  ·  POLICY</text>
+  <text class="tier-label" x="20" y="69">META  ·  POLICY  ·  HUMANS DECIDE</text>
 
   <a xlink:href="https://github.com/qte77/qte77">
-    <title>qte77/qte77 — workspace meta: AGENTS.md, project-workflows.md, cross-repo hygiene policy</title>
+    <title>qte77/qte77 — workspace meta: AGENTS.md, project-workflows.md, cross-repo hygiene policy. Humans are the policy authority; this repo records their decisions.</title>
     <rect class="box" x="260" y="78" width="380" height="58" rx="5"/>
     <text class="box-title" x="450" y="97" text-anchor="middle">qte77/qte77</text>
     <text class="box-desc" x="450" y="113" text-anchor="middle">workspace meta  ·  AGENTS.md  ·  project-workflows.md</text>
-    <text class="box-note" x="450" y="127" text-anchor="middle">policy: "what to do and why" — no mechanism</text>
+    <text class="box-note" x="450" y="127" text-anchor="middle">humans set policy  ·  this repo records it  ·  no mechanism</text>
   </a>
 
   <!-- Arrow META → KERNEL -->
