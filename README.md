@@ -62,23 +62,7 @@ The spec-generation work started in [`context-engineering-template-legacy`](http
 
 ## Profile
 
-### Topics
-
-- Agentic Software Development, Autonomous Coding
-- Self-Evolving Agents, Compound Learning
-- Multi-Repo Orchestration, Cross-Repo Issue Sync
-- AI Agent Evaluation, MAS Benchmarking
-- Goal-Driven Lifecycle Management, OKR Traceability
-- Claude Code Plugins, MCP Integrations
-- Agent UI (AG-UI/A2UI), Voice (TTS/STT)
-- Robotics, Bio-Lab Automation
-
-### Interests
-
-- GitHub Actions, CI/CD Automation
-- Inductive Priors, Automatic Differentiation
-- Data Centric vs Model Centric
-- QML, Barren Plateaus
+More: [Topics, Interests, TODO](PROFILE.md).
 
 ### Posts
 
@@ -108,10 +92,3 @@ The spec-generation work started in [`context-engineering-template-legacy`](http
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/gh-models-dark.svg"><img src="assets/images/icons/gh-models-light.svg" title="GitHub Models" alt="GitHub Models" width="32" height="32"/></picture><!--
   --><img src="assets/images/icons/claude.svg" title="Claude" alt="Claude" width="32" height="32"/><!--
 --></div>
-
-### TODO
-
-- [x] Kaggle Playgrounds
-- [x] Kaggle Competitions
-- [ ] Codewars Python
-- [ ] Advent of Code
