@@ -62,6 +62,12 @@ Each repo carries its own quickstart.
 - **Next** — spec-forge methodology landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
 - **Later** — runtime portability: air-gapped, BYOM, your stack.
 
+## Positioning
+
+qte77 is a cross-repo coordination layer, not a single-repo agent runner or per-prompt orchestrator. It assumes you already have agents (Claude Code, etc.) and need them to stop drifting across many repos.
+
+Reach for something else if you're building one agent for one repo, or your loop fits in a single prompt.
+
 ## Lineage
 
 How the current system got here — proof of work, not required reading.
