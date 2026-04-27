@@ -10,7 +10,7 @@
 
 **qte77** hosts a framework for compounding agentic work — keeping goals, specs, builds, and learnings in one feedback loop instead of drifting. Agents drive it; humans approve and steer.
 
-Proof: [30+ repos](https://github.com/qte77?tab=repositories) running on it; this README itself was shaped by agent PRs (e.g. [#83](https://github.com/qte77/qte77/pull/83), [#84](https://github.com/qte77/qte77/pull/84)).
+Proof: [30+ repos](https://github.com/qte77?tab=repositories) running on it.
 
 ## Mental Model
 
