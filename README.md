@@ -8,11 +8,7 @@
   </picture>
 </p>
 
-Turn goals into merged PRs across many repos. Agents drive the loop; humans can approve and steer; engines do the heavy lifting.
-
-qte77 is a GitHub account hosting a runtime-portable framework. Today: GitHub (Actions, Issues, PRs). Tomorrow: anywhere — air-gapped, BYOM, your stack.
-
-> Without coordination, agentic work across many repos drifts — learnings get lost, work duplicates, goals lose their thread. qte77 keeps the goal → spec → build → learn loop compounding, not forgetting.
+**qte77** hosts a framework for compounding agentic work — keeping goals, specs, builds, and learnings in one feedback loop instead of drifting. Agents drive it; humans approve and steer. Proof: 30+ repos running on it here.
 
 ## Mental Model
 
@@ -51,6 +47,12 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 - Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
 
 Each repo carries its own quickstart.
+
+## Roadmap
+
+- **Now** — GitHub-native (Actions, Issues, PRs); Claude Code agents.
+- **Next** — spec-forge methodology landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
+- **Later** — runtime portability: air-gapped, BYOM, your stack.
 
 ## Profile
 
@@ -112,4 +114,4 @@ Each repo carries its own quickstart.
 
 How the current system got here — proof of work, not required reading.
 
-The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26). The methodology is now landing in [`claude-code-plugins`](https://github.com/qte77/claude-code-plugins) as the `spec-forge` plugin.
+The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26).
