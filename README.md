@@ -24,11 +24,11 @@ Read it as: goals at the top feed specs, specs feed builds, builds emit learning
 
 Policy, mechanism, and state get confused and duplicated across repos. Naming where each decision lives prevents the drift and keeps 30+ repos DRY.
 
-- **META** — policy (what we optimize for)
-- **KERNEL** — invariants (rules that must hold)
-- **MECHANISM** — code (how rules are enforced)
-- **STATE** — data (goals, specs, learnings)
-- **CONSUMERS** — repos (where it lands)
+- **META** — policy: what we optimize for (rules, principles)
+- **KERNEL** — invariants: rules that must hold (core-principles, compound-learning)
+- **MECHANISM** — code that enforces rules (skills, hooks, GHA pipelines)
+- **STATE** — data the system reads and writes (goals, specs, learnings)
+- **CONSUMERS** — where it lands (30+ companion repos)
 
 <details>
   <summary>Diagram: META, KERNEL, MECHANISM, STATE, CONSUMERS</summary>
