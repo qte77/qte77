@@ -10,8 +10,6 @@
 
 **qte77** hosts a framework for compounding agentic work — keeping goals, specs, builds, and learnings in one feedback loop instead of drifting. Agents drive it; humans approve and steer.
 
-Proof: [30+ repos](https://github.com/qte77?tab=repositories) running on it.
-
 ## Mental Model
 
 Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
