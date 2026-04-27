@@ -101,10 +101,37 @@
   <rect class="band-bg" x="10" y="408" width="880" height="92" rx="6"/>
   <text class="tier-label" x="20" y="423">STATE  ·  TRACKING</text>
 
-  <rect class="box" x="160" y="432" width="580" height="58" rx="5"/>
-  <text class="box-title" x="450" y="451" text-anchor="middle">contributions.json  ·  GitHub Issues  ·  TODO.md</text>
-  <text class="box-desc" x="450" y="467" text-anchor="middle">cross-project state  ·  canonical task state  ·  curated backlog</text>
-  <text class="box-note" x="450" y="481" text-anchor="middle">state lives here, not in mechanism — read+written by both layers above and below</text>
+  <a xlink:href="https://github.com/qte77/qte77/issues">
+    <title>GitHub Issues — canonical task SOT (per polyforge ontology.json)</title>
+    <rect class="box" x="40" y="432" width="200" height="58" rx="5"/>
+    <text class="box-title" x="140" y="451" text-anchor="middle">GitHub Issues</text>
+    <text class="box-desc" x="140" y="467" text-anchor="middle">canonical task SOT</text>
+    <text class="box-note" x="140" y="481" text-anchor="middle">human + agent + GHA writers</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator/blob/main/config/contributions.json">
+    <title>contributions.json — polyforge cross-repo plan execution state (machine-written, --resume source)</title>
+    <rect class="box" x="250" y="432" width="200" height="58" rx="5"/>
+    <text class="box-title" x="350" y="451" text-anchor="middle">contributions.json</text>
+    <text class="box-desc" x="350" y="467" text-anchor="middle">polyforge execution state</text>
+    <text class="box-note" x="350" y="481" text-anchor="middle">cross-repo plan; survives rebuilds</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator/blob/main/config/ontology.json">
+    <title>ontology.json — entity model (12 types, 11 typed relationships) — defines storage/writers/readers</title>
+    <rect class="box" x="460" y="432" width="200" height="58" rx="5"/>
+    <text class="box-title" x="560" y="451" text-anchor="middle">ontology.json</text>
+    <text class="box-desc" x="560" y="467" text-anchor="middle">entity model</text>
+    <text class="box-note" x="560" y="481" text-anchor="middle">defines this very tier</text>
+  </a>
+
+  <a xlink:href="https://github.com/qte77/qte77/blob/main/goals.json">
+    <title>goals.json — workspace OKRs / strategic goals (humans write; orchestrators read)</title>
+    <rect class="box" x="670" y="432" width="200" height="58" rx="5"/>
+    <text class="box-title" x="770" y="451" text-anchor="middle">goals.json</text>
+    <text class="box-desc" x="770" y="467" text-anchor="middle">workspace OKRs</text>
+    <text class="box-note" x="770" y="481" text-anchor="middle">humans set; agents read</text>
+  </a>
 
   <!-- Arrow STATE → CONSUMERS -->
   <line class="arrow" x1="450" y1="500" x2="450" y2="524"/>
