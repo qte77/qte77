@@ -57,7 +57,7 @@
   <!-- ===== HUMANS (left) + NORTH STAR (right, dashed) — both feed SPECS ===== -->
   <rect class="box" x="130" y="54" width="220" height="38" rx="5"/>
   <text class="box-title" x="240" y="70" text-anchor="middle">HUMANS</text>
-  <text class="box-desc" x="240" y="84" text-anchor="middle">approve  ·  review PRs  ·  steer</text>
+  <text class="box-desc" x="240" y="84" text-anchor="middle">set goals  ·  track OKRs  ·  HITL optional</text>
 
   <a xlink:href="https://github.com/qte77/liminal-flux-gh-acc">
     <title>liminal-flux — self-evolving agent-operated GitHub account</title>
