@@ -48,6 +48,12 @@ Policy, mechanism, and state get confused and duplicated across repos. Naming wh
 
 Each repo carries its own quickstart.
 
+## Roadmap
+
+- **Now** — GitHub-native (Actions, Issues, PRs); Claude Code agents.
+- **Next** — spec-forge methodology landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
+- **Later** — runtime portability: air-gapped, BYOM, your stack.
+
 ## Profile
 
 ### Topics
