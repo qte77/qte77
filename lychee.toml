@@ -24,4 +24,9 @@ exclude = [
   # --- GitHub anchors / settings pages requiring auth ---
   "^https://github\\.com/.*/settings",
   "^https://github\\.com/.*/security/advisories/new",
+
+  # --- Private repos (404 to unauthenticated linker, intentional) ---
+  # AGENTS.md references a private project tracker; the 404 from the
+  # public CI runner is expected and not a broken link.
+  "^https://github\\.com/qte77/\\.github-private-project-tracker",
 ]
