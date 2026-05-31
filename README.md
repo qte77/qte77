@@ -8,7 +8,7 @@
   </picture>
 </p>
 
-**qte77** hosts a framework for compounding agentic work — keeping goals, specs, builds, and learnings in one feedback loop instead of drifting. Agents drive it; humans approve and steer.
+**qte77** is a polyrepo orchestration framework for AI coding agents — coordinating Claude Code and compatible agents across 30+ repositories so goals, specs, builds, and learnings compound instead of drift. Agents drive it; humans approve and steer.
 
 ## Mental Model
 
