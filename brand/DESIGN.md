@@ -6,21 +6,21 @@ description: >-
   science. The brand IS EyeRest (qte77's own theme): the default scheme is the
   flagship warm umber/parchment with an amber accent; Green, BluBlock, and Dusk
   ship as secondary variants. Dual light/dark. Reference tokens, never raw hex.
-colors:                        # DEFAULT — EyeRest flagship (warm, amber accent)
+colors:                        # DEFAULT — EyeRest flagship (warm, amber primary)
   bg: "#ece8d8"
   surface: "#e2dec8"
   border: "#c8c4b0"
   text: "#2c2818"
   text-muted: "#686040"
-  accent: "#8a7018"
-  accent-on: "#ece8d8"
+  primary: "#7a6010"           # deepened from EyeRest #8a7018 to clear WCAG AA on primary-on text
+  primary-on: "#ece8d8"
   dark-bg: "#1c1a14"
   dark-surface: "#242018"
   dark-border: "#383428"
   dark-text: "#d8d0b8"
   dark-text-muted: "#a89878"
-  dark-accent: "#c8a858"
-  dark-accent-on: "#1c1a14"
+  dark-primary: "#c8a858"
+  dark-primary-on: "#1c1a14"
 data:                          # zero-blue categorical arc (charts, KPI heatmap)
   positive: "#4a6818"          # dark: #8aa860
   caution:  "#787010"          # dark: #c8b868
@@ -35,9 +35,12 @@ typography:
 rounded: { sm: "4px", md: "6px", lg: "12px" }
 spacing: { unit: "8px", container: "768px" }
 components:
-  button-primary: { backgroundColor: "{colors.accent}", textColor: "{colors.accent-on}", rounded: "{rounded.md}", padding: "6px 16px", typography: "{typography.sans}" }
+  button-primary: { backgroundColor: "{colors.primary}", textColor: "{colors.primary-on}", rounded: "{rounded.md}", padding: "6px 16px", typography: "{typography.sans}" }
   card: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.lg}", padding: "16px" }
   code: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", typography: "{typography.mono}", rounded: "{rounded.sm}" }
+  page: { backgroundColor: "{colors.bg}", textColor: "{colors.text}" }
+  input: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", borderColor: "{colors.border}", rounded: "{rounded.sm}", padding: "6px 12px" }
+  caption: { textColor: "{colors.text-muted}", typography: "{typography.sans}" }
 variants:
   green:                       # forest / yellow-green
     name: EyeRest Green
@@ -47,15 +50,15 @@ variants:
       border: "#c0d4bc"
       text: "#2a4a2a"
       text-muted: "#4a6a4a"
-      accent: "#2a6a2a"
-      accent-on: "#f0f6ee"
+      primary: "#2a6a2a"
+      primary-on: "#f0f6ee"
       dark-bg: "#0c1610"
       dark-surface: "#12201a"
       dark-border: "#2a3e2c"
       dark-text: "#8cb888"
       dark-text-muted: "#7aa878"
-      dark-accent: "#3a6a3a"
-      dark-accent-on: "#c4e8c0"
+      dark-primary: "#3a6a3a"
+      dark-primary-on: "#c4e8c0"
   blublock:                    # zero-blue (B<=30), for blue-filter lenses
     name: EyeRest BluBlock
     colors:
@@ -64,15 +67,15 @@ variants:
       border: "#c8b898"
       text: "#3d2e18"
       text-muted: "#6b5838"
-      accent: "#c06010"
-      accent-on: "#f5ecd8"
+      primary: "#c06010"
+      primary-on: "#f5ecd8"
       dark-bg: "#1a1208"
       dark-surface: "#231a0e"
       dark-border: "#3d2e1a"
       dark-text: "#e8d5b0"
       dark-text-muted: "#a08b6d"
-      dark-accent: "#e89030"
-      dark-accent-on: "#1a1208"
+      dark-primary: "#e89030"
+      dark-primary-on: "#1a1208"
   dusk:                        # plum-gray / sage, earth-tone accents
     name: EyeRest Dusk
     colors:
@@ -81,15 +84,15 @@ variants:
       border: "#c8cac0"
       text: "#2c2622"
       text-muted: "#6a6058"
-      accent: "#7a5820"
-      accent-on: "#eaece2"
+      primary: "#7a5820"
+      primary-on: "#eaece2"
       dark-bg: "#1f1b22"
       dark-surface: "#2a2630"
       dark-border: "#3a343e"
       dark-text: "#d8ccbc"
       dark-text-muted: "#b0a498"
-      dark-accent: "#c8a468"
-      dark-accent-on: "#1f1b22"
+      dark-primary: "#c8a468"
+      dark-primary-on: "#1f1b22"
 ---
 
 # qte77 Design System
@@ -107,8 +110,8 @@ every value.
 
 ## Colors
 
-Surfaces are warm near-white or near-black; the single amber accent
-(`#8a7018` light / `#c8a858` dark) does the pointing. `text-muted` is secondary
+Surfaces are warm near-white or near-black; the single amber `primary`
+(`#7a6010` light / `#c8a858` dark) does the pointing. `text-muted` is secondary
 metadata only. Zero blue appears in any accent — that is the brand's defining
 constraint, not a stylistic preference. The `data` arc (positive/caution/
 negative/alt) is the categorical palette for charts and KPI heatmaps; it maps
@@ -132,7 +135,7 @@ No pills except removable filter chips.
 
 ## Components
 
-`button-primary` is accent-filled with `accent-on` text; `card` is a surface
+`button-primary` is primary-filled with `primary-on` text; `card` is a surface
 panel at 12px; `code` is mono on the surface tone. Components reference tokens, so
 they recolor wholesale when the active variant changes. New components compose
 existing tokens — never raw values.
@@ -140,7 +143,7 @@ existing tokens — never raw values.
 ## Do's and Don'ts
 
 - **Do** drive every color from a token so light/dark and variant flips are free.
-- **Do** keep one amber accent per variant; let whitespace and weight carry hierarchy.
+- **Do** keep one amber primary per variant; let whitespace and weight carry hierarchy.
 - **Do** use mono for numeric data and the `data` arc for chart/KPI categories.
 - **Don't** ever introduce a blue accent — it breaks the brand's core promise.
 - **Don't** mix two variants in one view; pick one, let it resolve wholesale.
@@ -151,9 +154,9 @@ existing tokens — never raw values.
 The page selects variant + scheme (e.g. `data-variant="dusk" data-theme="dark"`);
 CSS custom properties resolve from the matching block. All variants are zero-blue.
 
-| Variant | bg light · dark | accent light · dark | Character |
+| Variant | bg light · dark | primary light · dark | Character |
 |---|---|---|---|
-| **Default** (EyeRest) | `#ece8d8` · `#1c1a14` | `#8a7018` · `#c8a858` | warm umber / parchment |
+| **Default** (EyeRest) | `#ece8d8` · `#1c1a14` | `#7a6010` · `#c8a858` | warm umber / parchment |
 | Green | `#f0f6ee` · `#0c1610` | `#2a6a2a` · `#3a6a3a` | forest / yellow-green |
 | BluBlock | `#f5ecd8` · `#1a1208` | `#c06010` · `#e89030` | zero-blue amber; blue-filter lenses |
 | Dusk | `#eaece2` · `#1f1b22` | `#7a5820` · `#c8a468` | plum-gray / sage, earth tones |

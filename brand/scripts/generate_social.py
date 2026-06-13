@@ -52,16 +52,16 @@ def load_palette(path: Path) -> dict:
     front_matter = path.read_text().split("---", 2)[1]
     spec = yaml.safe_load(front_matter)
     c = spec["colors"]
-    accents = [c["accent"], *spec.get("data", {}).values()]
+    accents = [c["primary"], *spec.get("data", {}).values()]
     return {
         "light": {
             "bg": c["bg"], "text": c["text"],
-            "text_muted": c["text-muted"], "accent": c["accent"],
+            "text_muted": c["text-muted"], "accent": c["primary"],
             "accents": accents,
         },
         "dark": {
             "bg": c["dark-bg"], "text": c["dark-text"],
-            "text_muted": c["dark-text-muted"], "accent": c["dark-accent"],
+            "text_muted": c["dark-text-muted"], "accent": c["dark-primary"],
             "accents": accents,
         },
     }
