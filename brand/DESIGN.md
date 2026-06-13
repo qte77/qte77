@@ -39,8 +39,9 @@ components:
   card: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.lg}", padding: "16px" }
   code: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", typography: "{typography.mono}", rounded: "{rounded.sm}" }
   page: { backgroundColor: "{colors.bg}", textColor: "{colors.text}" }
-  input: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", borderColor: "{colors.border}", rounded: "{rounded.sm}", padding: "6px 12px" }
+  input: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.sm}", padding: "6px 12px" }
   caption: { textColor: "{colors.text-muted}", typography: "{typography.sans}" }
+  divider: { backgroundColor: "{colors.border}", height: "1px" }
 variants:
   green:                       # forest / yellow-green
     name: EyeRest Green
