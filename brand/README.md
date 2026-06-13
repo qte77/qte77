@@ -1,10 +1,10 @@
 # Brand assets
 
-Source palette, logo, and font references for qte77 visual identity.
+Design tokens, logo, and font references for qte77 visual identity.
 
 ## Files
 
-- `palette.toml` — color tokens (GitHub Primer, light + dark variants)
+- `DESIGN.md` — design tokens + color system (EyeRest, light + dark; google-labs-code design.md format)
 - `images/logo-mark.text.svg` / `logo-mark.paths.dejavu.svg` — square mark; canonical text + path-baked variant
 - `images/logo-wordmark.text.svg` / `logo-wordmark.paths.dejavu.svg` — wordmark; same pair
 - `images/avatar_dark.dejavu.png` / `images/avatar_light.dejavu.png` — 920×920 PNG

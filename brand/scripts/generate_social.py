@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["Pillow>=10.0"]
+# dependencies = ["Pillow>=10.0", "pyyaml>=6.0"]
 # ///
 """Generate 1280x640 social preview PNGs from social-previews.toml.
 
@@ -22,10 +22,11 @@ import sys
 import tomllib
 from pathlib import Path
 
+import yaml
 from PIL import Image, ImageDraw, ImageFont
 
 BRAND = Path(__file__).resolve().parent.parent
-PALETTE_FILE = BRAND / "palette.toml"
+DESIGN_FILE = BRAND / "DESIGN.md"
 CONFIG_FILE = BRAND / "social-previews.toml"
 FONTS_DIR = BRAND / "fonts"
 DIST = BRAND / "dist"
@@ -40,19 +41,41 @@ def load_toml(path: Path) -> dict:
         return tomllib.load(f)
 
 
+def load_palette(path: Path) -> dict:
+    """Read color tokens from the DESIGN.md (google-labs-code) front matter.
+
+    DESIGN.md is the single source of truth for the qte77 palette. Maps the
+    flat `colors` block (light defaults + `dark-*` overrides) into the
+    {theme: {bg, text, text_muted, accent, accents}} shape this renderer
+    expects, and exposes the zero-blue `data` arc as the on-brand accent set.
+    """
+    front_matter = path.read_text().split("---", 2)[1]
+    spec = yaml.safe_load(front_matter)
+    c = spec["colors"]
+    accents = [c["accent"], *spec.get("data", {}).values()]
+    return {
+        "light": {
+            "bg": c["bg"], "text": c["text"],
+            "text_muted": c["text-muted"], "accent": c["accent"],
+            "accents": accents,
+        },
+        "dark": {
+            "bg": c["dark-bg"], "text": c["dark-text"],
+            "text_muted": c["dark-text-muted"], "accent": c["dark-accent"],
+            "accents": accents,
+        },
+    }
+
+
 def hash_accent(repo: str, theme_palette: dict) -> str:
-    """Deterministic accent fallback when none set explicitly."""
+    """Deterministic per-repo accent from the DESIGN.md brand accent set.
+
+    Picks from the EyeRest accent + zero-blue `data` arc so accents stay
+    on-brand without a per-repo override.
+    """
     digest = hashlib.sha256(repo.encode()).digest()
     hue = digest[0] / 255.0
-    # Pick from a curated set so colors stay on-brand.
-    options = [
-        theme_palette["accent"],
-        theme_palette["accent_warm"],
-        "#3fb950",  # green
-        "#a371f7",  # purple
-        "#f85149",  # red
-        "#d29922",  # yellow
-    ]
+    options = theme_palette["accents"]
     return options[int(hue * len(options)) % len(options)]
 
 
@@ -145,7 +168,7 @@ def main() -> int:
     ap.add_argument("--dark", action="store_true", help="force dark theme")
     args = ap.parse_args()
 
-    palette = load_toml(PALETTE_FILE)
+    palette = load_palette(DESIGN_FILE)
     config = load_toml(CONFIG_FILE)
     defaults = config.get("defaults", {})
     repos = config.get("repo", [])
