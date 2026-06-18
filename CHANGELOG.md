@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/social-previews.toml`: expanded from 1 to 12 repo entries covering the main estate (doc-pipeline-engine, paperverse, polyforge-orchestrator, claude-code-plugins, so101-biolab-automation, pseudonymize-text, i3mega-pipettebot, gha-issue-triage, diagramforge, agentic-job-offer-to-application-kit, ai-agents-research)
 - `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist
 - `.markdownlint.jsonc`: project policy disabling MD013/MD041/MD060, allowing inline HTML
 - `lychee.toml`: link-check config with bot-blocking accept codes and exclusion patterns

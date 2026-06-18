@@ -3,7 +3,7 @@
 # Add one [[repo]] block per repository to brand.
 
 [defaults]
-# 1280x640 — GitHub social preview spec (Open Graph)
+# 1280x640 -- GitHub social preview spec (Open Graph)
 width  = 1280
 height = 640
 theme  = "dark"        # "dark" | "light"
@@ -15,4 +15,70 @@ name     = "qte77"
 title    = "qte77"
 subtitle = "profile · meta"
 tagline  = "AI engineering, agentic systems, structured chaos."
-accent   = "#388bfd"
+accent   = "#c8a858"
+
+[[repo]]
+name     = "doc-pipeline-engine"
+title    = "doc-pipeline-engine"
+subtitle = "document processing pipeline"
+tagline  = "Adapters, contracts, domain packs, eval harnesses."
+
+[[repo]]
+name     = "paperverse"
+title    = "paperverse"
+subtitle = "3D academic-paper cloud"
+tagline  = "arXiv + bioRxiv + medRxiv visualized on GitHub Pages."
+
+[[repo]]
+name     = "polyforge-orchestrator"
+title    = "polyforge-orchestrator"
+subtitle = "polyrepo AI agent orchestration"
+tagline  = "Parallel agents across 30+ repos from one devcontainer."
+
+[[repo]]
+name     = "claude-code-plugins"
+title    = "claude-code-plugins"
+subtitle = "Claude Code plugin marketplace"
+tagline  = "Skills, rules, and scripts from a production AI workflow."
+
+[[repo]]
+name     = "so101-biolab-automation"
+title    = "so101-biolab-automation"
+subtitle = "robotic bio-lab automation"
+tagline  = "Dual SO-101 arms: 96-well pipetting, remote oversight."
+
+[[repo]]
+name     = "pseudonymize-text"
+title    = "pseudonymize-text"
+subtitle = "bulk entity pseudonymization"
+tagline  = "Names, emails, IBANs, SSNs — deterministic and reversible."
+
+[[repo]]
+name     = "i3mega-pipettebot"
+title    = "i3mega-pipettebot"
+subtitle = "sub-$150 pipetting robot"
+tagline  = "Consumer 3D printer + DLAB dPette + Python."
+
+[[repo]]
+name     = "gha-issue-triage"
+title    = "gha-issue-triage"
+subtitle = "AI-powered issue triage action"
+tagline  = "Duplicate detection, scoring, auto-labeling per issue."
+
+[[repo]]
+name     = "diagramforge"
+title    = "diagramforge"
+subtitle = "Claude Code → draw.io bridge"
+tagline  = "Live diagram rendering from your AI coding session."
+
+[[repo]]
+name     = "agentic-job-offer-to-application-kit"
+title    = "job-application-kit"
+subtitle = "agentic application generator"
+tagline  = "Portfolio → tailored ATS-safe applications. No scraping."
+
+[[repo]]
+name     = "ai-agents-research"
+title    = "ai-agents-research"
+subtitle = "AI coding agent field research"
+tagline  = "Sandboxing, orchestration, SDLC patterns, community tooling."
