@@ -4,16 +4,19 @@
 # ///
 """Download brand fonts into brand/fonts/.
 
-All fonts are SIL OFL 1.1 (or compatible) and free to redistribute:
-- Inter (sans, headings) — Fontsource CDN
-- JetBrains Mono (mono, social-preview taglines) — Fontsource CDN
-- Cascadia Mono (mark/wordmark default) — Fontsource CDN
-- DejaVu Sans Mono, Liberation Mono — Linux defaults; raw GitHub via jsdelivr
-- Fira Mono, Source Code Pro — additional Linux-leaning monos via Fontsource
+All fonts are free/libre and redistributable, but under three different
+licenses — not all are OFL. Canonical license texts and the per-font
+mapping live in fonts/LICENSES/ (committed; the .ttf binaries are not):
+- Inter (sans, headings) — SIL OFL 1.1 — Fontsource CDN
+- JetBrains Mono (mono, social-preview taglines) — SIL OFL 1.1 — Fontsource CDN
+- Cascadia Mono (mark/wordmark default) — SIL OFL 1.1 — Fontsource CDN
+- Fira / Source Code Pro / IBM Plex Mono — SIL OFL 1.1 — Fontsource CDN
+- Ubuntu Mono — Ubuntu Font Licence 1.0 — Fontsource CDN
+- DejaVu Sans Mono — Bitstream Vera + Arev — GitHub release zip
 
-The Linux monos are available so brand_paths can bake .paths.svg
-variants from each, letting consumers pick the closest match to what
-their viewers' systems render."""
+The extra monos are available so brand_paths can bake .paths.svg variants
+from each, letting consumers pick the closest match to what their viewers'
+systems render. DejaVu Sans Mono Bold is the canonical bake font."""
 
 from __future__ import annotations
 

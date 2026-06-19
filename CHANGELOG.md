@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/fonts/LICENSES/`: canonical, committed font-license texts — the single source of truth a consumer vendors a font *and* its license from. `OFL.txt` (SIL OFL 1.1, stacked copyright headers for Inter, JetBrains Mono, Cascadia, Fira, Source Code Pro, IBM Plex Mono), `DejaVu-LICENSE.txt` (Bitstream Vera + Arev), `UbuntuMono-UFL.txt` (Ubuntu Font Licence 1.0), and a `README.md` font→license manifest; `brand/.gitignore` un-ignores `LICENSES/` while font binaries stay ignored
 - `brand/social-previews.toml`: expanded from 1 to 12 repo entries covering the main estate (doc-pipeline-engine, paperverse, polyforge-orchestrator, claude-code-plugins, so101-biolab-automation, pseudonymize-text, i3mega-pipettebot, gha-issue-triage, diagramforge, agentic-job-offer-to-application-kit, ai-agents-research)
 - `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist
 - `.markdownlint.jsonc`: project policy disabling MD013/MD041/MD060, allowing inline HTML
@@ -40,6 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `brand/scripts/install_fonts.py`, `brand/README.md`, `brand/Makefile`: corrected the inaccurate "all fonts are SIL OFL 1.1" claim — the downloader pulls three license families (OFL 1.1, Ubuntu Font Licence 1.0 for Ubuntu Mono, Bitstream Vera + Arev for the canonical DejaVu bake font); docs now list every downloaded font with its actual license and point to `fonts/LICENSES/`
 - `brand/scripts/svg_text_to_paths.py`: honor `letter-spacing` attribute when shaping; previously paths SVGs spaced glyphs further apart than the canonical text SVG (PR #55)
 
 ## [0.3.0] - 2026-04-26

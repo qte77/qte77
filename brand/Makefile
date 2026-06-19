@@ -20,7 +20,7 @@ SCRIPTS  := scripts
 # MARK: SETUP
 
 
-setup_brand_fonts:  ## Download Inter + JetBrains Mono (OFL) into brand/fonts/
+setup_brand_fonts:  ## Download brand fonts into brand/fonts/ (licenses in fonts/LICENSES/)
 	echo "Installing brand fonts ..."
 	uv run $(SCRIPTS)/install_fonts.py
 

@@ -85,8 +85,16 @@ sources in [docs/github-image-theming.md](../docs/github-image-theming.md).
 
 ## Fonts
 
-- **Inter** (sans, headings) — [rsms/inter](https://github.com/rsms/inter), OFL
-- **JetBrains Mono** (mono, code) — [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono), OFL
+`scripts/install_fonts.py` downloads these on demand (binaries gitignored). All
+are free/libre but under **three** licenses — canonical texts and the per-font
+mapping live in [`fonts/LICENSES/`](fonts/LICENSES/README.md):
+
+- **Inter** (sans, headings) — [rsms/inter](https://github.com/rsms/inter) — SIL OFL 1.1
+- **JetBrains Mono** (mono, code) — [JetBrains/JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) — SIL OFL 1.1
+- **Cascadia Mono** (mark/wordmark) — [microsoft/cascadia-code](https://github.com/microsoft/cascadia-code) — SIL OFL 1.1
+- **Fira Mono**, **Source Code Pro**, **IBM Plex Mono** (bake variants) — SIL OFL 1.1
+- **Ubuntu Mono** (bake variant) — [Ubuntu Font Family](https://design.ubuntu.com/font) — Ubuntu Font Licence 1.0
+- **DejaVu Sans Mono** (canonical bake font) — [dejavu-fonts](https://github.com/dejavu-fonts/dejavu-fonts) — Bitstream Vera + Arev
 
 ## Usage
 
