@@ -84,9 +84,19 @@ function metaTag(attr, key, content) {
 const metaName = (key, content) => metaTag("name", key, content);
 const metaProp = (key, content) => metaTag("property", key, content);
 
-/** JSON-LD `<script>` tag for the config (also feeds GEO/ASO). */
+/**
+ * JSON-LD `<script>` tag for the config (also feeds GEO/ASO). Escapes `<` `>` `&`
+ * (and U+2028/U+2029) as `\uXXXX` so a value containing `</script>` can't break out
+ * of the script context — the result is still valid JSON that consumers decode back.
+ */
 function jsonLdTag(cfg) {
-  return `<script type="application/ld+json">${JSON.stringify(prune(buildJsonLd(cfg)))}</script>`;
+  const ld = JSON.stringify(prune(buildJsonLd(cfg)))
+    .replaceAll("<", "\\u003c")
+    .replaceAll(">", "\\u003e")
+    .replaceAll("&", "\\u0026")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+  return `<script type="application/ld+json">${ld}</script>`;
 }
 
 /**
