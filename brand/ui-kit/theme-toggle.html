@@ -1,0 +1,21 @@
+<!--
+  theme-toggle.html — the single cycling theme control + its live region.
+  Drop into your toolbar/header. Wired by ui-kit/theme.js; styled by ui-kit/a11y.css.
+
+  - One button cycles system → light → dark (decision D2 glyphs ◐ ○ ●).
+  - aria-label/title are set dynamically by theme.js ("Color theme: <Mode> (click to change)").
+  - #theme-status is the polite live region announced on every change (a11y, decision D3).
+  - The glyph is aria-hidden (decorative); the label carries the meaning.
+  Initial values below assume System; theme.js overwrites them on load.
+-->
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Color theme: System (click to change)"
+  title="Color theme: System (click to change)"
+>
+  <span class="theme-glyph" aria-hidden="true">◐</span>
+  <span class="theme-label">System</span>
+</button>
+
+<span id="theme-status" class="sr-only" role="status" aria-live="polite"></span>

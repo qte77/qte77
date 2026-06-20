@@ -5,6 +5,8 @@ Design tokens, logo, and font references for qte77 visual identity.
 ## Files
 
 - `DESIGN.md` — design tokens + color system (EyeRest, light + dark; google-labs-code design.md format)
+- `ui-kit/` — the no-build UI theme generated from `DESIGN.md` (EyeRest color/layout/fonts
+  CSS + theme cycler + a11y); see [`ui-kit/BASELINE.md`](ui-kit/BASELINE.md)
 - `images/logo-mark.text.svg` / `logo-mark.paths.dejavu.svg` — square mark; canonical text + path-baked variant
 - `images/logo-wordmark.text.svg` / `logo-wordmark.paths.dejavu.svg` — wordmark; same pair
 - `images/avatar_dark.dejavu.png` / `images/avatar_light.dejavu.png` — 920×920 PNG
@@ -12,7 +14,8 @@ Design tokens, logo, and font references for qte77 visual identity.
   `scripts/render_avatar.py`)
 - `fonts/` — typography (downloaded by `scripts/install_fonts.py`, gitignored)
 - `scripts/` — Python tooling (font download, avatar render, social
-  preview render, SVG text-to-paths conversion)
+  preview render, SVG text-to-paths conversion, `render_og.py` OG/figure cards,
+  `gui-check.py` optional polyfetch UI verifier)
 - `Makefile` — entry point for all the above; see `make -C brand help`
 
 <details>
