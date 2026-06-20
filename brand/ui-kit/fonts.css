@@ -1,8 +1,10 @@
 /*
  * fonts.css — qte77 UI-branding TYPOGRAPHY (EyeRest).
  *
- * GENERATED from ../DESIGN.md (`typography`) — DO NOT HAND-EDIT. Source of truth:
- * brand/DESIGN.md. Pair with eyerest.css (color) and layout.css (spacing/shape).
+ * Hand-authored structural CSS (@font-face + type tokens); values mirror
+ * ../DESIGN.md (`typography`) — keep in sync. Only eyerest.css is generated
+ * (scripts/gen_ui_kit.py); this file is not.
+ * Pair with eyerest.css (color) and layout.css (spacing/shape).
  *
  * Web delivery prefers WOFF2 (Brotli-compressed, universal since ~2018) with a TTF
  * fallback, so it works against today's ../fonts/*.ttf and upgrades to *.woff2 once

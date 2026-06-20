@@ -26,6 +26,11 @@ data:                          # zero-blue categorical arc (charts, KPI heatmap)
   caution:  "#787010"          # dark: #c8b868
   negative: "#983828"          # dark: #c08060
   alt:      "#587818"          # dark: #a8b870
+data-dark:                     # dark scheme of the data arc (machine-readable; read by gen_ui_kit.py)
+  positive: "#8aa860"
+  caution:  "#c8b868"
+  negative: "#c08060"
+  alt:      "#a8b870"
 typography:
   sans: { fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif", fontSize: "16px", lineHeight: "1.6" }
   mono: { fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', monospace", fontSize: "14px", lineHeight: "1.5" }

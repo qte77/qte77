@@ -6,6 +6,7 @@
 .PHONY: \
 	setup_brand_fonts \
 	brand brand_paths brand_avatar brand_wordmark brand_social brand_clean \
+	ui_kit \
 	help
 .DEFAULT_GOAL := help
 
@@ -28,8 +29,9 @@ setup_brand_fonts:  ## Download brand fonts into brand/fonts/ (licenses in fonts
 # MARK: BRAND
 
 
-brand:  ## Refresh all brand artifacts (fonts + paths + avatar + wordmark + social)
+brand:  ## Refresh all brand artifacts (fonts + ui-kit + paths + avatar + wordmark + social)
 	$(MAKE) -s setup_brand_fonts
+	$(MAKE) -s ui_kit
 	$(MAKE) -s brand_paths
 	$(MAKE) -s brand_avatar
 	$(MAKE) -s brand_wordmark
@@ -71,6 +73,14 @@ brand_clean:  ## Remove $(DIST)/ and downloaded fonts (.paths.svg + PNGs are com
 	echo "Cleaning brand artifacts ..."
 	rm -rf $(DIST)
 	rm -f $(FONTS)/*.ttf $(FONTS)/*.otf
+
+
+# MARK: UI-KIT
+
+
+ui_kit:  ## Generate ui-kit/eyerest.css from DESIGN.md (color tokens; layout/fonts are hand-authored)
+	echo "Generating ui-kit CSS from DESIGN.md ..."
+	uv run $(SCRIPTS)/gen_ui_kit.py
 
 
 # MARK: HELP
