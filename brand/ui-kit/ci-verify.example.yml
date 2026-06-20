@@ -1,0 +1,52 @@
+# OPTIONAL — polyfetch UI verify gate (check & fetch before users).
+#
+# This is an EXAMPLE, not wired by default. Polyfetch verification is opt-in: copy this to
+# a consuming project's .github/workflows/ only if you want the gate in CI. It is NOT
+# required to merge, and is NOT enabled for qte77/brand itself.
+#
+# It drives qte77/polyfetch-scrape's bundled Patchright to render the built UI and assert
+# the EyeRest branding (tokens, theme cycle, a11y, fonts, favicon) before deploy.
+
+name: ui-verify (optional)
+
+on:
+  workflow_dispatch:        # manual only by default; add push/pull_request to enforce
+  # push:
+  #   branches: [main]
+
+jobs:
+  gui-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # the shared verify stack — no per-repo browser dependency
+      - name: Checkout polyfetch-scrape
+        uses: actions/checkout@v4
+        with:
+          repository: qte77/polyfetch-scrape
+          path: polyfetch-scrape
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install browser
+        run: uv run --directory polyfetch-scrape patchright install --with-deps chromium
+
+      # serve the built UI (adjust to your build/serve step)
+      - name: Serve UI
+        run: |
+          python -m http.server 8137 --directory ui &
+          sleep 2
+
+      - name: gui-check (check + fetch)
+        run: |
+          uv run --directory polyfetch-scrape \
+            python brand/scripts/gui-check.py --url http://localhost:8137 --out gui-check-out
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gui-check-screenshots
+          path: gui-check-out/
