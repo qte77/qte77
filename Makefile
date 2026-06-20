@@ -4,7 +4,7 @@
 .SILENT:
 .ONESHELL:
 .DEFAULT_GOAL := help
-.PHONY: help brand brand_paths brand_avatar brand_wordmark brand_social brand_clean setup_brand_fonts
+.PHONY: help brand brand_paths brand_avatar brand_wordmark brand_social brand_clean setup_brand_fonts ui_kit
 
-help brand brand_paths brand_avatar brand_wordmark brand_social brand_clean setup_brand_fonts:
+help brand brand_paths brand_avatar brand_wordmark brand_social brand_clean setup_brand_fonts ui_kit:
 	$(MAKE) --no-print-directory -C brand $@

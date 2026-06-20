@@ -1,8 +1,9 @@
 /*
  * layout.css — qte77 UI-branding LAYOUT (EyeRest): spacing, shape, components.
  *
- * GENERATED from ../DESIGN.md (`spacing` / `rounded` / `layout` / `shapes` /
- * `components`) — DO NOT HAND-EDIT. Source of truth: brand/DESIGN.md.
+ * Hand-authored structural CSS; the token values mirror ../DESIGN.md
+ * (`spacing` / `rounded` / `components`) — keep them in sync. Only eyerest.css is
+ * generated (by scripts/gen_ui_kit.py); this file is not.
  * Pair with eyerest.css (color) and fonts.css (type). Colors are referenced via tokens
  * only — never a raw hex here.
  */
