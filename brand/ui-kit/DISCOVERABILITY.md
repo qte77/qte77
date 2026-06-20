@@ -52,6 +52,8 @@ Optimizing so autonomous agents can **find, parse, and act**:
 
 ## Roadmap
 
+Part of the master roadmap in [`BASELINE.md`](BASELINE.md) — this is the SEO/GEO/ASO subset.
+
 - [ ] **SEO head partial** — `brand/ui-kit/seo.html` (meta + canonical + OG / Twitter +
       JSON-LD; `og:image` ← `render_og.py`).
 - [ ] **Machine-readability convention (GEO + ASO)** — standardize `llms.txt`

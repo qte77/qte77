@@ -2,8 +2,8 @@
 
 Consolidated from a review of four qte77 GUIs (qte77.github.io, paperverse,
 analyze-stock-kpi, agentic-job-offer-to-application-kit) and how each verified its UI with
-`polyfetch-scrape`. This is the rationale behind [`brand/ui-kit/`](README.md): the shared,
-no-build EyeRest theming used by every qte77-branded UI.
+`polyfetch-scrape`. **Start at [`README.md`](README.md) to *use* the kit; this doc is the
+*why*** — the findings, decisions, and roadmap behind the shared no-build EyeRest theming.
 
 ## Two brandings — GitHub vs UI
 
@@ -59,38 +59,21 @@ without a bundler.
 
 ## Tokens & CSS
 
-`DESIGN.md` is the single source of truth (D5). The CSS is generated from it and split (D9):
+`DESIGN.md` is the single source of truth (D5); the CSS is **generated** from it and split
+into color / layout / fonts (D9) — see [`README.md`](README.md) for the per-file contents.
+Everything references tokens, never a raw hex; `--primary` is the deepened `#7a6010` /
+`#c8a858` (WCAG AA on `--primary-on`).
 
-- [`eyerest.css`](eyerest.css) — color: default + 3 variants (Green/BluBlock/Dusk),
-  light/dark, zero-blue data arc. Selected via `html[data-variant="…"]`.
-- [`layout.css`](layout.css) — spacing (8px unit), radii (4/6/12px), container (768px),
-  component bindings.
-- [`fonts.css`](fonts.css) — `@font-face` (WOFF2 + TTF fallback), Inter + JetBrains Mono.
+## Verify with polyfetch — optional
 
-All reference tokens — never a raw hex. `--primary` is the deepened `#7a6010` / `#c8a858`
-(WCAG AA on `--primary-on`).
+The recommended (not required) way to catch branding/render defects **before users**:
+[`../scripts/gui-check.py`](../scripts/gui-check.py) drives the shared `polyfetch-scrape`
+stack to **check** the rendered UI (tokens, theme cycle, a11y, fonts, favicon, WebGL) and
+**fetch** that URLs/assets return 200. It is **dual-scope** — *in-project* (your local/
+staging URL) and *cross-repo* (sweep deployed URLs, audit live tokens vs `DESIGN.md` for
+drift).
 
-## Verify with polyfetch — optional, recommended
-
-Every qte77-branded UI can **check & fetch its UI headlessly, early, before users** with the
-shared [`qte77/polyfetch-scrape`](https://github.com/qte77/polyfetch-scrape) stack. It is the
-recommended way to catch branding/render defects pre-deploy — **optional, not a required CI
-gate** (see [`ci-verify.example.yml`](ci-verify.example.yml) for opt-in CI).
-
-[`../scripts/gui-check.py`](../scripts/gui-check.py) is dual-scope:
-
-- **single-repo / in-project** — render your local/staging URL and assert EyeRest tokens,
-  theme cycle, a11y, fonts, favicon, WebGL.
-- **cross-repo / multi-project** — sweep deployed URLs and audit live computed tokens
-  against `DESIGN.md` (drift detection).
-
-```bash
-uv run --directory ../polyfetch-scrape patchright install chromium          # once
-uv run --directory ../polyfetch-scrape python brand/scripts/gui-check.py --url http://localhost:8137
-uv run --directory ../polyfetch-scrape python brand/scripts/gui-check.py --urls urls.txt
-```
-
-`--directory` points at wherever the `polyfetch-scrape` checkout lives.
+Commands + the opt-in CI recipe live in [`README.md`](README.md) ("Verify with polyfetch").
 
 ## Portable gotchas
 
@@ -111,7 +94,8 @@ uv run --directory ../polyfetch-scrape python brand/scripts/gui-check.py --urls 
 - [ ] Promote `scripts/gui-check.py` to `repo-baseline/tools/` for the cross-repo drift
       sweep (the org-wide baseline/drift home); keep the brand copy or symlink.
 - [ ] Wire the existing GUIs onto the kit (start with `analyze-stock-kpi`, the reference).
-- [ ] Update issues #111 (shared ui-kit) and #112 (SVG/diagram pipeline) with this placement.
+- [x] Update issues #111 (shared ui-kit) and #112 (SVG/diagram pipeline) — done.
+- [ ] Discoverability (SEO / GEO / ASO) — see [`DISCOVERABILITY.md`](DISCOVERABILITY.md) for the SEO head partial + GEO/ASO convention items.
 - [ ] (optional) Adopt `ci-verify.example.yml` in projects that want the gate in CI.
 
 ## Discoverability (SEO / GEO / ASO)
