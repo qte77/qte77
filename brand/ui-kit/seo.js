@@ -77,41 +77,50 @@ function prune(obj) {
   return obj;
 }
 
+/** A `<meta>` tag (name or property), or "" when the content is empty. */
+function metaTag(attr, key, content) {
+  return content ? `<meta ${attr}="${key}" content="${esc(content)}">` : "";
+}
+const metaName = (key, content) => metaTag("name", key, content);
+const metaProp = (key, content) => metaTag("property", key, content);
+
+/** JSON-LD `<script>` tag for the config (also feeds GEO/ASO). */
+function jsonLdTag(cfg) {
+  return `<script type="application/ld+json">${JSON.stringify(prune(buildJsonLd(cfg)))}</script>`;
+}
+
 /**
  * Render the full `<head>` SEO fragment as an HTML string. Description and image
- * fall back through page → site. Returns build-time-injectable HTML.
+ * fall back through page → site. Build-time-injectable; empty-valued tags drop.
  */
 export function renderHead(cfg) {
   const desc = cfg.description || cfg.siteDescription;
   const image = cfg.image || cfg.siteImage;
-  const ogType = isArticle(cfg) ? "article" : "website";
-  const m = (l) => l.filter(Boolean).join("\n");
+  const handle = cfg.twitterUser ? `@${esc(cfg.twitterUser)}` : "";
+  const titled = cfg.siteName ? `${esc(cfg.title)} | ${esc(cfg.siteName)}` : esc(cfg.title);
 
   const tags = [
-    `<title>${esc(cfg.title)}${cfg.siteName ? ` | ${esc(cfg.siteName)}` : ""}</title>`,
+    `<title>${titled}</title>`,
     `<meta name="viewport" content="width=device-width, initial-scale=1.0">`,
-    desc && `<meta name="description" content="${esc(desc)}">`,
-    cfg.author?.name && `<meta name="author" content="${esc(cfg.author.name)}">`,
-    cfg.keywords && `<meta name="keywords" content="${esc(cfg.keywords)}">`,
+    metaName("description", desc),
+    metaName("author", cfg.author?.name),
+    metaName("keywords", cfg.keywords),
     `<meta name="robots" content="index, follow">`,
-    cfg.url && `<link rel="canonical" href="${esc(cfg.url)}">`,
-    // Open Graph
-    `<meta property="og:title" content="${esc(cfg.title)}">`,
-    desc && `<meta property="og:description" content="${esc(desc)}">`,
-    cfg.url && `<meta property="og:url" content="${esc(cfg.url)}">`,
-    cfg.siteName && `<meta property="og:site_name" content="${esc(cfg.siteName)}">`,
-    `<meta property="og:type" content="${ogType}">`,
-    `<meta property="og:locale" content="${esc(cfg.locale || "en_US")}">`,
-    image && `<meta property="og:image" content="${esc(image)}">`,
-    // Twitter Card
-    `<meta name="twitter:card" content="${esc(cfg.twitterCard || "summary")}">`,
-    cfg.twitterUser && `<meta name="twitter:site" content="@${esc(cfg.twitterUser)}">`,
-    cfg.twitterUser && `<meta name="twitter:creator" content="@${esc(cfg.twitterUser)}">`,
-    `<meta name="twitter:title" content="${esc(cfg.title)}">`,
-    desc && `<meta name="twitter:description" content="${esc(desc)}">`,
-    image && `<meta name="twitter:image" content="${esc(image)}">`,
-    // JSON-LD (also feeds GEO/ASO)
-    `<script type="application/ld+json">${JSON.stringify(prune(buildJsonLd(cfg)))}</script>`,
+    cfg.url ? `<link rel="canonical" href="${esc(cfg.url)}">` : "",
+    metaProp("og:title", cfg.title),
+    metaProp("og:description", desc),
+    metaProp("og:url", cfg.url),
+    metaProp("og:site_name", cfg.siteName),
+    metaProp("og:type", isArticle(cfg) ? "article" : "website"),
+    metaProp("og:locale", cfg.locale || "en_US"),
+    metaProp("og:image", image),
+    metaName("twitter:card", cfg.twitterCard || "summary"),
+    metaName("twitter:site", handle),
+    metaName("twitter:creator", handle),
+    metaName("twitter:title", cfg.title),
+    metaName("twitter:description", desc),
+    metaName("twitter:image", image),
+    jsonLdTag(cfg),
   ];
-  return m(tags) + "\n";
+  return tags.filter(Boolean).join("\n") + "\n";
 }
