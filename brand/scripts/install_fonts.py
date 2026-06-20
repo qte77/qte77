@@ -46,6 +46,15 @@ FONTS = {
         "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-400-normal.ttf",
     "JetBrainsMono-Bold.ttf":
         "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-700-normal.ttf",
+    # WOFF2 for the web ui-kit (fonts.css prefers these; TTF is the fallback).
+    "Inter-Regular.woff2":
+        "https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.woff2",
+    "Inter-Bold.woff2":
+        "https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.woff2",
+    "JetBrainsMono-Regular.woff2":
+        "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-400-normal.woff2",
+    "JetBrainsMono-Bold.woff2":
+        "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-700-normal.woff2",
     "CascadiaMono-Bold.ttf":
         "https://cdn.jsdelivr.net/fontsource/fonts/cascadia-mono@latest/latin-700-normal.ttf",
     # --- Linux monospaces (for paths.svg variants) ---
