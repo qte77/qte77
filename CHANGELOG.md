@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `brand/ui-kit/` docs streamlined to one-owner-per-topic — `README.md` = usage (front door), `BASELINE.md` = rationale/decisions/roadmap, `DISCOVERABILITY.md` = SEO/GEO/ASO; removed the duplicated verify commands + per-file token re-listing from `BASELINE.md`; added a doc map to `README.md` (PR #117)
 - Profile `README.md`: wordmark centered horizontally via `<p align="center">`, updated to `brand/images/` paths (PR #47)
 - `brand/README.md`, `docs/github-image-theming.md`: live-example paths updated to `brand/images/` (PR #47)
 - `brand/scripts/render_avatar.py`: `BRAND` constant + `IMAGES` resolve to subfolder (PR #47)

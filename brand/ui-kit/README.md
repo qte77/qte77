@@ -9,6 +9,13 @@ rationale and decisions.
 > **Provenance.** `eyerest.css`, `layout.css`, and `fonts.css` are **generated from
 > `../DESIGN.md`** — do not hand-edit. The token source of truth is `DESIGN.md`.
 
+## Docs in this kit
+
+- **`README.md`** (you are here) — how to adopt & use the kit.
+- [`BASELINE.md`](BASELINE.md) — the *why*: branding split, decisions (D1–D10), gotchas, roadmap.
+- [`DISCOVERABILITY.md`](DISCOVERABILITY.md) — SEO / GEO / ASO.
+- [`../DESIGN.md`](../DESIGN.md) — token source of truth.
+
 ## Contents
 
 | File | From `DESIGN.md` | What |
