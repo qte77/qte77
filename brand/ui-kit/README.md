@@ -28,6 +28,7 @@ rationale and decisions.
 | `theme-toggle.html` | — | toggle markup + `aria-live` status region |
 | `anti-fouc.html` | — | inline `<head>` guard snippet |
 | `ci-verify.example.yml` | — | **optional** CI recipe for the polyfetch verify gate |
+| `seo.js` / `seo.html` | — | portable SEO head — meta + OG/Twitter + JSON-LD (builder + template) |
 
 ## Load order (no-build)
 
@@ -85,6 +86,19 @@ another repo at runtime), then:
 
 For **`og:image`** use a raster (e.g. `brand/images/avatar_neutral.dejavu.png` or a
 `render_og.py` card) — many platforms don't render SVG OG images.
+
+## SEO
+
+Portable SEO `<head>` parity with the Jekyll sites, framework-free (for the no-build / Vite
+GUIs). Two options:
+
+- **Author** [`seo.html`](seo.html) — copy into your `<head>`, fill the `{{PLACEHOLDERS}}`;
+  meta lives in the served HTML (best for crawlers, no JS needed).
+- **Generate** with [`seo.js`](seo.js) — `renderHead(cfg)` emits the same tags at build time
+  and keeps the JSON-LD in sync (`BlogPosting` for posts, `WebSite` otherwise).
+
+`og:image` should be a raster (a `render_og.py` card or `brand/images/avatar_*.png`). The
+JSON-LD also feeds GEO / ASO — see [`DISCOVERABILITY.md`](DISCOVERABILITY.md).
 
 ## Verify with polyfetch — optional, recommended
 

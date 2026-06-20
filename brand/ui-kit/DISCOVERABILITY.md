@@ -22,10 +22,10 @@ and GEO + ASO overlap enough to share one convention.
 - **social cards** — favicon / logo + `og:image` +
   [`../scripts/render_og.py`](../scripts/render_og.py) cover the OG sliver of SEO.
 
-## SEO — head partial (planned unit)
+## SEO — head partial (shipped)
 
-A no-build `seo.html` head partial (portable across no-build / Vite / Jekyll; replaces the
-Jekyll-only `jekyll-seo-tag` path for non-Jekyll sites):
+[`seo.html`](seo.html) (authored template) + [`seo.js`](seo.js) (`renderHead(cfg)` build-time
+builder) give portable head parity with the Jekyll sites, framework-free:
 
 - `<title>` + `<meta name="description">` + `<link rel="canonical">`
 - Open Graph + Twitter Card (`og:title/description/image/url`, `twitter:card`)
@@ -54,8 +54,8 @@ Optimizing so autonomous agents can **find, parse, and act**:
 
 Part of the master roadmap in [`BASELINE.md`](BASELINE.md) — this is the SEO/GEO/ASO subset.
 
-- [ ] **SEO head partial** — `brand/ui-kit/seo.html` (meta + canonical + OG / Twitter +
-      JSON-LD; `og:image` ← `render_og.py`).
+- [x] **SEO head partial** — shipped: `seo.js` (builder) + `seo.html` (template); meta +
+      canonical + OG / Twitter + JSON-LD (`BlogPosting`/`WebSite`).
 - [ ] **Machine-readability convention (GEO + ASO)** — standardize `llms.txt`
       (`gha-llms-txt-action`) + JSON-LD + semantic / ARIA + stable selectors so answer-engines
       and autonomous agents parse the sites consistently.
