@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/ui-kit/README.md` "Self-hosting (no CDN)": advice to vendor fonts + external JS libs (Chart.js / Fuse.js) into the repo and pin exact versions — privacy, reliability/offline, simpler CSP, supply-chain control, GitHub-Pages portability (PR #119)
 - `brand/scripts/gen_ui_kit.py` + `make -C brand ui_kit`: generate `brand/ui-kit/eyerest.css` (color tokens) from `DESIGN.md` so the two never drift (decision D5); `--check` flags staleness (PR #118)
 - `brand/DESIGN.md`: machine-readable `data-dark` block (was YAML comments only) so the dark data arc is generatable (PR #118)
 - WOFF2 web fonts in `brand/scripts/install_fonts.py` (Inter + JetBrains Mono 400/700 from Fontsource); `fonts.css` prefers WOFF2 with TTF fallback (PR #118)

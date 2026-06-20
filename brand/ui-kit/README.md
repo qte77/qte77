@@ -51,6 +51,21 @@ Place the `theme-toggle.html` markup in your toolbar; recolour charts on flip vi
 (`../scripts/`) keeps the TTF/OTF because fonttools / cairosvg need desktop formats.
 `install_fonts.py` should emit both.
 
+## Self-hosting (no CDN)
+
+Vendor everything the GUI needs — fonts (above) and any external JS libs (Chart.js, Fuse.js,
+…) — into the repo and serve it from your own origin. Don't hotlink a CDN.
+
+**Why:** no third-party requests (privacy), works offline / survives CDN outages, a simpler
+Content-Security-Policy, supply-chain control, and clean GitHub-Pages portability.
+
+**How:**
+
+- **Fonts** → `../fonts/` via `install_fonts.py` + `fonts.css` (see above).
+- **Libs** → a committed `vendor/` dir (e.g. `ui/public/vendor/chart.umd.min.js`); load via a
+  plain `<script>` tag — no bundler needed. **Pin the exact version** in the file/commit;
+  never track `@latest`.
+
 ## Favicon & logo
 
 Both come from `brand/images/` (single source) — the same path-baked mark (resolves D7):
