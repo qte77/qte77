@@ -1,0 +1,24 @@
+<!--
+  anti-fouc.html — inline theme guard. Paste this as the FIRST <script> in <head>,
+  before any stylesheet, so the scheme is applied before first paint (no flash).
+
+  Precedence: ?theme= › localStorage['qte77-theme'] › prefers-color-scheme.
+  Keep it inline and tiny — it must run synchronously, with no imports.
+  Mirror any change to STORAGE_KEY / mode set here and in ui-kit/theme.js.
+-->
+<script>
+  (function () {
+    try {
+      var modes = { system: 1, light: 1, dark: 1 };
+      var p = new URLSearchParams(location.search).get("theme");
+      var s = localStorage.getItem("qte77-theme");
+      var m = modes[p] ? p : modes[s] ? s : "system";
+      // explicit scheme → set attribute; system → leave unset (prefers-color-scheme governs)
+      if (m === "light" || m === "dark") {
+        document.documentElement.setAttribute("data-theme", m);
+      }
+    } catch (e) {
+      /* storage blocked — fall back to prefers-color-scheme, no attribute */
+    }
+  })();
+</script>
