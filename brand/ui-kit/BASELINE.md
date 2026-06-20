@@ -52,7 +52,7 @@ without a bundler.
 | D4 | `localStorage` key = `qte77-theme` | standardize the divergent keys |
 | D5 | Tokens have one source of truth = `DESIGN.md` | CSS is generated; no second tokens source |
 | D6 | Home = `brand/ui-kit/` (next to `DESIGN.md`) | tightest DRY; no new repo, no cross-repo token hop |
-| D7 | Favicon = open decision (recommend EyeRest-tinted mark) | keeps the UI zero-blue; GitHub avatar stays Primer-blue |
+| D7 | Favicon **+ site logo** = `brand/images/logo-mark.paths.dejavu.svg` | one path-baked brand asset for both; sourced from brand/images |
 | D8 | OG cards split by branding | 1200×630 figure cards (UI) vs 1280×640 repo social (GitHub) |
 | D9 | Default CSS split into color / layout / fonts | matches `DESIGN.md` sections; pull only what you need |
 | D10 | Fonts: WOFF2 for web, TTF kept for baking | smallest web payload; cairosvg/fonttools need desktop formats |
@@ -107,7 +107,7 @@ uv run --directory ../polyfetch-scrape python brand/scripts/gui-check.py --urls 
 - [ ] Add a `make ui-kit` target that **generates** `eyerest.css` / `layout.css` /
       `fonts.css` from `DESIGN.md` (keep them in sync; today they are faithful hand-renders).
 - [ ] Update `scripts/install_fonts.py` to emit **WOFF2** (web) alongside TTF (baking).
-- [ ] Decide the favicon (D7): EyeRest-tinted mark variant vs. reuse the Primer-blue mark.
+- [x] Favicon (D7) — resolved: favicon + site logo = `brand/images/logo-mark.paths.dejavu.svg` (see README).
 - [ ] Promote `scripts/gui-check.py` to `repo-baseline/tools/` for the cross-repo drift
       sweep (the org-wide baseline/drift home); keep the brand copy or symlink.
 - [ ] Wire the existing GUIs onto the kit (start with `analyze-stock-kpi`, the reference).

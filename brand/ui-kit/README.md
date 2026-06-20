@@ -44,6 +44,26 @@ Place the `theme-toggle.html` markup in your toolbar; recolour charts on flip vi
 (`../scripts/`) keeps the TTF/OTF because fonttools / cairosvg need desktop formats.
 `install_fonts.py` should emit both.
 
+## Favicon & logo
+
+Both come from `brand/images/` (single source) — the same path-baked mark (resolves D7):
+
+- **Favicon + site logo** = `brand/images/logo-mark.paths.dejavu.svg` (path-baked square
+  mark; renders identically, no font dependency).
+- These are **GitHub-native brand** assets used on UI surfaces for identity — only the
+  *theme* (colors/fonts) is EyeRest.
+
+Vendor the file into your site's `assets/` (same as fonts — a deployed site can't reference
+another repo at runtime), then:
+
+```html
+<link rel="icon" type="image/svg+xml" href="/assets/logo-mark.svg">
+<img class="site-logo" src="/assets/logo-mark.svg" alt="qte77">
+```
+
+For **`og:image`** use a raster (e.g. `brand/images/avatar_neutral.dejavu.png` or a
+`render_og.py` card) — many platforms don't render SVG OG images.
+
 ## Verify with polyfetch — optional, recommended
 
 Check the rendered UI headlessly with the shared
