@@ -114,6 +114,12 @@ uv run --directory ../polyfetch-scrape python brand/scripts/gui-check.py --urls 
 - [ ] Update issues #111 (shared ui-kit) and #112 (SVG/diagram pipeline) with this placement.
 - [ ] (optional) Adopt `ci-verify.example.yml` in projects that want the gate in CI.
 
+## Discoverability (SEO / GEO / ASO)
+
+How the sites get found and parsed by humans, answer engines, and autonomous agents — and
+what the kit contributes — is a separate concern. See
+[`DISCOVERABILITY.md`](DISCOVERABILITY.md).
+
 ## References
 
 - `DESIGN.md` — EyeRest tokens (source of truth).
