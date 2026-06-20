@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/ui-kit/`: no-build EyeRest UI kit — `eyerest.css` / `layout.css` / `fonts.css` (generated from `DESIGN.md`), `theme.js` cycler (`◐/○/●`, `html[data-theme]`, `qte77-theme` key, `themechange` event), `a11y.css` + `theme-toggle.html` (dynamic `aria-label`, `aria-live`, width-sizer, `prefers-reduced-motion`), `anti-fouc.html`, `README.md`, optional `ci-verify.example.yml`; `brand/README.md` lists it (PR #113)
+- `brand/scripts/render_og.py`: SVG→cairosvg OG/figure renderer (1200×630, EyeRest palette, glyph-safety lint) (PR #113)
+- `brand/scripts/gui-check.py`: optional polyfetch-scrape UI verifier, dual-scope (in-project gate + cross-repo token-drift sweep) (PR #113)
+- `brand/ui-kit/BASELINE.md`: consolidated GUI-baseline findings (GitHub-vs-UI branding split, decisions D1–D10, portable gotchas) + actionable roadmap (PR #113)
+- `brand/ui-kit/README.md` "Favicon & logo": favicon + site logo resolved to `brand/images/logo-mark.paths.dejavu.svg` (decision D7) (PR #114)
+- `brand/ui-kit/DISCOVERABILITY.md`: SEO / GEO / ASO (incl. Agentic Search Optimization) machine-readability scope + roadmap, cross-referenced with `BASELINE.md` (PR #115)
 - `brand/fonts/LICENSES/`: canonical, committed font-license texts — the single source of truth a consumer vendors a font *and* its license from. `OFL.txt` (SIL OFL 1.1, stacked copyright headers for Inter, JetBrains Mono, Cascadia, Fira, Source Code Pro, IBM Plex Mono), `DejaVu-LICENSE.txt` (Bitstream Vera + Arev), `UbuntuMono-UFL.txt` (Ubuntu Font Licence 1.0), and a `README.md` font→license manifest; `brand/.gitignore` un-ignores `LICENSES/` while font binaries stay ignored
 - `brand/social-previews.toml`: expanded from 1 to 12 repo entries covering the main estate (doc-pipeline-engine, paperverse, polyforge-orchestrator, claude-code-plugins, so101-biolab-automation, pseudonymize-text, i3mega-pipettebot, gha-issue-triage, diagramforge, agentic-job-offer-to-application-kit, ai-agents-research)
 - `CONTRIBUTING.md`: minimal workflow doc — scope, commands, Conventional Commits, branch naming, CHANGELOG rule, pre-merge checklist
