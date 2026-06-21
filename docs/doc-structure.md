@@ -79,7 +79,7 @@ One audience per file; no duplication.
 | `README.md` | users / evaluators | this contract |
 | `CONTRIBUTING.md` | contributors | commands, conventions, the `## Documentation hierarchy` + `## Releasing` statements |
 | `AGENTS.md` | AI agents | behavioural rules, decision framework |
-| `CLAUDE.md` | Claude Code loader | a one-line `@AGENTS.md` pointer — never a copy |
+| `CLAUDE.md` | Claude Code loader | a pointer to `AGENTS.md` (symlink or one-line `@AGENTS.md` import) — never a copy |
 
 ## Releasing
 
