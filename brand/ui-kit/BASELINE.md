@@ -75,6 +75,12 @@ drift).
 
 Commands + the opt-in CI recipe live in [`README.md`](README.md) ("Verify with polyfetch").
 
+`gui-check.py` verifies **conformance** — the static contract (tokens, theme cycle, a11y,
+fonts, favicon, WebGL context). **Behaviour** verification — does a control actually *do*
+something over time (pause stops the idle motion, a toggle re-weights, a view snaps) — is the
+complementary, currently ad-hoc half, driven the same way but comparing **frames** (see the
+animation + Pillow gotchas below).
+
 ## Portable gotchas
 
 | Gotcha | Fix |
@@ -84,6 +90,8 @@ Commands + the opt-in CI recipe live in [`README.md`](README.md) ("Verify with p
 | headless WebGL blank | launch with `--enable-unsafe-swiftshader --ignore-gpu-blocklist` |
 | nested `sync_playwright()` throws | run polyfetch's `attempt()` outside your own context |
 | `fetch()` won't JS-render a 200 page | drive Patchright directly to execute JS |
+| idle animation (auto-rotate, transitions) confounds frame comparison | pause/disable it first, then compare; else every frame differs and the diff is meaningless |
+| frame-diffing screenshots needs Pillow (absent from polyfetch's env) | add `--with pillow` to the `uv run`; compare via `ImageChops`/`ImageStat` mean-diff |
 
 ## Actionable items
 
