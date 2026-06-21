@@ -95,10 +95,10 @@ The spec-generation work started in [`context-engineering-template-legacy`](http
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [An Open Agentic Coding Harness — the Loop, the Plugins, the Senses, the Eval](https://qte77.github.io/open-agentic-coding-harness/)
 - [Building a Trustworthy Agent Loop for a Physical Lab](https://qte77.github.io/open-self-driving-lab-agent-loop/)
 - [A $150 Pipetting Robot from a Stock 3D Printer](https://qte77.github.io/pipettebot-sub-150-pipetting-robot/)
 - [GraphJudge — Measuring How Agents Collaborate](https://qte77.github.io/agentx-agentbeats-writeup/)
-- [AI Agents-eval Comprehensive Analysis](https://qte77.github.io/ai-agents-eval-comprehensive-analysis/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Profile
