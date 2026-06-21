@@ -2,6 +2,17 @@
 
 For agent behavioral rules see [AGENTS.md](AGENTS.md). For brand tooling specifics see [brand/README.md](brand/README.md).
 
+## Documentation hierarchy
+
+One audience per file — reference, don't duplicate (the estate contract is [docs/doc-structure.md](docs/doc-structure.md)):
+
+| File | Audience | Owns |
+| --- | --- | --- |
+| [README.md](README.md) | users / evaluators | what this is, why, how — the front door |
+| CONTRIBUTING.md (this file) | contributors | workflow, commands, conventions, releasing |
+| [AGENTS.md](AGENTS.md) | AI agents | behavioural rules, decision frameworks (`CLAUDE.md` loads the same instructions) |
+| [CHANGELOG.md](CHANGELOG.md) | everyone | notable changes by version |
+
 ## Scope
 
 GitHub profile repository. Two surfaces:
