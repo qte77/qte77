@@ -19,7 +19,7 @@ tagline carries the motivation, so `Why` can sit low.
 
 ```text
 HERO       H1 name + one-line tagline   (optional theme-aware wordmark)
-BADGES     version · CI · license
+BADGES     License · Version · CI
 ## What    ≤ ~7 bullets  (+ optional screenshots <details> at bottom)
 ## How     minimal run example + link out
 ## Why     2–4 lines, deferred
