@@ -10,6 +10,7 @@ exclude_path = [
   ".github/workflows",
   "brand/dist",
   "brand/fonts",
+  "docs/templates",
 ]
 
 # Exclude URLs that are expected to fail in CI

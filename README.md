@@ -10,67 +10,42 @@
 
 **qte77** is a polyrepo orchestration framework for AI coding agents — coordinating Claude Code and compatible agents across 30+ repositories so goals, specs, builds, and learnings compound instead of drift. Agents drive it; humans approve and steer.
 
-## Mental Model
+## What
 
-Agentic development across 30+ repos drifts without a shared map. This fixes the feedback loop from learnings back to specs so the system compounds instead of forgetting.
+qte77 is the META layer that keeps 30+ agent-driven repos coherent — a shared map so goals, specs, builds, and learnings compound instead of drift.
 
-Read it as: goals at the top feed specs, specs feed builds, builds emit learnings, and learnings flow back into the next goals.
+- **Agents** — Claude Code and compatible LLM coding agents running per-repo, coordinated by orchestrators in this workspace.
+- **Orchestrators** — [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) drives the dev loop; [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) the office loop.
+- **Engines** — reusable components orchestrators compose: [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape).
+- **Humans** — approve goals, review PRs, steer the orchestrators. Agents propose; humans decide.
 
 <img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
 
-### Authority Chain
+## How
 
-Policy, mechanism, and state get confused and duplicated across repos. Naming where each decision lives prevents the drift and keeps 30+ repos DRY.
-
-- **META** — policy: what we optimize for (rules, principles)
-- **KERNEL** — invariants: rules that must hold (core-principles, compound-learning)
-- **MECHANISM** — code that enforces rules (skills, hooks, GHA pipelines)
-- **STATE** — data the system reads and writes (goals, specs, learnings)
-- **CONSUMERS** — where it lands (30+ companion repos)
-
-<details>
-  <summary>Diagram: META, KERNEL, MECHANISM, STATE, CONSUMERS</summary>
-  <img src="assets/images/authority-chain.svg" alt="qte77 Authority Chain — META, KERNEL, MECHANISM, STATE, CONSUMERS" width="100%" />
-</details>
-
-<details>
-  <summary>GHA automation pipeline — the GitHub Actions running across the ecosystem</summary>
-  <img src="assets/images/pipeline-layers.svg" alt="GHA automation pipeline — layers across the ecosystem" width="100%" />
-</details>
-
-### What this means concretely
-
-- **Agents** — Claude Code (and compatible LLM coding agents) running per-repo, coordinated by orchestrators in this workspace.
-- **Office work** — real workflows where humans and agents collaborate, orchestrated by office-forge and powered by the wider qte77 framework (engines like doc-pipeline-engine handle the heavy lifting).
-- **Engines** — reusable components orchestrators compose: [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) (document processing) and [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape) (HTTP scraping with anti-bot fallback).
-- **Humans** — approve goals, review PRs, and steer the orchestrators. Agents propose; humans decide.
-- **Where to look** — start with [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) for the dev loop or [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) for the office loop. 30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
-
-## Get started
+Each repo carries its own quickstart. Start with an orchestrator:
 
 - Dev loop → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator)
 - Office loop → [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator)
 - Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
 
-Each repo carries its own quickstart.
+30+ companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
 
-## Roadmap
+## Why
 
-- **Now** — GitHub-native (Actions, Issues, PRs); Claude Code agents.
-- **Next** — spec-forge methodology landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
-- **Later** — runtime portability: air-gapped, BYOM, your stack.
+Agentic development across 30+ repos drifts without a shared map — learnings don't flow back into specs, and the system forgets. qte77 fixes that feedback loop (goals → specs → builds → learnings → goals) so the system compounds instead.
 
-## Positioning
+It's a cross-repo coordination layer, not a single-repo agent runner or per-prompt orchestrator. Reach for something else if you're building one agent for one repo, or your loop fits in a single prompt.
 
-qte77 is a cross-repo coordination layer, not a single-repo agent runner or per-prompt orchestrator. It assumes you already have agents (Claude Code, etc.) and need them to stop drifting across many repos.
+## Refs
 
-Reach for something else if you're building one agent for one repo, or your loop fits in a single prompt.
+- [docs/architecture.md](docs/architecture.md) — mental model, authority chain, GHA pipeline, roadmap
+- [docs/doc-structure.md](docs/doc-structure.md) — the README + doc-hierarchy contract for the estate
+- [CONTRIBUTING.md](CONTRIBUTING.md) · [AGENTS.md](AGENTS.md) — how to work here
 
-## Lineage
+## License
 
-How the current system got here — proof of work, not required reading.
-
-The spec-generation work started in [`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (2025-07-06), where the BRD → PRD → FRD pipeline first took shape. [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy) carried it forward until archived (2026-04-26).
+Apache-2.0 — see [LICENSE](LICENSE).
 
 ## Tools
 
@@ -104,3 +79,13 @@ The spec-generation work started in [`context-engineering-template-legacy`](http
 ## Profile
 
 More: [Topics, Interests, TODO](PROFILE.md).
+
+## Lineage
+
+How the current system got here — proof of work, not required reading.
+
+[`context-engineering-template-legacy`](https://github.com/qte77/context-engineering-template-legacy) (first commit 2025-07-07) coined the BRD → PRD → FRD pipeline and the "CABIO" vision. The work was carried forward in **RAPID-spec-forge** (Requirements-to-Agent Pipeline & Implementation Driver; formerly CABIO-test) from 2026-02-26, archived 2026-04-26 as [`RAPID-spec-forge-legacy`](https://github.com/qte77/RAPID-spec-forge-legacy). Its parts were then decomposed under qte77 — now the META layer for 30+ repos:
+
+- **Spec methodology** → the spec-forge plugin landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins) (2026-02-22)
+- **Dev / office cockpit** → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) (2026-03-17) · [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) (2026-03-27)
+- **Doc-search + memory** → a dedicated plugin
