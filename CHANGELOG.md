@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/ui-kit/github-links.html` + `assets/images/icons/github.svg`: reusable GitHub repo/issues toolbar snippet that masks the shared octocat (Bootstrap Icons, MIT) in GitHub-permitted black/white per theme — dedupes the inlined mark across paperverse + agenthud; `assets/images/icons/README.md` documents the MIT-code / GitHub-trademark split (PR #131)
 - `docs/doc-structure.md` + `docs/templates/README.template.md`: canonical README + document-hierarchy contract for the qte77 estate — value-first order (Hero → Badges → What → How → Why → Refs → License → `<tail>`), badge spec (License → Version → CI; static badges blue, status badges native — paperverse SSOT), front-door/conciseness rule, theme-aware `assets/images/` screenshot rule, `README`/`CONTRIBUTING`/`AGENTS`/`CLAUDE` split. This repo is the source of truth; the docs-governance skills/rules/plugins derive from it. `lychee.toml` excludes `docs/templates` (placeholder links)
 - `docs/architecture.md`: mental model, authority chain, GHA pipeline diagrams, and roadmap — extracted from `README.md` so the profile front door stays concise (dogfoods the doc-structure contract)
 - `docs/templates/CONTRIBUTING.template.md`: canonical CONTRIBUTING skeleton (`## Documentation hierarchy` + semi-automatic `## Releasing` + commands/conventions/branches) — the SOT the docs-governance plugin's CONTRIBUTING template derives from
