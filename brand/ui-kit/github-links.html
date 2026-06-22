@@ -2,18 +2,19 @@
   github-links.html — toolbar links to a project's GitHub repo + issues.
   Drop into your toolbar/header alongside theme-toggle.html.
 
-  - The GitHub mark is the single source of truth at assets/images/icons/github.svg;
-    this snippet IMPORTS it via a CSS mask, so there is one copy of the path.
   - GitHub's brand guidelines (brand.github.com/foundations/logo) permit the Octocat
-    to LINK to a project but forbid recolouring it — so the mark is rendered only in
-    GitHub black (#181717) on light and white on dark, tracking the resolved theme
-    (html[data-theme]; `system` -> prefers-color-scheme). It is NOT tinted to the
-    EyeRest accent (mirrors this kit's "never repaint the GitHub mark" rule).
-  - Vendor github.svg into your own assets/ — a deployed site can't reference another
-    repo at runtime — and point the mask url() at that local path.
+    to LINK to a project but forbid recolouring it. So this displays GitHub's provided
+    black/white marks directly — github-black.svg on light, github-white.svg on dark —
+    swapped by the resolved theme (html[data-theme]; `system` -> prefers-color-scheme),
+    never tinted to the EyeRest accent. (Same dark/light-pair pattern as the other
+    monochrome icons, e.g. gh-models-dark/light.)
+  - Vendor both SVGs into your own assets/ — a deployed site can't reference another
+    repo at runtime — and point the background-image url()s at the local copies.
   - Replace OWNER/REPO with the project. The visible labels (Repo/Issues) carry the
-    meaning, so the masked icon is aria-hidden (decorative).
+    meaning, so the icon is aria-hidden (decorative).
   - rel="noopener noreferrer" hardens the external target.
+  - The rules below are self-contained (the kit's CSS is generated from DESIGN.md); a
+    host that already styles toolbar links can drop .gh-link and keep .gh-icon.
 
   Provenance: the mark path is Bootstrap Icons (MIT); the GitHub logo itself is a
   GitHub trademark, used here per brand.github.com only to link to the project.
@@ -29,17 +30,15 @@
     width: 14px;
     height: 14px;
     flex: 0 0 auto;
-    /* GitHub-permitted black/white only — never the theme tint. */
-    background-color: #181717;
-    -webkit-mask: url("../../assets/images/icons/github.svg") center / contain no-repeat;
-    mask: url("../../assets/images/icons/github.svg") center / contain no-repeat;
+    background: center / contain no-repeat
+      url("../../assets/images/icons/github-black.svg");
   }
   html[data-theme="dark"] .gh-link .gh-icon {
-    background-color: #ffffff;
+    background-image: url("../../assets/images/icons/github-white.svg");
   }
   @media (prefers-color-scheme: dark) {
     html:not([data-theme]) .gh-link .gh-icon {
-      background-color: #ffffff;
+      background-image: url("../../assets/images/icons/github-white.svg");
     }
   }
 </style>

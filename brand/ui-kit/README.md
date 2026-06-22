@@ -26,7 +26,7 @@ rationale and decisions.
 | `theme.js` | — | no-build cycler: `resolveTheme`/`nextTheme`/`THEME_CYCLE` + `themechange` |
 | `a11y.css` | — | `.sr-only`, width-sizer, reduced-motion |
 | `theme-toggle.html` | — | toggle markup + `aria-live` status region |
-| `github-links.html` | — | toolbar repo + issues links; masks `../../assets/images/icons/github.svg` in GitHub-permitted black/white |
+| `github-links.html` | — | toolbar repo + issues links; swaps `../../assets/images/icons/github-{black,white}.svg` by theme |
 | `anti-fouc.html` | — | inline `<head>` guard snippet |
 | `ci-verify.example.yml` | — | **optional** CI recipe for the polyfetch verify gate |
 | `seo.js` / `seo.html` | — | portable SEO head — meta + OG/Twitter + JSON-LD (builder + template) |
@@ -47,7 +47,8 @@ rationale and decisions.
 Place the `theme-toggle.html` markup in your toolbar; recolour charts on flip via
 `document.addEventListener('themechange', e => chart.update())`. The optional
 `github-links.html` adds repo + issues links the same way — vendor
-`assets/images/icons/github.svg` and point its mask `url()` at the local copy.
+`assets/images/icons/github-black.svg` + `github-white.svg` and point its
+`background-image` `url()`s at the local copies.
 
 ## Fonts: WOFF2 for the web, TTF for baking
 
