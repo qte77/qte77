@@ -1,0 +1,66 @@
+<!--
+  github-links.html — toolbar links to a project's GitHub repo + issues.
+  Drop into your toolbar/header alongside theme-toggle.html.
+
+  - The GitHub mark is the single source of truth at assets/images/icons/github.svg;
+    this snippet IMPORTS it via a CSS mask, so there is one copy of the path.
+  - GitHub's brand guidelines (brand.github.com/foundations/logo) permit the Octocat
+    to LINK to a project but forbid recolouring it — so the mark is rendered only in
+    GitHub black (#181717) on light and white on dark, tracking the resolved theme
+    (html[data-theme]; `system` -> prefers-color-scheme). It is NOT tinted to the
+    EyeRest accent (mirrors this kit's "never repaint the GitHub mark" rule).
+  - Vendor github.svg into your own assets/ — a deployed site can't reference another
+    repo at runtime — and point the mask url() at that local path.
+  - Replace OWNER/REPO with the project. The visible labels (Repo/Issues) carry the
+    meaning, so the masked icon is aria-hidden (decorative).
+  - rel="noopener noreferrer" hardens the external target.
+
+  Provenance: the mark path is Bootstrap Icons (MIT); the GitHub logo itself is a
+  GitHub trademark, used here per brand.github.com only to link to the project.
+-->
+<style>
+  .gh-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+  }
+  .gh-link .gh-icon {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+    /* GitHub-permitted black/white only — never the theme tint. */
+    background-color: #181717;
+    -webkit-mask: url("../../assets/images/icons/github.svg") center / contain no-repeat;
+    mask: url("../../assets/images/icons/github.svg") center / contain no-repeat;
+  }
+  html[data-theme="dark"] .gh-link .gh-icon {
+    background-color: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) .gh-link .gh-icon {
+      background-color: #ffffff;
+    }
+  }
+</style>
+
+<a
+  class="gh-link"
+  href="https://github.com/OWNER/REPO"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Repository on GitHub"
+  title="Repository on GitHub"
+>
+  <span class="gh-icon" aria-hidden="true"></span>Repo
+</a>
+<a
+  class="gh-link"
+  href="https://github.com/OWNER/REPO/issues"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Issues on GitHub"
+  title="Issues on GitHub"
+>
+  <span class="gh-icon" aria-hidden="true"></span>Issues
+</a>
