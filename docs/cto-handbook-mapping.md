@@ -16,7 +16,7 @@ and in GitHub Issues.
 
 | Handbook area | Estate home | Status |
 | --- | --- | --- |
-| People & Culture → leadership model, CEO/OKR alignment, measuring success | This repo: [`goals.json`](../goals.json) (OKRs), the "agents propose, humans decide" stance, cockpit ([qte77#67]) | Partial — the *operating-model* half is in scope; the human-team half is not |
+| People & Culture → leadership model, CEO/OKR alignment, measuring success | This repo: [`goals.json`](../goals.json) (OKRs), the "agents propose, humans decide" stance, a future cockpit consumer | Partial — the *operating-model* half is in scope; the human-team half is not |
 | Technology Roadmap | [`architecture.md` → Roadmap][arch] (Now / Next / Later) | Adopted in shape; thin on detail |
 | Technical Team Management (tech debt, tech process, developer experience) | Dev loop: [polyforge-orchestrator] + [compound-learning][cl] (learnings → specs) | Partial |
 | Tech Architecture ops (DevOps, testing, source control, security & compliance, RCA) | [polyforge-orchestrator] presets (`validate` / `security-all` / `security-pr`) + per-repo CI | Partial — enforced as presets, not documented as practice |
@@ -33,7 +33,7 @@ and in GitHub Issues.
   approve PRs, steer orchestrators.
 - **OKRs & measuring success.** The handbook's "align with the CEO" and "measure
   success" chapters map directly onto [`goals.json`](../goals.json) (intentionally
-  a minimal placeholder until the cockpit consumer pressure-tests it, [qte77#67]).
+  a minimal placeholder until a cockpit/dashboard consumer pressure-tests it).
   This is the strongest, most actionable overlap.
 - **Roadmap.** [`architecture.md`][arch] already carries a Now/Next/Later roadmap;
   the handbook's roadmap guidance (stakeholder-visible, decision-led) is the
@@ -48,11 +48,11 @@ and in GitHub Issues.
 
 ## Candidate expansions (backlog — not done here)
 
-Per the "mapping note first, then expand" decision, these are deferred until picked
-up as Issues:
+Per the "mapping note first, then expand" decision, these are deferred — now tracked
+in [qte77#134]:
 
 1. Use the handbook's *measuring-success* framing to shape the [`goals.json`](../goals.json)
-   OKR schema as [qte77#67] matures.
+   OKR schema.
 2. Expand the [`architecture.md` Roadmap][arch] using the handbook's roadmap
    structure (decision-led Now/Next/Later with rationale).
 3. An *agentic RCA* pattern (what changes when an agent causes the incident?) for
@@ -80,4 +80,4 @@ scoped to that repo's slice:
 [polyforge-orchestrator]: https://github.com/qte77/polyforge-orchestrator
 [office-forge-orchestrator]: https://github.com/qte77/office-forge-orchestrator
 [ai-agents-research]: https://github.com/qte77/ai-agents-research
-[qte77#67]: https://github.com/qte77/qte77/issues/67
+[qte77#134]: https://github.com/qte77/qte77/issues/134
