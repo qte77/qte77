@@ -48,3 +48,5 @@ each decision lives prevents the drift and keeps 30+ repos DRY.
 - **Now** — GitHub-native (Actions, Issues, PRs); Claude Code agents.
 - **Next** — spec-forge methodology landing in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
 - **Later** — runtime portability: air-gapped, BYOM, your stack.
+
+See also: [cto-handbook-mapping.md](cto-handbook-mapping.md) — an external engineering-leadership reference (Startup CTO Handbook) mapped onto this operating model and roadmap.

@@ -41,6 +41,7 @@ It's a cross-repo coordination layer, not a single-repo agent runner or per-prom
 
 - [docs/architecture.md](docs/architecture.md) — mental model, authority chain, GHA pipeline, roadmap
 - [docs/doc-structure.md](docs/doc-structure.md) — the README + doc-hierarchy contract for the estate
+- [docs/cto-handbook-mapping.md](docs/cto-handbook-mapping.md) — Startup CTO Handbook mapped onto the operating model
 - [CONTRIBUTING.md](CONTRIBUTING.md) · [AGENTS.md](AGENTS.md) — how to work here
 
 ## License
