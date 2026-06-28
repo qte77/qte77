@@ -50,3 +50,5 @@ each decision lives prevents the drift and keeps the estate DRY.
 - **Later** — runtime portability: air-gapped, BYOM, your stack.
 
 See also: [cto-handbook-mapping.md](cto-handbook-mapping.md) — an external engineering-leadership reference (Startup CTO Handbook) mapped onto this operating model and roadmap.
+
+See also: [operating-model.md](operating-model.md) — the steer-top / trace-bottom operating-model concept, its adversarial de-risking, and the decision to ship a single eval-before-work gate rather than the full spine.
