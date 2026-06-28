@@ -18,6 +18,9 @@ owner; inclusion here does not imply endorsement.
 
 ## Other marks
 
-`claude.svg`, `huggingface.svg`, `gh-models-*.svg`, `devcontainers-*.svg`, and `ros-*.svg` are
-the respective trademarks of their owners, used nominatively to identify each technology. Use
-them unmodified and only to refer to the tool they name.
+`claude.svg`, `huggingface.svg`, `gh-models-*.svg`, `devcontainers-*.svg`, `ros-*.svg`,
+`mcp-*.svg`, `uv-*.svg`, and `markdown-*.svg` are the respective trademarks of their owners, used
+nominatively to identify each technology (`claude.svg`, `mcp-*.svg`, `uv-*.svg`, and
+`markdown-*.svg` use the CC0 mark paths from
+[Simple Icons](https://github.com/simple-icons/simple-icons)). Use them unmodified and only to
+refer to the tool they name.
