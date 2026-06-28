@@ -118,7 +118,7 @@
   </a>
 
   <a xlink:href="https://github.com/qte77/polyforge-orchestrator/blob/main/config/ontology.json">
-    <title>ontology.json — entity model (12 types, 11 typed relationships) — defines storage/writers/readers</title>
+    <title>ontology.json — typed entity model (entities + relationships) — defines storage/writers/readers</title>
     <rect class="box" x="460" y="432" width="200" height="58" rx="5"/>
     <text class="box-title" x="560" y="451" text-anchor="middle">ontology.json</text>
     <text class="box-desc" x="560" y="467" text-anchor="middle">entity model</text>
@@ -141,14 +141,14 @@
   <text class="tier-label" x="20" y="541">CONSUMERS</text>
 
   <a xlink:href="https://github.com/qte77">
-    <title>30+ sibling repos — consume polyforge; inherit workspace policy; stay rules-light</title>
+    <title>Sibling repos — consume polyforge; inherit workspace policy; stay rules-light</title>
     <rect class="box" x="160" y="550" width="580" height="58" rx="5"/>
-    <text class="box-title" x="450" y="569" text-anchor="middle">30+ sibling repos</text>
-    <text class="box-desc" x="450" y="585" text-anchor="middle">Agents-eval  ·  ralph-loop  ·  ai-agents-research  ·  paperverse  ·  …</text>
+    <text class="box-title" x="450" y="569" text-anchor="middle">sibling repos</text>
+    <text class="box-desc" x="450" y="585" text-anchor="middle">HybridRAG-eval  ·  ralph-loop  ·  ai-agents-research  ·  paperverse  ·  …</text>
     <text class="box-note" x="450" y="599" text-anchor="middle">operands: no new hygiene docs  ·  stay rules-light  ·  run under polyforge</text>
   </a>
 
   <!-- Footer -->
   <text class="note" x="20" y="638">policy ≠ mechanism ≠ operand  ·  each concern lives in exactly one tier</text>
-  <text class="note" x="880" y="638" text-anchor="end">DRY across 30+ repos: one AGENTS.md rule  ·  one tool doc  ·  no sibling duplication</text>
+  <text class="note" x="880" y="638" text-anchor="end">DRY across the estate: one AGENTS.md rule  ·  one tool doc  ·  no sibling duplication</text>
 </svg>
