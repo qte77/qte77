@@ -1,11 +1,11 @@
 # Architecture
 
-How qte77 coordinates 30+ agent-driven repos without drift. For the project
+How qte77 coordinates the agent-driven estate without drift. For the project
 overview, see [the README](../README.md).
 
 ## Mental model
 
-Agentic development across 30+ repos drifts without a shared map. This fixes the
+Agentic development across the estate drifts without a shared map. This fixes the
 feedback loop from learnings back to specs so the system compounds instead of
 forgetting.
 
@@ -17,13 +17,13 @@ and learnings flow back into the next goals.
 ## Authority chain
 
 Policy, mechanism, and state get confused and duplicated across repos. Naming where
-each decision lives prevents the drift and keeps 30+ repos DRY.
+each decision lives prevents the drift and keeps the estate DRY.
 
 - **META** — policy: what we optimize for (rules, principles)
 - **KERNEL** — invariants: rules that must hold (core-principles, compound-learning)
 - **MECHANISM** — code that enforces rules (skills, hooks, GHA pipelines)
 - **STATE** — data the system reads and writes (goals, specs, learnings)
-- **CONSUMERS** — where it lands (30+ companion repos)
+- **CONSUMERS** — where it lands (the sibling estate)
 
 <details>
   <summary>Diagram: META, KERNEL, MECHANISM, STATE, CONSUMERS</summary>
