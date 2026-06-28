@@ -18,9 +18,11 @@ owner; inclusion here does not imply endorsement.
 
 ## Other marks
 
-`claude.svg`, `huggingface.svg`, `gh-models-*.svg`, `devcontainers-*.svg`, `ros-*.svg`,
-`mcp-*.svg`, `uv-*.svg`, and `markdown-*.svg` are the respective trademarks of their owners, used
-nominatively to identify each technology (`claude.svg`, `mcp-*.svg`, `uv-*.svg`, and
-`markdown-*.svg` use the CC0 mark paths from
-[Simple Icons](https://github.com/simple-icons/simple-icons)). Use them unmodified and only to
-refer to the tool they name.
+`claude.svg`, `huggingface.svg`, `uv.svg`, `gh-models-*.svg`, `devcontainers-*.svg`, `ros-*.svg`,
+`mcp-*.svg`, and `markdown-*.svg` are the respective trademarks of their owners, used nominatively
+to identify each technology (`claude.svg`, `uv.svg`, `mcp-*.svg`, and `markdown-*.svg` use the CC0
+mark paths from [Simple Icons](https://github.com/simple-icons/simple-icons)). Brand-colored marks
+(`claude.svg` `#D97757`, `uv.svg` `#DE5FE9`) ship as a single file in the brand color; marks that
+are monochrome by brand — `mcp-*` and `markdown-*` (both `#000000`), like `gh-models-*` / `ros-*` /
+`devcontainers-*` — ship paired light/dark. Use them unmodified and only to refer to the tool they
+name.
