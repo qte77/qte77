@@ -65,18 +65,18 @@
     <text class="repo-desc" x="220" y="170" text-anchor="middle">issues/PRs/commits over time</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/gha-arxiv-stats-action">
-    <title>gha-arxiv-stats-action — daily arXiv paper stats by category</title>
+  <a xlink:href="https://github.com/qte77/gha-rxiv-feed-action">
+    <title>gha-rxiv-feed-action — daily arXiv / bioRxiv paper feed by category</title>
     <rect class="box" x="333" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="430" y="156" text-anchor="middle">arxiv-stats</text>
-    <text class="repo-desc" x="430" y="170" text-anchor="middle">daily arXiv paper stats</text>
+    <text class="repo-name" x="430" y="156" text-anchor="middle">rxiv-feed</text>
+    <text class="repo-desc" x="430" y="170" text-anchor="middle">daily arXiv / bioRxiv feed</text>
   </a>
 
-  <a xlink:href="https://github.com/qte77/gha-biorxiv-stats-action">
-    <title>gha-biorxiv-stats-action — daily bioRxiv paper stats by category</title>
+  <a xlink:href="https://github.com/qte77/gha-sec-feed">
+    <title>gha-sec-feed — security advisory feed across the estate</title>
     <rect class="box" x="543" y="140" width="195" height="38" rx="5"/>
-    <text class="repo-name" x="640" y="156" text-anchor="middle">biorxiv-stats</text>
-    <text class="repo-desc" x="640" y="170" text-anchor="middle">daily bioRxiv paper stats</text>
+    <text class="repo-name" x="640" y="156" text-anchor="middle">sec-feed</text>
+    <text class="repo-desc" x="640" y="170" text-anchor="middle">security advisory feed</text>
   </a>
 
   <!-- ===== Layer 2: TRANSFORM (4 boxes) ===== -->
@@ -155,7 +155,7 @@
     <title>consumer repos — sibling projects that run these GHAs and act on their outputs</title>
     <rect class="box" x="160" y="428" width="540" height="38" rx="5"/>
     <text class="repo-name" x="430" y="444" text-anchor="middle">consumer repos</text>
-    <text class="repo-desc" x="430" y="458" text-anchor="middle">Agents-eval  ·  paperverse  ·  ralphy offspring  ·  …</text>
+    <text class="repo-desc" x="430" y="458" text-anchor="middle">ai-agents-research  ·  paperverse  ·  ralphy offspring  ·  …</text>
   </a>
 
   <!-- ===== Downward arrows between layers ===== -->

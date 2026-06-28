@@ -88,10 +88,10 @@
   <text class="band-label" x="20" y="223">ORCHESTRATE</text>
 
   <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
-    <title>DEV orchestration: polyforge + ralph-loop + 2 ralphy offspring</title>
+    <title>DEV orchestration: polyforge + ralph-loop + ralphy offspring</title>
     <rect class="box" x="60" y="230" width="360" height="48" rx="5"/>
     <text class="box-title" x="240" y="249" text-anchor="middle">DEV  ·  polyforge</text>
-    <text class="box-desc" x="240" y="264" text-anchor="middle">+ ralph-loop  ·  2 ralphy offspring</text>
+    <text class="box-desc" x="240" y="264" text-anchor="middle">+ ralph-loop  ·  ralphy offspring</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/office-forge-orchestrator">
@@ -121,11 +121,11 @@
   <rect class="band-bg" x="10" y="392" width="880" height="64" rx="6"/>
   <text class="band-label" x="20" y="407">EVALUATE</text>
 
-  <a xlink:href="https://github.com/qte77/Agents-eval">
-    <title>Agents-eval flagship + 4 siblings + 1 external (pat-tax)</title>
+  <a xlink:href="https://github.com/qte77?tab=repositories&amp;q=eval">
+    <title>Eval suite — scores agent and GHA output, feeds learnings back to SPECS</title>
     <rect class="box" x="290" y="412" width="320" height="36" rx="5"/>
-    <text class="box-title" x="450" y="428" text-anchor="middle">Agents-eval</text>
-    <text class="box-desc" x="450" y="442" text-anchor="middle">+ 4 siblings  ·  1 external</text>
+    <text class="box-title" x="450" y="428" text-anchor="middle">eval suite</text>
+    <text class="box-desc" x="450" y="442" text-anchor="middle">agent + GHA evaluation</text>
   </a>
 
   <line class="arrow" x1="450" y1="456" x2="450" y2="478"/>
@@ -142,10 +142,10 @@
   </a>
 
   <a xlink:href="https://github.com/qte77/paperverse">
-    <title>paperverse — 3D paperscape viz, plus arxiv/biorxiv helper GHAs</title>
+    <title>paperverse — 3D paperscape viz, plus the rxiv-feed helper GHA</title>
     <rect class="box" x="480" y="500" width="360" height="48" rx="5"/>
     <text class="box-title" x="660" y="519" text-anchor="middle">paperverse</text>
-    <text class="box-desc" x="660" y="534" text-anchor="middle">+ arxiv-stats  ·  biorxiv-stats</text>
+    <text class="box-desc" x="660" y="534" text-anchor="middle">+ gha-rxiv-feed-action</text>
   </a>
 
   <!-- ===== SUPPORT (3 items — prefixes kept, they distinguish) ===== -->
@@ -153,24 +153,24 @@
   <text class="band-label" x="20" y="583">SUPPORT  ·  substrate underneath all flows above</text>
 
   <a xlink:href="https://github.com/qte77/qte77/blob/main/assets/images/pipeline-layers.svg">
-    <title>13 GitHub Actions forming the 6-layer pipeline — see pipeline-layers.svg</title>
+    <title>GitHub Actions forming the 6-layer pipeline — see pipeline-layers.svg</title>
     <rect class="box" x="30" y="590" width="260" height="48" rx="5"/>
-    <text class="box-title" x="160" y="609" text-anchor="middle">AUTOMATE  ·  13 GHAs</text>
+    <text class="box-title" x="160" y="609" text-anchor="middle">AUTOMATE  ·  GHA pipeline</text>
     <text class="box-desc" x="160" y="624" text-anchor="middle">6-layer pipeline → pipeline-layers.svg</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/claude-code-plugins">
     <title>Infrastructure: dotfiles, cc-plugins, cc-recursive-team, eyerest-theme, diagramforge, polyfetch-scrape</title>
     <rect class="box" x="315" y="590" width="260" height="48" rx="5"/>
-    <text class="box-title" x="445" y="609" text-anchor="middle">INFRASTRUCTURE  ·  6 repos</text>
+    <text class="box-title" x="445" y="609" text-anchor="middle">INFRASTRUCTURE  ·  dev tooling</text>
     <text class="box-desc" x="445" y="624" text-anchor="middle">dotfiles  ·  claude-code-plugins  ·  diagramforge  ·  …</text>
   </a>
 
   <a xlink:href="https://github.com/qte77/agenthud-agui-a2ui">
-    <title>Interfaces: agenthud-agui-a2ui, cc-voice-plugin, so101-biolab</title>
+    <title>Interfaces: agenthud-agui-a2ui, cc-senses-plugin, so101-biolab</title>
     <rect class="box" x="600" y="590" width="260" height="48" rx="5"/>
     <text class="box-title" x="730" y="609" text-anchor="middle">INTERFACES  ·  UI · Voice · Robot</text>
-    <text class="box-desc" x="730" y="624" text-anchor="middle">agenthud  ·  cc-voice  ·  so101-biolab</text>
+    <text class="box-desc" x="730" y="624" text-anchor="middle">agenthud  ·  cc-senses  ·  so101-biolab</text>
   </a>
 
   <!-- ===== Feedback loop: LEARN → SPECS (blue dashed, right side) ===== -->
