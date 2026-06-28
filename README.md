@@ -52,7 +52,7 @@ Apache-2.0 — see [LICENSE](LICENSE).
 
 <div><!--
   --><img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="32" height="32"/><!--
-  --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/uv-dark.svg"><img src="assets/images/icons/uv-light.svg" title="uv" alt="uv" width="32" height="32"/></picture><!--
+  --><img src="assets/images/icons/uv.svg" title="uv" alt="uv" width="32" height="32"/><!--
   --><img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="32" height="32"/><!--
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/markdown-dark.svg"><img src="assets/images/icons/markdown-light.svg" title="Markdown" alt="Markdown" width="32" height="32"/></picture><!--
   --><img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="Linux" width="32" height="32"/><!--
