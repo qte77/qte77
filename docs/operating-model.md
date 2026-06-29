@@ -77,15 +77,48 @@ Workspace / Kiro make "spec is the contract" a platform feature).
 **The meta-risk.** Building the spine **is** the yak-shave the model exists to prevent — "the
 cure is the disease." It is the single most likely failure mode.
 
-## The decision
+## Calibration — read the verdict above with two corrections
 
-1. **Build:** `kr-eval-gate.yml` (~50 lines) — _no eval block on the KR ⇒ no merge_ — as the
-   **complete useful artifact**, NOT "phase 1 of the operating model" (framing it as phase 1 is
-   itself a kill condition).
-2. **Do not build (yet):** the ontology spine, OKF bundles, SHACL/MQO, steer-by-exception
-   alerting, multi-tenant / cockpit. Use GitHub's native Issue↔PR graph for traceability and
-   LangSmith/Braintrust for evals; accept their limits.
-3. **Record + revisit:** this doc is the decision record — compound-learning applied to itself.
+The distillation optimised for **commercial defensibility** (moat / TAM / "a rival could copy it" /
+"where to invest"). **Our purpose is to _showcase_ a working agentic estate, not to sell one.** That
+voids part of the verdict and reframes the rest.
+
+**Voided — commercial-only, irrelevant to a showcase:** "no moat," "GitHub closes the gap," "TAM too
+small," "reinventable → discard." You don't need a moat to demonstrate a capability; _building the
+coherent artifact is the point_.
+
+**Survives — reframed as KISS / credibility (frame-independent):**
+
+- **Self-certification** → don't _oversell_ "objective." A showcase that claims objective achievement
+  but self-grades is a credibility risk. Anchor the showcase's credibility on the genuinely-independent
+  signals — **external-project merges + office/business outcomes** (paid / signed / delivered).
+  "Objective" is dead; **"pre-committed"** is the honest word for the internal eval.
+- **Yak-shave / rot** → a showcase of _abandoned scaffolding_ is worse than none. Build only what
+  _visibly works_; don't erect an ontology/cockpit that decays. KISS · AHA · YAGNI.
+- **Goodhart / green-farming** → 9,286 self-merged contributions read as _farming_ to a sophisticated
+  viewer and weaken the showcase. Tie cadence to goals + the objective surfaces, not the graph.
+
+**Structural correction — two loops, one apex** (we'd omitted the business half): the model spans
+**polyforge (DEV)** _and_ **office-forge (OFFICE)**, both under one `qte77/goals.json`. The dev/office
+split _is_ the "multi-loop" showcase — by work-type, not account. Office KRs (invoice paid, contract
+signed) and external-contrib merges are externally verified and **binary**, so the
+genuinely-objective-eval surface is **larger** than the roast assumed.
+
+## The decision (showcase-calibrated)
+
+1. **Build the minimal coherent spine that visibly works:**
+   - seed `goals.json` (2–3 OKRs + IDs + Cynefin tag) — the apex;
+   - `kr-eval-gate.yml` (~50 lines) — eval-_before_-work pre-commitment, your missing reviewer;
+   - `goal_id` on `contributions.json` plans (and office projects) — the goal→campaign link, by
+     _reference_, nothing relocated;
+   - **optional** (if it showcases well): a lite GitHub-native goal-rollup (a `gh` query →
+     README/Action), not a cockpit.
+2. **Keep shelved — KISS / anti-rot, not "no moat":** OKF bundles, SHACL/MQO, `ontology.json`
+   goal/eval extension, self-evolving ladder automation, multi-tenant infra. Lean on GitHub-native
+   trace + LangSmith/Braintrust for evals.
+3. **Anchor credibility on the objective surfaces:** external-project merges + office outcomes — the
+   showcase's honest "it actually works" evidence.
+4. **Record + revisit:** this doc is the decision record — compound-learning applied to itself.
 
 ## What would earn building more
 
@@ -108,6 +141,16 @@ Clear/Complicated; GitHub Issues is the _actual_ work surface; the gate ships _b
 **LOSES IFF:** an eval is reverse-engineered after seeing output (even once); most KRs are fuzzy
 with no prior definition of success; the spine ships before one governed cycle; or the gate is
 framed as "phase 1" rather than the complete artifact.
+
+## Glossary — the BBOM is these five conflated
+
+- **goal** — an OKR; strategic; human-set; in `goals.json` (META); stable ID `G0x`.
+- **plan / campaign** — an operational batch of contributions; machine-tracked in `contributions.json`
+  (polyforge) or office projects (office-forge); references a `goal_id`.
+- **task / story** — a unit of work; a GitHub Issue / ralph `prd.json` `STORY-xxx`.
+- **contribution** — a single PR / commit; the _output_.
+- **achievement / eval** — _outcome_ verification; **pre-committed** internally, **independently
+  verified** for external merges + office outcomes. Done ≠ Achieved.
 
 ## Provenance
 
