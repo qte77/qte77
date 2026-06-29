@@ -142,6 +142,31 @@ Clear/Complicated; GitHub Issues is the _actual_ work surface; the gate ships _b
 with no prior definition of success; the spine ships before one governed cycle; or the gate is
 framed as "phase 1" rather than the complete artifact.
 
+## How it runs — two refinements
+
+- **Steer by exception = _discrete_ signals, not a statistical deadband.** A solo operator can't
+  generate the volume to calibrate a threshold (the roast's cut), so "exception" means
+  **deterministic** events — a KR with no passing eval past its horizon, a stalled/blocked Issue,
+  an unlinked PR — surfaced by a weekly `gh` query. Caveat: _no-alarm must mean on-track, not
+  detector-asleep_ — keep a liveness/coverage check, or absence-of-exception is meaningless.
+- **Cadence is the existing engine; goals make it _directed_.** The estate's throughput (parallel
+  `cc-parallel` runs across many repos) already exists — the contribution graph is its _exhaust_.
+  Top-down adds direction, not throughput: `goal → plan (goal_id) → cc-parallel fan-out →
+  eval-gated PRs → exception-review`. Steer by goals + the objective surfaces (external merges,
+  office outcomes), **never by the graph** (steering the graph is how cadence becomes farming).
+
+## Open decisions — the draft index (everything links from here)
+
+| Open item | Tracked in | Decision pending |
+|---|---|---|
+| Seed `goals.json` | qte77 #143 | which 2–3 OKRs |
+| Ship the eval-gate | qte77 #144 | — (the build) |
+| `goal_id` on plans | polyforge #79 | — (the link) |
+| Persistence cycle + scrape job | qte77 #94 | cadence · mechanism · compression gate |
+| Authority-chain terminology | qte77 #145 | is "KERNEL = invariant rules/skills, packaged in claude-code-plugins" right? |
+| AI-authorship guardrail | qte77 #146 | hard-never + human-only lane? |
+| Promote principles to `AGENTS.md` | — | once the model exits draft |
+
 ## Glossary — the BBOM is these five conflated
 
 - **goal** — an OKR; strategic; human-set; in `goals.json` (META); stable ID `G0x`.
