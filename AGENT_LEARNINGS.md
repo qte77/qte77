@@ -26,3 +26,10 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: `~/.claude/.../memory/` is **local container disk** — disk break / codespace delete / rebuild loses it. Nothing critical can live only there.
 - **Solution**: Durable SOT = **git-committed + pushed** (repo docs, GitHub Issues, this file, `.claude/rules/`). Memory is a *regeneratable cache*. Periodically **scrape** the ephemeral layer for learnings and **compress** (distil, don't dump — compression is the anti-graveyard quality gate), then commit. Commit-as-you-go during a session + a backstop scrape.
 - **References**: `qte77/qte77#94`.
+
+### markdownlint MD049: emphasis style is per-file; gate it with `if`, not `set -e`
+
+- **Context**: Editing Markdown docs in this estate and running `markdownlint` before commit.
+- **Problem**: (1) MD049 enforces emphasis-style *consistency within each file* — `docs/operating-model.md` is all-underscore, `docs/cto-handbook-mapping.md` is all-asterisk; mixing styles fails. (2) `set -e; markdownlint …` did **not** abort on a non-zero exit here (shipped a violating commit twice in one session).
+- **Solution**: Match the *target file's existing* emphasis char before editing. Gate explicitly — `if markdownlint "$f"; then …; else exit 1; fi` — never rely on `set -e` for the lint step.
+- **References**: PR #147.
