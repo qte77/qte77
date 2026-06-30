@@ -62,7 +62,7 @@ cycles_, which most operators skip. Barrier type: **incentive, thin** — no OKR
 this GitHub-native at KR-creation; time-bounded (~12–18 months before GitHub Projects / Copilot
 Workspace / Kiro make "spec is the contract" a platform feature).
 
-**What fell:**
+**What fell** _(this is the **commercial** verdict — read it with the Calibration below, which voids the moat / TAM / "GitHub-closes-it" cuts for a showcase and keeps only the frame-independent ones):_
 
 | Claim | Verdict |
 |---|---|

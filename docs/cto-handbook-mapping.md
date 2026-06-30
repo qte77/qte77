@@ -12,6 +12,13 @@ Audience: humans steering the estate, and agents that read this as context. It i
 a map, not a build — concrete work lives in the *Candidate expansions* backlog
 and in GitHub Issues.
 
+> **Retention note (2026-06-30):** reviewed as a deletion candidate under the estate's
+> *showcase-not-sell* stance and **kept** — its value is precisely the **traditional
+> engineering-leadership baseline** the *agentic* operating model is contrasted against, which
+> makes the contrast itself a showcase asset. Demoted (off the README front door), not removed.
+> The stale `META→KERNEL→MECHANISM` naming it shares is tracked in #145. See
+> [operating-model.md](operating-model.md).
+
 ## How the handbook maps
 
 | Handbook area | Estate home | Status |

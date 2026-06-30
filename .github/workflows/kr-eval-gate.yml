@@ -1,0 +1,61 @@
+name: KR Eval Gate
+
+# Pre-commitment gate (the operating-model bedrock — see docs/operating-model.md):
+# a PR that *closes* a `goal`-labelled KR Issue must not merge unless that Issue
+# carries a non-empty `eval:` line written BEFORE the work (anti-goalpost-moving;
+# your missing reviewer). For Complex KRs the eval is a probe question, not a metric.
+#
+# Dormant until adopted: a PR with no goal-labelled closing issues passes.
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize, labeled, unlabeled]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a pre-committed eval on each goal KR this PR closes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          issues=$(gh pr view "$PR" --repo "$REPO" \
+            --json closingIssuesReferences \
+            --jq '.closingIssuesReferences[].number')
+
+          if [ -z "${issues:-}" ]; then
+            echo "No closing issues referenced — KR eval gate dormant (pass)."
+            exit 0
+          fi
+
+          fail=0
+          for n in $issues; do
+            view=$(gh issue view "$n" --repo "$REPO" --json labels,body)
+            is_goal=$(printf '%s' "$view" | jq -r '[.labels[].name] | any(test("^goal"; "i"))')
+            if [ "$is_goal" != "true" ]; then
+              continue
+            fi
+            has_eval=$(printf '%s' "$view" | jq -r '.body // ""' \
+              | grep -ciE '^[[:space:]]*eval:[[:space:]]*\S' || true)
+            if [ "$has_eval" -gt 0 ]; then
+              echo "ok #$n (goal KR) has a pre-committed eval"
+            else
+              echo "MISSING #$n is a goal KR but has no non-empty 'eval:' line"
+              fail=1
+            fi
+          done
+
+          if [ "$fail" -ne 0 ]; then
+            echo "::error::KR eval gate failed — write the eval BEFORE the work. See docs/operating-model.md"
+            exit 1
+          fi
+          echo "KR eval gate passed."
