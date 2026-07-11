@@ -146,14 +146,29 @@ panel at 12px; `code` is mono on the surface tone. Components reference tokens, 
 they recolor wholesale when the active variant changes. New components compose
 existing tokens — never raw values.
 
+## Motion & effects
+
+The surface is **flat**. Elevation comes from the `border` + `surface` tone step,
+never from shadow. Motion is allowed only when it is *functional and subtle* — a
+brief entrance on a newly-rendered block, a low-contrast "working" pulse — and it
+must collapse under `prefers-reduced-motion`. Everything decorative is out: no
+gloss, gradients, drop/decorative shadows, glows, or pill radii (a removable
+filter chip is the only pill).
+
+This is a constraint, not a knob — those effects break the flat, low-fatigue
+promise. It is enforced downstream: `@qte77/ui-theme` (`ui-kit/tailwind/tokens.css`)
+ships **no shadow token**, and consuming packages lint their CSS against
+`box-shadow` / `*-gradient` / raw hex so effects can't creep back in.
+
 ## Do's and Don'ts
 
 - **Do** drive every color from a token so light/dark and variant flips are free.
 - **Do** keep one amber primary per variant; let whitespace and weight carry hierarchy.
 - **Do** use mono for numeric data and the `data` arc for chart/KPI categories.
+- **Do** keep motion functional, subtle, and `prefers-reduced-motion`-guarded (above).
 - **Don't** ever introduce a blue accent — it breaks the brand's core promise.
 - **Don't** mix two variants in one view; pick one, let it resolve wholesale.
-- **Don't** add gradients, decorative shadows, a third font, or a hardcoded hex.
+- **Don't** add gradients, decorative shadows, gloss, pills, a third font, or a hardcoded hex.
 
 ## Variants
 

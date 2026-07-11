@@ -49,9 +49,19 @@ Add an entry under `[Unreleased]` for any change that's visible to consumers (ne
 - `brand/scripts/foo.py`: <change>
 ```
 
+## Releasing `@qte77/ui-theme`
+
+`brand/ui-kit` is published to GitHub Packages as `@qte77/ui-theme` (Tailwind
+theme tokens for the Vite/React apps). To cut a release: regenerate
+(`make -C brand ui_kit`), bump `brand/ui-kit/package.json` `version`, and merge to
+`main`. `.github/workflows/publish-ui-theme.yml` then publishes (idempotent; gated
+on `gen_ui_kit.py --check`). Never hand-edit `tailwind/tokens.css` — it is
+generated from `brand/DESIGN.md`.
+
 ## Pre-merge
 
 1. `markdownlint $(git ls-files '*.md')` clean
 2. `lychee --offline $(git ls-files '*.md')` clean
-3. CHANGELOG `[Unreleased]` updated
-4. Conventional Commits title
+3. `uv run brand/scripts/gen_ui_kit.py --check` clean (if `brand/DESIGN.md` or `brand/ui-kit/` changed)
+4. CHANGELOG `[Unreleased]` updated
+5. Conventional Commits title
