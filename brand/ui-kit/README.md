@@ -27,8 +27,8 @@ This registers the utilities the apps use — `bg-bg`, `bg-surface`, `text-text`
 `text-primary`, `border-border`, `font-sans`, `font-mono`, `rounded-lg` — plus a
 runtime `html[data-theme]` / `prefers-color-scheme` scheme swap. Fonts are the
 consumer's concern (`@fontsource/*` or self-host); the package only names the
-family stacks. It ships **no shadow token** — the surface is flat by mandate
-(see `../DESIGN.md` "Motion & effects").
+family stacks. It also ships **`--shadow-card`** (light/dark) for subtle functional
+elevation — see `../DESIGN.md` "Motion & effects".
 
 GitHub Packages requires an auth token even to *install* a public package. Add an
 `.npmrc` next to your `package.json`:
