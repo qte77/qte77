@@ -1,0 +1,33 @@
+{
+  "name": "@qte77/ui-theme",
+  "version": "0.1.0",
+  "description": "qte77 EyeRest UI theme as Tailwind v4 design tokens — zero-blue, warm, flat. Generated from brand/DESIGN.md.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qte77/qte77",
+    "directory": "brand/ui-kit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    "./tailwind/tokens.css": "./tailwind/tokens.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "tailwind/tokens.css",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "qte77",
+    "eyerest",
+    "tailwindcss",
+    "design-tokens",
+    "theme"
+  ]
+}

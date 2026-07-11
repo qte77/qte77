@@ -1,0 +1,50 @@
+---
+name: Publish @qte77/ui-theme
+
+# Publishes brand/ui-kit as the @qte77/ui-theme npm package to GitHub Packages.
+# Triggers on a push to main that touches the package manifest (i.e. a version
+# bump) or manually. Idempotent: skips if that version is already published.
+# The theme tokens are generated from brand/DESIGN.md, so the publish is gated
+# on `gen_ui_kit.py --check` — a stale tokens.css blocks the release.
+
+on:
+  push:
+    branches: [main]
+    paths: ['brand/ui-kit/package.json']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+
+      - name: Verify tokens.css is in sync with DESIGN.md
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet 'pyyaml>=6'
+          python3 brand/scripts/gen_ui_kit.py --check
+
+      - name: Publish to GitHub Packages (skip if version unchanged)
+        working-directory: brand/ui-kit
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Scope @qte77 to GitHub Packages; npm (not the shell) expands the token ref.
+          {
+            echo "@qte77:registry=https://npm.pkg.github.com"
+            # shellcheck disable=SC2016  # literal ${NODE_AUTH_TOKEN}; npm expands it at runtime
+            echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}'
+          } > .npmrc
+          name=$(node -p "require('./package.json').name")
+          version=$(node -p "require('./package.json').version")
+          if npm view "$name@$version" version --registry=https://npm.pkg.github.com >/dev/null 2>&1; then
+            echo "$name@$version already published — nothing to do."
+            exit 0
+          fi
+          npm publish

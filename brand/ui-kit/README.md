@@ -9,6 +9,39 @@ rationale and decisions.
 > **Provenance.** `eyerest.css`, `layout.css`, and `fonts.css` are **generated from
 > `../DESIGN.md`** — do not hand-edit. The token source of truth is `DESIGN.md`.
 
+## npm package — `@qte77/ui-theme` (Tailwind v4 apps)
+
+The Vite/React apps consume the theme as an npm package instead of hand-copying
+the `@theme` block. `tailwind/tokens.css` is **generated from `../DESIGN.md`**
+(same source, `make -C brand ui_kit`) and published to **GitHub Packages** by
+`.github/workflows/publish-ui-theme.yml` on a version bump of
+[`package.json`](package.json).
+
+```css
+/* src/index.css */
+@import "tailwindcss";
+@import "@qte77/ui-theme/tailwind/tokens.css";
+```
+
+This registers the utilities the apps use — `bg-bg`, `bg-surface`, `text-text`,
+`text-primary`, `border-border`, `font-sans`, `font-mono`, `rounded-lg` — plus a
+runtime `html[data-theme]` / `prefers-color-scheme` scheme swap. Fonts are the
+consumer's concern (`@fontsource/*` or self-host); the package only names the
+family stacks. It ships **no shadow token** — the surface is flat by mandate
+(see `../DESIGN.md` "Motion & effects").
+
+GitHub Packages requires an auth token even to *install* a public package. Add an
+`.npmrc` next to your `package.json`:
+
+```ini
+@qte77:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
+`read:packages`. In CI, set it from a `NPM_READ_TOKEN` secret (or the job's
+`GITHUB_TOKEN` when `permissions: packages: read` is granted).
+
 ## Docs in this kit
 
 - **`README.md`** (you are here) — how to adopt & use the kit.
@@ -20,6 +53,7 @@ rationale and decisions.
 
 | File | From `DESIGN.md` | What |
 |---|---|---|
+| `tailwind/tokens.css` | `colors` · `data` · `typography` · `rounded` | Tailwind v4 `@theme` tokens — the `@qte77/ui-theme` npm package (see above) |
 | `eyerest.css` | `colors` · `variants` · `data` | color tokens (default + 3 variants, light/dark, data arc) |
 | `layout.css` | `spacing` · `rounded` · `shapes` · `components` | spacing/shape tokens + component bindings |
 | `fonts.css` | `typography` | `@font-face` (WOFF2 + TTF fallback) + type tokens |
