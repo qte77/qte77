@@ -39,6 +39,9 @@ typography:
   h3: { fontFamily: "{typography.sans.fontFamily}", fontSize: "20px", fontWeight: 600, lineHeight: "1.4" }
 rounded: { sm: "4px", md: "6px", lg: "12px" }
 spacing: { unit: "8px", container: "768px" }
+elevation:                     # functional depth — warm, zero-blue, low-opacity (card/skeleton/chip)
+  shadow-card: "0 1px 2px rgba(28, 26, 20, 0.06), 0 4px 12px rgba(28, 26, 20, 0.08)"
+  dark-shadow-card: "0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55)"
 components:
   button-primary: { backgroundColor: "{colors.primary}", textColor: "{colors.primary-on}", rounded: "{rounded.md}", padding: "6px 16px", typography: "{typography.sans}" }
   card: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.lg}", padding: "16px" }
@@ -148,27 +151,46 @@ existing tokens — never raw values.
 
 ## Motion & effects
 
-The surface is **flat**. Elevation comes from the `border` + `surface` tone step,
-never from shadow. Motion is allowed only when it is *functional and subtle* — a
-brief entrance on a newly-rendered block, a low-contrast "working" pulse — and it
-must collapse under `prefers-reduced-motion`. Everything decorative is out: no
-gloss, gradients, drop/decorative shadows, glows, or pill radii (a removable
-filter chip is the only pill).
+Depth is **functional, not decorative**. The brand allows a small, warm, zero-blue
+elevation shadow and quiet motion where they help the reader parse the interface;
+anything ornamental stays out. Everything here collapses under
+`prefers-reduced-motion`.
 
-This is a constraint, not a knob — those effects break the flat, low-fatigue
-promise. It is enforced downstream: `@qte77/ui-theme` (`ui-kit/tailwind/tokens.css`)
-ships **no shadow token**, and consuming packages lint their CSS against
-`box-shadow` / `*-gradient` / raw hex so effects can't creep back in.
+**Allowed** — subtle and purposeful:
+
+- **Elevation shadow** (`--shadow-card`): lifts a card/panel so it reads as a
+  distinct surface. Use on raised surfaces (cards, the loading skeleton, the
+  "working" chip); pair it with the `border` + `surface` tone step, don't replace
+  it. *Example: an A2UI card uses `box-shadow: var(--shadow-card)`.*
+- **Loading shimmer**: a token-driven gradient sweeping a skeleton placeholder
+  while content streams — signals "in progress". *Example: a `--color-border` →
+  `--color-surface` `linear-gradient` animating `background-position`.*
+- **Functional motion**: a brief entrance on a newly-mounted block, a low-contrast
+  "working" pulse. *Example: `qte-enter` 220ms on a new card only.*
+
+**Discouraged** — decorative, high-fatigue: heavy or high-contrast shadows, glow,
+gloss, and non-functional gradients used as surface fills. Depth should be barely
+noticed, never the point.
+
+**Still banned** (see Shapes / Colors / Typography): pill radii except a removable
+filter chip; any blue accent; pure black/white; a hardcoded hex; a third typeface.
+
+`--shadow-card` is a real brand token — its light/dark values live in the
+`elevation` front matter and ship in `@qte77/ui-theme`
+(`ui-kit/tailwind/tokens.css`), so every surface draws the same depth and a scheme
+flip re-resolves it.
 
 ## Do's and Don'ts
 
 - **Do** drive every color from a token so light/dark and variant flips are free.
 - **Do** keep one amber primary per variant; let whitespace and weight carry hierarchy.
 - **Do** use mono for numeric data and the `data` arc for chart/KPI categories.
-- **Do** keep motion functional, subtle, and `prefers-reduced-motion`-guarded (above).
+- **Do** use `--shadow-card` for subtle elevation; keep motion functional, subtle,
+  and `prefers-reduced-motion`-guarded (see Motion & effects).
 - **Don't** ever introduce a blue accent — it breaks the brand's core promise.
 - **Don't** mix two variants in one view; pick one, let it resolve wholesale.
-- **Don't** add gradients, decorative shadows, gloss, pills, a third font, or a hardcoded hex.
+- **Don't** add decorative gloss, glow, non-functional gradients, heavy shadows,
+  pills (except a removable filter chip), a third font, or a hardcoded hex.
 
 ## Variants
 

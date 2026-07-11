@@ -1,6 +1,6 @@
 {
   "name": "@qte77/ui-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "qte77 EyeRest UI theme as Tailwind v4 design tokens — zero-blue, warm, flat. Generated from brand/DESIGN.md.",
   "license": "Apache-2.0",
   "type": "module",

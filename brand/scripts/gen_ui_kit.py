@@ -137,7 +137,7 @@ TW_HEADER = """\
  *
  * GENERATED from DESIGN.md by scripts/gen_ui_kit.py — DO NOT HAND-EDIT.
  * Source of truth: brand/DESIGN.md (`colors` / `data` / `data-dark` /
- * `typography` / `rounded`). Regenerate: `make -C brand ui_kit`.
+ * `typography` / `rounded` / `elevation`). Regenerate: `make -C brand ui_kit`.
  *
  * Consume from a Tailwind v4 app:
  *     @import "tailwindcss";
@@ -146,7 +146,8 @@ TW_HEADER = """\
  * font-sans, rounded-lg, …); the :root overrides swap the scheme at runtime via
  * html[data-theme] or prefers-color-scheme. Fonts are the consumer's concern
  * (self-host or @fontsource) — this file only names the family stacks.
- * FLAT by mandate: no shadow/elevation tokens (DESIGN.md "Motion & effects").
+ * Includes --shadow-card: functional elevation, warm/zero-blue (DESIGN.md
+ * "Motion & effects"); the dark value swaps via the runtime scheme blocks.
  * Zero blue in any accent — the brand's core rule.
  */"""
 
@@ -161,7 +162,7 @@ def _tw_color_decls(colors: dict, data: dict, *, dark: bool) -> Decls:
 def css_tailwind(spec: dict) -> str:
     """Render tokens.css: the DESIGN.md tokens as a Tailwind v4 @theme cascade."""
     colors = spec["colors"]
-    typ, rounded = spec["typography"], spec["rounded"]
+    typ, rounded, elevation = spec["typography"], spec["rounded"], spec.get("elevation", {})
 
     theme = _tw_color_decls(colors, spec.get("data", {}), dark=False)
     theme += [
@@ -172,6 +173,11 @@ def css_tailwind(spec: dict) -> str:
         ("--radius-lg", rounded["lg"]),
     ]
     dark = _tw_color_decls(colors, spec.get("data-dark", {}), dark=True)
+    # Functional elevation (DESIGN.md `elevation`): --shadow-card, light in @theme +
+    # its dark value in the scheme-swap blocks so var(--shadow-card) re-resolves.
+    if elevation:
+        theme.append(("--shadow-card", elevation["shadow-card"]))
+        dark.append(("--shadow-card", elevation["dark-shadow-card"]))
 
     parts = [
         TW_HEADER,
