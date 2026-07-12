@@ -45,7 +45,7 @@ Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
 ## Docs in this kit
 
 - **`README.md`** (you are here) — how to adopt & use the kit.
-- [`BASELINE.md`](BASELINE.md) — the *why*: branding split, decisions (D1–D10), gotchas, roadmap.
+- [`BASELINE.md`](BASELINE.md) — the *why*: branding split, decisions (D1–D13), gotchas, roadmap.
 - [`DISCOVERABILITY.md`](DISCOVERABILITY.md) — SEO / GEO / ASO.
 - [`../DESIGN.md`](../DESIGN.md) — token source of truth.
 
@@ -53,11 +53,12 @@ Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
 
 | File | From `DESIGN.md` | What |
 |---|---|---|
-| `tailwind/tokens.css` | `colors` · `data` · `typography` · `rounded` | Tailwind v4 `@theme` tokens — the `@qte77/ui-theme` npm package (see above) |
-| `eyerest.css` | `colors` · `variants` · `data` | color tokens (default + 3 variants, light/dark, data arc) |
+| `tailwind/tokens.css` | `colors` · `data` · `variants` · `typography` · `rounded` | Tailwind v4 `@theme` tokens + `data-variant` overrides — the `@qte77/ui-theme` npm package (see above) |
+| `eyerest.css` | `colors` · `variants` · `data` | color tokens (default + 4 variants incl. SaaS, light/dark, data arc, `--shadow-card`) |
 | `layout.css` | `spacing` · `rounded` · `shapes` · `components` | spacing/shape tokens + component bindings |
 | `fonts.css` | `typography` | `@font-face` (WOFF2 + TTF fallback) + type tokens |
 | `theme.js` | — | no-build cycler: `resolveTheme`/`nextTheme`/`THEME_CYCLE` + `themechange` |
+| `chart-theme.js` | — | bind Chart.js/canvas colours to live tokens; `onThemePalette`/`getChartPalette` (zero-blue `--data-*` arc) |
 | `a11y.css` | — | `.sr-only`, width-sizer, reduced-motion |
 | `theme-toggle.html` | — | toggle markup + `aria-live` status region |
 | `github-links.html` | — | toolbar repo + issues links; swaps `../../assets/images/icons/github-{black,white}.svg` by theme |
@@ -78,8 +79,9 @@ Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
 </head>
 ```
 
-Place the `theme-toggle.html` markup in your toolbar; recolour charts on flip via
-`document.addEventListener('themechange', e => chart.update())`. The optional
+Place the `theme-toggle.html` markup in your toolbar; recolour charts on flip with
+[`chart-theme.js`](chart-theme.js) — `onThemePalette(p => { …; chart.update(); })` reads the live
+zero-blue `--data-*` arc for whatever variant/scheme is active. The optional
 `github-links.html` adds repo + issues links the same way — vendor
 `assets/images/icons/github-black.svg` + `github-white.svg` and point its
 `background-image` `url()`s at the local copies.
