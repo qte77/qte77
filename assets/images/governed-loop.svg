@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 356" width="900" height="356">
+  <defs>
+    <style>
+      .page-bg { fill: #ffffff; }
+      .band-bg { fill: #f6f8fa; }
+      .box { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1f2328; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #656d76; }
+      .band-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #57606a; letter-spacing: 1.5px; }
+      .box-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #1f2328; }
+      .box-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; fill: #656d76; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #8b949e; letter-spacing: 1px; }
+      .arrow { stroke: #b0b8c1; stroke-width: 1.6; fill: none; marker-end: url(#gl-l); }
+      .arrow-up { stroke: #1f6feb; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; marker-end: url(#gl-blue-l); }
+      a:hover .box { stroke: #1f2328; stroke-width: 1.5; }
+
+      @media (prefers-color-scheme: dark) {
+        .page-bg { fill: #0d1117; }
+        .band-bg { fill: #161b22; }
+        .box { fill: #0d1117; stroke: #30363d; }
+        .title { fill: #e6edf3; }
+        .subtitle { fill: #8b949e; }
+        .band-label { fill: #8b949e; }
+        .box-title { fill: #e6edf3; }
+        .box-desc { fill: #8b949e; }
+        .note { fill: #6e7681; }
+        .arrow { stroke: #484f58; marker-end: url(#gl-d); }
+        .arrow-up { stroke: #388bfd; marker-end: url(#gl-blue-d); }
+        a:hover .box { stroke: #e6edf3; }
+      }
+    </style>
+    <marker id="gl-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#b0b8c1" stroke-width="1"/>
+    </marker>
+    <marker id="gl-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#484f58" stroke-width="1"/>
+    </marker>
+    <marker id="gl-blue-l" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#1f6feb" stroke-width="1"/>
+    </marker>
+    <marker id="gl-blue-d" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#388bfd" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <rect class="page-bg" width="900" height="356" rx="8"/>
+
+  <text class="title" x="450" y="28" text-anchor="middle">qte77 — the governed loop</text>
+  <text class="subtitle" x="450" y="46" text-anchor="middle">goals steer down  ·  achievement traces up  ·  built in the open</text>
+
+  <!-- ===== GOALS (intent) ===== -->
+  <rect class="band-bg" x="10" y="72" width="880" height="76" rx="6"/>
+  <text class="band-label" x="24" y="88">GOALS</text>
+  <a xlink:href="https://github.com/qte77/qte77/blob/main/docs/goals.md">
+    <title>goals.json — objectives + KRs, each with a pre-committed eval (humans author these)</title>
+    <rect class="box" x="250" y="88" width="400" height="44" rx="5"/>
+    <text class="box-title" x="450" y="108" text-anchor="middle">goals.json  ·  OKRs</text>
+    <text class="box-desc" x="450" y="124" text-anchor="middle">objectives + key results  ·  each a pre-committed eval  ·  humans set these</text>
+  </a>
+
+  <line class="arrow" x1="160" y1="150" x2="160" y2="170"/>
+
+  <!-- ===== TRACING (governance) ===== -->
+  <rect class="band-bg" x="10" y="172" width="880" height="76" rx="6"/>
+  <text class="band-label" x="24" y="188">ENFORCE + TRACE</text>
+  <a xlink:href="https://github.com/qte77/qte77/blob/main/docs/operating-model.md">
+    <title>The governance spine: eval-gate enforces, goal_id links, the rollup proves achievement</title>
+    <rect class="box" x="250" y="188" width="400" height="44" rx="5"/>
+    <text class="box-title" x="450" y="208" text-anchor="middle">the governance spine</text>
+    <text class="box-desc" x="450" y="224" text-anchor="middle">eval-gate enforces  ·  goal_id links  ·  rollup proves (%)</text>
+  </a>
+
+  <line class="arrow" x1="160" y1="250" x2="160" y2="270"/>
+  <line class="arrow-up" x1="740" y1="170" x2="740" y2="150"/>
+
+  <!-- ===== CODE (execution) ===== -->
+  <rect class="band-bg" x="10" y="272" width="880" height="76" rx="6"/>
+  <text class="band-label" x="24" y="288">CODE</text>
+  <a xlink:href="https://github.com/qte77/polyforge-orchestrator">
+    <title>Agents open PRs that close KR issues — the cadence engine, across the estate</title>
+    <rect class="box" x="250" y="288" width="400" height="44" rx="5"/>
+    <text class="box-title" x="450" y="308" text-anchor="middle">the cadence engine</text>
+    <text class="box-desc" x="450" y="324" text-anchor="middle">agents open PRs that close KRs  ·  across the estate</text>
+  </a>
+
+  <line class="arrow-up" x1="740" y1="270" x2="740" y2="250"/>
+</svg>

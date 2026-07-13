@@ -8,41 +8,38 @@
   </picture>
 </p>
 
-**qte77** is a polyrepo orchestration framework for AI coding agents — coordinating Claude Code and compatible agents across the estate so goals, specs, builds, and learnings compound instead of drift. Agents drive it; humans approve and steer, with the North Star a self-evolving, agent-operated GitHub account.
+**qte77** is a governed operating model for an agentic estate. Goals steer top-down, evals trace achievement bottom-up, all built in the open. Not a demo — a model to read, critique, and lift.
 
 ## What
 
-qte77 is the META layer that keeps the agent-driven estate coherent — a shared map so goals, specs, builds, and learnings compound instead of drift.
+qte77 runs an agentic estate as a governed loop — intent flows down, proof flows up:
 
-- **Agents** — Claude Code and compatible LLM coding agents running per-repo, with [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) and its ralphy offspring driving the autonomous build-and-self-improve cycle.
-- **Orchestrators** — [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) drives the dev loop; [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) the office loop.
-- **Engines** — reusable components orchestrators compose: [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape).
-- **Specs → eval → learnings** — spec-forge turns goals into BRD → PRD → FRD; an eval suite scores agent output; [ai-agents-research](https://github.com/qte77/ai-agents-research) distills the learnings back into specs.
-- **Humans** — approve goals, review PRs, steer the orchestrators. Agents propose; humans decide.
+<img src="assets/images/governed-loop.svg" alt="qte77 — the governed loop: GOALS (goals.json OKRs, each KR a pre-committed eval) steer down through ENFORCE + TRACE (the governance spine — eval-gate enforces, goal_id links, rollup proves %) to CODE (the cadence engine — agents open PRs that close KRs); achievement traces back up." width="100%" />
 
-<img src="assets/images/mental-model.svg" alt="qte77 Mental Model — clusters, flow, feedback loop" width="100%" />
+Built from [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) (dev loop) and [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) (office loop), reusable engines ([doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape)), and [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) driving the autonomous build-and-improve cycle. Agents propose; humans approve and steer. For how responsibility maps across repos, see the [authority chain](docs/architecture.md).
 
 ## How
 
-Each repo carries its own quickstart. Start with an orchestrator:
+Two ways in:
 
-- Dev loop → [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator)
-- Office loop → [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator)
-- Engine sample → [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine)
+- **Run it** — start with an orchestrator: [polyforge](https://github.com/qte77/polyforge-orchestrator) (dev) or [office-forge](https://github.com/qte77/office-forge-orchestrator) (office); [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) is a sample engine.
+- **Read it** — the [operating model](docs/operating-model.md) (the design plus its adversarial de-risking) and the [goal loop](docs/goals.md) (how intent becomes enforced and traced). Lift what's useful.
 
 Companion repos live as siblings under [qte77](https://github.com/qte77?tab=repositories).
 
 ## Why
 
-Agentic development across the estate drifts without a shared map — learnings don't flow back into specs, and the system forgets. qte77 fixes that feedback loop (goals → specs → builds → learnings → goals) so the system compounds instead.
+Run agents across many repos and it drifts into chaos — no shared goals, no traceability, no proof that "done" means "achieved." qte77 is the governance for exactly that: goals steer the work, a pre-committed eval gates every key result, and achievement traces back up — so the estate compounds instead of forgetting.
 
-It's a cross-repo coordination layer, not a single-repo agent runner or per-prompt orchestrator. Reach for something else if you're building one agent for one repo, or your loop fits in a single prompt.
+Built in the open, honestly: the rails ship before the goals, and what's live versus still dormant is shown as it is — see [STATUS.md](STATUS.md). It's a cross-repo operating model, not a single-repo agent runner; reach for something else if your loop fits in one repo or one prompt.
 
 ## Refs
 
-- [docs/architecture.md](docs/architecture.md) — mental model, authority chain, GHA pipeline, roadmap
-- [docs/doc-structure.md](docs/doc-structure.md) — the README + doc-hierarchy contract for the estate
-- [CONTRIBUTING.md](CONTRIBUTING.md) · [AGENTS.md](AGENTS.md) — how to work here
+- [Operating model](docs/operating-model.md)
+- [Goal loop](docs/goals.md)
+- [Architecture](docs/architecture.md)
+- [Doc-structure contract](docs/doc-structure.md)
+- [Contributing](CONTRIBUTING.md) · [Agent instructions](AGENTS.md)
 
 ## License
 
