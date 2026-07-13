@@ -37,11 +37,9 @@ each decision lives prevents the drift and keeps the estate DRY.
 
 ## What this means concretely
 
-- **Agents** — Claude Code (and compatible LLM coding agents) running per-repo, coordinated by orchestrators in this workspace.
-- **Office work** — real workflows where humans and agents collaborate, orchestrated by office-forge and powered by the wider qte77 framework (engines like doc-pipeline-engine handle the heavy lifting).
-- **Engines** — reusable components orchestrators compose: [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) (document processing) and [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape) (HTTP scraping with anti-bot fallback).
-- **Humans** — approve goals, review PRs, and steer the orchestrators. Agents propose; humans decide.
-- **Where to look** — start with [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) for the dev loop or [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) for the office loop.
+- **Office work** — real workflows where humans and agents collaborate, orchestrated by office-forge and powered by the wider qte77 estate (engines like [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) handle the heavy lifting).
+
+The agents, engines, and humans that make up the estate — and where to start — are covered in the [README](../README.md); this doc focuses on how it stays coherent.
 
 ## Roadmap
 
