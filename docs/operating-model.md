@@ -24,6 +24,8 @@ STATE   the trace backbone (join table)    ────────────�
 CONSUM. repos: agents write code           ──────────────┘   commit → story → spec → goal
 ```
 
+> _Axis note: this is the **control-loop** view (steer down / trace up); the tier names are loose loop-stages, **not** the repo-responsibility tiers. For where each decision actually lives (META/KERNEL/MECHANISM/STATE/CONSUMERS by repo), see the [authority chain](architecture.md)._
+
 ## The concept stack (as explored)
 
 - **EDD (Eval-Driven Development)** as the intended keystone: `Achieved = DoD satisfied AND the

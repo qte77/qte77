@@ -16,8 +16,8 @@ and in GitHub Issues.
 > *showcase-not-sell* stance and **kept** — its value is precisely the **traditional
 > engineering-leadership baseline** the *agentic* operating model is contrasted against, which
 > makes the contrast itself a showcase asset. Demoted (off the README front door), not removed.
-> The stale `META→KERNEL→MECHANISM` naming it shares is tracked in #145. See
-> [operating-model.md](operating-model.md).
+> Its `META→KERNEL→MECHANISM` references follow the canonical [authority chain](architecture.md)
+> (reconciled in #145). See [operating-model.md](operating-model.md).
 
 ## How the handbook maps
 
