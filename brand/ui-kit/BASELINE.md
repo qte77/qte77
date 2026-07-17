@@ -56,6 +56,9 @@ without a bundler.
 | D8 | OG cards split by branding | 1200×630 figure cards (UI) vs 1280×640 repo social (GitHub) |
 | D9 | Default CSS split into color / layout / fonts | matches `DESIGN.md` sections; pull only what you need |
 | D10 | Fonts: WOFF2 for web, TTF kept for baking | smallest web payload; cairosvg/fonttools need desktop formats |
+| D11 | `saas` variant added, de-blued (spruce green, not indigo) | brand is zero-blue by law; ships a cool/flat "SaaS/Linear" look without breaking the core rule (channel-order matches the approved `green`) |
+| D12 | `chart-theme.js` reads live CSS custom properties on `themechange` | charts stay correct across any variant/scheme with no per-variant JS palette to drift from `eyerest.css`; consumes the zero-blue `--data-*` arc |
+| D13 | `--shadow-card` now emitted into `eyerest.css` too (was Tailwind-only) | the no-build kit needs the elevation token for `.stat-tile`/`.callout` |
 
 ## Tokens & CSS
 

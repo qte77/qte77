@@ -4,8 +4,8 @@ version: 0.1.0
 description: >-
   qte77 visual identity — warm, low-fatigue, zero-blue, grounded in color
   science. The brand IS EyeRest (qte77's own theme): the default scheme is the
-  flagship warm umber/parchment with an amber accent; Green, BluBlock, and Dusk
-  ship as secondary variants. Dual light/dark. Reference tokens, never raw hex.
+  flagship warm umber/parchment with an amber accent; Green, BluBlock, Dusk, and
+  SaaS ship as secondary variants. Dual light/dark. Reference tokens, never raw hex.
 colors:                        # DEFAULT — EyeRest flagship (warm, amber primary)
   bg: "#ece8d8"
   surface: "#e2dec8"
@@ -50,6 +50,8 @@ components:
   input: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.sm}", padding: "6px 12px" }
   caption: { textColor: "{colors.text-muted}", typography: "{typography.sans}" }
   divider: { backgroundColor: "{colors.border}", height: "1px" }
+  stat-tile: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", rounded: "{rounded.lg}", padding: "16px", elevation: "{elevation.shadow-card}" }
+  callout: { backgroundColor: "{colors.surface}", textColor: "{colors.text}", borderColor: "{colors.border}", rounded: "{rounded.md}", padding: "12px 16px" }
 variants:
   green:                       # forest / yellow-green
     name: EyeRest Green
@@ -102,6 +104,23 @@ variants:
       dark-text-muted: "#b0a498"
       dark-primary: "#c8a468"
       dark-primary-on: "#1f1b22"
+  saas:                        # de-blued "SaaS/Linear" — cool spruce green (zero-blue), flat/modern
+    name: EyeRest SaaS
+    colors:
+      bg: "#f4f6f4"
+      surface: "#e9ece9"
+      border: "#ccd2cc"
+      text: "#1a201c"
+      text-muted: "#5a635c"
+      primary: "#1f6e4c"
+      primary-on: "#eef1ec"
+      dark-bg: "#0f1512"
+      dark-surface: "#161d19"
+      dark-border: "#28322c"
+      dark-text: "#e6ece8"
+      dark-text-muted: "#9aa8a0"
+      dark-primary: "#4fae82"
+      dark-primary-on: "#14201a"
 ---
 
 # qte77 Design System
