@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `docs/lineage.md` + `README.md`: trim the profile README tail to the doc-structure contract — the tail is now **Tools + Posts** only; the **Lineage** provenance moves to `docs/lineage.md`, and it + `PROFILE.md` are linked from `## Refs`. Dogfoods the estate's own README contract (this repo is its reference example)
+
 - `docs/plans/002-events-engine-generalization.md` + `docs/handoffs/002-events-engine-generalization.md`: cross-repo plan + onboarding to generalize the calendar/venue **events engine** (fo-scraper / sfclarity) into shared `qte77/events-core` (Python) + `qte77/events-ui` (React) repos, plus fo-scraper's React/CSP ADR. The plan carries the full code/file/source map so a fresh session resumes without re-exploring; phase 1 (`events-core`) first, strict-TDD/lint/sec. Tracking issue #156. Distinct from `@qte77/a2ui-agui-kit` (agent events)
 - `README.md` + `assets/images/governed-loop.svg` + `docs/architecture.md`: re-anchor the profile README to the **governed operating model** positioning — goals steer top-down, evals trace bottom-up, built in the open, *a model to read, critique, and lift* — replacing the generic "orchestration framework" framing. New theme-aware `governed-loop.svg` (GOALS → ENFORCE + TRACE → CODE; steer-down / prove-up) reusing the Primer palette + `@media` scaffold; `## How` gains a "read it / lift it" adoption path; `## Why` re-aims at the multi-repo-sprawl reader + the honesty stance (`STATUS.md`); `## Refs` trimmed to links-only per the doc-structure contract. De-dups the machinery bullets out of `docs/architecture.md` (README now owns them). No SVG theme edits; no #145 changes
 
