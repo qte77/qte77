@@ -55,3 +55,22 @@ code, kbd, samp, pre {
 /* Soft, not round. No pills except removable filter chips. */
 .chip { border-radius: var(--radius-sm); }
 .chip--removable { border-radius: 999px; }
+
+/* KPI stat tile + callout — dashboard panels. Elevation via the --shadow-card token (eyerest.css). */
+.stat-tile {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  padding: calc(2 * var(--space-unit));
+  box-shadow: var(--shadow-card);
+}
+.stat-tile .stat-num { font-variant-numeric: tabular-nums; }
+.stat-tile .stat-label { color: var(--text-muted); }
+.callout {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: var(--radius-md);
+  padding: calc(1.5 * var(--space-unit)) calc(2 * var(--space-unit));
+}

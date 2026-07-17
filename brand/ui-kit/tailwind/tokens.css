@@ -71,6 +71,144 @@
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55);
 }
 
+/* Variants: html[data-variant] overrides the base palette (data arc stays global). */
+
+/* Variant: EyeRest Green */
+
+:root[data-variant="green"] {
+  --color-bg: #f0f6ee;
+  --color-surface: #e8f0e6;
+  --color-border: #c0d4bc;
+  --color-text: #2a4a2a;
+  --color-text-muted: #4a6a4a;
+  --color-primary: #2a6a2a;
+  --color-primary-on: #f0f6ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-variant="green"]:not([data-theme="light"]) {
+    --color-bg: #0c1610;
+    --color-surface: #12201a;
+    --color-border: #2a3e2c;
+    --color-text: #8cb888;
+    --color-text-muted: #7aa878;
+    --color-primary: #3a6a3a;
+    --color-primary-on: #c4e8c0;
+  }
+}
+
+:root[data-variant="green"][data-theme="dark"] {
+  --color-bg: #0c1610;
+  --color-surface: #12201a;
+  --color-border: #2a3e2c;
+  --color-text: #8cb888;
+  --color-text-muted: #7aa878;
+  --color-primary: #3a6a3a;
+  --color-primary-on: #c4e8c0;
+}
+
+/* Variant: EyeRest BluBlock */
+
+:root[data-variant="blublock"] {
+  --color-bg: #f5ecd8;
+  --color-surface: #ede3cc;
+  --color-border: #c8b898;
+  --color-text: #3d2e18;
+  --color-text-muted: #6b5838;
+  --color-primary: #c06010;
+  --color-primary-on: #f5ecd8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-variant="blublock"]:not([data-theme="light"]) {
+    --color-bg: #1a1208;
+    --color-surface: #231a0e;
+    --color-border: #3d2e1a;
+    --color-text: #e8d5b0;
+    --color-text-muted: #a08b6d;
+    --color-primary: #e89030;
+    --color-primary-on: #1a1208;
+  }
+}
+
+:root[data-variant="blublock"][data-theme="dark"] {
+  --color-bg: #1a1208;
+  --color-surface: #231a0e;
+  --color-border: #3d2e1a;
+  --color-text: #e8d5b0;
+  --color-text-muted: #a08b6d;
+  --color-primary: #e89030;
+  --color-primary-on: #1a1208;
+}
+
+/* Variant: EyeRest Dusk */
+
+:root[data-variant="dusk"] {
+  --color-bg: #eaece2;
+  --color-surface: #e0e3d7;
+  --color-border: #c8cac0;
+  --color-text: #2c2622;
+  --color-text-muted: #6a6058;
+  --color-primary: #7a5820;
+  --color-primary-on: #eaece2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-variant="dusk"]:not([data-theme="light"]) {
+    --color-bg: #1f1b22;
+    --color-surface: #2a2630;
+    --color-border: #3a343e;
+    --color-text: #d8ccbc;
+    --color-text-muted: #b0a498;
+    --color-primary: #c8a468;
+    --color-primary-on: #1f1b22;
+  }
+}
+
+:root[data-variant="dusk"][data-theme="dark"] {
+  --color-bg: #1f1b22;
+  --color-surface: #2a2630;
+  --color-border: #3a343e;
+  --color-text: #d8ccbc;
+  --color-text-muted: #b0a498;
+  --color-primary: #c8a468;
+  --color-primary-on: #1f1b22;
+}
+
+/* Variant: EyeRest SaaS */
+
+:root[data-variant="saas"] {
+  --color-bg: #f4f6f4;
+  --color-surface: #e9ece9;
+  --color-border: #ccd2cc;
+  --color-text: #1a201c;
+  --color-text-muted: #5a635c;
+  --color-primary: #1f6e4c;
+  --color-primary-on: #eef1ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-variant="saas"]:not([data-theme="light"]) {
+    --color-bg: #0f1512;
+    --color-surface: #161d19;
+    --color-border: #28322c;
+    --color-text: #e6ece8;
+    --color-text-muted: #9aa8a0;
+    --color-primary: #4fae82;
+    --color-primary-on: #14201a;
+  }
+}
+
+:root[data-variant="saas"][data-theme="dark"] {
+  --color-bg: #0f1512;
+  --color-surface: #161d19;
+  --color-border: #28322c;
+  --color-text: #e6ece8;
+  --color-text-muted: #9aa8a0;
+  --color-primary: #4fae82;
+  --color-primary-on: #14201a;
+}
+
 :root {
   color-scheme: light dark;
 }
