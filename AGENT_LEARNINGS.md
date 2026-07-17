@@ -33,3 +33,10 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: (1) MD049 enforces emphasis-style *consistency within each file* — `docs/operating-model.md` is all-underscore, `docs/cto-handbook-mapping.md` is all-asterisk; mixing styles fails. (2) `set -e; markdownlint …` did **not** abort on a non-zero exit here (shipped a violating commit twice in one session).
 - **Solution**: Match the *target file's existing* emphasis char before editing. Gate explicitly — `if markdownlint "$f"; then …; else exit 1; fi` — never rely on `set -e` for the lint step.
 - **References**: PR #147.
+
+### Stuck `CodeFactor: ERROR` clears on a real update-to-main, not on nudge commits
+
+- **Context**: A required `CodeFactor` status check shows `ERROR` (often null description / empty target URL) and blocks a PR merge — common when a head SHA's analysis got stuck (seen on docs-only PRs).
+- **Problem**: Pushing empty "nudge CI" commits to force re-analysis does **not** clear it — the stuck SHA keeps its errored status — and it pollutes history. (Two nudge commits failed before the fix was found.)
+- **Solution**: Bring the branch **up to date with `main`** (`gh pr update-branch <n>`, or a local `git merge origin/main`). The fresh, GitHub-signed SHA gets a clean CodeFactor re-analysis that goes green. Never nudge-commit; never `--admin` past a genuinely failing/absent check (only the signature gate is bypassable).
+- **References**: PRs #158 / #159.
