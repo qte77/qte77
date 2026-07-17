@@ -2,7 +2,7 @@
 status: in-progress
 phase: consumer wave (Phases 4/5/7/8) remaining
 handoff: ../handoffs/001-estate-ui-engine-unification.md
-updated: 2026-07-11
+updated: 2026-07-17
 ---
 
 # Estate UI + workflow-definition unification
@@ -31,8 +31,8 @@ Two problems, found by comparing the repos:
 | Local path | GitHub | Role |
 | --- | --- | --- |
 | `/workspaces/qte77/qte77` | `qte77/qte77` | Estate hub; brand SSOT (`brand/DESIGN.md`); publishes `@qte77/ui-theme` from `brand/ui-kit` |
-| `/workspaces/qte77/a2ui-agui-kit` | `qte77/a2ui-agui-kit` | NEW. `@qte77/a2ui-agui-kit` shared bridge (core + React + styles). I own it — clean squash-merges |
-| `/workspaces/qte77/protocols` | `qte77/protocols` | NEW. `workflow-definition/v1` JSON Schema + fixtures. Clean squash-merges |
+| `/workspaces/qte77/a2ui-agui-kit` | `qte77/a2ui-agui-kit` | NEW. `@qte77/a2ui-agui-kit` shared bridge (core + React + styles). I own it. Ruleset-protected — squash only, no `--admin` bypass (see note) |
+| `/workspaces/qte77/protocols` | `qte77/protocols` | NEW. `workflow-definition/v1` JSON Schema + fixtures. Ruleset-protected — squash only, no `--admin` bypass (see note) |
 | `/workspaces/qte77/agenthud-agui-a2ui` | `qte77/agenthud-agui-a2ui` | Canonical UI base (superset). Consumer (Phase 4). `required_signatures` → admin merge |
 | `/workspaces/qte77/ldnmxx-hack` | `qte77/ldnmxx-hack` | Fork "groundwork" + TS worker. Consumer (Phase 5 ui, Phase 8 worker). Admin merge |
 | `/workspaces/qte77/claude-azure-workflows-gui` | `qte77/azure-doc-workflows` | Python doc-workflows engine. Consumer (Phase 7). Admin merge |
@@ -40,9 +40,14 @@ Two problems, found by comparing the repos:
 Estate conventions (apply everywhere): prefix all git/gh with `env -u GH_TOKEN -u GITHUB_TOKEN`;
 identity `qte77 <93844790+qte77@users.noreply.github.com>`; commits `--no-gpg-sign`; conventional
 commits; branch per topic; squash-merge on green CI then prune remote+local; plain-text docs, no
-emoji/glyphs. The three consumer repos enforce `required_signatures` → their PRs need a per-PR
-`--admin` merge (unsigned commits are the estate norm; only the signature gate is bypassed, never
-a failing/absent check).
+emoji/glyphs. The three consumer repos use classic protection with `required_signatures` → their PRs need a
+per-PR `--admin` merge (unsigned commits are the estate norm; only the signature gate is
+bypassed, never a failing/absent check). `a2ui-agui-kit` and `protocols` now use branch
+**rulesets** (0 bypass actors) enforcing `required_signatures` + CodeFactor `strict=true`:
+`--admin` bypasses classic protection only, NOT rulesets. **Do not modify the rulesets:** once
+CodeFactor is green, squash normally — GitHub signs the squash commit, satisfying
+`required_signatures` (confirm on the next PR). Reserve `--admin` for the classic-protection
+repos (qte77/qte77 + the three consumers).
 
 ## DONE and published (do not redo)
 
