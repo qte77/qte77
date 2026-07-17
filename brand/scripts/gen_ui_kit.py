@@ -55,7 +55,7 @@ DATA: Decls = [
     ("--data-negative", "negative"),
     ("--data-alt", "alt"),
 ]
-VARIANTS: tuple[str, ...] = ("green", "blublock", "dusk")
+VARIANTS: tuple[str, ...] = ("green", "blublock", "dusk", "saas")
 
 HEADER = """\
 /*
@@ -97,11 +97,17 @@ def css_eyerest(spec: dict) -> str:
     """Render the full eyerest.css cascade from a parsed DESIGN.md spec."""
     colors = spec["colors"]
     data, data_dark = spec.get("data", {}), spec.get("data-dark", {})
+    elevation = spec.get("elevation", {})
 
     light = [("color-scheme", "light dark"), *_decls(colors, BASE, dark=False)]
     light += [(var, data[key]) for var, key in DATA]
     dark = _decls(colors, BASE, dark=True)
     dark += [(var, data_dark[key]) for var, key in DATA]
+    # Functional elevation as a plain custom property for the no-build kit (Tailwind gets it too).
+    # It lives on the default :root; variants inherit it (they only override the base palette).
+    if elevation:
+        light.append(("--shadow-card", elevation["shadow-card"]))
+        dark.append(("--shadow-card", elevation["dark-shadow-card"]))
 
     parts = [
         HEADER,
@@ -159,6 +165,11 @@ def _tw_color_decls(colors: dict, data: dict, *, dark: bool) -> Decls:
     return base + arc
 
 
+def _tw_variant_decls(vcolors: dict, *, dark: bool) -> Decls:
+    """Tailwind --color-* base overrides for a variant scheme (data arc stays global)."""
+    return [(f"--color-{key}", vcolors[f'{"dark-" if dark else ""}{key}']) for _, key in BASE]
+
+
 def css_tailwind(spec: dict) -> str:
     """Render tokens.css: the DESIGN.md tokens as a Tailwind v4 @theme cascade."""
     colors = spec["colors"]
@@ -179,12 +190,25 @@ def css_tailwind(spec: dict) -> str:
         theme.append(("--shadow-card", elevation["shadow-card"]))
         dark.append(("--shadow-card", elevation["dark-shadow-card"]))
 
+    variant_parts: list[str] = []
+    for name in VARIANTS:
+        vc = spec["variants"][name]["colors"]
+        sel = f':root[data-variant="{name}"]'
+        variant_parts += [
+            f'/* Variant: {spec["variants"][name]["name"]} */',
+            _rule(sel, _tw_variant_decls(vc, dark=False)),
+            _media_dark(_rule(f'{sel}:not([data-theme="light"])', _tw_variant_decls(vc, dark=True))),
+            _rule(f'{sel}[data-theme="dark"]', _tw_variant_decls(vc, dark=True)),
+        ]
+
     parts = [
         TW_HEADER,
         _rule("@theme", theme),
         "/* Runtime scheme swap: system-dark (no explicit light), then the attribute. */",
         _media_dark(_rule(':root:not([data-theme="light"])', dark)),
         _rule(':root[data-theme="dark"]', dark),
+        "/* Variants: html[data-variant] overrides the base palette (data arc stays global). */",
+        *variant_parts,
         _rule(":root", [("color-scheme", "light dark")]),
     ]
     return "\n\n".join(parts) + "\n"
