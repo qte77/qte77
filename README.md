@@ -40,7 +40,7 @@ Built in the open, honestly: the rails ship before the goals, and what's live ve
 - [Architecture](docs/architecture.md)
 - [Doc-structure contract](docs/doc-structure.md)
 - [Contributing](CONTRIBUTING.md) · [Agent instructions](AGENTS.md)
-- [Profile](PROFILE.md) · [Lineage](docs/lineage.md)
+- [Profile](PROFILE.md) · [Lineage](docs/lineage.md) · [Hackathons](docs/hackathons.md)
 
 ## License
 
