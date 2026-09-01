@@ -1,4 +1,9 @@
 {
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-fable-5-1"
+  },
   "attribution": {
     "commit": "Co-Authored-By: Claude <noreply@anthropic.com>",
     "pr": "Generated with Claude <noreply@anthropic.com>"
@@ -15,5 +20,20 @@
         "repo": "qte77/claude-code-plugins"
       }
     }
+  },
+  "model": "opusplan",
+  "advisorModel": "claude-fable-5-1",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Re-onboard: re-read the newest docs/handoffs/NNN + its paired plan (the file:line source map). Verify plan + handoff + MEMORY.md reflect current branch/PR/CI state. Keep conclusions and the parked owner-gates; drop raw command output and search dumps.'"
+          }
+        ]
+      }
+    ]
   }
 }
