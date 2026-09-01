@@ -30,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'Re-onboard: re-read the newest docs/handoffs/NNN + its paired plan (the file:line source map). Verify plan + handoff + MEMORY.md reflect current branch/PR/CI state. Keep conclusions and the parked owner-gates; drop raw command output and search dumps.'"
+            "command": "echo 'Post-compaction: re-orient from the current plan/branch/PR state before continuing; do not re-derive what is already established.'"
           }
         ]
       }
