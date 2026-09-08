@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `docs/hackathons.md` + `README.md`: hackathon track record — four recent SF builds (AgentNativeHack-FT-CF-SF, the 0HumanCompanyHack firm/client pair, AWS_EnterpriseHack, ldnmxx-hack) linked from `## Refs`, per the doc-structure contract (tail stays Tools + Posts only)
 
+- `README.md`: `## Refs` gains an "Agent-native surface" link to `qte77.github.io` — this repo's own README can't carry agent-native signals (GitHub strips `<script>`/JSON-LD from rendered READMEs, and `github.com` isn't an origin qte77 controls), so it points to the one that is
 - `docs/lineage.md` + `README.md`: trim the profile README tail to the doc-structure contract — the tail is now **Tools + Posts** only; the **Lineage** provenance moves to `docs/lineage.md`, and it + `PROFILE.md` are linked from `## Refs`. Dogfoods the estate's own README contract (this repo is its reference example)
 
 - `docs/plans/002-events-engine-generalization.md` + `docs/handoffs/002-events-engine-generalization.md`: cross-repo plan + onboarding to generalize the calendar/venue **events engine** (fo-scraper / sfclarity) into shared `qte77/events-core` (Python) + `qte77/events-ui` (React) repos, plus fo-scraper's React/CSP ADR. The plan carries the full code/file/source map so a fresh session resumes without re-exploring; phase 1 (`events-core`) first, strict-TDD/lint/sec. Tracking issue #156. Distinct from `@qte77/a2ui-agui-kit` (agent events)

@@ -38,5 +38,5 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 
 - **Context**: A required `CodeFactor` status check shows `ERROR` (often null description / empty target URL) and blocks a PR merge — common when a head SHA's analysis got stuck (seen on docs-only PRs).
 - **Problem**: Pushing empty "nudge CI" commits to force re-analysis does **not** clear it — the stuck SHA keeps its errored status — and it pollutes history. (Two nudge commits failed before the fix was found.)
-- **Solution**: Bring the branch **up to date with `main`** (`gh pr update-branch <n>`, or a local `git merge origin/main`). The fresh, GitHub-signed SHA gets a clean CodeFactor re-analysis that goes green. Never nudge-commit; never `--admin` past a genuinely failing/absent check (only the signature gate is bypassable).
+- **Solution**: Bring the branch **up to date with `main`** (`gh pr update-branch <n>`, or a local `git merge origin/main`). The fresh, GitHub-signed SHA gets a clean CodeFactor re-analysis that goes green. Never nudge-commit.
 - **References**: PRs #158 / #159.

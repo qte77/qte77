@@ -1,4 +1,9 @@
 {
+  "env": {
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-fable-5-1"
+  },
   "attribution": {
     "commit": "Co-Authored-By: Claude <noreply@anthropic.com>",
     "pr": "Generated with Claude <noreply@anthropic.com>"
@@ -15,5 +20,20 @@
         "repo": "qte77/claude-code-plugins"
       }
     }
+  },
+  "model": "opusplan",
+  "advisorModel": "claude-fable-5-1",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Post-compaction: re-orient from the current plan/branch/PR state before continuing; do not re-derive what is already established.'"
+          }
+        ]
+      }
+    ]
   }
 }
