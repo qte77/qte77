@@ -1,5 +1,5 @@
 ---
-plan: ../plans/002-[redacted]-generalization.md
+plan: ../plans/002-events-engine-generalization.md
 status: not started — build phase 1 (events-core) first
 updated: 2026-07-16
 ---
@@ -7,7 +7,7 @@ updated: 2026-07-16
 # Handoff — [redacted] generalization
 
 Onboarding for the next session. Full detail + code/file/source map:
-[plan 002](../plans/002-[redacted]-generalization.md). Read the plan first (its "Source map" sections
+[plan 002](../plans/002-events-engine-generalization.md). Read the plan first (its "Source map" sections
 for [redacted] + [redacted] + estate) — you should not need to re-explore the repos. Tracking issue:
 qte77/qte77 **#156**.
 

@@ -1,7 +1,7 @@
 ---
 status: proposed — not started
 phase: phase 1 (events-core) is the recommended first build
-handoff: ../handoffs/002-[redacted]-generalization.md
+handoff: ../handoffs/002-events-engine-generalization.md
 updated: 2026-07-16
 ---
 
@@ -11,7 +11,7 @@ Cross-repo plan. Extract the duplicated **calendar/venue events** domain shared 
 [redacted] and [redacted] — into a shared Python engine (`events-core`) and a shared React ui-kit
 (`events-ui`), mirroring what plan 001 did for the agent-UI seam. This doc is the **source map** so a
 fresh session executes without re-exploring the repos. Onboarding + how-to-run is in the paired
-[handoff](../handoffs/002-[redacted]-generalization.md). Distinct from `@qte77/a2ui-agui-kit`, whose
+[handoff](../handoffs/002-events-engine-generalization.md). Distinct from `@qte77/a2ui-agui-kit`, whose
 "events" are AG-UI *agent/protocol* events — this is real-world **calendar** events.
 
 ## Why
