@@ -1,25 +1,25 @@
 ---
 status: proposed — not started
 phase: phase 1 (events-core) is the recommended first build
-handoff: ../handoffs/002-events-engine-generalization.md
+handoff: ../handoffs/002-[redacted]-generalization.md
 updated: 2026-07-16
 ---
 
-# Events-engine generalization (calendar/venue events + React ui-kit)
+# [redacted] generalization (calendar/venue events + React ui-kit)
 
 Cross-repo plan. Extract the duplicated **calendar/venue events** domain shared by two dashboards —
-fo-scraper-miwi and sfclarity — into a shared Python engine (`events-core`) and a shared React ui-kit
+[redacted] and [redacted] — into a shared Python engine (`events-core`) and a shared React ui-kit
 (`events-ui`), mirroring what plan 001 did for the agent-UI seam. This doc is the **source map** so a
 fresh session executes without re-exploring the repos. Onboarding + how-to-run is in the paired
-[handoff](../handoffs/002-events-engine-generalization.md). Distinct from `@qte77/a2ui-agui-kit`, whose
+[handoff](../handoffs/002-[redacted]-generalization.md). Distinct from `@qte77/a2ui-agui-kit`, whose
 "events" are AG-UI *agent/protocol* events — this is real-world **calendar** events.
 
 ## Why
 
 Two dashboards render the same real-world-event domain from a duplicated stack:
 
-1. **sfclarity** (React/Vite + Supabase) — already has an interactive **OSM map** and geocoded venues.
-2. **fo-scraper-miwi** (no-build vanilla ES modules + Pydantic + Cloudflare Pages) — richer filters,
+1. **[redacted]** (React/Vite + Supabase) — already has an interactive **OSM map** and geocoded venues.
+2. **[redacted]** (no-build vanilla ES modules + Pydantic + Cloudflare Pages) — richer filters,
    Insights, Trip planner, .ics/CSV export, deep-link state; **no coordinates/map yet**.
 
 The event model, geocoding, dedupe, storage, and the List/Calendar/Map views are duplicated (or about
@@ -30,8 +30,8 @@ to be). Generalize once — the same move the estate already made for agent UI (
 | Local path | GitHub | Role |
 | --- | --- | --- |
 | `/workspaces/qte77/qte77` | `qte77/qte77` | Estate hub; governance; publishes `@qte77/ui-theme` (tokens). Tracking issue **#156**. |
-| `/workspaces/qte77/fo-scraper-miwi` | `qte77/__fo-scraper_miwi` | FO events dashboard. **events-core seed** (Pydantic models + build) + a **consumer** (migrates to React). |
-| `/workspaces/sfsanity/sfclarity` | sfclarity (confirm owner/name) | SF events dashboard. **events-ui superset seed** (React + map) + the **Supabase adapter** source. NOTE: different parent dir (`/workspaces/sfsanity`, not `/workspaces/qte77`). |
+| `/workspaces/qte77/[redacted]` | `qte77/[redacted]` | FO events dashboard. **events-core seed** (Pydantic models + build) + a **consumer** (migrates to React). |
+| `/workspaces/[redacted]/[redacted]` | [redacted] (confirm owner/name) | SF events dashboard. **events-ui superset seed** (React + map) + the **Supabase adapter** source. NOTE: different parent dir (`/workspaces/[redacted]`, not `/workspaces/qte77`). |
 | `/workspaces/qte77/events-core` | `qte77/events-core` | NEW. Python events engine (`uv`-consumed like polyfetch). I own it — clean squash-merges. |
 | `/workspaces/qte77/events-ui` | `qte77/events-ui` | NEW. React/Vite kit `@qte77/events-ui` (views + OSM map + Ctrl+K palette). Clean squash-merges. |
 
@@ -46,10 +46,10 @@ signature gate, never a failing/absent check).
 ## Owner decisions (2026-07-16)
 
 1. Generalize the **calendar/venue events engine** as a new shared concern (distinct from `a2ui-agui-kit`).
-2. Standardize the UI on **React/Vite**; **fo-scraper migrates off no-build vanilla JS** and relaxes its
+2. Standardize the UI on **React/Vite**; **[redacted] migrates off no-build vanilla JS** and relaxes its
    strict `default-src 'self'` CSP to the minimum the toolchain needs (hash/nonce `script-src 'self'`,
-   map tiles via a proxy or scoped `img-src`; NOT sfclarity's `img-src https:` wildcard). Recorded in
-   fo-scraper `docs/decisions/0008-react-ui-kit-supersedes-no-build-strict-csp.md`.
+   map tiles via a proxy or scoped `img-src`; NOT [redacted]'s `img-src https:` wildcard). Recorded in
+   [redacted] `docs/decisions/0008-react-ui-kit-supersedes-no-build-strict-csp.md`.
 
 ## Proposed repos
 
@@ -58,15 +58,15 @@ signature gate, never a failing/absent check).
 - **`qte77/events-ui`** (React/Vite npm `@qte77/events-ui`, GitHub Packages) — the dashboard components.
   Consumes `@qte77/ui-theme`.
 
-## Source map — fo-scraper (events-core seed + React consumer)
+## Source map — [redacted] (events-core seed + React consumer)
 
-Base: `/workspaces/qte77/fo-scraper-miwi`.
+Base: `/workspaces/qte77/[redacted]`.
 
 | File | Symbols / content | Role in this plan |
 | --- | --- | --- |
 | `src/fo_scraper/models.py` | `Event` (name, source_id, organizer, start_date, end_date, city, country, region, venue, format[in_person/virtual/hybrid], audience, topics[], registration_url, source_url, price_hint, `fo_relevance` float, scraped_at, notes); `Source`; `Provenance` (verified, validated_date, first_party_urls) — `extra="forbid"` | → `events_core.models`. `fo_relevance` becomes optional generic `relevance`. |
-| `scripts/build_ui_data.py` | `main(argv)` argparse (positional out_dir, results_dir, `--require-events`/`--require-sitekey`), `build_events`, `build_sources`, `latest_results`, `_has_events` | → `events_core.ingest`/`export`. Guards + config.json stay fo-scraper. |
-| `config/sources.json` | 23 sources + `_meta` | STAYS fo-scraper (registry data). |
+| `scripts/build_ui_data.py` | `main(argv)` argparse (positional out_dir, results_dir, `--require-events`/`--require-sitekey`), `build_events`, `build_sources`, `latest_results`, `_has_events` | → `events_core.ingest`/`export`. Guards + config.json stay [redacted]. |
+| `config/sources.json` | 23 sources + `_meta` | STAYS [redacted] (registry data). |
 | `ui/src/app.js` | state, `render()` (dispatches `viewchange`), `bindControls`, `initFiltersPane`, `initScrollNav`, `applyDrill`, `renderChips` | → replaced by `events-ui` React shell. |
 | `ui/src/dashboard.js` | `renderList`, `filterEvents`, `activeFilters`, `formatBucket`, `parseDate` | → `events-ui` List/Tiles + filter logic (shareable to events-core as pure fns). |
 | `ui/src/calendar.js` | `renderCalendar` | → `events-ui` Calendar. |
@@ -79,16 +79,16 @@ Base: `/workspaces/qte77/fo-scraper-miwi`.
 | `ui/src/stars.js`, `ui/src/scrollnav.js`, `ui/src/provenance.js`, `ui/src/format.js` | watchlist; toolbar scroll-nav (↑/↓ + Jump-to, shipped PR #77/#84); provenance popover; formatting | → `events-ui` components. |
 | `ui/assets/linear.css` | Linear-style theme + component CSS | → reconcile with `@qte77/ui-theme` tokens. |
 | `ui/app/index.html` | strict CSP `<meta>` (`default-src 'self'; img-src 'self' data:`), toolbar structure | CSP changes under ADR-0008. |
-| `functions/app/_middleware.js`, `functions/claim.js`, `functions/request_access.js`, `functions/_lib/{session,store,ratelimit}.js` | per-user invite gate (KV `ACCESS_REQUESTS`), gates ONLY `/app/*` | STAYS fo-scraper (ADR-0006). A `/api/*` route is NOT gated by this. |
+| `functions/app/_middleware.js`, `functions/claim.js`, `functions/request_access.js`, `functions/_lib/{session,store,ratelimit}.js` | per-user invite gate (KV `ACCESS_REQUESTS`), gates ONLY `/app/*` | STAYS [redacted] (ADR-0006). A `/api/*` route is NOT gated by this. |
 | `docs/decisions/0006` / `0007` / `0008` | gate / D1 (PR #85) / React (PR #86) | 0007 D1 → `events_core.store.d1`; 0008 = the React decision. |
 | `tests/test_ui_data.py` | require-events/keep-existing/harvest-write cases (PR #84) | model/dedupe/geocode tests → events-core; glue tests stay. |
 
 Open PRs: **#84** (011 durable data + guards, merged+deployed), **#85** (ADR-0007 D1, open), **#86**
 (ADR-0008 + carry-over handoff, open).
 
-## Source map — sfclarity (events-ui superset seed + Supabase adapter + geocode)
+## Source map — [redacted] (events-ui superset seed + Supabase adapter + geocode)
 
-Base: `/workspaces/sfsanity/sfclarity/frontend` (React/Vite; `package.json`: `pigeon-maps ^0.22.1`, `vite ^7`).
+Base: `/workspaces/[redacted]/[redacted]/frontend` (React/Vite; `package.json`: `pigeon-maps ^0.22.1`, `vite ^7`).
 
 | File | Symbols / content | Role in this plan |
 | --- | --- | --- |
@@ -96,10 +96,10 @@ Base: `/workspaces/sfsanity/sfclarity/frontend` (React/Vite; `package.json`: `pi
 | `src/components/map/EntityMarker.tsx` | lone pin vs numbered density pill | → `events-ui` marker. |
 | `src/lib/mapPins.ts` | `pinKey`, `dedupePins`, `eventsAtPin`, `densityTier` (pure, zero-dep) | → `events_core.dedupe` (server) + `events-ui` (client density). |
 | `src/components/a2ui/VenueMap.tsx` | sizing wrapper (`height='60vh'`) | → `events-ui`. |
-| `src/components/views/EventsView.tsx` | expand/collapse map (`?map=0` URL-synced, `aria-expanded`, mount/unmount); pin-click → list filter (banner) | → `events-ui` expandable-map UX (the pattern fo-scraper wants). |
+| `src/components/views/EventsView.tsx` | expand/collapse map (`?map=0` URL-synced, `aria-expanded`, mount/unmount); pin-click → list filter (banner) | → `events-ui` expandable-map UX (the pattern [redacted] wants). |
 | `src/hooks/useEventsQuery.ts` | `parseCoords("lat,lng")`; `.from('events_enriched').select(...).eq('published', true)`; `EventItem.coords?: [number,number]` | → `events_core.store.supabase` + coord parsing. |
 | `src/contexts/ThemeContext.tsx` | `[data-theme]` drives light/dark tiles | → `events-ui` theme wiring. |
-| `public/_headers` | CSP `img-src 'self' data: https:` (wildcard) | DO NOT copy — fo-scraper scopes tiles (proxy or exact host). |
+| `public/_headers` | CSP `img-src 'self' data: https:` (wildcard) | DO NOT copy — [redacted] scopes tiles (proxy or exact host). |
 | Supabase `events_enriched` (table) + offline `ops` geocode pipeline (service-role, `coordinates` "lat,lng") | server-side geocode | → `events_core.geocode` (OSM Nominatim) + `events_core.store.supabase`. |
 
 ## Source map — estate (coupling + tokens)
@@ -131,36 +131,36 @@ STAYS app-specific: `config/sources.json` registry data; `fo_relevance` scoring 
 gate; deploy policy (`config.json` sitekey, `wrangler.jsonc`, Makefile guards); branding + demo data;
 the FO scraping pipeline (writes into events-core via `ingest` but is domain code).
 
-fo-scraper consumption (phase 1, pre-React): `build_ui_data.py` shrinks to
+[redacted] consumption (phase 1, pre-React): `build_ui_data.py` shrinks to
 `events_core.export.snapshot(D1Store())` → writes `events.json` (keeps the deploy guards +
 `sources.json`/`config.json` local).
 
 ## events-ui — component inventory (phase 2)
 
-Seed from sfclarity (superset for Map) + fo-scraper (superset for filters/Insights/Trip/export):
+Seed from [redacted] (superset for Map) + [redacted] (superset for filters/Insights/Trip/export):
 List, Tiles, Calendar, **Map** (expandable, pins→filter, OSM tiles + attribution), Insights (Chart.js),
 Trip, filters + chips + deep-link state, .ics/CSV export, event modal + travel links, watchlist,
 **Ctrl+K command palette** (new — pure client), later **Ctrl+I Ask-AI** (per-app `/api/ask` RAG proxy).
 
 ## Phasing
 
-0. **Ratify** — this plan + issue #156 + fo-scraper ADR-0008 (PR #86); re-scope fo-scraper ADR-0007 (D1)
+0. **Ratify** — this plan + issue #156 + [redacted] ADR-0008 (PR #86); re-scope [redacted] ADR-0007 (D1)
    as the `events-core` D1 adapter.
 1. **`events-core`** — package skeleton + models + dedupe + geocode + D1 adapter + Supabase adapter +
-   snapshot export; fo-scraper `build_ui_data` consumes it. **Recommended first build** — backend-only,
-   no React, delivers fo-scraper durability + the coords the map needs, shared with sfclarity now.
-2. **`events-ui`** — seed from sfclarity; publish `@qte77/events-ui`.
-3. **fo-scraper React migration** — Vite build consuming `events-ui`; preserve the invite gate + the
+   snapshot export; [redacted] `build_ui_data` consumes it. **Recommended first build** — backend-only,
+   no React, delivers [redacted] durability + the coords the map needs, shared with [redacted] now.
+2. **`events-ui`** — seed from [redacted]; publish `@qte77/events-ui`.
+3. **[redacted] React migration** — Vite build consuming `events-ui`; preserve the invite gate + the
    patchright e2e gates (`make ui_check`/`ui_matrix`, borrow `../polyfetch-scrape` venv).
 4. **Shared features** — OSM map (rides coords) + Ctrl+K palette into `events-ui`.
 5. **Ctrl+I Ask-AI** — per-app gated `/api/ask` RAG proxy (LLM server-side, browser stays same-origin).
 
 ## OSM map / CSP notes (for phase 4)
 
-fo-scraper's CSP is `img-src 'self' data:` — external tiles violate it. Options: (a) a **tile-proxy Pages
+[redacted]'s CSP is `img-src 'self' data:` — external tiles violate it. Options: (a) a **tile-proxy Pages
 Function** (`/tiles/:z/:x/:y` → cache in Cache API/R2 → OSM), browser stays `'self'`; or (b) scoped
 `img-src tile.openstreetmap.org`. Either way ADD visible "(c) OpenStreetMap contributors" attribution
-(sfclarity disabled it). Coordinates are a hard prerequisite → `events_core.geocode` (phase 1).
+([redacted] disabled it). Coordinates are a hard prerequisite → `events_core.geocode` (phase 1).
 
 ## Open questions
 
@@ -169,13 +169,13 @@ Function** (`/tiles/:z/:x/:y` → cache in Cache API/R2 → OSM), browser stays 
 - Dedupe key for undated / cross-source duplicates.
 - `relevance` in core (nullable) vs each app's domain layer (recommend: nullable generic field in core).
 - Geocode cache location (repo file vs store table vs R2), shared across apps.
-- How tight fo-scraper's CSP stays under Vite (hash/nonce vs unsafe-inline; no unsafe-eval).
+- How tight [redacted]'s CSP stays under Vite (hash/nonce vs unsafe-inline; no unsafe-eval).
 - Greenlight `events-core` (phase 1) alone first vs the whole program.
 
 ## Refs
 
 - Tracking issue: qte77/qte77 #156.
 - Estate: plan 001 (agent-UI unification); `a2ui-agui-kit`; `protocols`; `@qte77/ui-theme`.
-- fo-scraper: `docs/decisions/0007` (D1, PR #85), `0008` (React, PR #86); PR #84 (011 durability); the
+- [redacted]: `docs/decisions/0007` (D1, PR #85), `0008` (React, PR #86); PR #84 (011 durability); the
   carry-over `docs/handoffs/012-qte77-events-generalization-tracking-issue.md`.
-- sfclarity: `frontend/src/components/map/*`, `lib/mapPins.ts`, `hooks/useEventsQuery.ts`.
+- [redacted]: `frontend/src/components/map/*`, `lib/mapPins.ts`, `hooks/useEventsQuery.ts`.
