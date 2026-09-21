@@ -2,6 +2,10 @@
 
 Unified decision flow for intra-project execution and inter-project orchestration.
 
+For **long-running, e2e hands-off unattended** sessions (the phase shape, owner-gates, verification loop,
+and the recurring footguns), see the [unattended-execution contract](unattended-execution.md) and its
+always-loaded rule [`.claude/rules/unattended-execution.md`](../.claude/rules/unattended-execution.md).
+
 ## Multi-Repo Agent Architecture
 
 CC agents load context from the repo they run in — CLAUDE.md, settings, rules, hooks,

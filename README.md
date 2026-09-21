@@ -38,7 +38,7 @@ Built in the open, honestly: the rails ship before the goals, and what's live ve
 - [Operating model](docs/operating-model.md)
 - [Goal loop](docs/goals.md)
 - [Architecture](docs/architecture.md)
-- [Doc-structure contract](docs/doc-structure.md)
+- [Doc-structure contract](docs/doc-structure.md) · [Unattended execution](docs/unattended-execution.md)
 - [Contributing](CONTRIBUTING.md) · [Agent instructions](AGENTS.md)
 - [Profile](PROFILE.md) · [Lineage](docs/lineage.md) · [Hackathons](docs/hackathons.md) · [Agent reliability](docs/agent-reliability.md)
 - [Agent-native surface](https://qte77.github.io) — where this estate is actually machine-discoverable (this repo's README can't be: GitHub strips `<script>`/JSON-LD from rendered READMEs and `github.com` isn't an origin qte77 controls)
