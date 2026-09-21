@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `docs/agent-reliability.md` + `README.md`: agent-reliability research track record — seven sibling repos measuring agent/site trustworthiness (RDI-AgentBeats-MAS-GraphJudge, RDI-AgentBeats-TestBehaveAlign, agent-readiness-kit, cc-recursive-team-mode, coding-harness-eval, multi-tasking-quality-benchmark, ai-agents-research) linked from `## Refs`, per the doc-structure contract (tail stays Tools + Posts only). Named "reliability" rather than "eval(s)" deliberately — this repo already uses "eval" for the goal-KR eval-gate mechanism (`goals.json`, `kr-eval-gate.yml`), a different thing from measuring other agents'/sites' trustworthiness
+
+- `docs/hackathons.md` + `README.md`: hackathon track record — four recent SF builds (AgentNativeHack-FT-CF-SF, the 0HumanCompanyHack firm/client pair, AWS_EnterpriseHack, ldnmxx-hack) linked from `## Refs`, per the doc-structure contract (tail stays Tools + Posts only)
+
 - `README.md`: `## Refs` gains an "Agent-native surface" link to `qte77.github.io` — this repo's own README can't carry agent-native signals (GitHub strips `<script>`/JSON-LD from rendered READMEs, and `github.com` isn't an origin qte77 controls), so it points to the one that is
 - `docs/lineage.md` + `README.md`: trim the profile README tail to the doc-structure contract — the tail is now **Tools + Posts** only; the **Lineage** provenance moves to `docs/lineage.md`, and it + `PROFILE.md` are linked from `## Refs`. Dogfoods the estate's own README contract (this repo is its reference example)
 
