@@ -25,6 +25,7 @@
   --color-text-muted: #686040;
   --color-primary: #7a6010;
   --color-primary-on: #ece8d8;
+  --color-link: #755c0f;
   --color-data-positive: #4a6818;
   --color-data-caution: #787010;
   --color-data-negative: #983828;
@@ -34,6 +35,7 @@
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 12px;
+  --radius-full: 9999px;
   --shadow-card: 0 1px 2px rgba(28, 26, 20, 0.06), 0 4px 12px rgba(28, 26, 20, 0.08);
 }
 
@@ -48,6 +50,7 @@
     --color-text-muted: #a89878;
     --color-primary: #c8a858;
     --color-primary-on: #1c1a14;
+    --color-link: #c8a858;
     --color-data-positive: #8aa860;
     --color-data-caution: #c8b868;
     --color-data-negative: #c08060;
@@ -64,6 +67,7 @@
   --color-text-muted: #a89878;
   --color-primary: #c8a858;
   --color-primary-on: #1c1a14;
+  --color-link: #c8a858;
   --color-data-positive: #8aa860;
   --color-data-caution: #c8b868;
   --color-data-negative: #c08060;
@@ -83,6 +87,7 @@
   --color-text-muted: #4a6a4a;
   --color-primary: #2a6a2a;
   --color-primary-on: #f0f6ee;
+  --color-link: #2a6a2a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -94,6 +99,7 @@
     --color-text-muted: #7aa878;
     --color-primary: #3a6a3a;
     --color-primary-on: #c4e8c0;
+    --color-link: #539853;
   }
 }
 
@@ -105,6 +111,7 @@
   --color-text-muted: #7aa878;
   --color-primary: #3a6a3a;
   --color-primary-on: #c4e8c0;
+  --color-link: #539853;
 }
 
 /* Variant: EyeRest BluBlock */
@@ -117,6 +124,7 @@
   --color-text-muted: #6b5838;
   --color-primary: #c06010;
   --color-primary-on: #f5ecd8;
+  --color-link: #964b0c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,6 +136,7 @@
     --color-text-muted: #a08b6d;
     --color-primary: #e89030;
     --color-primary-on: #1a1208;
+    --color-link: #e89030;
   }
 }
 
@@ -139,6 +148,7 @@
   --color-text-muted: #a08b6d;
   --color-primary: #e89030;
   --color-primary-on: #1a1208;
+  --color-link: #e89030;
 }
 
 /* Variant: EyeRest Dusk */
@@ -151,6 +161,7 @@
   --color-text-muted: #6a6058;
   --color-primary: #7a5820;
   --color-primary-on: #eaece2;
+  --color-link: #7a5820;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,6 +173,7 @@
     --color-text-muted: #b0a498;
     --color-primary: #c8a468;
     --color-primary-on: #1f1b22;
+    --color-link: #c8a468;
   }
 }
 
@@ -173,6 +185,7 @@
   --color-text-muted: #b0a498;
   --color-primary: #c8a468;
   --color-primary-on: #1f1b22;
+  --color-link: #c8a468;
 }
 
 /* Variant: EyeRest SaaS */
@@ -185,6 +198,7 @@
   --color-text-muted: #5a635c;
   --color-primary: #1f6e4c;
   --color-primary-on: #eef1ec;
+  --color-link: #1f6e4c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -196,6 +210,7 @@
     --color-text-muted: #9aa8a0;
     --color-primary: #4fae82;
     --color-primary-on: #14201a;
+    --color-link: #4fae82;
   }
 }
 
@@ -207,6 +222,7 @@
   --color-text-muted: #9aa8a0;
   --color-primary: #4fae82;
   --color-primary-on: #14201a;
+  --color-link: #4fae82;
 }
 
 :root {

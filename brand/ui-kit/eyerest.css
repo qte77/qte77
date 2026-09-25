@@ -22,6 +22,7 @@
   --text-muted: #686040;
   --primary: #7a6010;
   --primary-on: #ece8d8;
+  --link: #755c0f;
   --data-positive: #4a6818;
   --data-caution: #787010;
   --data-negative: #983828;
@@ -40,6 +41,7 @@
     --text-muted: #a89878;
     --primary: #c8a858;
     --primary-on: #1c1a14;
+    --link: #c8a858;
     --data-positive: #8aa860;
     --data-caution: #c8b868;
     --data-negative: #c08060;
@@ -56,6 +58,7 @@
   --text-muted: #a89878;
   --primary: #c8a858;
   --primary-on: #1c1a14;
+  --link: #c8a858;
   --data-positive: #8aa860;
   --data-caution: #c8b868;
   --data-negative: #c08060;
@@ -73,6 +76,7 @@
   --text-muted: #4a6a4a;
   --primary: #2a6a2a;
   --primary-on: #f0f6ee;
+  --link: #2a6a2a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -84,6 +88,7 @@
     --text-muted: #7aa878;
     --primary: #3a6a3a;
     --primary-on: #c4e8c0;
+    --link: #539853;
   }
 }
 
@@ -95,6 +100,7 @@
   --text-muted: #7aa878;
   --primary: #3a6a3a;
   --primary-on: #c4e8c0;
+  --link: #539853;
 }
 
 /* Variant: EyeRest BluBlock */
@@ -107,6 +113,7 @@
   --text-muted: #6b5838;
   --primary: #c06010;
   --primary-on: #f5ecd8;
+  --link: #964b0c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -118,6 +125,7 @@
     --text-muted: #a08b6d;
     --primary: #e89030;
     --primary-on: #1a1208;
+    --link: #e89030;
   }
 }
 
@@ -129,6 +137,7 @@
   --text-muted: #a08b6d;
   --primary: #e89030;
   --primary-on: #1a1208;
+  --link: #e89030;
 }
 
 /* Variant: EyeRest Dusk */
@@ -141,6 +150,7 @@
   --text-muted: #6a6058;
   --primary: #7a5820;
   --primary-on: #eaece2;
+  --link: #7a5820;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -152,6 +162,7 @@
     --text-muted: #b0a498;
     --primary: #c8a468;
     --primary-on: #1f1b22;
+    --link: #c8a468;
   }
 }
 
@@ -163,6 +174,7 @@
   --text-muted: #b0a498;
   --primary: #c8a468;
   --primary-on: #1f1b22;
+  --link: #c8a468;
 }
 
 /* Variant: EyeRest SaaS */
@@ -175,6 +187,7 @@
   --text-muted: #5a635c;
   --primary: #1f6e4c;
   --primary-on: #eef1ec;
+  --link: #1f6e4c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -186,6 +199,7 @@
     --text-muted: #9aa8a0;
     --primary: #4fae82;
     --primary-on: #14201a;
+    --link: #4fae82;
   }
 }
 
@@ -197,6 +211,7 @@
   --text-muted: #9aa8a0;
   --primary: #4fae82;
   --primary-on: #14201a;
+  --link: #4fae82;
 }
 
 /* Base color application */

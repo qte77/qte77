@@ -47,6 +47,7 @@ BASE: Decls = [
     ("--text-muted", "text-muted"),
     ("--primary", "primary"),
     ("--primary-on", "primary-on"),
+    ("--link", "link"),
 ]
 # CSS custom property <- DESIGN.md `data` / `data-dark` key.
 DATA: Decls = [
@@ -182,6 +183,7 @@ def css_tailwind(spec: dict) -> str:
         ("--radius-sm", rounded["sm"]),
         ("--radius-md", rounded["md"]),
         ("--radius-lg", rounded["lg"]),
+        ("--radius-full", rounded["full"]),
     ]
     dark = _tw_color_decls(colors, spec.get("data-dark", {}), dark=True)
     # Functional elevation (DESIGN.md `elevation`): --shadow-card, light in @theme +
