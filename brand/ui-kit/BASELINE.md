@@ -59,6 +59,42 @@ without a bundler.
 | D11 | `saas` variant added, de-blued (spruce green, not indigo) | brand is zero-blue by law; ships a cool/flat "SaaS/Linear" look without breaking the core rule (channel-order matches the approved `green`) |
 | D12 | `chart-theme.js` reads live CSS custom properties on `themechange` | charts stay correct across any variant/scheme with no per-variant JS palette to drift from `eyerest.css`; consumes the zero-blue `--data-*` arc |
 | D13 | `--shadow-card` now emitted into `eyerest.css` too (was Tailwind-only) | the no-build kit needs the elevation token for `.stat-tile`/`.callout` |
+| D14 | Rejected a second EyeRest-colored "Brand Mark" logo lockup (2026-09-25) | doubles asset/governance surface for a recolor with no earned differentiation; the source's own rationale for the split doesn't apply here — see below |
+
+## Considered and rejected: a second "Brand Mark" logo lockup
+
+A 2026-09-25 design-system sync (built from this repo, then extended) proposed splitting the
+logo into two lockups: **Platform Mark** — today's mark, GitHub-blue, GitHub chrome only — and
+**Brand Mark** — the identical `q7_` glyph geometry, recolored to `primary`/`bg`, for every
+non-GitHub surface (site, decks, docs). Considered and rejected; **D7 stands**: one path-baked
+asset (`logo-mark.paths.dejavu.svg`), one color, everywhere the mark appears, favicon and site
+logo included.
+
+**What differs from ours.** The proposal treats "the logo is GitHub-blue" as one choice to
+re-litigate per surface — two lockups, each with a `.on-dark` counterpart (up to 8 files for
+mark + wordmark), plus a "never mix the two" governance rule to document and maintain. D7
+treats it as settled: the *theme* (product UI colors) is EyeRest; the *mark* is not, on
+purpose, everywhere it appears — one asset, no per-surface choice to get wrong.
+
+**Why not adopt theirs:**
+
+- **No visual differentiation earned.** The Brand Mark is the same glyph geometry with only
+  the fill swapped — it carries no new information, only more files and more rules to enforce
+  ("which lockup does this surface get") for a change a viewer wouldn't register as meaningful.
+- **The stated reason for their split doesn't hold here.** Their own asset notes explain the
+  two-lockup, flat-pre-baked-file design exists because their platform's upload pipeline
+  strips `<style>` tags, breaking the single adaptive file their first attempt used. That's a
+  constraint of *their* hosting pipeline, not ours — our SVGs live in the git repo and already
+  render theme-aware on GitHub via inline `@media (prefers-color-scheme)` (see
+  `../README.md` "Adaptive theming"), so the problem their design solves doesn't exist for us.
+- **D7's actual job — recognizable inside GitHub's chrome — doesn't depend on the product's
+  theme.** An avatar, PR badge, or social-preview card sits in GitHub's chrome regardless of
+  which EyeRest variant a viewer's dashboard happens to be running; there's no surface where
+  the mark needs to match a variant the viewer isn't looking at.
+
+If a future surface genuinely needs an EyeRest-colored mark (e.g. a qte77.github.io hero with
+no GitHub chrome nearby), revisit then — not maintain a parallel lockup pre-emptively for a use
+that hasn't materialized.
 
 ## Tokens & CSS
 

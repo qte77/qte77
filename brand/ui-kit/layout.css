@@ -14,6 +14,10 @@
   --radius-sm: 4px;      /* inputs, chips */
   --radius-md: 6px;      /* buttons, cells */
   --radius-lg: 12px;     /* cards, panels */
+  --radius-full: 9999px; /* removable filter chips ONLY */
+  --rule-height: 3px;    /* Index Rule bar thickness — fixed, never scales */
+  --rule-width-sm: 24px; /* Index Rule, inline form */
+  --rule-width-lg: 48px; /* Index Rule, card/section top-edge form */
 }
 
 /* Single-column, content-first. Dashboards may go full-bleed but keep the rhythm. */
@@ -54,7 +58,18 @@ code, kbd, samp, pre {
 .divider { background: var(--border); height: 1px; border: 0; }
 /* Soft, not round. No pills except removable filter chips. */
 .chip { border-radius: var(--radius-sm); }
-.chip--removable { border-radius: 999px; }
+.chip--removable { border-radius: var(--radius-full); }
+
+/* The Index Rule — qte77's one recurring geometric signature (DESIGN.md
+   "The Index Rule"). primary fill, capsule-ended, two fixed lengths only. */
+.index-rule {
+  display: block;
+  height: var(--rule-height);
+  border-radius: calc(var(--rule-height) / 2);
+  background: var(--primary);
+}
+.index-rule--sm { width: var(--rule-width-sm); }
+.index-rule--lg { width: var(--rule-width-lg); }
 
 /* KPI stat tile + callout — dashboard panels. Elevation via the --shadow-card token (eyerest.css). */
 .stat-tile {

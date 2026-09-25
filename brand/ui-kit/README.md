@@ -6,8 +6,10 @@ GUI); `../images/` is the **GitHub branding** (avatar, logo-mark). The two are d
 systems — never pull GitHub-blue into the app. See [`BASELINE.md`](BASELINE.md) for the full
 rationale and decisions.
 
-> **Provenance.** `eyerest.css`, `layout.css`, and `fonts.css` are **generated from
-> `../DESIGN.md`** — do not hand-edit. The token source of truth is `DESIGN.md`.
+> **Provenance.** `eyerest.css` and `tailwind/tokens.css` are **generated from
+> `../DESIGN.md`** (`make -C brand ui_kit`) — do not hand-edit. `layout.css` and
+> `fonts.css` are hand-authored and must be kept in sync with `DESIGN.md`
+> manually. The token source of truth is `DESIGN.md` either way.
 
 ## npm package — `@qte77/ui-theme` (Tailwind v4 apps)
 
@@ -24,8 +26,10 @@ the `@theme` block. `tailwind/tokens.css` is **generated from `../DESIGN.md`**
 ```
 
 This registers the utilities the apps use — `bg-bg`, `bg-surface`, `text-text`,
-`text-primary`, `border-border`, `font-sans`, `font-mono`, `rounded-lg` — plus a
-runtime `html[data-theme]` / `prefers-color-scheme` scheme swap. Fonts are the
+`text-primary`, `text-link`, `border-border`, `font-sans`, `font-mono`,
+`rounded-lg`, `rounded-full` — plus a runtime `html[data-theme]` /
+`prefers-color-scheme` scheme swap. Use `text-link` (never `text-primary`) for
+any primary-colored text — see `../DESIGN.md` Colors / Accessibility. Fonts are the
 consumer's concern (`@fontsource/*` or self-host); the package only names the
 family stacks. It also ships **`--shadow-card`** (light/dark) for subtle functional
 elevation — see `../DESIGN.md` "Motion & effects".
