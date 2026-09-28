@@ -2,7 +2,7 @@
 status: in-progress
 phase: consumer wave (Phases 4/5/7/8) remaining
 handoff: ../handoffs/001-estate-ui-engine-unification.md
-updated: 2026-07-17
+updated: 2026-09-28
 ---
 
 # Estate UI + workflow-definition unification
@@ -53,7 +53,7 @@ repos (qte77/qte77 + the three consumers).
 
 | Artifact | Version / tag | PR | Notes |
 | --- | --- | --- | --- |
-| `@qte77/ui-theme` | 0.1.0 → **0.2.0** | qte77/qte77 #149, #150 | Tailwind tokens generated from `brand/DESIGN.md`; 0.2.0 adds `--shadow-card` |
+| `@qte77/ui-theme` | 0.1.0 → 0.2.0 → **0.3.0** | qte77/qte77 #149, #150, #184 | Tailwind tokens generated from `brand/DESIGN.md`; 0.2.0 adds `--shadow-card`; 0.3.0 adds `--color-link` (accessibility fix, use instead of `--color-primary` for text) + `--radius-full` |
 | `@qte77/a2ui-agui-kit` | 0.1.0 → 0.2.0 → **0.3.0** | a2ui-agui-kit #1, #2, #3 | core (#1) → React (#2) → functional-depth styles (#3) |
 | `qte77/protocols` `workflow-definition` | tag **`workflow-definition/v1.0.0`** | protocols #1 | schema + 4 valid + 4 invalid fixtures + dual-validator CI |
 
@@ -94,13 +94,14 @@ functional depth allowed). CI: gitleaks + semgrep (`p/typescript --error`) + typ
 test/build + CodeQL + publish-on-version-bump. 46 tests. Peers: `zod`, and optional `react` /
 `@a2ui/react` / `@qte77/ui-theme`.
 
-### `@qte77/ui-theme` (v0.2.0)
+### `@qte77/ui-theme` (v0.3.0)
 
 `brand/ui-kit/tailwind/tokens.css` GENERATED from `brand/DESIGN.md` by `brand/scripts/gen_ui_kit.py`
 (`--check` gates staleness; `make -C brand ui_kit` regenerates). Ships a Tailwind v4 `@theme` block:
-`--color-*`, `--font-*`, `--radius-*`, `--shadow-card` (light) + dark scheme-swap blocks. DESIGN.md
-front matter has the `elevation` block that produces `--shadow-card`. `eyerest.css` stays color-only
-(no-build sites). Publish workflow: `.github/workflows/publish-ui-theme.yml`.
+`--color-*` (incl. `--color-link`, v0.3.0), `--font-*`, `--radius-*` (incl. `--radius-full`, v0.3.0),
+`--shadow-card` (light) + dark scheme-swap blocks. DESIGN.md front matter has the `elevation` block
+that produces `--shadow-card`. `eyerest.css` stays color-only (no-build sites). Publish workflow:
+`.github/workflows/publish-ui-theme.yml`.
 
 ### `qte77/protocols` `workflow-definition/v1`
 
@@ -115,7 +116,8 @@ and `check-jsonschema`.
 ## REMAINING — consumer wave (Phases 4/5/7/8)
 
 All on `experiment/*` **test branches** (may-not-merge). PRs open for validation; **merge waits for
-the user** (protected repos). Consume `@qte77/ui-theme@^0.2.0` + `@qte77/a2ui-agui-kit@^0.3.0`
+the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.2.0` for
+`--color-link`/`--radius-full`, qte77/qte77 #184) + `@qte77/a2ui-agui-kit@^0.3.0`
 (effects preserved). Suggested order: **7 + 8 first** (tokenless, test-first), then **4 + 5** (need
 `NPM_READ_TOKEN` for green CI). Phases 5 and 8 share the `ldnmxx-hack` clone → run sequentially there.
 
@@ -139,7 +141,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.2.0` + `@qte77/a2ui-ag
   busy CSS in `ui/src/index.css` (→ `@import "@qte77/a2ui-agui-kit/styles.css"`). KEEP app-specific
   CSS (brand-mark, gh-icon, `#theme-toggle`, `.sr-only`).
 - KEEP local: `ui/src/agent/{liveAgent,useLiveAgent,actionBridge,assets,prompts,conversation,transcript,fallback}.ts`, `recordings/`, `DashboardShell`, Demo/Live dashboards.
-- MODIFY: `ui/package.json` (+ `@qte77/ui-theme@^0.2.0`, `@qte77/a2ui-agui-kit@^0.3.0`); import sites
+- MODIFY: `ui/package.json` (+ `@qte77/ui-theme@^0.3.0`, `@qte77/a2ui-agui-kit@^0.3.0`); import sites
   (`useLiveAgent.ts`, `liveAgent.ts`, `LiveDashboard.tsx`, `Transcript.tsx`; `prompts.ts` shrinks);
   wire `A2UISurface`'s `onAction` to the actionBridge; NEW `ui/.npmrc`.
 - Adopt `detectInjection` browser-side at the composer submit seam. NEW behavior test: flagged input

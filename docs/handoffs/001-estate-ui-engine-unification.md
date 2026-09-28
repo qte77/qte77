@@ -1,7 +1,7 @@
 ---
 plan: ../plans/001-estate-ui-engine-unification.md
 status: shared artifacts DONE; consumer wave (P4/5/7/8) REMAINING
-updated: 2026-07-11
+updated: 2026-09-28
 ---
 
 # Handoff — Estate UI + workflow-definition unification
@@ -14,7 +14,8 @@ Onboarding for the next session. Full detail + source map:
 
 **Done and published** (7 PRs merged, nothing pending on your side):
 
-- `@qte77/ui-theme` **0.2.0** (Tailwind tokens from `brand/DESIGN.md`, incl. `--shadow-card`)
+- `@qte77/ui-theme` **0.3.0** (Tailwind tokens from `brand/DESIGN.md`, incl. `--shadow-card`,
+  `--color-link`, `--radius-full` — qte77/qte77 #184)
 - `@qte77/a2ui-agui-kit` **0.3.0** (core + `./react` + `./styles.css`, functional depth)
 - `qte77/protocols` `workflow-definition` tag **`v1.0.0`**
 
@@ -33,7 +34,7 @@ Onboarding for the next session. Full detail + source map:
 2. **Test branches**: everything goes on `experiment/*` branches (estate's may-not-merge prefix).
    Open the PR for validation, but **do not merge** — the three consumer repos enforce
    `required_signatures`, so each merge is the user's per-PR `--admin` decision.
-3. **Effects are preserved**: consumers pull `@qte77/ui-theme@^0.2.0` + `@qte77/a2ui-agui-kit@^0.3.0`,
+3. **Effects are preserved**: consumers pull `@qte77/ui-theme@^0.3.0` + `@qte77/a2ui-agui-kit@^0.3.0`,
    so the card shadow + skeleton shimmer STAY. The only intended visual change is the generating
    chip un-pilling (`999px` → `var(--radius-md)`). Say so in each PR/CHANGELOG; it is not a bug.
 4. **TDD**: P7/P8 are genuinely test-first (write the contract-validation tests red, then wire the
