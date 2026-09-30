@@ -67,9 +67,13 @@ person or one session. Learned by taking one product from design-tool canvas to 
   set, button style) from which every token is derived.
 - The estate has the same shape in [`brand/DESIGN.md`](../brand/DESIGN.md): parameters in the open
   design.md format, a generator, and a published theme package.
-- Proposed (not built yet): each product writes its own `DESIGN.md` in the same format and uses the same
-  generator, so products share the token structure, the accessibility rules and the checker-safe CSS
-  shape while keeping their own look. Plain CSS custom properties are the shared contract; a React theme
-  wrapper stays optional. Neutral token prefixes keep brands apart by value, not by name.
+- Reuse the pattern, not the script. The brand generator is built for one brand: fixed file paths, bare
+  token names on `:root`, one fixed set of variants and two font slots. A product with its own theme axis,
+  a headline font, a type scale, motion tokens or a scoped theme root needs a generator of its own. Each
+  product keeps a `DESIGN.md`-style parameter file as its single source, a small local generator that emits
+  prefixed tokens on the product's theme root (with the classification comments the design tool's checker
+  needs), a drift check, and hand-written layout CSS. Plain CSS custom properties are the shared contract; a
+  React theme wrapper stays optional. A shared generator is worth extracting only once two products need
+  the same schema.
 - Each product keeps its own design-tool project, synced from its own repo. Upgrades are opt-in version
   bumps, never a push across products.
