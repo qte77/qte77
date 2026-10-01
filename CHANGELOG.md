@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `docs/design-tool-workflow.md`: the guide gains an end-to-end path, what to ask the design tool to build into templates, a template-to-production section (fetch, snapshot and sync, deploy build, security headers, verify), and mobile-first and agent-ready how-tos; it names no hosts or products
+
 ### Added
 
 - `docs/unattended-execution.md`: a **"Cloud offload"** section — moving a long fan-out out of the interactive session, either as a detached local headless `claude -p` run (subscription vs `ANTHROPIC_API_KEY`, Manual-mode default, the workflow concurrency cap and its env var, a free-disk check before each slice) or as a cloud session (VM limits, env vars vs proxy-injected network secrets, the Trusted allowlist incl. GitHub and R2, push/teleport return path, workflow support unconfirmed in the docs); private data only through private stores; canary one slice first. Facts checked against code.claude.com on 2026-11-02
