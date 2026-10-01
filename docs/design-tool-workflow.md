@@ -94,7 +94,9 @@ Ask for these up front — each one skipped becomes a repo patch later.
 
 ### Deploy build
 
-- Production serves a build output, not the snapshot.
+- Production serves a build output, not the snapshot: a design tool's runtime often compiles JSX in
+  the browser, and a build step with self-hosted assets is the biggest speed win and allows a strict
+  content security policy.
 - Precompile the template's JSX: an esbuild transform to classic `React.createElement`, no bundling
   needed.
 - Wrap each compiled file in the scope the runtime gave it.
