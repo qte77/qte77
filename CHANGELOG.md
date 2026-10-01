@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `docs/design-tool-workflow.md`: the guide gains an end-to-end path, what to ask the design tool to build into templates, a template-to-production section (fetch, snapshot and sync, deploy build, security headers, verify), and mobile-first and agent-ready how-tos; it names no hosts or products
+
 ### Added
 
 - `docs/design-tool-workflow.md`: how to work with AI design tools so output ships as code — templates vs artifacts, the two one-way flows, upload order and checker-safe CSS, template-to-site verification, and the proposal that products derive their design systems from their own `DESIGN.md` via the brand generator.
