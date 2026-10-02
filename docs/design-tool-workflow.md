@@ -14,16 +14,31 @@ person or one session. Learned by taking one product from design-tool canvas to 
 - So each product moves towards: a design system synced from its repo, templates built on it, and
   artifacts only for exploration, audits and one-off assets.
 
-## End-to-end path
+## Quick start
 
-1. Design-system package in the repo: tokens generated from a parameter file, plus components.
-2. Synced to the design tool's design-system project.
-3. Templates built in the tool, on that design system.
-4. Fetched into the repo as an untouched snapshot.
-5. A deploy build next to the snapshot.
-6. Deploy.
-7. Verify, in a real browser.
-8. Feed findings back, tagged repo fix or design fix.
+Goal: build a design system and page templates in Claude Design (or a similar tool) and publish them to a
+real website. The sections below give the detail for each step.
+
+1. **Design-system package in your repo.** Tokens generated from a `DESIGN.md`-style parameter file by a
+   small local generator, plus a drift check in CI and React components.
+2. **Sync it to the design tool's design-system project.** Upload order: sentinel, all content, deletes
+   as the diff lists them, sentinel again, sync-state file last.
+3. **Build templates in the design tool on that design system.** Ask for these up front: title,
+   description and favicon in the static head; `viewport-fit=cover`; landmarks and one `h1`; no CDN-only
+   dependencies; exported media; a weak-device path.
+4. **Fetch every template file into the repo as an untouched snapshot.** Use an extract script for large
+   files. A sync script re-applies the written change list; each change is applied, already carried by
+   the template, or failed, and a failure writes nothing.
+5. **Deploy build next to the snapshot.** Precompile the JSX, self-host React (checked against its
+   integrity hash, loaded first), a CSP of `'self'` plus inline-script hashes, and rewrite only the
+   anchored CSP line. The build fails if an anchor moves. Run it in CI.
+6. **Deploy, then verify in a real browser at phone and desktop sizes.** Page and console errors, CSP
+   violation events, responses of 400 or more, response headers, the main visual mounted, one real
+   interaction. Restore the last good build first if anything breaks.
+7. **Mobile-first and agent-ready.** Use the checklists in the sections of those names.
+
+Rules: the design tool owns the template. Repo patches only as listed exceptions, sent upstream and
+dropped at the next sync. Verify vendor and spec claims at source before publishing.
 
 ## What to ask the design tool to build into templates
 
