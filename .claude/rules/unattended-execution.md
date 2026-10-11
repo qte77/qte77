@@ -1,81 +1,104 @@
-# Unattended Execution
+# Unattended E2E Execution (arc template)
 
-Always-loaded constraints for **long-running, e2e hands-off unattended sessions** with minimal
-supervision. Constraints only; the contract, rationale, and mechanism spec live in
-[`docs/unattended-execution.md`](../../docs/unattended-execution.md). Pairs with
-[`context-management.md`](context-management.md) (compaction) and
-[`compound-learning.md`](compound-learning.md) (learnings promotion).
+**Goal: long-running, e2e hands-off unattended sessions with minimal supervision and
+intervention.** These constraints generalize across projects and repos; apply each section per the
+use case (e.g. the UI-e2e section applies when the project ships a UI).
 
-## Plan + handoff (per arc `NNN`)
+## Plan artifact (one per arc)
 
-- Every arc is a paired `docs/plans/NNN-slug.md` + `docs/handoffs/NNN-slug.md` (same number, kebab
-  slug; match the repo's existing digit width). Findings reuse the number with a `-findings` suffix.
-- The **plan MUST carry a `file:line` source map** ("touch without re-mapping") so the next session
-  does not re-explore. The **handoff onboards** the next session: state, ordered next steps, the loop,
-  owner-gates, commands, gotchas. Read the handoff first, the plan second.
-- Keep plan + handoff + `MEMORY.md` in sync at every milestone. **Close an arc by migrating the entire
-  remainder to the next `NNN`** — never strand work in a closed arc.
-- **Plans, handoffs, findings, memory, and session summaries are EPHEMERAL working state, not permanent
-  docs.** Evaluate them on a regular cadence; **mine** the durable learnings out (into code, ADRs,
-  `AGENT_LEARNINGS.md`, rules) and then **prune** the artifact. The durable SOT is git history + code +
-  ADRs + learnings + rules — not the arc scaffolding. Compression is the anti-graveyard gate.
+- Save ONE file per arc: `docs/plans/YYYY-MM-DD-NNNN-slug.md` (creation date, 4-digit sequence =
+  next free number — never reuse or renumber — kebab slug). No separate handoff files or
+  `handoffs/` folders: merge any existing handoff into its plan. No separate
+  onboarding file, and no dedicated "handoff" ritual or section name either — the plan document
+  itself opens with the current status (what shipped, what's next in order, the loop, owner-gates,
+  commands, watch-outs), then the rest of the plan (source map, approach, remaining-work table). A
+  single file per arc is easier to keep in sync than two that can drift, and a plain "read the plan"
+  is easier to follow than "read the plan, then also read its handoff."
+- **The plan's opening MUST onboard the next session to it and how to handle it**: what shipped,
+  what's next (in order), the loop, owner-gates, commands, watch-outs.
+- **The plan MUST contain a code/file/source map** (exact files, functions, line refs, external
+  refs, reference blueprints) so the next session does **not** have to map or gather context again.
+- Keep the plan (its opening status included) + memory in sync at every milestone. Close an arc by
+  marking shipped items and migrating the entire remainder to the next arc's plan — never leave work
+  stranded in a closed arc.
+- **EXACTLY ONE remaining-work table per plan.** One section lists what is still open, one row per
+  item, with a **gate** column (`agent` / `owner` / `data`) and a **done-when**. Source maps, design
+  sections, and execution orders may describe HOW an item is done — they must NEVER re-list WHAT is
+  open; they point at the table. Two lists of open work always drift into disagreement, and the
+  next session then re-does shipped items because it trusted the stale copy.
+- **Strike the row in the SAME PR that ships it** — not in a later docs PR. A merged PR whose plan
+  row still reads "remaining" is an incomplete PR.
+- **No orphans: every plan item ends in exactly one state** — shipped (with its PR number), deferred
+  (with the gate + the reason), or a live row in the table. An item that is described in the plan
+  but appears in none of the three is a doc bug; audit for orphans at every arc close.
 
 ## Non-blocked phase shape (structure every arc this way)
 
-- **Phase A (agent-only):** front-load EVERY agent-runnable slice; never interleave owner-gated items
-  mid-sequence. **Pre-stage every gate during Phase A** (migration SQL PR'd-but-unapplied, remediation
-  scripts, dry-run reports) so a gate becomes an approval, not a work session.
-- **Phase B (ONE owner sitting):** batch all gates — migrations, DB mutations, secrets, spend, merge —
-  into a single pre-staged checkpoint.
-- **Phase C (activation):** agent resumes — verify, activate gated features, e2e, deploy, report.
-- **Decide-by-default:** every open decision carries a recommended default; proceed unattended; the
-  owner overrides at the checkpoint. In hands-off mode this **overrides** core-principles' "when in
-  doubt, STOP, ask the user" — proceed under the safe default and **park** the decision for the owner
-  rather than blocking. Escalate mid-run ONLY when a decision has **no safe default** or the action is
-  **irreversible/destructive** (delete, DB mutation, spend, deploy, force-push to a shared/protected
-  branch). **Done-when per item:**
-  each item states its own verification. **Build-behind-gate:** ship data-dependent features dormant;
-  they activate when the data lands.
+- **Phase A — agent-only:** front-load EVERY agent-runnable slice; never interleave owner-gated
+  items mid-sequence.
+- **Pre-stage every gate during Phase A:** migration SQL (PR'd, unapplied), remediation scripts,
+  dry-run reports — so gates become approvals, not work sessions.
+- **Phase B — ONE owner sitting:** batch all gates (migrations, DB mutations, spend) into a single
+  pre-staged checkpoint.
+- **Phase C — activation:** agent resumes (verify, activate gated features, e2e, deploy).
+- **Decide-by-default:** every open decision in the plan carries a recommended default; proceed
+  with the default unattended; the owner overrides at the checkpoint.
+- **Done-when per item:** each backlog item states its verification so the agent self-verifies and
+  moves on.
+- **Build-behind-gate:** ship data-dependent features dormant behind their gate; they activate when
+  the data lands — code never waits on data.
+- **Arc-start access checklist:** list the credentials/grants the arc needs in the plan; the owner
+  provisions once up front (no mid-run credential stalls).
+- **Bounded write budgets:** pre-approve capped, backup-first data writes (dry-run shown) instead
+  of gating every small write.
+
+## Per-milestone discipline (after every major milestone / merged PR)
+
+- **Git:** new branch per topic; commits by topic (`feat`/`fix`/`test`/`docs`/`chore`); push +
+  squash-merge ONLY if all CI + test items pass; delete stale remote AND local branches.
+- **Docs & issues audit:** CHANGELOG · root README · architecture/ADRs · roadmap · userstory ·
+  registries · consumer-facing contract/interface doc (e.g. `docs/CONTRACT.md`, a design-token
+  source doc) if the repo has one — updates needed? New **URLs / env vars / CLI switches**
+  documented (README tables + CHANGELOG)? Issues to **open/update/close** (close shipped features;
+  advance — never auto-close — multi-item trackers)? If a CI test asserts the contract doc against
+  the live source (the pattern to prefer over a purely hand-maintained doc), does it still pass?
+- **Progress report (concise):** what **shipped** · what's **next** · **overall % of the plan** ·
+  **blocked/deferred** (+ what's pre-staged for each).
 
 ## Quality gates (always)
 
-- Run the **exact CI gate locally, whole, before pushing** (the repo's `make check` / `npm run
-  validate` — format + lint + type + test + build). Never à la carte. Run the **audit/security target**
-  too (`npm audit` / dependency + secret scan).
-- **Strict TDD, RED first** — model the desired behavior and observe the red before implementing.
-  Modules only; rendering/wiring/glue/config are covered by build + lint + e2e, never unit tests. Only
-  value-add tests; never chase coverage.
-- Assume **strict lint + typing + security always**, on every file, whether or not it has unit tests.
+- **Strict TDD: first model the expected and desired behavior** (RED first). Only non-trivial
+  tests, only where necessary — for modules, never for simple scripts/config;
+  rendering/wiring = e2e is the test.
+- Run the EXACT CI gate locally before pushing (the repo's make/npm validate target incl. format
+  checks) — never à la carte. Run the audit (dependency/security) target too.
+- Assume strict lint + typing + security always.
 
-## Verification (verdict-is-the-status)
+## UI e2e verification (when the project ships a UI)
 
-- Verify on the **live target**, not mocks or localhost assumptions — run e2e against **local AND the
-  remote deploy**. `curl` can lie where the browser fails (per-encoding cache variants).
-- UI e2e uses **patchright/Chromium**: vary viewport + device, rotate portrait AND landscape, click
-  every control, capture **screenshots (and read 2-3 of them)** + opt-in video. **App console errors
-  fail the run**; capture failed network requests.
-- **Never trust a verification started before the edge settles** after a deploy (add a settle wait +
-  asset-hash/MIME poll). Commit a **run manifest** (append PASS/FAIL honestly, keep FAILs). Prefer a
-  **scheduled remote monitor** that auto-opens/updates an alert issue on FAIL.
+- Use **polyfetch + its patchright chromium** for e2e UI tests, **locally AND against the remote
+  deploy**.
+- Vary the **viewport + device emulation**; **click buttons, dropdowns, and other interactive
+  elements** to verify functionality *and* appearance — not just render presence.
+- Take **screenshots and (opt-in) videos in horizontal and vertical orientation**.
+- Use the patchright/chromium **devtools**: capture **console errors** (fail the run on app console
+  errors) and failed network requests.
 
-## Durability + the unattended tax (hard rules)
+## Context economy (see context-management.md)
 
-- **git is the only durable SOT** — a session/container death loses anything uncommitted. For long runs
-  use **resume-from-run-id** (replays cached agent calls, re-runs only the tail); commit-as-you-go.
-- Prefix EVERY `git`/`gh` with `env -u GH_TOKEN -u GITHUB_TOKEN` (both vars shadow the real credential
-  -> 403 on writes). Commit with `--no-gpg-sign` and `-F <file>` (never `-m` — backticks/`$()` in `-m`
-  get shell-substituted). For rebase, disable signing (`-c commit.gpgsign=false`). Force-push
-  (`--force-with-lease`) your OWN unmerged feature branch freely to tidy commits — but force-pushing a
-  **shared/protected** branch rewrites others' history and is escalate-only (per the list above).
-- **Merge is an owner gate.** Open the PR, drive the gate to green, then **park for owner approval** —
-  never agent auto-merge. `--admin` bypasses ONLY the signature gate, never a failing/absent check;
-  **never relax branch protection**. Clear a stuck required check by updating the branch to `main`, not
-  by nudge-commits.
-- **Scraper / untrusted-input repos: keep the Bash allowlist narrow** — broad read-only Bash widens
-  prompt-injection blast radius and can read secrets. Prefer `Read`/`Grep`/`Glob` (never gated) +
-  `uv run python` one-liners over `cat`/`grep`.
-- **Compact at phase/milestone boundaries.** The model cannot self-trigger `/compact`; set
-  `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`, a `PreCompact` archive hook (flush the live arc state before the
-  summary lands), and a `SessionStart:compact` re-onboard hook (see the settings template). **Subagent
-  discovery** to keep dumps out of the window — the biggest lever. Durable facts belong in
-  plan/handoff/memory, not only in-conversation.
+- Delegate discovery/search/audits/long-running ops to **subagents**; the main thread keeps
+  conclusions, not dumps.
+- **Compact at phase/milestone boundaries**; durable facts belong in the plan or memory, not only
+  in-conversation.
+- **Enforcing compaction in long runs:** the model cannot trigger `/compact`; set
+  `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=<pct>` (e.g. 50) to fire auto-compact earlier (main +
+  subagents); in SDK/headless runs `/compact [instructions]` can be sent as a prompt input. Shape
+  WHAT survives via a "what to preserve" section in CLAUDE.md (plan state, shipped list, next
+  steps, branch/PR state); a `PreCompact` hook may archive/block but never trigger or rewrite.
+- Redirect verbose command output to files; read back only the relevant slice.
+- **What to preserve during compaction** (the compactor reads this): the current arc + its state
+  (newest `docs/plans/` file, items done/in-flight) · this session's shipped list
+  (PR numbers + one-liners) · the ordered next steps + done-whens · branch/PR/CI state + anything
+  uncommitted · parked owner-gated items + their pre-staged artifacts · unresolved decisions + the
+  defaults being applied. **Drop** raw command output, file dumps, and search results already
+  distilled into the above.
