@@ -40,6 +40,7 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: Pushing empty "nudge CI" commits to force re-analysis does **not** clear it — the stuck SHA keeps its errored status — and it pollutes history. (Two nudge commits failed before the fix was found.)
 - **Solution**: Bring the branch **up to date with `main`** (`gh pr update-branch <n>`, or a local `git merge origin/main`). The fresh, GitHub-signed SHA gets a clean CodeFactor re-analysis that goes green. Never nudge-commit.
 - **References**: PRs #158 / #159.
+- **Promoted** to a shared rule: qte77/claude-code-plugins [`.claude/rules/ci-status-checks.md`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/ci-status-checks.md) (#224), shipped to consumers via `workspace-setup` / `workspace-sandbox`.
 
 ### Unattended hands-off runs converge on one repeatable shape
 
