@@ -1,16 +1,50 @@
 ---
 status: in-progress
 phase: consumer wave (Phases 4/5/7/8) remaining
-handoff: ../handoffs/001-estate-ui-engine-unification.md
-updated: 2026-09-28
+updated: 2026-10-19
 ---
 
 # Estate UI + workflow-definition unification
 
 Cross-repo plan. Extract the duplicated A2UI UI seam into shared npm packages and
 unify the two workflow engines' definition schema. This doc is the **source map** so
-a fresh session executes the remaining work without re-exploring. Onboarding +
-how-to-run is in the paired [handoff](../handoffs/001-estate-ui-engine-unification.md).
+a fresh session executes the remaining work without re-exploring; the status below is
+the onboarding — read it first, then "Source map" and "REMAINING" below.
+
+## Status (2026-10-19)
+
+- **Shipped:** 7 PRs merged, nothing pending on your side — `@qte77/ui-theme` **0.3.0** (Tailwind
+  tokens from `brand/DESIGN.md`, incl. `--shadow-card`, `--color-link`, `--radius-full` —
+  qte77/qte77 #184), `@qte77/a2ui-agui-kit` **0.3.0** (core + `./react` + `./styles.css`, functional
+  depth), `qte77/protocols` `workflow-definition` tag **`v1.0.0`**. Full table: "DONE and published"
+  below.
+- **Next, in order:** **P7 + P8 first** — tokenless (schema vendored over public `curl` via
+  `protocols/scripts/sync.sh`), reach green CI now. Then **P4 + P5** (need `NPM_READ_TOKEN`, below).
+  P5 and P8 both edit the `ldnmxx-hack` clone — run them sequentially, not in parallel. First actions
+  on resume: reset the stale, empty `experiment/adopt-shared-packages` branch in `agenthud-agui-a2ui`
+  (`git checkout main`; delete the branch) before starting P4; start P7 on branch
+  `experiment/workflow-definition-contract` off `claude-azure-workflows-gui` main, vendor the
+  schema+fixtures via `sync.sh` at tag `workflow-definition/v1.0.0`, write the contract tests red,
+  then green.
+- **The loop:** P7/P8 are genuinely test-first (write the contract-validation tests red, then wire the
+  fixture sync + validator dep green). P4/P5 are mechanical (delete duplicated modules, repoint
+  imports), verified by build/test/render, each adding only ONE new behavior test. Delete ported
+  tests; never duplicate. Delegate content edits to a subagent working inside each target repo
+  (cross-repo hygiene); the main agent does git plumbing (branch/commit/PR) only. Strict lint/typing/
+  security always.
+- **Owner-gates:** everything lands on `experiment/*` test branches (the estate's may-not-merge
+  prefix); PRs open for validation but **merge waits for the owner** — the three consumer repos
+  enforce `required_signatures`, so each merge is a per-PR `--admin` decision (`a2ui-agui-kit` /
+  `protocols` instead use rulesets — no `--admin` bypass there; squash normally once CodeFactor is
+  green). P4/P5 additionally need the owner to add an `NPM_READ_TOKEN` (`read:packages` PAT) secret to
+  `agenthud-agui-a2ui` and `ldnmxx-hack` before their CI goes green at install — verify locally first,
+  tokenless, via `npm pack` tarballs (see "Token constraint" below).
+- **Commands:** see "Verification (per phase)" below for the exact per-repo gate commands.
+- **Watch-outs:** prefix every git/gh with `env -u GH_TOKEN -u GITHUB_TOKEN` (both vars are invalid and
+  shadow the real credential → 403 on writes); commit `--no-gpg-sign`, identity
+  `qte77 <93844790+qte77@users.noreply.github.com>`; `--admin` merges bypass ONLY the signature gate,
+  never a failing/absent status check; plain-text docs — no emoji/checkmarks/glyphs; azure has no
+  typechecker in CI — flag, don't fix; arc memory: `project_ui_engine_unification.md`.
 
 ## Why
 
@@ -146,7 +180,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   wire `A2UISurface`'s `onAction` to the actionBridge; NEW `ui/.npmrc`.
 - Adopt `detectInjection` browser-side at the composer submit seam. NEW behavior test: flagged input
   → refusal/stub path.
-- Docs: CHANGELOG; `docs/plans|handoffs/015` pair; `docs/README` index; `.github/CONTRIBUTING.md`
+- Docs: CHANGELOG; `docs/plans/015` (one file per arc); `docs/README` index; `.github/CONTRIBUTING.md`
   (.npmrc/token); AGENTS.md pointer. Separate tiny branch (out of scope here): fix
   `worker/README.md:61` keyless "Deferred" → shipped + document TURNSTILE_SECRET/OPENROUTER_KEY/
   OPENROUTER_FREE_MODELS.
@@ -164,7 +198,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
 - MODIFY: `ui/package.json`, `worker/src/worker.ts` (import `detectInjection` from the package),
   `.npmrc` in `ui/` + `worker/`.
 - NEW behavior test: USAGE chip renders via `renderExtra` (`ui/tests/`).
-- Docs: CHANGELOG; `docs/plans|handoffs/009` pair; `docs/design.md` (theme now from `@qte77/ui-theme`,
+- Docs: CHANGELOG; `docs/plans/009` (one file per arc); `docs/design.md` (theme now from `@qte77/ui-theme`,
   DESIGN.md still SSOT); `docs/architecture.md`; AGENTS.md "Reuse" line. Open small issue "worker/
   lacks eslint config". Comment #5.
 - Gate: gitleaks + semgrep + ui lint/typecheck/test/build + worker typecheck/test green.
@@ -179,7 +213,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   valid fixture parses via `Workflow.model_validate`; invalid fixtures rejected; round-trip
   `from_yaml(...).model_dump()` re-validates. Do NOT touch `core/runner.py` (plan 018's job).
 - Docs: **scriv fragment** in `changelog.d/` (required pre-merge; not a direct CHANGELOG edit);
-  `docs/plans|handoffs/019` pair (note the no-typechecker gap); MADR ADR beside
+  `docs/plans/019` (one file per arc; note the no-typechecker gap); MADR ADR beside
   `docs/decisions/0004-workflow-runtime.md`; CONTRIBUTING fixture-sync command. Passing fix: add
   `DOC_WF_REQUIRE_PRINCIPAL_HEADER` + `DOC_WF_MAX_UPLOAD_FILES` (`core/settings.py:53-56`) to the
   CONTRIBUTING config table + `.env.example`.
@@ -196,7 +230,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   the schema (ajv devDep, test-only); invalid fixtures rejected by `assertUsecaseDef`; the rename is
   covered by existing usecase tests going red-then-green.
 - Docs: CHANGELOG; `usecases/README.md` + `docs/usecase-workflows.md` rewritten against the contract
-  (document USAGE as a B-local SSE extension); `docs/plans|handoffs/010` pair.
+  (document USAGE as a B-local SSE extension); `docs/plans/010` (one file per arc).
 - Gate: worker typecheck/test + gitleaks/semgrep green; demo smoke `/run?usecase=founders-copilot`.
 
 ## Token constraint (Phases 4/5 only)

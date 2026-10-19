@@ -1,18 +1,34 @@
 ---
 status: proposed — not started
 phase: <which phase is the recommended first build>
-handoff: ../handoffs/NNN-slug.md
 updated: YYYY-MM-DD
 ---
 
 # <Title — what this arc delivers>
 
 <One paragraph: the change, and that this doc is the source map so a fresh session executes without
-re-exploring. Point to the paired handoff for onboarding + how-to-run.>
+re-exploring. The status below is the onboarding — read it first.>
 
 > Delete this callout before use. This template instantiates the estate
-> [unattended-execution contract](../unattended-execution.md). Keep the `file:line` source map — it is
-> what lets a cold or compacted session act without re-mapping. Match the repo's digit width for `NNN`.
+> [unattended-execution contract](../unattended-execution.md). One file per arc — no separate handoff
+> file. Keep the `file:line` source map — it is what lets a cold or compacted session act without
+> re-mapping. Match the repo's digit width for `NNN`.
+
+## Status (as of YYYY-MM-DD)
+
+<The plan's own onboarding — read this before anything else below. Update at every milestone.>
+
+- **Shipped:** <merged PR numbers + one-liners, or "nothing yet">.
+- **Next, in order:** <the ordered resume steps — what to build first and why; the literal first
+  branch/commands/files to touch if resuming cold>.
+- **The loop:** <RED-first TDD for modules; glue/config/rendering covered by build+lint+e2e; run the
+  whole gate == CI before pushing; merge is an owner gate, never agent auto squash-merge>.
+- **Owner-gates:** <each pre-staged gate + the single switch the owner flips — point at "Owner-gates"
+  below for detail>.
+- **Commands:** <the exact verification commands — point at "Verification" below>.
+- **Watch-outs:** <inherited gotchas: the
+  [unattended tax](../unattended-execution.md#the-unattended-tax) and arc-specific traps verified
+  this session>.
 
 ## Why
 

@@ -71,6 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `docs/unattended-execution.md` + `docs/templates/plan.template.md` + `docs/plans/{001,003,004}-*.md`: the estate contract moves from a paired plan + handoff per arc to **one file per arc** (owner decision, 2026-10-19), matching the already-revised rule (`.claude/rules/unattended-execution.md`, PR #193). The plan template gains an opening `## Status` block (shipped / next-in-order / the loop / owner-gates / commands / watch-outs); the depth guide's "Plan + handoff artifacts" section is rewritten as "Plan artifact (one per arc)" and every other handoff reference in it now describes the single plan file; `AGENT_LEARNINGS.md`'s reference line drops the template it no longer cites
 - `brand/DESIGN.md`: fixed a stale-docs gap — the SaaS variant (added in a prior PR) was missing from the Overview prose and the Variants table; both now list all four secondary variants (Green, BluBlock, Dusk, SaaS)
 - `brand/ui-kit/package.json`: `@qte77/ui-theme` `0.2.0` → `0.3.0` (additive: `--color-link`, `--radius-full`)
 - `docs/architecture.md` + `assets/images/authority-chain.svg` + `docs/operating-model.md` + `docs/cto-handbook-mapping.md`: reconcile the **authority-chain tier definitions** (#145) to one canonical model — **`skills` → KERNEL** (the invariant capability package, in `claude-code-plugins`), **GHA → MECHANISM** (alongside the orchestrators), **`goals.json` → META** (human-authored intent, not derived STATE). Resolves three contradictory KERNEL/MECHANISM definitions across prose / SVG / operating-model ascii plus the goals.json META-vs-STATE conflict the coherence audit surfaced. The SVG folds `goals.json` into the META repo box and re-centers STATE to Issues/contributions/ontology (text + geometry only — `@media` themes untouched); the operating-model tier-named loop ascii gets an axis-note distinguishing control-loop from repo-responsibility. Closes #145
@@ -90,6 +91,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `brand/images/logo-mark.text.svg`: `q7_` composition centered in 80×80 canvas using DejaVu metrics (PR #55)
 - `brand/images/logo-wordmark.text.svg`: underscore aligned to visible glyph edges of `t` (left) and last `7` (right) (PR #55)
 - `brand/Makefile` / root `Makefile`: `.SILENT` + `.ONESHELL` for cleaner recipes (PR #55)
+
+### Removed
+
+- `docs/templates/handoff.template.md` and `docs/handoffs/{001,003,004}-*.md`: the handoff template and the three existing per-arc handoffs are removed — each handoff's still-relevant content is folded into the matching plan's new opening `## Status` section (`docs/plans/{001,003,004}-*.md`), per the one-file-per-arc contract
 
 ### Fixed
 
