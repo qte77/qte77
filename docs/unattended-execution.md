@@ -52,26 +52,29 @@ Three cross-cutting rules make the phases run unattended:
 - **Build-behind-gate.** Ship data-dependent features dormant behind their gate; code never waits on
   data. The feature activates when the data lands in Phase C.
 
-## Plan + handoff artifacts
+## Plan artifact (one per arc)
 
-The single highest-ROI practice: a paired plan + handoff per arc that collapses per-session
-re-onboarding to near zero.
+The single highest-ROI practice: **one** versioned plan per arc, not a paired plan + handoff. Two
+files that must be kept in sync always drift; a plan that opens with its own current status removes
+the drift risk and the "read the handoff first, the plan second" ritual along with it.
 
-- **Pairing.** `docs/plans/NNN-slug.md` + `docs/handoffs/NNN-slug.md`, same number, kebab slug. Match
-  the repo's existing digit width (this repo uses 3-digit `NNN`; some estate repos use 4-digit).
-  Findings reuse the number with a `-findings` suffix.
-- **The plan carries a `file:line` source map** — a "touch without re-mapping" table of exact files,
-  symbols, and line refs for every change, marked session-verified with a date. This is what lets a
-  cold or compacted session act without re-exploring. See an existing plan under [`plans/`](plans/) for
-  the canonical shape.
-- **The handoff onboards the next session**: dated state (branch, prod version, shipped PRs), the
-  ordered next steps with done-whens, the loop, owner-gates, exact commands, and inherited gotchas.
-  Read the handoff first, the plan second.
-- **Keep plan + handoff + `MEMORY.md` in sync at every milestone.** Close an arc by migrating its entire
-  remainder to the next `NNN` — never strand work in a closed arc.
+- **One file.** `docs/plans/NNN-slug.md` — this repo's existing 3-digit `NNN` convention (the estate
+  rule's canonical name is the dated `YYYY-MM-DD-NNNN-slug.md`; some estate repos already use that
+  4-digit form). No separate handoff file, no `handoffs/` folder. Findings reuse the number with a
+  `-findings` suffix.
+- **Opens with status, not a title + abstract.** The plan's own opening answers what shipped, what's
+  next in order, the loop, owner-gates, the exact commands, and inherited watch-outs — everything a
+  cold or compacted session needs before reading anything else. An existing paired handoff's content
+  folds in here, then the handoff file is deleted.
+- **Then the `file:line` source map** — a "touch without re-mapping" table of exact files, symbols,
+  and line refs for every change, marked session-verified with a date. See an existing plan under
+  [`plans/`](plans/) for the canonical shape.
+- **Keep the plan (status + source map) + `MEMORY.md` in sync at every milestone.** Close an arc by
+  migrating its entire remainder to the next `NNN` — never strand work in a closed arc.
+- **Exactly one remaining-work list per plan**, struck in the same PR that ships each row — see the
+  rule for the full constraint.
 
-Templates: [`templates/plan.template.md`](templates/plan.template.md),
-[`templates/handoff.template.md`](templates/handoff.template.md).
+Template: [`templates/plan.template.md`](templates/plan.template.md).
 
 ## Quality gates
 
@@ -117,7 +120,7 @@ target and the ACE-FCA quality equation. Unattended-specific:
 - **Configure compaction, do not just intend it.** The model cannot self-trigger `/compact`. Set
   `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` (e.g. `50`) to fire auto-compact earlier (main + subagents) and a
   `SessionStart:compact` hook that re-onboards the agent post-compaction (re-read the newest
-  handoff+plan; keep conclusions, drop noise). Snippet:
+  plan's opening status; keep conclusions, drop noise). Snippet:
   [`templates/settings.unattended.jsonc`](templates/settings.unattended.jsonc).
 - **What to preserve on compaction:** the current arc + its state, this session's shipped PR list,
   ordered next steps + done-whens, branch/PR/CI state + anything uncommitted, parked owner-gated items +
@@ -134,9 +137,10 @@ Learned from prior runs, in ROI order:
 - **Subagent discovery + verification aggressively — the single biggest lever.** Raw file reads dominate
   token spend (they can eat the majority of a window); isolating them in subagents keeps the dumps out
   of the main window entirely, so compaction fires later and loses less. Do this before tuning anything.
-- **Add a `PreCompact` archive hook — the highest-ROI config change.** It flushes a rich handoff to disk
-  (and may gate) *before* the summary replaces the window; it never itself triggers compaction. That
-  turns a compaction from a loss into a checkpoint. Pair it with the handoff format.
+- **Add a `PreCompact` archive hook — the highest-ROI config change.** It flushes the plan's opening
+  status to disk (and may gate) *before* the summary replaces the window; it never itself triggers
+  compaction. That turns a compaction from a loss into a checkpoint. Pair it with the plan template's
+  opening-status block.
 - **"Compact at each phase transition" is not directly triggerable** — the model cannot fire `/compact`;
   only the `%` threshold or a manual call does. Practical substitutes: (a) **tune the threshold** — an
   aggressive value (e.g. 50) fires often and risks firing mid-task, a higher value (~65-70) gives more
@@ -167,10 +171,10 @@ where you were.
 - **auto-memory** (`MEMORY.md` index + an arc-state file) — the wake-up briefing loaded at session
   start: the shipped list, the exact one-step resume command, branch/commit refs, deferred items, and
   the parked owner-gates.
-- **plan + handoff docs** — the versioned source map + onboarding in the repo.
+- **the plan doc** — the versioned source map + onboarding in the repo, opening with current status.
 
-Keep all three in sync each milestone. The common miss: memory gets synced but the plan/handoff are left
-stale by a few shipped items — memory then holds the resume-critical facts while the canonical docs lag.
+Keep all three in sync each milestone. The common miss: memory gets synced but the plan is left stale
+by a few shipped items — memory then holds the resume-critical facts while the canonical doc lags.
 Fold a `docs(NNN)` sync into the next wrap-up so all three layers agree.
 
 ### Ephemeral by design — mine, then prune
@@ -178,7 +182,7 @@ Fold a `docs(NNN)` sync into the next wrap-up so all three layers agree.
 Two of those three layers are durable only *against compaction*, not against the repo's lifetime. Draw
 the line explicitly:
 
-- **Ephemeral working state** — plans, handoffs, findings, `MEMORY.md` / auto-memory, session summaries.
+- **Ephemeral working state** — plans, findings, `MEMORY.md` / auto-memory, session summaries.
   These exist to carry an arc across sessions and compactions. They are **not** permanent documentation.
 - **Durable SOT** — committed code + git history (commit/PR bodies), ADRs, `AGENT_LEARNINGS.md`, and
   `.claude/rules/`. This is what outlives the arc.
@@ -186,7 +190,7 @@ the line explicitly:
 Run a **regular evaluation cadence** over the ephemeral set: **mine** each artifact for any durable
 learning and promote it to the SOT (a learning to `AGENT_LEARNINGS.md`, a recurring constraint to a
 rule, a decision to an ADR, the *why* into a commit body), then **prune** the artifact — delete a closed
-arc's plan/handoff/findings, compress a bloated memory file to current state, drop stale session notes.
+arc's plan/findings, compress a bloated memory file to current state, drop stale session notes.
 Compression is the anti-graveyard quality gate: distil, do not accumulate. An arc that has shipped and
 been mined leaves durable value behind and takes its scaffolding with it.
 
@@ -219,10 +223,10 @@ specifies them; the mechanism lives in the
   settings + governance MD). This is where the kit's rule + templates + autocompact settings must be
   added so new repos inherit them automatically.
 - **Context economy** — the `cc-meta` plugin: `compacting-context` (distil verbose output to a
-  structured template), `handing-off-session` (write a durable handoff from git + conversation),
-  `summarizing-session-end`, plus `researching-codebase` (subagent-isolated discovery, the biggest
-  context lever). The `read-once` dedup hook (`workspace-sandbox`) blocks re-reads to save tokens on
-  long runs.
+  structured template), `handing-off-session` (write the plan's opening-status update from git +
+  conversation), `summarizing-session-end`, plus `researching-codebase` (subagent-isolated discovery,
+  the biggest context lever). The `read-once` dedup hook (`workspace-sandbox`) blocks re-reads to save
+  tokens on long runs.
 - **Docs + git gates** — `docs-governance` (hierarchy + AGENTS.md audits), `security-audit`,
   `readme-generator`, `tdd-core`, `simplify`, and `commit-helper` (commit + PR skills with explicit
   approval pauses — the owner merge gate, respected).
@@ -240,10 +244,11 @@ specifies them; the mechanism lives in the
 - **Auto-firing `PreCompact` + `SessionEnd` archiving** — only a PostCompact cache-clear exists. Wire
   `PreCompact` to `handing-off-session` and `SessionEnd` to `summarizing-session-end` so the flush is
   automatic, not manual-skill-triggered.
-- **Plan+handoff pairing + arc-closure audit** — planning creates plans and `handing-off-session`
-  creates handoffs, but nothing pairs them, builds the source map, or verifies arc closure/prune.
-- **Scaffolded autocompact settings + plan/handoff templates** — add the threshold + `PreCompact` /
-  `SessionStart:compact` hooks and the templates to `workspace-setup`'s deployed set.
+- **Plan opening-status discipline + arc-closure audit** — planning creates plans and
+  `handing-off-session` writes onboarding state, but nothing folds that state into the plan's own
+  opening status, builds the source map, or verifies arc closure/prune.
+- **Scaffolded autocompact settings + a plan template** — add the threshold + `PreCompact` /
+  `SessionStart:compact` hooks and the template to `workspace-setup`'s deployed set.
 - **A scheduled remote monitor** (`.github/workflows/*-monitor.yml`) — credential-free cron probe that
   auto-opens/updates an alert issue on FAIL.
 - **A `git -> gate -> PR -> park` loop skill** chaining the existing gate + `commit-helper` skills and
@@ -256,7 +261,6 @@ specifies them; the mechanism lives in the
   [`compound-learning.md`](../.claude/rules/compound-learning.md),
   [`core-principles.md`](../.claude/rules/core-principles.md)
 - Templates: [`plan.template.md`](templates/plan.template.md),
-  [`handoff.template.md`](templates/handoff.template.md),
   [`settings.unattended.jsonc`](templates/settings.unattended.jsonc)
 - Decision routing: [`project-workflows.md`](project-workflows.md)
 - Learnings: [`../AGENT_LEARNINGS.md`](../AGENT_LEARNINGS.md)
