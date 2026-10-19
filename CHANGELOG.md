@@ -91,9 +91,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `brand/images/logo-mark.text.svg`: `q7_` composition centered in 80×80 canvas using DejaVu metrics (PR #55)
 - `brand/images/logo-wordmark.text.svg`: underscore aligned to visible glyph edges of `t` (left) and last `7` (right) (PR #55)
 - `brand/Makefile` / root `Makefile`: `.SILENT` + `.ONESHELL` for cleaner recipes (PR #55)
+- `AGENTS.md`: the `## Claude Code Infrastructure` Rules line now explains that the shared estate rules load once at user level from `~/.claude/rules/` (symlinked to the claude-code-plugins SoT), not from this repo (owner decision, 2026-10-19); repointed the resulting dangling `.claude/rules/*.md` links in `docs/cto-handbook-mapping.md`, `docs/plans/003-unattended-run-kit.md`, `docs/project-workflows.md`, `docs/unattended-execution.md`, and `AGENT_LEARNINGS.md` to the SoT
 
 ### Removed
 
+- `.claude/rules/{compound-learning,context-management,core-principles,unattended-execution}.md`: dropped the repo's local copies — they now load once at user level from `~/.claude/rules/`, symlinked into the qte77/claude-code-plugins rules SoT, same change as `ai-agents-research#689`. The local `core-principles.md` and `compound-learning.md` were older than the SoT versions, so sessions now get the current text; `context-management.md` and `unattended-execution.md` were already identical
 - `docs/templates/handoff.template.md` and `docs/handoffs/{001,003,004}-*.md`: the handoff template and the three existing per-arc handoffs are removed — each handoff's still-relevant content is folded into the matching plan's new opening `## Status` section (`docs/plans/{001,003,004}-*.md`), per the one-file-per-arc contract
 
 ### Fixed

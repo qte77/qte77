@@ -1,8 +1,8 @@
 # Unattended execution
 
 The estate contract for **long-running, e2e hands-off unattended sessions** with minimal supervision.
-This is the depth companion to the always-loaded rule
-[`.claude/rules/unattended-execution.md`](../.claude/rules/unattended-execution.md) — the rule is the
+This is the depth companion to the always-loaded shared
+[`unattended-execution`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md) rule — the rule is the
 constraint, this page is the rationale, the mechanism spec, and the templates that instantiate it.
 
 Distilled from **learnings across prior unattended runs, tasks, and projects** in the estate — several
@@ -145,7 +145,7 @@ The verification's exit code IS the status. A run either self-certifies or fails
 
 ## Context economy
 
-See [`.claude/rules/context-management.md`](../.claude/rules/context-management.md) for the 40-60%
+See the shared [`context-management`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/context-management.md) rule for the 40-60%
 target and the ACE-FCA quality equation. Unattended-specific:
 
 - **Configure compaction, do not just intend it.** The model cannot self-trigger `/compact`. Set
@@ -290,10 +290,10 @@ specifies them; the mechanism lives in the
 
 ## Refs
 
-- Rule: [`.claude/rules/unattended-execution.md`](../.claude/rules/unattended-execution.md)
-- Related rules: [`context-management.md`](../.claude/rules/context-management.md),
-  [`compound-learning.md`](../.claude/rules/compound-learning.md),
-  [`core-principles.md`](../.claude/rules/core-principles.md)
+- Rule: the shared [`unattended-execution`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md) rule
+- Related rules: [`context-management`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/context-management.md),
+  [`compound-learning`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/compound-learning.md),
+  [`core-principles`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/core-principles.md)
 - Templates: [`plan.template.md`](templates/plan.template.md),
   [`settings.unattended.jsonc`](templates/settings.unattended.jsonc)
 - Decision routing: [`project-workflows.md`](project-workflows.md)

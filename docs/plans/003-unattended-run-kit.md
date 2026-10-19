@@ -127,6 +127,6 @@ routine (aligns with the existing `CONTRIBUTING.template.md` line).
 ## Refs
 
 - Contract: [`../unattended-execution.md`](../unattended-execution.md);
-  rule [`../../.claude/rules/unattended-execution.md`](../../.claude/rules/unattended-execution.md).
+  rule: the shared [`unattended-execution`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md) rule.
 - Related rules: `context-management.md`, `compound-learning.md`, `core-principles.md`.
 - Related arcs: this repo's `plans/001` (source-map shape precedent).

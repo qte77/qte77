@@ -4,7 +4,7 @@ Unified decision flow for intra-project execution and inter-project orchestratio
 
 For **long-running, e2e hands-off unattended** sessions (the phase shape, owner-gates, verification loop,
 and the recurring footguns), see the [unattended-execution contract](unattended-execution.md) and its
-always-loaded rule [`.claude/rules/unattended-execution.md`](../.claude/rules/unattended-execution.md).
+always-loaded shared [`unattended-execution`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md) rule.
 
 ## Multi-Repo Agent Architecture
 
