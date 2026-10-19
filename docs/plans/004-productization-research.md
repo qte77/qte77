@@ -1,8 +1,7 @@
 ---
 status: proposed — not started
 phase: Phase A — market/competition/ICP research fan-out
-handoff: ../handoffs/004-productization-research.md
-updated: 2026-08-03
+updated: 2026-10-19
 ---
 
 # Productization research — market, competition, ICP, USP for the qte77 approach
@@ -12,8 +11,47 @@ Decide whether — and as what — the qte77 approach is sellable: the orchestra
 [office-forge](https://github.com/qte77/office-forge-orchestrator)) as the adoption wedge, and the
 BRD/PRD/FRD → OKR/KPI governance layer as the paid tier. This arc produces **research + a BRD, not
 code**; PRD/FRD and any implementation are downstream. This doc is the source map so a fresh session
-executes without re-exploring; read the paired [handoff](../handoffs/004-productization-research.md)
-first.
+executes without re-exploring; the status below is the onboarding — read it first.
+
+## Status (2026-10-19)
+
+- **Shipped:** nothing yet — Stage 0 (this plan) is the only artifact to date; no PR has landed since
+  #182 (which shipped the plan itself). Branch/sync note from the plan's authoring (2026-08-03) is
+  stale and superseded: arc 003's files are committed (#181) and its rule further revised (#193).
+- **Next, in order:** launch the Phase A research fan-out (backlog #1-#4) as a dynamic workflow —
+  three lanes (comparables x7, ICP/JTBD x4, category+competition x2), each agent returning a fixed
+  schema with a mandatory `sources: []` field, then an adversarial verify stage that drops any claim
+  without a source URL. Target 12-15 agents (medium size guideline). Write findings to
+  `docs/plans/004-productization-research-findings.md` — structured findings only, never raw search
+  dumps (`.claude/rules/context-management.md`). Then #5 (re-run the "What fell" table under the
+  commercial frame — this arc's intellectual core), then #6-#8 (positioning, pricing, BRD;
+  single-threaded, synthesis does not parallelize), then #9-#10 (pre-stage the tracking issue,
+  `goals.json` entries, interview guide). **Do NOT start with the PRD/FRD** — writing requirements
+  before the market research is exactly the yak-shave `operating-model.md:79-80` names as the single
+  most likely failure mode ("the cure is the disease").
+- **The loop:** sources or it did not happen — every market/pricing/ICP claim carries a URL or moves
+  to an explicit assumptions list; assert nothing about the named companies from priors (especially
+  monaco.com, whose GTM archetype is unverified here). This replaces "RED first" as this arc's
+  quality gate — there is no code. Docs gate before pushing: `markdownlint $(git ls-files '*.md')` and
+  `lychee $(git ls-files '*.md')`, whole, not à la carte, gated with `if … then … else exit 1`, never
+  `set -e` (`AGENT_LEARNINGS.md` — `set -e` did not abort here and shipped violating commits twice).
+  Match the target file's emphasis char before editing (this file is underscore-italic; MD049 is
+  per-file). Merge is an owner gate — park the green PR, never auto squash-merge.
+- **Owner-gates:** none block Phase A. The first hard gate is #11 (BRD go/no-go + outreach
+  authorization) after the BRD lands — full pre-staged table in "Owner-gates" below. Do NOT open
+  issues, commit `goals.json`, or contact anyone before that owner sitting.
+- **Commands:** `markdownlint $(git ls-files '*.md')` + `lychee $(git ls-files '*.md')` — see
+  "Verification" below.
+- **Watch-outs:** prefix every `git`/`gh` with `env -u GH_TOKEN -u GITHUB_TOKEN`; commit
+  `--no-gpg-sign` and `-F <file>` (never `-m` — backticks/`$()` get shell-substituted). Cross-repo: the
+  orchestrators are sibling repos — do not `Read` their files from a qte77 session for content work
+  (the implicit `CLAUDE.md` cascade fires on `Read`); the source map below already carries what you
+  need, delegate to a subagent inside the target repo for more. Do not create a second tracking
+  system — BRD/PRD/FRD plugs into the existing rails at `docs/goals.md:41-55` step 1; GitHub Issues
+  stay the SOT. `AGENT_LEARNINGS.md` has a stale-by-frame entry ("Calibrate adversarial / moat
+  red-teams to the actual purpose") that backlog #14 amends — until then it wrongly reads as voiding
+  the commercial cuts this arc re-arms. Findings + this arc's scaffolding are ephemeral; do not let
+  `004-productization-research-findings.md` become a permanent doc.
 
 ## Why
 
@@ -86,7 +124,7 @@ BRD that either survives or kills the idea cheaply.
 
 | File | Role |
 | --- | --- |
-| `.claude/rules/unattended-execution.md` | Phase A/B/C shape; arc = plan+handoff pair; ephemeral-scaffolding rule; merge is an owner gate |
+| `.claude/rules/unattended-execution.md` | Phase A/B/C shape; arc = one dated plan file with its own opening status (no handoff file); merge is an owner gate |
 | `docs/doc-structure.md` | README/CONTRIBUTING/AGENTS split — any product-facing README this arc proposes must conform |
 | `.claude/rules/context-management.md` | Incorrect > missing > noisy. Drives the adversarial-verify stage on every market claim |
 
@@ -166,7 +204,6 @@ an unsourced-but-confident BRD is a _worse_ outcome than no BRD.
 
 ## Refs
 
-- Paired handoff: [`004-productization-research`](../handoffs/004-productization-research.md)
 - [`docs/operating-model.md`](../operating-model.md) — the prior commercial verdict this arc re-arms
 - [`docs/goals.md`](../goals.md) — the 7-step loop the BRD/PRD/FRD layer plugs into
 - [`docs/cto-handbook-mapping.md`](../cto-handbook-mapping.md) — existing external-reference framing

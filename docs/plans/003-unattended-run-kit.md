@@ -1,8 +1,7 @@
 ---
-status: in progress — Phase A authored, uncommitted, pending owner review
-phase: Phase A (author the contract) done; Phase B (owner review + commit) next
-handoff: ../handoffs/003-unattended-run-kit.md
-updated: 2026-07-29
+status: shipped (PR #181); Phase C rollout backfill still open
+phase: Phase C — rollout backfill
+updated: 2026-10-19
 ---
 
 # Unattended-run kit — the estate contract for hands-off e2e sessions
@@ -10,8 +9,32 @@ updated: 2026-07-29
 Codify, once, the contract for **long-running e2e hands-off unattended Claude Code sessions**, distilled
 from learnings across prior runs, tasks, and projects in the estate. Contract-only: this repo owns the
 rule, guide, templates, and learnings; the runnable mechanism is derived downstream per the
-META -> MECHANISM split ([`doc-structure.md`](../doc-structure.md)). Onboarding + loop:
-[handoff 003](../handoffs/003-unattended-run-kit.md).
+META -> MECHANISM split ([`doc-structure.md`](../doc-structure.md)). The status below is the
+onboarding — read it first.
+
+## Status (2026-10-19)
+
+- **Shipped:** the contract landed via PR #181 (2026-09-21) — rule, depth guide, both templates, the
+  `AGENT_LEARNINGS.md` entry, and the README/`project-workflows.md` wiring. The owner then revised the
+  rule in place via PR #193 (2026-10-11): one dated plan per arc, no handoff files. This PR folds that
+  decision through this depth guide, its template, and the three existing arcs that still paired a
+  plan with a handoff (001/003/004) — see the "Source map" table below for what changed.
+- **Next, in order:** Phase C rollout backfill — carry the rule + autocompact settings snippet into
+  estate repos that run hands-off but lack them. No tracking issue was ever opened for this; open one
+  before backfilling (decide-by-default: all hands-off-capable repos, highest-traffic first).
+- **The loop:** docs-only arc — the gate is `markdownlint` + lychee link-check, not a code gate. These
+  files are asterisk-emphasis (MD049 is per-file) and hyphen bullets (MD004 is per-file) — match them.
+  Before any commit touching the kit files, grep for the private-repo name set (the
+  built-in-the-open guarantee).
+- **Owner-gates:** commit/merge of this arc is **done** (PR #181). The remaining gate is rollout
+  scope — which repos get backfilled, and in what order.
+- **Commands:** `markdownlint` + lychee, whole repo — see "Verification" below.
+- **Watch-outs:** the kit is contract-only — resist adding a runnable `ui_sweep.py` / `workflow.js`
+  here; that belongs downstream per the META -> MECHANISM split (a new engine/plugin arc, not this
+  one). `settings.unattended.jsonc` is a template **with comments** — real `settings.json` is strict
+  JSON; strip the comments when merging into a repo. Prefix every `git`/`gh` with
+  `env -u GH_TOKEN -u GITHUB_TOKEN`; commit `--no-gpg-sign` and `-F` (not `-m`). Full list:
+  [unattended tax](../unattended-execution.md#the-unattended-tax).
 
 ## Why
 
@@ -36,14 +59,14 @@ rebuilding it. This is the same generalize-once move the estate already makes fo
 
 | File | Content | Status |
 | --- | --- | --- |
-| `.claude/rules/unattended-execution.md` | Always-loaded constraints: phase shape, gates, verification, the unattended tax as hard rules | authored, uncommitted |
-| `docs/unattended-execution.md` | Depth contract: rationale, phase shape, quality gates, verification loop, context economy, tax table, mechanism spec + downstream pointers | authored, uncommitted |
-| `docs/templates/plan.template.md` | Plan skeleton: source map, decide-by-default, phase plan, done-whens, owner-gates, verification | authored, uncommitted |
-| `docs/templates/handoff.template.md` | Handoff skeleton: state, order, working style, owner-gates, gotchas | authored, uncommitted |
-| `docs/templates/settings.unattended.jsonc` | Harness config: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` + `SessionStart:compact` re-onboard hook | authored, uncommitted |
-| `AGENT_LEARNINGS.md` | One entry linking the codified contract (no footgun duplication — DRY into the rule) | authored, uncommitted |
-| `README.md`, `docs/project-workflows.md` | Refs/pointer wiring to the new contract | authored, uncommitted |
-| `CHANGELOG.md` | `### Added` entry (Unreleased) for the kit | authored, uncommitted |
+| `.claude/rules/unattended-execution.md` | Always-loaded constraints: phase shape, gates, verification, the unattended tax as hard rules | shipped (#181); revised to one-file-per-arc by the owner (#193, 2026-10-11) |
+| `docs/unattended-execution.md` | Depth contract: rationale, phase shape, quality gates, verification loop, context economy, tax table, mechanism spec + downstream pointers | shipped (#181); updated for one-file-per-arc (this PR) |
+| `docs/templates/plan.template.md` | Plan skeleton: source map, decide-by-default, phase plan, done-whens, owner-gates, verification | shipped (#181); gained the opening-status block (this PR) |
+| `docs/templates/handoff.template.md` | Handoff skeleton: state, order, working style, owner-gates, gotchas | shipped (#181); **removed** — folded into `plan.template.md`'s opening status (this PR, one-file-per-arc) |
+| `docs/templates/settings.unattended.jsonc` | Harness config: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` + `SessionStart:compact` re-onboard hook | shipped (#181) |
+| `AGENT_LEARNINGS.md` | One entry linking the codified contract (no footgun duplication — DRY into the rule) | shipped (#181) |
+| `README.md`, `docs/project-workflows.md` | Refs/pointer wiring to the new contract | shipped (#181) |
+| `CHANGELOG.md` | `### Added` entry (Unreleased) for the kit | shipped (#181) |
 
 ## Phase plan (non-blocked A/B/C)
 
@@ -61,20 +84,20 @@ rebuilding it. This is the same generalize-once move the estate already makes fo
      [`../unattended-execution.md`](../unattended-execution.md#mechanism-derived-downstream): (a) add
      the `unattended-execution` rule + templates + autocompact settings to `workspace-setup`'s deployed
      set (highest leverage; must carry the core-principles reconciliation); (b) a browser-sweep skill +
-     run manifest; (c) auto-firing `PreCompact`/`SessionEnd` archiving in `cc-meta`; (d) plan+handoff
-     pairing + arc-closure audit; (e) a `git -> gate -> PR -> park` loop skill.
+     run manifest; (c) auto-firing `PreCompact`/`SessionEnd` archiving in `cc-meta`; (d) plan
+     opening-status discipline + arc-closure audit; (e) a `git -> gate -> PR -> park` loop skill.
   3. Apply the full kit to the next greenfield-for-unattended build as its first arc.
 
 ## Backlog (done-when each)
 
 - [x] Author rule + guide + 3 templates + learnings entry — *done-when:* files exist, project-name-clean.
 - [x] Wire README Refs + `project-workflows.md` decision-flow pointer + CHANGELOG entry — *done-when:* all link/record the kit.
-- [ ] Owner review + commit/merge decision — *done-when:* owner approves; arc committed per owner style.
+- [x] Owner review + commit/merge decision — *done-when:* owner approves; arc committed per owner style. Shipped PR #181.
 - [ ] Rollout backfill (Phase C) — *done-when:* each targeted repo loads the rule; tracked on the issue.
 
 ## Owner-gates (the only blockers)
 
-- **Commit / merge** of this arc — owner reviews the diff and decides (agent will not merge).
+- **Commit / merge** of this arc — done, PR #181 (2026-09-21).
 - **Rollout scope** — which repos get backfilled, and in what order (decide-by-default: all
   hands-off-capable repos, highest-traffic first).
 
