@@ -83,7 +83,7 @@ scoped to that repo's slice:
 
 [handbook]: https://github.com/ZachGoldberg/Startup-CTO-Handbook
 [arch]: architecture.md
-[cl]: ../.claude/rules/compound-learning.md
+[cl]: https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/compound-learning.md
 [polyforge-orchestrator]: https://github.com/qte77/polyforge-orchestrator
 [office-forge-orchestrator]: https://github.com/qte77/office-forge-orchestrator
 [ai-agents-research]: https://github.com/qte77/ai-agents-research

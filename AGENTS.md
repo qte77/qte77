@@ -15,7 +15,7 @@ hierarchy, see [CONTRIBUTING.md](CONTRIBUTING.md). For project overview, see
 
 ## Claude Code Infrastructure
 
-**Rules** (`.claude/rules/`): Session-loaded constraints (always active)
+**Rules**: Session-loaded constraints (always active). The shared estate rules (core principles, context management, compound learning, unattended execution, …) load at user level from `~/.claude/rules/`, symlinked to the [claude-code-plugins rules SoT](https://github.com/qte77/claude-code-plugins/tree/main/.claude/rules); `.claude/rules/` holds only rules specific to this repo. Sessions on another machine, in the cloud or in GHA don't get the user-level rules.
 **Skills** (`.claude/skills/`): Modular capabilities with progressive disclosure
 
 ## Core Rules & AI Behavior
