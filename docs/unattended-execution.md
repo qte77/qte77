@@ -76,6 +76,37 @@ the drift risk and the "read the handoff first, the plan second" ritual along wi
 
 Template: [`templates/plan.template.md`](templates/plan.template.md).
 
+## Driving Phase A with `/goal`
+
+Phase A is where Claude Code's `/goal` fits: one session works the agent-runnable backlog without a
+prompt per turn and stops at the Phase B checkpoint. The plan stays the goal across sessions; `/goal`
+is session-scoped (`/clear` removes it). General mechanics and failure modes:
+[CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md).
+
+- **Name the plan, don't paste it** — the condition is capped at 4,000 characters.
+- **Scope = the Phase A backlog.** Every `- [ ]` item under Backlog; the Owner-gates section is out of
+  scope by construction, so the goal is met when only owner gates remain.
+- **End state = Phase B pre-staged**: each item's done-when verified and its PR (if any) open with the
+  repo gate green and parked — never "merged"; merge is an owner gate.
+- **Evidence in the transcript.** The evaluator does not run commands or read files, so the final turn
+  prints the Backlog lines still unchecked and `gh pr view <N> --json state,statusCheckRollup` for each
+  PR.
+- **Constraints**: decide-by-default (park decisions, don't ask); never `--admin`, never relax branch
+  protection; add a turn bound.
+- **Run it in auto mode** (`/goal` does not change permission mode); headless:
+  `claude -p "/goal …" --output-format stream-json --verbose`.
+
+```text
+/goal Every "- [ ]" item in the Backlog section of docs/plans/NNN-slug.md is checked,
+its done-when verified, and its PR (if any) open with the repo gate green. Prove it in
+your final turn by printing the Backlog lines still unchecked and
+`gh pr view <N> --json state,statusCheckRollup` for each PR. The Owner-gates section is
+out of scope. Decide by default and park decisions; never merge, never use --admin.
+Or stop after 40 turns.
+```
+
+This recipe is untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
+
 ## Quality gates
 
 - **One canonical gate == CI.** Run the exact CI gate locally, whole, before pushing — the repo's
@@ -253,6 +284,9 @@ specifies them; the mechanism lives in the
   auto-opens/updates an alert issue on FAIL.
 - **A `git -> gate -> PR -> park` loop skill** chaining the existing gate + `commit-helper` skills and
   stopping at the owner merge gate.
+- **A plan-backlog Stop hook** — a `command` Stop hook that blocks while unchecked Phase A backlog
+  items remain (exit 2 with the open items on stderr; check `stop_hook_active` so it can't block
+  forever). The deterministic counterpart to `/goal`, which only judges what the transcript shows.
 
 ## Refs
 
