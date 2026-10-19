@@ -14,9 +14,9 @@ onboarding — read it first.
 
 ## Status (2026-10-19)
 
-- **Shipped:** the contract landed via PR #181 (2026-09-21) — rule, depth guide, both templates, the
+- **Shipped:** the contract landed via PR #181 (2026-09-21) — rule, depth guide, three templates, the
   `AGENT_LEARNINGS.md` entry, and the README/`project-workflows.md` wiring. The owner then revised the
-  rule in place via PR #193 (2026-10-11): one dated plan per arc, no handoff files. This PR folds that
+  rule in place via PR #193 (2026-10-11): one dated plan per arc, no handoff files. PR #195 folded that
   decision through this depth guide, its template, and the three existing arcs that still paired a
   plan with a handoff (001/003/004) — see the "Source map" table below for what changed.
 - **Next, in order:** Phase C rollout backfill — carry the rule + autocompact settings snippet into
@@ -60,9 +60,9 @@ rebuilding it. This is the same generalize-once move the estate already makes fo
 | File | Content | Status |
 | --- | --- | --- |
 | `.claude/rules/unattended-execution.md` | Always-loaded constraints: phase shape, gates, verification, the unattended tax as hard rules | shipped (#181); revised to one-file-per-arc by the owner (#193, 2026-10-11) |
-| `docs/unattended-execution.md` | Depth contract: rationale, phase shape, quality gates, verification loop, context economy, tax table, mechanism spec + downstream pointers | shipped (#181); updated for one-file-per-arc (this PR) |
-| `docs/templates/plan.template.md` | Plan skeleton: source map, decide-by-default, phase plan, done-whens, owner-gates, verification | shipped (#181); gained the opening-status block (this PR) |
-| `docs/templates/handoff.template.md` | Handoff skeleton: state, order, working style, owner-gates, gotchas | shipped (#181); **removed** — folded into `plan.template.md`'s opening status (this PR, one-file-per-arc) |
+| `docs/unattended-execution.md` | Depth contract: rationale, phase shape, quality gates, verification loop, context economy, tax table, mechanism spec + downstream pointers | shipped (#181); updated for one-file-per-arc (#195) |
+| `docs/templates/plan.template.md` | Plan skeleton: source map, decide-by-default, phase plan, done-whens, owner-gates, verification | shipped (#181); gained the opening-status block (#195) |
+| `docs/templates/handoff.template.md` | Handoff skeleton: state, order, working style, owner-gates, gotchas | shipped (#181); **removed** — folded into `plan.template.md`'s opening status (#195, one-file-per-arc) |
 | `docs/templates/settings.unattended.jsonc` | Harness config: `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` + `SessionStart:compact` re-onboard hook | shipped (#181) |
 | `AGENT_LEARNINGS.md` | One entry linking the codified contract (no footgun duplication — DRY into the rule) | shipped (#181) |
 | `README.md`, `docs/project-workflows.md` | Refs/pointer wiring to the new contract | shipped (#181) |

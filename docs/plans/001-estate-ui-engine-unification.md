@@ -44,7 +44,7 @@ the onboarding — read it first, then "Source map" and "REMAINING" below.
   shadow the real credential → 403 on writes); commit `--no-gpg-sign`, identity
   `qte77 <93844790+qte77@users.noreply.github.com>`; `--admin` merges bypass ONLY the signature gate,
   never a failing/absent status check; plain-text docs — no emoji/checkmarks/glyphs; azure has no
-  typechecker in CI — flag, don't fix.
+  typechecker in CI — flag, don't fix; arc memory: `project_ui_engine_unification.md`.
 
 ## Why
 
@@ -180,7 +180,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   wire `A2UISurface`'s `onAction` to the actionBridge; NEW `ui/.npmrc`.
 - Adopt `detectInjection` browser-side at the composer submit seam. NEW behavior test: flagged input
   → refusal/stub path.
-- Docs: CHANGELOG; `docs/plans|handoffs/015` pair; `docs/README` index; `.github/CONTRIBUTING.md`
+- Docs: CHANGELOG; `docs/plans/015` (one file per arc); `docs/README` index; `.github/CONTRIBUTING.md`
   (.npmrc/token); AGENTS.md pointer. Separate tiny branch (out of scope here): fix
   `worker/README.md:61` keyless "Deferred" → shipped + document TURNSTILE_SECRET/OPENROUTER_KEY/
   OPENROUTER_FREE_MODELS.
@@ -198,7 +198,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
 - MODIFY: `ui/package.json`, `worker/src/worker.ts` (import `detectInjection` from the package),
   `.npmrc` in `ui/` + `worker/`.
 - NEW behavior test: USAGE chip renders via `renderExtra` (`ui/tests/`).
-- Docs: CHANGELOG; `docs/plans|handoffs/009` pair; `docs/design.md` (theme now from `@qte77/ui-theme`,
+- Docs: CHANGELOG; `docs/plans/009` (one file per arc); `docs/design.md` (theme now from `@qte77/ui-theme`,
   DESIGN.md still SSOT); `docs/architecture.md`; AGENTS.md "Reuse" line. Open small issue "worker/
   lacks eslint config". Comment #5.
 - Gate: gitleaks + semgrep + ui lint/typecheck/test/build + worker typecheck/test green.
@@ -213,7 +213,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   valid fixture parses via `Workflow.model_validate`; invalid fixtures rejected; round-trip
   `from_yaml(...).model_dump()` re-validates. Do NOT touch `core/runner.py` (plan 018's job).
 - Docs: **scriv fragment** in `changelog.d/` (required pre-merge; not a direct CHANGELOG edit);
-  `docs/plans|handoffs/019` pair (note the no-typechecker gap); MADR ADR beside
+  `docs/plans/019` (one file per arc; note the no-typechecker gap); MADR ADR beside
   `docs/decisions/0004-workflow-runtime.md`; CONTRIBUTING fixture-sync command. Passing fix: add
   `DOC_WF_REQUIRE_PRINCIPAL_HEADER` + `DOC_WF_MAX_UPLOAD_FILES` (`core/settings.py:53-56`) to the
   CONTRIBUTING config table + `.env.example`.
@@ -230,7 +230,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
   the schema (ajv devDep, test-only); invalid fixtures rejected by `assertUsecaseDef`; the rename is
   covered by existing usecase tests going red-then-green.
 - Docs: CHANGELOG; `usecases/README.md` + `docs/usecase-workflows.md` rewritten against the contract
-  (document USAGE as a B-local SSE extension); `docs/plans|handoffs/010` pair.
+  (document USAGE as a B-local SSE extension); `docs/plans/010` (one file per arc).
 - Gate: worker typecheck/test + gitleaks/semgrep green; demo smoke `/run?usecase=founders-copilot`.
 
 ## Token constraint (Phases 4/5 only)

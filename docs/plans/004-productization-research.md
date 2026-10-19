@@ -16,8 +16,7 @@ executes without re-exploring; the status below is the onboarding — read it fi
 ## Status (2026-10-19)
 
 - **Shipped:** nothing yet — Stage 0 (this plan) is the only artifact to date; no PR has landed since
-  #182 (which shipped the plan itself). Branch/sync note from the plan's authoring (2026-08-03) is
-  stale and superseded: arc 003's files are committed (#181) and its rule further revised (#193).
+  #182 (which shipped the plan itself). No branch in flight.
 - **Next, in order:** launch the Phase A research fan-out (backlog #1-#4) as a dynamic workflow —
   three lanes (comparables x7, ICP/JTBD x4, category+competition x2), each agent returning a fixed
   schema with a mandatory `sources: []` field, then an adversarial verify stage that drops any claim
