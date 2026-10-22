@@ -100,6 +100,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- `docs/unattended-execution.md`: the `/goal` headless one-liner had no permission mode set, so every unapproved tool call would be denied — from v2.1.302, a headless `claude -p` run starts in Manual mode in that case ([headless docs](https://code.claude.com/docs/en/headless)). Adds `--permission-mode auto --permission-prompts none`; also notes exit codes don't distinguish goal met / impossible / bounded, so check the PR state the final turn prints instead ([CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md))
 - `brand/scripts/install_fonts.py`, `brand/README.md`, `brand/Makefile`: corrected the inaccurate "all fonts are SIL OFL 1.1" claim — the downloader pulls three license families (OFL 1.1, Ubuntu Font Licence 1.0 for Ubuntu Mono, Bitstream Vera + Arev for the canonical DejaVu bake font); docs now list every downloaded font with its actual license and point to `fonts/LICENSES/`
 - `brand/scripts/svg_text_to_paths.py`: honor `letter-spacing` attribute when shaping; previously paths SVGs spaced glyphs further apart than the canonical text SVG (PR #55)
 

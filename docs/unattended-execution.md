@@ -94,7 +94,13 @@ is session-scoped (`/clear` removes it). General mechanics and failure modes:
 - **Constraints**: decide-by-default (park decisions, don't ask); never `--admin`, never relax branch
   protection; add a turn bound.
 - **Run it in auto mode** (`/goal` does not change permission mode); headless:
-  `claude -p "/goal …" --output-format stream-json --verbose`.
+  `claude -p "/goal …" --permission-mode auto --permission-prompts none --output-format stream-json --verbose`.
+  From v2.1.302, a headless `claude -p` run starts in Manual mode when nothing sets a permission mode,
+  and an unapproved tool call is denied there — see the
+  [headless docs](https://code.claude.com/docs/en/headless). Exit codes don't distinguish goal met /
+  impossible / bounded (only 0 on success, non-zero on failure, 143 on SIGTERM are documented), so check
+  the PR state the final turn prints, not the exit code — detail:
+  [CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md).
 
 ```text
 /goal Every "- [ ]" item in the Backlog section of docs/plans/NNN-slug.md is checked,
