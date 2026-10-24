@@ -75,7 +75,7 @@ quotes it; do not redefine the model here.
 | Artifact | Scope | Writers |
 | -------- | ----- | ------- |
 | **GitHub Issues** | Canonical task SOT (per `ontology.json`: `entity: issue`, `persisted: true`) | human, agent, GHA |
-| **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | machine-written by `cc-parallel.sh` |
+| **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | maintained by hand |
 | **[`.github-private-project-tracker`][tracker]** | Per-repo tactical issue mirror; bidirectional sync via [`gha-cross-repo-issue-sync`][sync] (close/reopen/labels propagate) | tracker GHA + maintainers |
 | **`goals.json`** (this repo) | Workspace OKRs / strategic goals | humans only |
 
