@@ -71,6 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `AGENTS.md`: corrected the `contributions.json` Writers cell in the task-tracking authority table — verified 2026-10-23 that `scripts/cc-parallel.sh` never reads or writes that file (it has no `contribute` preset); the file is maintained by hand, not machine-written
 - `docs/unattended-execution.md` + `docs/templates/plan.template.md` + `docs/plans/{001,003,004}-*.md`: the estate contract moves from a paired plan + handoff per arc to **one file per arc** (owner decision, 2026-10-19), matching the already-revised rule (`.claude/rules/unattended-execution.md`, PR #193). The plan template gains an opening `## Status` block (shipped / next-in-order / the loop / owner-gates / commands / watch-outs); the depth guide's "Plan + handoff artifacts" section is rewritten as "Plan artifact (one per arc)" and every other handoff reference in it now describes the single plan file; `AGENT_LEARNINGS.md`'s reference line drops the template it no longer cites
 - `brand/DESIGN.md`: fixed a stale-docs gap — the SaaS variant (added in a prior PR) was missing from the Overview prose and the Variants table; both now list all four secondary variants (Green, BluBlock, Dusk, SaaS)
 - `brand/ui-kit/package.json`: `@qte77/ui-theme` `0.2.0` → `0.3.0` (additive: `--color-link`, `--radius-full`)
