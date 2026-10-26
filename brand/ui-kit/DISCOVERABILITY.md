@@ -52,14 +52,11 @@ Optimizing so autonomous agents can **find, parse, and act**:
 
 ## Roadmap
 
-Part of the master roadmap in [`BASELINE.md`](BASELINE.md) — this is the SEO/GEO/ASO subset.
-
-- [x] **SEO head partial** — shipped: `seo.js` (builder) + `seo.html` (template); meta +
-      canonical + OG / Twitter + JSON-LD (`BlogPosting`/`WebSite`).
-- [ ] **Machine-readability convention (GEO + ASO)** — standardize `llms.txt`
-      (`gha-llms-txt-action`) + JSON-LD + semantic / ARIA + stable selectors so answer-engines
-      and autonomous agents parse the sites consistently.
-- [ ] (later) align interactive agent-driving with AG-UI / A2UI (`agenthud-agui-a2ui`).
+**SEO head partial is shipped** — `seo.js` (builder) + `seo.html` (template); meta +
+canonical + OG / Twitter + JSON-LD (`BlogPosting`/`WebSite`). Remaining work (the GEO/ASO
+machine-readability convention, and later aligning interactive agent-driving with AG-UI / A2UI)
+is tracked in **[issue #111](https://github.com/qte77/qte77/issues/111)** alongside the rest
+of the ui-kit roadmap, not as a second checklist here.
 
 ## See also
 

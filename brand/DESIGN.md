@@ -4,8 +4,9 @@ version: 0.1.0
 description: >-
   qte77 visual identity — warm, low-fatigue, zero-blue, grounded in color
   science. The brand IS EyeRest (qte77's own theme): the default scheme is the
-  flagship warm umber/parchment with an amber accent; Green, BluBlock, Dusk, and
-  SaaS ship as secondary variants. Dual light/dark. Reference tokens, never raw hex.
+  flagship warm umber/parchment with an amber accent; Green, BluBlock, Dusk,
+  SaaS, Terracotta, and Plum ship as secondary variants. Dual light/dark.
+  Reference tokens, never raw hex.
 colors:                        # DEFAULT — EyeRest flagship (warm, amber primary)
   bg: "#ece8d8"
   surface: "#e2dec8"
@@ -142,6 +143,44 @@ variants:
       dark-primary: "#4fae82"
       dark-primary-on: "#14201a"
       dark-link: "#4fae82"       # aliases dark-primary — already clears AA as text (6.3-6.8:1)
+  terracotta:                   # clay / brick-red, analogous-warm of the flagship hue
+    name: EyeRest Terracotta
+    colors:
+      bg: "#f5e9e2"
+      surface: "#ecdcd0"
+      border: "#cfb8a8"
+      text: "#3a2018"
+      text-muted: "#7a5248"
+      primary: "#9c3d1f"
+      primary-on: "#f5e9e2"
+      link: "#9c3d1f"            # aliases primary — already clears AA as text (5.7-5.9:1)
+      dark-bg: "#1d130f"
+      dark-surface: "#271a14"
+      dark-border: "#4a3426"
+      dark-text: "#e8d2c0"
+      dark-text-muted: "#b8927a"
+      dark-primary: "#e8824c"
+      dark-primary-on: "#1d130f"
+      dark-link: "#e8824c"       # aliases dark-primary — already clears AA as text (6.7-6.8:1)
+  plum:                         # muted violet / mulberry, triadic of the flagship hue
+    name: EyeRest Plum
+    colors:
+      bg: "#f2e8ef"
+      surface: "#e8dce6"
+      border: "#c8b4c4"
+      text: "#2e1a2a"
+      text-muted: "#6a4a62"
+      primary: "#7a2e68"
+      primary-on: "#f2e8ef"
+      link: "#7a2e68"            # aliases primary — already clears AA as text (7.2-7.3:1)
+      dark-bg: "#1a1119"
+      dark-surface: "#241a22"
+      dark-border: "#3e2e3a"
+      dark-text: "#e4d0dc"
+      dark-text-muted: "#ab8aa0"
+      dark-primary: "#d072b8"
+      dark-primary-on: "#1a1119"
+      dark-link: "#d072b8"       # aliases dark-primary — already clears AA as text (5.9-6.0:1)
 ---
 
 # qte77 Design System
@@ -151,11 +190,12 @@ variants:
 qte77 looks the way qte77's own product works: **warm, quiet, and zero-blue.**
 The brand is the EyeRest palette — color-science-grounded for low visual fatigue
 (no blue in any accent, no pure black/white, 5:1–10:1 contrast). The default is
-the flagship umber/parchment with an amber accent; four secondary variants
-(Green, BluBlock, Dusk, SaaS) cover preference, blue-filter-lens, and de-blued
-dashboard contexts. Two schemes always ship (light = default for prose, dark =
-default for dashboards). Never hardcode a hex — reference a token so scheme and
-variant flips re-resolve every value.
+the flagship umber/parchment with an amber accent; six secondary variants
+(Green, BluBlock, Dusk, SaaS, Terracotta, Plum) cover preference,
+blue-filter-lens, de-blued dashboard, and warm/cool-without-blue contexts. Two
+schemes always ship (light = default for prose, dark = default for
+dashboards). Never hardcode a hex — reference a token so scheme and variant
+flips re-resolve every value.
 
 ## Colors
 
@@ -270,6 +310,37 @@ values, not silently adjusted:
 
 `data-negative` is never the only signal — pair it with a label or icon.
 
+## Palette derivation
+
+New variants are derived with standard color-wheel harmony rules, not picked
+by eye, so the method is reusable the next time one is added. Adobe Color's
+wheel exposes ten named harmonies — Analogous, Monochromatic, Triad,
+Complementary, Split Complementary, Double Split Complementary, Square,
+Compound, Shades, Custom — each a fixed geometric relationship to one base
+hue ([Adobe Color FAQ](https://helpx.adobe.com/creative-cloud/adobe-color.html);
+note an Adobe staffer has stated its harmonies compute on the **RYB** wheel,
+not RGB/HSB, so exact hue numbers won't match an HSL rotation one-for-one —
+the *relationships* are what transfer). The brand's zero-blue rule excludes
+roughly the 180°–260° hue band outright, which rules out Complementary and
+Split Complementary from the flagship amber base (`primary` `#7a6010`,
+HSL hue ≈ 45°) — both land squarely on blue.
+
+Two harmonies survive the exclusion and were used for the two newest variants:
+
+- **Terracotta** — Analogous, pushed one step further toward red than
+  BluBlock's existing orange (hue ≈ 45° → ≈ 15°): clay/brick, genuinely new
+  hue territory versus the existing amber/green cluster.
+- **Plum** — Triad (hue ≈ 45° → ≈ 45° + 240° = 285°, landing ≈ 300°–315°
+  after the RYB-to-HSL adjustment needed to keep it a clean violet rather than
+  blue-violet): muted mulberry, the brand's first variant outside the
+  amber/green hue families.
+
+Every candidate hue is still run through the same gate as any other token:
+compute WCAG contrast for `text`/`text-muted`/`primary-on` against their
+stated ground in both schemes, and only alias `link` straight to `primary`
+when that already clears 4.5:1 as text (see Accessibility) — a harmony rule
+picks the *hue*, it does not excuse the contrast math.
+
 ## Do's and Don'ts
 
 - **Do** drive every color from a token so light/dark and variant flips are free.
@@ -297,3 +368,5 @@ CSS custom properties resolve from the matching block. All variants are zero-blu
 | BluBlock | `#f5ecd8` · `#1a1208` | `#c06010` · `#e89030` | zero-blue amber; blue-filter lenses |
 | Dusk | `#eaece2` · `#1f1b22` | `#7a5820` · `#c8a468` | plum-gray / sage, earth tones |
 | SaaS | `#f4f6f4` · `#0f1512` | `#1f6e4c` · `#4fae82` | de-blued flat/modern spruce |
+| Terracotta | `#f5e9e2` · `#1d130f` | `#9c3d1f` · `#e8824c` | clay / brick-red (analogous) |
+| Plum | `#f2e8ef` · `#1a1119` | `#7a2e68` · `#d072b8` | muted violet / mulberry (triadic) |

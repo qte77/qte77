@@ -7,6 +7,8 @@ Design tokens, logo, and font references for qte77 visual identity.
 - `DESIGN.md` — design tokens + color system (EyeRest, light + dark; google-labs-code design.md format)
 - `ui-kit/` — the no-build UI theme generated from `DESIGN.md` (EyeRest color/layout/fonts
   CSS + theme cycler + a11y); see [`ui-kit/BASELINE.md`](ui-kit/BASELINE.md)
+- `vscode-theme/` — a VS Code color theme extension generated from `DESIGN.md` (flagship +
+  all 6 variants, light/dark, UI chrome only); see [`vscode-theme/README.md`](vscode-theme/README.md)
 - `images/logo-mark.text.svg` / `logo-mark.paths.dejavu.svg` — square mark; canonical text + path-baked variant
 - `images/logo-wordmark.text.svg` / `logo-wordmark.paths.dejavu.svg` — wordmark; same pair
 - `images/avatar_dark.dejavu.png` / `images/avatar_light.dejavu.png` — 920×920 PNG
