@@ -13,6 +13,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `brand/DESIGN.md` + `brand/ui-kit/{eyerest.css,tailwind/tokens.css}`: two new color
+  variants — **Terracotta** (clay/brick-red) and **Plum** (muted violet/mulberry) — derived
+  with standard color-wheel harmony rules (Adobe Color's Analogous and Triad geometry) applied
+  around the brand's zero-blue exclusion band, rather than picked by eye. New "Palette
+  derivation" section in `DESIGN.md` documents the method for reuse. Both pass WCAG AA on
+  every `text`/`text-muted`/`link` pairing in both schemes with no retuning needed (verified
+  programmatically). `brand/ui-kit/BASELINE.md` gains D15; `@qte77/ui-theme` bumped
+  `0.3.0` → `0.4.0` (additive)
+- `brand/vscode-theme/` + `brand/scripts/gen_vscode_theme.py`: a VS Code color theme
+  extension, generated from `DESIGN.md` like the web ui-kit — 14 themes (flagship + all 6
+  variants, light/dark), UI chrome only (editor/sidebar/statusbar/tabs/panels/git-decorations).
+  Syntax highlighting (`tokenColors`) and terminal ANSI colors are a documented follow-up, not
+  included — both need new hues designed and AA-checked the same deliberate way, not picked as
+  an afterthought. Wired into `brand/Makefile` as `vscode_theme` (folded into the `brand` meta
+  target)
+- `brand/vscode-theme/gallery.html`: a hand-authored showcase page — every variant's swatches
+  plus a live editor-chrome mockup, light and dark, viewable without installing the theme.
+  Linked from `brand/vscode-theme/README.md`; a candidate for a durable page on
+  `qte77.github.io` (cross-repo, not done from this session)
+
 - `docs/goals.md`: an **Observe** step (7) in the KR loop, after the rollup — the rollup (or a monitor) may open a *draft* issue from a fixed schema only (KR id, metric, observed value, evidence link), never free text copied from alerts, logs, or external pages; a human promotes a draft into a plan Backlog item before it feeds Phase A again, because alert/log text handed to an agent without that human step becomes instructions to the agent (a crafted error message is a prompt injection that can end in a deploy). Also adds a `## Known gaps` section noting three current limitations: a KR's `eval:` and a `/goal` condition are written separately with nothing linking them; a `/goal` session stops at "PR open, checks green" so no single session closes a KR (merge stays an owner gate, by design); and the rollup has no automatic trigger yet
 - `docs/unattended-execution.md`: a **"Driving Phase A with `/goal`"** recipe — scope (the plan's `## Backlog`, `## Owner-gates` out of scope by construction), end state (Phase B pre-staged, never merged), transcript evidence (`gh pr view --json state,statusCheckRollup`), constraints, auto-mode / headless invocation, and a copy-paste `/goal` template; links `ai-agents-research`'s `CC-goal-analysis.md` for the general mechanics. The Mechanism section's "Gaps to build" gains the deterministic counterpart: a plan-backlog `Stop` hook. Untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
 - `docs/design-tool-workflow.md`: how to work with AI design tools so output ships as code — templates vs artifacts, the two one-way flows, upload order and checker-safe CSS, template-to-site verification, and the proposal that products derive their design systems from their own `DESIGN.md` via the brand generator.
@@ -72,6 +92,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `brand/ui-kit/{BASELINE.md,DISCOVERABILITY.md}`: stripped the "Actionable items"/"Roadmap"
+  checklists down to a pointer at [issue #111](https://github.com/qte77/qte77/issues/111) —
+  a static checklist in a decision doc and the live issue had drifted apart (the doc hadn't
+  caught up to the SEO head partial shipping or all four GUI-adoption issues closing).
+  Remaining open work (promoting `gui-check.py`, the GEO/ASO convention) is now tracked only
+  on #111, not duplicated in both places
 - `AGENTS.md`: corrected the `contributions.json` Writers cell in the task-tracking authority table — verified 2026-10-23 that `scripts/cc-parallel.sh` never reads or writes that file (it has no `contribute` preset); the file is maintained by hand, not machine-written
 - `docs/unattended-execution.md` + `docs/templates/plan.template.md` + `docs/plans/{001,003,004}-*.md`: the estate contract moves from a paired plan + handoff per arc to **one file per arc** (owner decision, 2026-10-19), matching the already-revised rule (`.claude/rules/unattended-execution.md`, PR #193). The plan template gains an opening `## Status` block (shipped / next-in-order / the loop / owner-gates / commands / watch-outs); the depth guide's "Plan + handoff artifacts" section is rewritten as "Plan artifact (one per arc)" and every other handoff reference in it now describes the single plan file; `AGENT_LEARNINGS.md`'s reference line drops the template it no longer cites
 - `brand/DESIGN.md`: fixed a stale-docs gap — the SaaS variant (added in a prior PR) was missing from the Overview prose and the Variants table; both now list all four secondary variants (Green, BluBlock, Dusk, SaaS)
