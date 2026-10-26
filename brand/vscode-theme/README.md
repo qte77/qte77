@@ -23,6 +23,13 @@ picking them as an afterthought here would be exactly the "eyeballed hex" shortc
 exists to avoid. Until that work lands, these themes inherit VS Code's own default TextMate
 grammar theme and ANSI colors, which may include blue — a known gap, not a silent one.
 
+## Gallery
+
+[`gallery.html`](gallery.html) shows every variant's swatches and a live editor-chrome mockup,
+light and dark, without installing anything — open it locally or view it rendered via
+[htmlpreview.github.io](https://htmlpreview.github.io/?https://github.com/qte77/qte77/blob/main/brand/vscode-theme/gallery.html).
+Hand-authored (not generated), so re-check it against `DESIGN.md` when a variant changes.
+
 ## Install locally (not yet published)
 
 No marketplace listing yet. To try it in VS Code:
@@ -47,6 +54,7 @@ uv run brand/scripts/gen_vscode_theme.py --check   # exit 1 if stale
 |---|---|---|
 | `package.json` | `colors` · `variants` | extension manifest + the generated `contributes.themes` list (14 entries) |
 | `themes/<variant>-<scheme>-color-theme.json` | `colors` · `data` · `data-dark` · `variants` | one workbench color theme per (variant, scheme) pair |
+| `gallery.html` | — | hand-authored showcase page — swatches + editor-chrome mockups, no install needed |
 
 ## See also
 
