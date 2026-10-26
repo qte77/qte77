@@ -14,6 +14,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `docs/unattended-execution.md`: a **"Cloud offload"** section — moving a long fan-out out of the interactive session, either as a detached local headless `claude -p` run (subscription vs `ANTHROPIC_API_KEY`, Manual-mode default, the workflow concurrency cap and its env var, a free-disk check before each slice) or as a cloud session (VM limits, env vars vs proxy-injected network secrets, the Trusted allowlist incl. GitHub and R2, push/teleport return path, workflow support unconfirmed in the docs); private data only through private stores; canary one slice first. Facts checked against code.claude.com on 2026-11-02
+- `brand/DESIGN.md` + `brand/ui-kit/{eyerest.css,tailwind/tokens.css}`: two new color
+  variants — **Terracotta** (clay/brick-red) and **Plum** (muted violet/mulberry) — derived
+  with standard color-wheel harmony rules (Adobe Color's Analogous and Triad geometry) applied
+  around the brand's zero-blue exclusion band, rather than picked by eye. New "Palette
+  derivation" section in `DESIGN.md` documents the method for reuse. Both pass WCAG AA on
+  every `text`/`text-muted`/`link` pairing in both schemes with no retuning needed (verified
+  programmatically). `brand/ui-kit/BASELINE.md` gains D15; `@qte77/ui-theme` bumped
+  `0.3.0` → `0.4.0` (additive)
+- `brand/vscode-theme/` + `brand/scripts/gen_vscode_theme.py`: a VS Code color theme
+  extension, generated from `DESIGN.md` like the web ui-kit — 14 themes (flagship + all 6
+  variants, light/dark), UI chrome only (editor/sidebar/statusbar/tabs/panels/git-decorations).
+  Syntax highlighting (`tokenColors`) and terminal ANSI colors are a documented follow-up, not
+  included — both need new hues designed and AA-checked the same deliberate way, not picked as
+  an afterthought. Wired into `brand/Makefile` as `vscode_theme` (folded into the `brand` meta
+  target)
+
 - `docs/goals.md`: an **Observe** step (7) in the KR loop, after the rollup — the rollup (or a monitor) may open a *draft* issue from a fixed schema only (KR id, metric, observed value, evidence link), never free text copied from alerts, logs, or external pages; a human promotes a draft into a plan Backlog item before it feeds Phase A again, because alert/log text handed to an agent without that human step becomes instructions to the agent (a crafted error message is a prompt injection that can end in a deploy). Also adds a `## Known gaps` section noting three current limitations: a KR's `eval:` and a `/goal` condition are written separately with nothing linking them; a `/goal` session stops at "PR open, checks green" so no single session closes a KR (merge stays an owner gate, by design); and the rollup has no automatic trigger yet
 - `docs/unattended-execution.md`: a **"Driving Phase A with `/goal`"** recipe — scope (the plan's `## Backlog`, `## Owner-gates` out of scope by construction), end state (Phase B pre-staged, never merged), transcript evidence (`gh pr view --json state,statusCheckRollup`), constraints, auto-mode / headless invocation, and a copy-paste `/goal` template; links `ai-agents-research`'s `CC-goal-analysis.md` for the general mechanics. The Mechanism section's "Gaps to build" gains the deterministic counterpart: a plan-backlog `Stop` hook. Untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
 - `docs/design-tool-workflow.md`: how to work with AI design tools so output ships as code — templates vs artifacts, the two one-way flows, upload order and checker-safe CSS, template-to-site verification, and the proposal that products derive their design systems from their own `DESIGN.md` via the brand generator.
@@ -75,6 +91,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `docs/unattended-execution.md` + `docs/gpg-signing.md` + `docs/templates/plan.template.md`: added a **"Claude Code cloud sessions"** section to the depth guide — launch mechanics (`claude --cloud`, TTY + subscription billing), what the cloned environment does and doesn't carry, the `/goal` character cap, the authorized-repository push trap (start one canary session before a wave), and the teleport-based salvage recipe for a session that cannot push. The "unattended tax" table's stale `--no-gpg-sign` / `commit.gpgsign false` row is replaced with the real fix for an unsigned Codespace commit: a stray `~/.gitconfig` `user.name` that doesn't match the GitHub profile, a repo-local `commit.gpgsign false`, or `GITHUB_TOKEN` stripped from the shell for the commit step itself (`gpg: ... No secret key`); the env-prefix row now scopes `env -u GH_TOKEN -u GITHUB_TOKEN` to `gh`/git network calls only, since stripping `GITHUB_TOKEN` for `git commit -S` breaks the Codespaces signer. `gpg-signing.md`'s troubleshooting table and `plan.template.md`'s git-conventions line are reconciled to the same facts instead of repeating the old `--no-gpg-sign` advice. The `/goal` section now says where auto-mode rules are read from (`~/.claude/settings.json`, managed settings or `--settings`, never the repo's `.claude/` settings) and points at the first real `/goal` runs instead of calling the recipe untested
+- `brand/ui-kit/{BASELINE.md,DISCOVERABILITY.md}`: stripped the "Actionable items"/"Roadmap"
+  checklists down to a pointer at [issue #111](https://github.com/qte77/qte77/issues/111) —
+  a static checklist in a decision doc and the live issue had drifted apart (the doc hadn't
+  caught up to the SEO head partial shipping or all four GUI-adoption issues closing).
+  Remaining open work (promoting `gui-check.py`, the GEO/ASO convention) is now tracked only
+  on #111, not duplicated in both places
 - `AGENTS.md`: corrected the `contributions.json` Writers cell in the task-tracking authority table — verified 2026-10-23 that `scripts/cc-parallel.sh` never reads or writes that file (it has no `contribute` preset); the file is maintained by hand, not machine-written
 - `docs/unattended-execution.md` + `docs/templates/plan.template.md` + `docs/plans/{001,003,004}-*.md`: the estate contract moves from a paired plan + handoff per arc to **one file per arc** (owner decision, 2026-10-19), matching the already-revised rule (`.claude/rules/unattended-execution.md`, PR #193). The plan template gains an opening `## Status` block (shipped / next-in-order / the loop / owner-gates / commands / watch-outs); the depth guide's "Plan + handoff artifacts" section is rewritten as "Plan artifact (one per arc)" and every other handoff reference in it now describes the single plan file; `AGENT_LEARNINGS.md`'s reference line drops the template it no longer cites
 - `docs/design-tool-workflow.md`: the guide gains a quick start, what to ask the design tool to build into templates, a template-to-production section (fetch, snapshot and sync, deploy build, security headers, verify), and mobile-first and agent-ready how-tos; it names no hosts or products

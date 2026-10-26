@@ -60,6 +60,7 @@ without a bundler.
 | D12 | `chart-theme.js` reads live CSS custom properties on `themechange` | charts stay correct across any variant/scheme with no per-variant JS palette to drift from `eyerest.css`; consumes the zero-blue `--data-*` arc |
 | D13 | `--shadow-card` now emitted into `eyerest.css` too (was Tailwind-only) | the no-build kit needs the elevation token for `.stat-tile`/`.callout` |
 | D14 | Rejected a second EyeRest-colored "Brand Mark" logo lockup (2026-09-25) | doubles asset/governance surface for a recolor with no earned differentiation; the source's own rationale for the split doesn't apply here — see below |
+| D15 | `terracotta` + `plum` variants added, harmony-rule-derived (2026-10-25) | fills genuinely new hue territory (clay/brick, muted violet) via Adobe Color's Analogous/Triad geometry applied around the zero-blue exclusion band, instead of picking hues by eye — method documented in `DESIGN.md` "Palette derivation" for reuse |
 
 ## Considered and rejected: a second "Brand Mark" logo lockup
 
@@ -134,16 +135,17 @@ animation + Pillow gotchas below).
 
 ## Actionable items
 
-- [ ] Add a `make ui-kit` target that **generates** `eyerest.css` / `layout.css` /
-      `fonts.css` from `DESIGN.md` (keep them in sync; today they are faithful hand-renders).
-- [ ] Update `scripts/install_fonts.py` to emit **WOFF2** (web) alongside TTF (baking).
-- [x] Favicon (D7) — resolved: favicon + site logo = `brand/images/logo-mark.paths.dejavu.svg` (see README).
-- [ ] Promote `scripts/gui-check.py` to `repo-baseline/tools/` for the cross-repo drift
-      sweep (the org-wide baseline/drift home); keep the brand copy or symlink.
-- [ ] Wire the existing GUIs onto the kit (start with `analyze-stock-kpi`, the reference).
-- [x] Update issues #111 (shared ui-kit) and #112 (SVG/diagram pipeline) — done.
-- [ ] Discoverability (SEO / GEO / ASO) — see [`DISCOVERABILITY.md`](DISCOVERABILITY.md) for the SEO head partial + GEO/ASO convention items.
-- [ ] (optional) Adopt `ci-verify.example.yml` in projects that want the gate in CI.
+Open work is tracked in **[issue #111](https://github.com/qte77/qte77/issues/111)**, not
+duplicated here — a static checklist in a decision doc and a live issue drift apart (this one
+had, until a 2026-10-25 reconciliation). Everything else originally listed here is shipped:
+the `make ui-kit` generator, `install_fonts.py` WOFF2, the favicon (D7), and kit adoption
+across all four GUIs (paperverse, analyze-stock-kpi, agenthud-agui-a2ui,
+agentic-job-offer-to-application-kit — all closed). Remaining on #111: promoting
+`gui-check.py` to `repo-baseline/tools/`, and the GEO/ASO machine-readability convention (see
+[`DISCOVERABILITY.md`](DISCOVERABILITY.md)).
+
+`ci-verify.example.yml` is an optional, per-adopter CI gate — not planned work on our side, so
+it isn't an issue; a project wires it in if/when it wants the gate (see `README.md`).
 
 ## Discoverability (SEO / GEO / ASO)
 
