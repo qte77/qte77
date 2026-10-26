@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   included — both need new hues designed and AA-checked the same deliberate way, not picked as
   an afterthought. Wired into `brand/Makefile` as `vscode_theme` (folded into the `brand` meta
   target)
+- `brand/vscode-theme/gallery.html`: a hand-authored showcase page — every variant's swatches
+  plus a live editor-chrome mockup, light and dark, viewable without installing the theme.
+  Linked from `brand/vscode-theme/README.md`; a candidate for a durable page on
+  `qte77.github.io` (cross-repo, not done from this session)
 
 - `docs/goals.md`: an **Observe** step (7) in the KR loop, after the rollup — the rollup (or a monitor) may open a *draft* issue from a fixed schema only (KR id, metric, observed value, evidence link), never free text copied from alerts, logs, or external pages; a human promotes a draft into a plan Backlog item before it feeds Phase A again, because alert/log text handed to an agent without that human step becomes instructions to the agent (a crafted error message is a prompt injection that can end in a deploy). Also adds a `## Known gaps` section noting three current limitations: a KR's `eval:` and a `/goal` condition are written separately with nothing linking them; a `/goal` session stops at "PR open, checks green" so no single session closes a KR (merge stays an owner gate, by design); and the rollup has no automatic trigger yet
 - `docs/unattended-execution.md`: a **"Driving Phase A with `/goal`"** recipe — scope (the plan's `## Backlog`, `## Owner-gates` out of scope by construction), end state (Phase B pre-staged, never merged), transcript evidence (`gh pr view --json state,statusCheckRollup`), constraints, auto-mode / headless invocation, and a copy-paste `/goal` template; links `ai-agents-research`'s `CC-goal-analysis.md` for the general mechanics. The Mechanism section's "Gaps to build" gains the deterministic counterpart: a plan-backlog `Stop` hook. Untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
