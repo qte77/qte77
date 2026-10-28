@@ -52,7 +52,25 @@ Kept intentionally minimal (see #67) — a documented example, *not* a formal sc
    (polyforge#79), so goal → KR → PR → contribution is one chain.
 6. **Track** — `python scripts/goal_rollup.py --write` regenerates
    [STATUS.md](../STATUS.md): per-goal KR completion + achievement %.
-7. **Learn** — on close, the eval verdict → a learning (`AGENT_LEARNINGS.md` → rules).
+7. **Observe** — the rollup (or a monitor) may open a *draft* issue from a fixed schema —
+   KR id, metric, observed value, a link to the evidence — never free text copied from
+   alerts, logs, or external pages. A human promotes a draft into a plan Backlog item; only
+   then does it feed Phase A again. Why: alert/log text handed to an agent without a human
+   step in between becomes *instructions* to that agent — a crafted error message is a
+   prompt injection that can end in a deploy.
+8. **Learn** — on close, the eval verdict → a learning (`AGENT_LEARNINGS.md` → rules).
+
+## Known gaps
+
+- **`eval:` and `/goal` are written separately.** A KR's `eval:` (step 1) and the `/goal`
+  condition that drives Phase A ([unattended-execution.md](unattended-execution.md)) are
+  authored independently; nothing links or cross-checks that the `/goal` condition actually
+  tests the KR's `eval:`.
+- **No single session closes a KR.** A `/goal` session stops at "PR open, checks green" —
+  by design, since merge is an owner gate. Closing the KR Issue happens after merge, as a
+  separate step.
+- **The rollup has no automatic trigger yet.** `goal_rollup.py --write` (step 6) runs on
+  demand; nothing invokes it when a KR Issue closes.
 
 ## Current state
 

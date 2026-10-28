@@ -15,7 +15,7 @@ hierarchy, see [CONTRIBUTING.md](CONTRIBUTING.md). For project overview, see
 
 ## Claude Code Infrastructure
 
-**Rules** (`.claude/rules/`): Session-loaded constraints (always active)
+**Rules**: Session-loaded constraints (always active). The shared estate rules (core principles, context management, compound learning, unattended execution, …) load at user level from `~/.claude/rules/`, symlinked to the [claude-code-plugins rules SoT](https://github.com/qte77/claude-code-plugins/tree/main/.claude/rules); `.claude/rules/` holds only rules specific to this repo. Sessions on another machine, in the cloud or in GHA don't get the user-level rules.
 **Skills** (`.claude/skills/`): Modular capabilities with progressive disclosure
 
 ## Core Rules & AI Behavior
@@ -75,7 +75,7 @@ quotes it; do not redefine the model here.
 | Artifact | Scope | Writers |
 | -------- | ----- | ------- |
 | **GitHub Issues** | Canonical task SOT (per `ontology.json`: `entity: issue`, `persisted: true`) | human, agent, GHA |
-| **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | machine-written by `cc-parallel.sh` |
+| **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | maintained by hand |
 | **[`.github-private-project-tracker`][tracker]** | Per-repo tactical issue mirror; bidirectional sync via [`gha-cross-repo-issue-sync`][sync] (close/reopen/labels propagate) | tracker GHA + maintainers |
 | **`goals.json`** (this repo) | Workspace OKRs / strategic goals | humans only |
 

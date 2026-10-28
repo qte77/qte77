@@ -40,10 +40,11 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: Pushing empty "nudge CI" commits to force re-analysis does **not** clear it — the stuck SHA keeps its errored status — and it pollutes history. (Two nudge commits failed before the fix was found.)
 - **Solution**: Bring the branch **up to date with `main`** (`gh pr update-branch <n>`, or a local `git merge origin/main`). The fresh, GitHub-signed SHA gets a clean CodeFactor re-analysis that goes green. Never nudge-commit.
 - **References**: PRs #158 / #159.
+- **Promoted** to a shared rule: qte77/claude-code-plugins [`.claude/rules/ci-status-checks.md`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/ci-status-checks.md) (#224), shipped to consumers via `workspace-setup` / `workspace-sandbox`.
 
 ### Unattended hands-off runs converge on one repeatable shape
 
 - **Context**: Running long, e2e hands-off unattended sessions across estate repos. Learned from prior runs, tasks, and projects that each independently rebuilt the same scaffolding.
 - **Problem**: Without a shared contract, every repo re-derives the same 80%: the non-blocked phase shape, the plan/handoff source map, the verify-on-live-target loop, and the same recurring footguns (bare `git`/`gh` 403, deploy/edge-cache race, session-death losing uncommitted work, broad Bash allowlist widening injection blast radius). Mistakes recur per-repo instead of being prevented once.
 - **Solution**: The contract is now codified once as the always-loaded rule + depth guide + templates. Instantiate it per repo (rule + settings snippet), do NOT re-list the footguns inline (DRY — they live in the rule). Merge stays an owner gate, never agent auto squash-merge. The runnable mechanism (browser sweep, orchestration workflow, monitor) is derived downstream per the META -> MECHANISM split.
-- **References**: [`.claude/rules/unattended-execution.md`](.claude/rules/unattended-execution.md), [`docs/unattended-execution.md`](docs/unattended-execution.md), `docs/templates/{plan,handoff}.template.md`, `docs/templates/settings.unattended.jsonc`.
+- **References**: qte77/claude-code-plugins [`.claude/rules/unattended-execution.md`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md), [`docs/unattended-execution.md`](docs/unattended-execution.md), `docs/templates/plan.template.md`, `docs/templates/settings.unattended.jsonc`.

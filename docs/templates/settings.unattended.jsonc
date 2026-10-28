@@ -25,10 +25,11 @@
   },
 
   "hooks": {
-    // Highest-ROI compaction change: archive a rich handoff to disk BEFORE the summary replaces the
-    // window. A PreCompact hook can archive (and gate) but never itself triggers compaction — so it
-    // turns a compaction from a loss into a checkpoint. Point it at a tracked script that flushes the
-    // live arc state (shipped list, one-step resume, branch/PR/CI, parked gates) to handoff + memory.
+    // Highest-ROI compaction change: archive the plan's opening status to disk BEFORE the summary
+    // replaces the window. A PreCompact hook can archive (and gate) but never itself triggers
+    // compaction — so it turns a compaction from a loss into a checkpoint. Point it at a tracked
+    // script that flushes the live arc state (shipped list, one-step resume, branch/PR/CI, parked
+    // gates) to the plan + memory.
     "PreCompact": [
       {
         "matcher": "auto",
@@ -48,7 +49,7 @@
           {
             "type": "command",
             // Example inline form. Prefer a tracked script: .claude/scripts/reonboard.sh
-            "command": "echo 'Re-onboard: re-read the newest docs/handoffs/NNN + its paired plan (the file:line source map). Verify plan + handoff + MEMORY.md reflect current branch/PR/CI state. Keep conclusions and the parked owner-gates; drop raw command output and search dumps.'"
+            "command": "echo 'Re-onboard: re-read the newest docs/plans/NNN file - its opening status, then its file:line source map. Verify the plan + MEMORY.md reflect current branch/PR/CI state. Keep conclusions and the parked owner-gates; drop raw command output and search dumps.'"
           }
         ]
       }
