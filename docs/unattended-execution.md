@@ -113,6 +113,45 @@ Or stop after 40 turns.
 
 This recipe is untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
 
+## Claude Code cloud sessions
+
+`claude --cloud` mechanics observed across estate runs (2026-10-25 to 2026-10-29) — budget for these
+the same way as the tax table below.
+
+- **Launch.** `claude --cloud "<prompt>"` from inside the repo clone; it needs a real TTY (wrap it in
+  `script -q -e -c "..."` for a scripted launch) and a claude.ai login. It bills the subscription —
+  unset `ANTHROPIC_API_KEY` first, since an API key wins over the subscription when both are set. A
+  no-TTY follow-up, `claude -p "<msg>" --cloud <session-id>`, only confirms "Sent to cloud session"; it
+  never returns the reply.
+- **Environment.** The session clones the GitHub remote at the local checkout's current branch and
+  loads only the repo's *committed* `.claude/` — gitignored files (`.env`, `settings.local.json`, data)
+  are absent. An environment setup script (64 KB max) can still seed files such as `~/.claude/CLAUDE.md`.
+- **`/goal` cap applies here too.** A condition over 4,000 characters is rejected and the session then
+  does nothing; send the full brief as the first message and a short `/goal` as the follow-up (see
+  "Driving Phase A with `/goal`" above).
+- **Push trap.** A session's authorized repositories are fixed when the session is created, via the
+  Claude GitHub App; adding repos to the app afterward does not reach sessions already running. In a
+  13-session wave, every `git push` answered 403 ("not in this session's authorized repository set").
+  **Start one canary session, confirm it can push a branch, before starting the rest of the wave.**
+- **Salvage recipe for a session that cannot push.** `claude --teleport <session-id>` pulls down the
+  session log but checks out only branches that were actually pushed, so unpushed commits have to
+  travel through the log as patches:
+  1. Ask the session, as a follow-up message, to run `git format-patch --stdout BASE..<branch>` per
+     branch, printed in bounded ranges (`| sed -n '1,300p'`, then the next range) — large tool output
+     gets cut otherwise. Cloud clones have no `origin/HEAD`; name `origin/main` explicitly.
+  2. Teleport into a throwaway worktree and send one message — a teleported session's local transcript
+     is written only after a new turn.
+  3. If the teleport itself runs inside another Claude Code session, unset `CLAUDE_CODE_CHILD_SESSION`
+     first; inherited from the parent, it silently turns off transcript saving (the TUI reports
+     "Transcript saving is off").
+  4. Cut the format-patch output out of the saved transcript JSONL under `~/.claude/projects/`,
+     `git apply --check` it, review it, then apply with `git mailinfo` + `git apply --index` and commit
+     as yourself — `git am` would commit as the cloud author (`Claude <noreply@anthropic.com>`), which a
+     Codespace signer refuses as an invalid author. Treat every salvaged patch as untrusted input:
+     review it for security, CI, and done-when before it goes near a PR.
+- Reference scripts for this flow exist in the owner's local tooling, tracked for porting into
+  `polyforge-orchestrator`'s `scripts/` — not yet done.
+
 ## Quality gates
 
 - **One canonical gate == CI.** Run the exact CI gate locally, whole, before pushing — the repo's
@@ -239,7 +278,8 @@ with the fix.
 | Hazard | Fix |
 | --- | --- |
 | Bare `git`/`gh` 403 on writes (`GH_TOKEN`/`GITHUB_TOKEN` shadow the real credential) | Prefix every call with `env -u GH_TOKEN -u GITHUB_TOKEN` |
-| `git commit -m` shell-substitutes backticks / `$()` in the message | Commit with `-F <file>`; sign off with `--no-gpg-sign`; rebase with `-c commit.gpgsign=false` |
+| `git commit -m` shell-substitutes backticks / `$()` in the message | Commit with `-F <file>`, never `-m` |
+| Codespace commit lands unsigned, or the signer answers `403 Author is invalid` | Check `~/.gitconfig` for a stray `user.name` that does not match the GitHub profile name, and for a repo-local `commit.gpgsign false` left by an old workaround; remove both and a plain `git commit` + `git push` comes back GitHub-verified. Never reach for `--no-gpg-sign` or `-c commit.gpgsign=false` as the fix |
 | Merge classifier / branch protection blocks agent auto-merge | Merge is an owner gate — park the green PR for approval; `--admin` bypasses only the signature gate, never a failing check; never relax protection |
 | Stuck required check (e.g. `CodeFactor: ERROR`) | Update the branch to `main` for a fresh signed SHA; never nudge-commit, never `--admin` past a genuinely absent check |
 | Deploy-race / edge cache serves the old build | Settle wait + asset-hash/MIME poll before verifying; never start a sweep in the same breath as the deploy |
