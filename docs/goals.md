@@ -30,7 +30,8 @@ Kept intentionally minimal (see #67) — a documented example, *not* a formal sc
           "statement": "<the measurable outcome>",
           "eval": "<pre-committed success test — metric target OR probe question>",
           "issue": 0,
-          "status": "open"
+          "status": "open",
+          "outcome": "achieved | not-achieved | inconclusive — set when status becomes closed; omit while open"
         }
       ]
     }
