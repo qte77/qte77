@@ -278,7 +278,7 @@ with the fix.
 
 | Hazard | Fix |
 | --- | --- |
-| Bare `git`/`gh` 403 on writes (`GH_TOKEN`/`GITHUB_TOKEN` shadow the real credential) | Prefix every call with `env -u GH_TOKEN -u GITHUB_TOKEN` |
+| Bare `git`/`gh` 403 on writes (`GH_TOKEN`/`GITHUB_TOKEN` shadow the real credential) | Prefix `gh` calls and git network calls (`fetch`/`push`/`ls-remote`) with `env -u GH_TOKEN -u GITHUB_TOKEN`. Keep `GITHUB_TOKEN` set for `git commit -S` — the Codespaces signer needs it and stripping it fails with `gpg: ... No secret key`. Never wrap the whole agent process in `env -u GITHUB_TOKEN` |
 | `git commit -m` shell-substitutes backticks / `$()` in the message | Commit with `-F <file>`, never `-m` |
 | Codespace commit lands unsigned, or the signer answers `403 Author is invalid` | Check `~/.gitconfig` for a stray `user.name` that does not match the GitHub profile name, and for a repo-local `commit.gpgsign false` left by an old workaround; remove both and a plain `git commit` + `git push` comes back GitHub-verified. Never reach for `--no-gpg-sign` or `-c commit.gpgsign=false` as the fix |
 | Merge classifier / branch protection blocks agent auto-merge | Merge is an owner gate — park the green PR for approval; `--admin` bypasses only the signature gate, never a failing check; never relax protection |
