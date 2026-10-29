@@ -49,6 +49,16 @@ See [`AGENTS.md` § Task-tracking authority](../AGENTS.md#task-tracking-authorit
 | Private tracker | Repos ↔ tracker (bidir) | Per-repo tactical mirror; close/reopen/labels propagate via `gha-cross-repo-issue-sync` |
 | `goals.json` | Humans → orchestrators | Workspace OKRs / strategic goals (this repo's root) |
 
+**Before any write in a shared repo's working tree:**
+
+1. Run `git status` and `git branch --show-current` first, every session — not just once.
+2. If the current branch isn't `main`, or unrelated modified/untracked files are already present, stop — do
+   not edit in place. That state is very likely another session's in-progress, uncommitted work; committing
+   or resetting from it risks misattributing content to them or discarding it outright.
+3. Isolate instead: branch off a freshly fetched `origin/main` (a fresh clone or a dedicated worktree), make
+   the change there, and open the PR from that isolated state without touching the shared checkout.
+4. Exception: the current task is a confirmed continuation of that exact in-progress work, not an assumption.
+
 **Design implications:**
 
 - Prompt templates are the primary cross-repo context injection mechanism
