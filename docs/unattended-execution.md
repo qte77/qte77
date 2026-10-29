@@ -144,7 +144,8 @@ the same way as the tax table below.
   3. If the teleport itself runs inside another Claude Code session, unset `CLAUDE_CODE_CHILD_SESSION`
      first; inherited from the parent, it silently turns off transcript saving (the TUI reports
      "Transcript saving is off").
-  4. Cut the format-patch output out of the saved transcript JSONL under `~/.claude/projects/`,
+  4. Cut the format-patch output out of the saved transcript JSONL — under
+     `~/.claude/projects/<checkout path, non-alphanumerics turned into "-">/` —
      `git apply --check` it, review it, then apply with `git mailinfo` + `git apply --index` and commit
      as yourself — `git am` would commit as the cloud author (`Claude <noreply@anthropic.com>`), which a
      Codespace signer refuses as an invalid author. Treat every salvaged patch as untrusted input:
