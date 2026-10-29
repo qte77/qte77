@@ -76,7 +76,7 @@ quotes it; do not redefine the model here.
 | -------- | ----- | ------- |
 | **GitHub Issues** | Canonical task SOT (per `ontology.json`: `entity: issue`, `persisted: true`) | human, agent, GHA |
 | **[`contributions.json`][contrib]** | Polyforge cross-repo plan execution state — `--resume` source, survives container rebuilds | maintained by hand |
-| **[`.github-private-project-tracker`][tracker]** | Per-repo tactical issue mirror; bidirectional sync via [`gha-cross-repo-issue-sync`][sync] (close/reopen/labels propagate) | tracker GHA + maintainers |
+| **A private per-repo issue tracker** | Per-repo tactical issue mirror; bidirectional sync via [`gha-cross-repo-issue-sync`][sync] (close/reopen/labels propagate) | tracker GHA + maintainers |
 | **`goals.json`** (this repo) | Workspace OKRs / strategic goals | humans only |
 
 **Rule:** GitHub Issues are the SOT for tasks. `contributions.json` and
@@ -90,7 +90,6 @@ update the ontology in polyforge — this section reflects it.
 
 [ontology]: https://github.com/qte77/polyforge-orchestrator/blob/main/config/ontology.json
 [contrib]: https://github.com/qte77/polyforge-orchestrator/blob/main/config/contributions.json
-[tracker]: https://github.com/qte77/.github-private-project-tracker
 [sync]: https://github.com/qte77/gha-cross-repo-issue-sync
 
 ## Cross-repo agent hygiene
