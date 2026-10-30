@@ -82,7 +82,7 @@ matching an uploaded key.
 |---|---|---|
 | `gpg: signing failed: Inappropriate ioctl for device` | No TTY available to gpg-agent | `export GPG_TTY=$(tty)` in your shell rc |
 | `error: gpg failed to sign the data` | Wrong key selected, or no default key | Set `user.signingkey` to the correct ID |
-| Codespace commits unsigned | Trust toggle flipped after container creation, or sibling repo | Run the two `git config --global` lines manually, or rebuild the Codespace |
+| Codespace commits unsigned, or `403 Author is invalid` / `gpg: ... No secret key` | A stray `~/.gitconfig` `user.name` that doesn't match the GitHub profile; a repo-local `commit.gpgsign false` left by an old workaround; `GITHUB_TOKEN` stripped from the shell for the commit step itself; less commonly, the trust toggle flipped after container creation, or a sibling repo cloned into an existing Codespace | Check the first three before reaching for a rebuild: remove the stray `user.name` / `gpgsign false`, keep `GITHUB_TOKEN` set, then retry a plain commit. Full writeup: [`unattended-execution.md`](unattended-execution.md#the-unattended-tax) |
 | `gpg-agent` prompts for passphrase repeatedly | Cache timeout too short | Configure `default-cache-ttl` in `~/.gnupg/gpg-agent.conf` |
 
 ## Authority
