@@ -101,6 +101,16 @@ is session-scoped (`/clear` removes it). General mechanics and failure modes:
   impossible / bounded (only 0 on success, non-zero on failure, 143 on SIGTERM are documented), so check
   the PR state the final turn prints, not the exit code — detail:
   [CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md).
+- **Auto-mode rules live in user settings, not the repo.** The classifier reads `autoMode`
+  (`environment`, `allow`, `soft_deny`, `hard_deny`) only from `~/.claude/settings.json`, managed
+  settings or `--settings`; a repo's `.claude/settings.json` and `.claude/settings.local.json` are
+  ignored, so a checked-in repo can't widen its own allow list. `/auto-mode-setup` writes to
+  `~/.claude/settings.json`, and `claude auto-mode config` shows what is in effect. Narrow allow rules
+  such as `Bash(npm test)` still skip the classifier unless `autoMode.classifyAllShell` is `true`.
+  Subagents inherit the parent's permission rules and mode, and in auto mode each subagent action
+  goes through the same decision order as the parent's — see
+  [auto mode config](https://code.claude.com/docs/en/auto-mode-config) and
+  [permission modes](https://code.claude.com/docs/en/permission-modes).
 
 ```text
 /goal Every "- [ ]" item in the Backlog section of docs/plans/NNN-slug.md is checked,
@@ -111,7 +121,9 @@ out of scope. Decide by default and park decisions; never merge, never use --adm
 Or stop after 40 turns.
 ```
 
-This recipe is untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
+First real runs: two headless batches against task files (2026-10-24 and 2026-10-29). What they
+showed is recorded in `AGENT_LEARNINGS.md` and, measured, in
+[CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md).
 
 ## Claude Code cloud sessions
 
