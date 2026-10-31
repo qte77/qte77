@@ -48,3 +48,17 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: Without a shared contract, every repo re-derives the same 80%: the non-blocked phase shape, the plan/handoff source map, the verify-on-live-target loop, and the same recurring footguns (bare `git`/`gh` 403, deploy/edge-cache race, session-death losing uncommitted work, broad Bash allowlist widening injection blast radius). Mistakes recur per-repo instead of being prevented once.
 - **Solution**: The contract is now codified once as the always-loaded rule + depth guide + templates. Instantiate it per repo (rule + settings snippet), do NOT re-list the footguns inline (DRY — they live in the rule). Merge stays an owner gate, never agent auto squash-merge. The runnable mechanism (browser sweep, orchestration workflow, monitor) is derived downstream per the META -> MECHANISM split.
 - **References**: qte77/claude-code-plugins [`.claude/rules/unattended-execution.md`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/unattended-execution.md), [`docs/unattended-execution.md`](docs/unattended-execution.md), `docs/templates/plan.template.md`, `docs/templates/settings.unattended.jsonc`.
+
+### `/goal` batch runs: the verdict is the report file and the PRs, never the exit status
+
+- **Context**: Running a batch of headless `claude -p "/goal …"` processes, one per repo worktree, each working a task file (first real runs: 20 processes on 2026-10-24, 17 on 2026-10-29).
+- **Problem**: Every run's result JSON read `"subtype": "success"` / `"terminal_reason": "completed"` whether or not its rows were done, and the final message was empty in 13 of 37 runs, so neither can serve as the run's report. In a cloud wave, a first `/goal` over 4,000 characters was rejected and those sessions sat idle.
+- **Solution**: Make the condition name the task file (don't paste it) and require a report file (one line per row: PR URL + check state, or the skip reason) plus the same printout in the final turn. Judge the batch from the report files and live `gh pr view` check states. Read each run's `permission_denials` afterwards: a denial doesn't end the run, it marks a step the session skipped or worked around. In cloud sessions send the brief as the first message and keep any `/goal` short.
+- **References**: [`docs/unattended-execution.md`](docs/unattended-execution.md) ("Driving Phase A with `/goal`"), [CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md).
+
+### Green checks but BLOCKED: compare the ruleset's required check names
+
+- **Context**: A PR shows every check green but `mergeStateStatus: BLOCKED`.
+- **Problem**: A branch ruleset requires status checks by name. Some rulesets still require a context named `codefactor.io`, while CodeFactor now reports as a check run named `CodeFactor`, so the requirement can never be met (found 2026-10-29 in 5 of 26 rulesets with required checks).
+- **Solution**: Before re-running anything, compare the ruleset's required contexts (`gh api repos/<owner>/<repo>/rules/branches/<branch>`) with the check names on the PR. A mismatch is an owner fix to the ruleset; agents never edit rulesets and never merge past it with `--admin`.
+- **References**: [`docs/unattended-execution.md`](docs/unattended-execution.md) ("The unattended tax").
