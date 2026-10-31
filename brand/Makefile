@@ -6,7 +6,7 @@
 .PHONY: \
 	setup_brand_fonts \
 	brand brand_paths brand_avatar brand_wordmark brand_social brand_clean \
-	ui_kit \
+	ui_kit vscode_theme \
 	help
 .DEFAULT_GOAL := help
 
@@ -29,9 +29,10 @@ setup_brand_fonts:  ## Download brand fonts into brand/fonts/ (licenses in fonts
 # MARK: BRAND
 
 
-brand:  ## Refresh all brand artifacts (fonts + ui-kit + paths + avatar + wordmark + social)
+brand:  ## Refresh all brand artifacts (fonts + ui-kit + vscode-theme + paths + avatar + wordmark + social)
 	$(MAKE) -s setup_brand_fonts
 	$(MAKE) -s ui_kit
+	$(MAKE) -s vscode_theme
 	$(MAKE) -s brand_paths
 	$(MAKE) -s brand_avatar
 	$(MAKE) -s brand_wordmark
@@ -81,6 +82,14 @@ brand_clean:  ## Remove $(DIST)/ and downloaded fonts (.paths.svg + PNGs are com
 ui_kit:  ## Generate ui-kit/eyerest.css from DESIGN.md (color tokens; layout/fonts are hand-authored)
 	echo "Generating ui-kit CSS from DESIGN.md ..."
 	uv run $(SCRIPTS)/gen_ui_kit.py
+
+
+# MARK: VSCODE THEME
+
+
+vscode_theme:  ## Generate vscode-theme/ (UI-chrome color themes, flagship + all variants) from DESIGN.md
+	echo "Generating VS Code color themes from DESIGN.md ..."
+	uv run $(SCRIPTS)/gen_vscode_theme.py
 
 
 # MARK: HELP
