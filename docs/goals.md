@@ -23,10 +23,10 @@ Kept intentionally minimal (see #67) — a documented example, *not* a formal sc
     {
       "id": "G01",
       "objective": "<the qualitative aim>",
-      "cynefin": "complicated",
       "key_results": [
         {
           "id": "G01-KR1",
+          "kind": "metric",
           "statement": "<the measurable outcome>",
           "eval": "<pre-committed success test — metric target OR probe question>",
           "issue": 0,
@@ -41,7 +41,7 @@ Kept intentionally minimal (see #67) — a documented example, *not* a formal sc
 ## The loop (one goal, end to end)
 
 1. **Author** (human) — add the goal + KRs to `goals.json`. Each KR carries an `eval:`
-   written *before* any work (a metric target, or a probe question for Complex KRs).
+   written *before* any work (a metric target, or a probe question for spike KRs).
 2. **Open a KR Issue** per KR from the [`Goal KR` template](../.github/ISSUE_TEMPLATE/goal-kr.md)
    — it applies the `goal` label and carries the same `eval:` line. Record its number in
    the KR's `issue` field.
