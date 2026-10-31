@@ -112,14 +112,14 @@ generating chip un-pilling (`999px` → `var(--radius-md)`).
 | `src/contract.ts` | agenthud `ui/src/agent/contract.ts` (the SUPERSET — `DataModelUpdateMessageSchema`, `TreeChoiceSchema.action`) |
 | `src/applyA2UIEvent.ts` | agenthud `ui/src/agent/applyA2UIEvent.ts` (render-injection seam; unknown events pass through as log entries) |
 | `src/events.ts` | AG-UI event vocab + `EventLogEntry`/`AgentEvent`/`appendLogEntry` (single-sourced here) |
-| `src/guard.ts` | ldnmxx `shared/guard.ts` (`detectInjection` + PATTERNS) |
-| `src/renderTool.ts` | ldnmxx `shared/renderTool.ts` (dep-free `RENDER_UI_TOOL` + `isSelfContainedBatch`; card builders left behind) |
-| `src/providers.ts` | ldnmxx `worker/src/agent/{providers,model}.ts` — runtime-agnostic subset only: `Provider`/`ToolSpec`/`CallArgs`/`ToolCallResult`/`runChain`. Cloudflare/OpenRouter/fetch specifics DROPPED |
-| `src/prompt.ts` | agenthud `ui/src/agent/prompts.ts` SYSTEM_PROMPT (superset) + ldnmxx `shared/prompt.ts` A2UI rules (subset) → `buildSystemPrompt(options)` |
+| `src/guard.ts` | ldnmxx-hack `shared/guard.ts` (`detectInjection` + PATTERNS) |
+| `src/renderTool.ts` | ldnmxx-hack `shared/renderTool.ts` (dep-free `RENDER_UI_TOOL` + `isSelfContainedBatch`; card builders left behind) |
+| `src/providers.ts` | ldnmxx-hack `worker/src/agent/{providers,model}.ts` — runtime-agnostic subset only: `Provider`/`ToolSpec`/`CallArgs`/`ToolCallResult`/`runChain`. Cloudflare/OpenRouter/fetch specifics DROPPED |
+| `src/prompt.ts` | agenthud `ui/src/agent/prompts.ts` SYSTEM_PROMPT (superset) + ldnmxx-hack `shared/prompt.ts` A2UI rules (subset) → `buildSystemPrompt(options)` |
 | `src/react/a2uiTheme.ts` | agenthud `ui/src/theme/a2uiTheme.ts` |
 | `src/react/A2UISurface.tsx` | agenthud `ui/src/A2UISurface.tsx` — decoupled from its actionBridge singleton → takes an `onAction?: (name) => void` prop |
 | `src/react/CatalogViewer.tsx` | agenthud `ui/src/CatalogViewer.tsx` |
-| `src/react/EventStream.tsx` | agenthud `ui/src/EventStream.tsx` — gains optional `renderExtra?: (entry) => ReactNode` (so ldnmxx keeps its USAGE chip without forking) |
+| `src/react/EventStream.tsx` | agenthud `ui/src/EventStream.tsx` — gains optional `renderExtra?: (entry) => ReactNode` (so ldnmxx-hack keeps its USAGE chip without forking) |
 | `styles/a2ui.css` | agenthud `ui/src/index.css` — the `.a2ui-surface .qte-*` rules + motion/skeleton/busy; functional depth (`box-shadow: var(--shadow-card)`, gradient shimmer, non-pill chip) |
 
 Toolchain: strict tsc (`exactOptionalPropertyTypes`), eslint (`typescript-eslint` + `sonarjs` +
@@ -157,12 +157,12 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
 
 ### TDD framing (honest, per "modules not scripts")
 
-- **P7 (azure) + P8 (ldnmxx worker) = genuinely test-first.** Contract-conformance is load-bearing:
+- **P7 (azure) + P8 (ldnmxx-hack worker) = genuinely test-first.** Contract-conformance is load-bearing:
   write the failing tests FIRST — every shipped config validates against the vendored schema, every
   `invalid/*` fixture is rejected — then wire the fixture-sync + validator dep to green. FIRST RED
   RISK: confirm ALL shipped configs actually validate (schema is envelope-permissive, so they
   should).
-- **P4 (agenthud) + P5 (ldnmxx ui) = mostly mechanical** (delete duplicated modules/CSS, repoint
+- **P4 (agenthud) + P5 (ldnmxx-hack ui) = mostly mechanical** (delete duplicated modules/CSS, repoint
   imports) — verified by typecheck/lint/test/build + a render/E2E smoke, NOT new unit tests. Each
   adds ONE new behavior test only. Ported tests are DELETED (the package owns them) — never
   duplicated.
@@ -188,7 +188,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
 - Gate: full CI green (needs `NPM_READ_TOKEN`). PR/CHANGELOG note: effects preserved, only the chip
   un-pills.
 
-### Phase 5 — ldnmxx UI (`experiment/adopt-shared-packages`)
+### Phase 5 — ldnmxx-hack UI (`experiment/adopt-shared-packages`)
 
 - DELETE: `ui/src/agent/{applyA2UIEvent,contract}.ts`, `ui/src/theme/a2uiTheme.ts`,
   `shared/guard.ts`, the tool schema + `isSelfContainedBatch` from `shared/renderTool.ts` (card
@@ -220,7 +220,7 @@ the user** (protected repos). Consume `@qte77/ui-theme@^0.3.0` (bumped from `^0.
 - Issues: comment #68 (schema-only, does NOT block plan 018) / #26 WS3 / #167.
 - Gate: ruff E/F/I/S + format + pytest + pip-audit green.
 
-### Phase 8 — ldnmxx worker adopts contract (`experiment/workflow-definition-contract`)
+### Phase 8 — ldnmxx-hack worker adopts contract (`experiment/workflow-definition-contract`)
 
 - `usecases/*.json`: rename `span` → `name`. `worker/src/usecases.ts`: `StageDef.span` → `name`,
   align `assertUsecaseDef` with the schema core (keep the assert-guard style — bundle-size-sensitive,
@@ -246,9 +246,9 @@ branch). Phases 7/8 are tokenless.
 
 1. P4: agenthud `npm run typecheck && lint && test && build` green; replay demo + live BYOK smoke;
    bundle diff sane; render shows shadow + shimmer (effects preserved), chip non-pill.
-2. P5: ldnmxx `make test` green; `/run?usecase=founders-copilot` renders cards + USAGE chip.
+2. P5: ldnmxx-hack `make test` green; `/run?usecase=founders-copilot` renders cards + USAGE chip.
 3. P7/P8: `pytest tests/contract` green in azure; `vitest worker/test/usecases.contract.test.ts`
-   green in ldnmxx — the SAME contract passing in both languages.
+   green in ldnmxx-hack — the SAME contract passing in both languages.
 
 ## Risks
 
@@ -257,4 +257,4 @@ branch). Phases 7/8 are tokenless.
 | `@a2ui/react` pre-1.0 drift breaks both consumers | Peer range `>=0.10.1 <0.11`; upgrade via one a2ui-agui-kit PR first |
 | GitHub Packages token friction (P4/P5) | `.npmrc.example` + CONTRIBUTING recipe; `NPM_READ_TOKEN` PAT; tokenless local verify via tarballs; can mirror to npmjs later |
 | Schema breaks azure YAML / fights plan 018 | Envelope-permissive schema; "every shipped YAML validates" red test; strictness deferred to #26 WS3; never touch `runner.py` |
-| ldnmxx may freeze post-hackathon | Its phases are self-contained; plan docs carry the exact diff |
+| ldnmxx-hack may freeze post-hackathon | Its phases are self-contained; plan docs carry the exact diff |
