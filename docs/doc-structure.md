@@ -81,6 +81,25 @@ One audience per file; no duplication.
 | `AGENTS.md` | AI agents | behavioural rules, decision framework |
 | `CLAUDE.md` | Claude Code loader | a pointer to `AGENTS.md` (symlink or one-line `@AGENTS.md` import) — never a copy |
 
+## Persona tracks
+
+Each reader persona has exactly one canonical entry point — route to it, don't
+re-derive its content elsewhere:
+
+| Persona | Entry point | Finds |
+| --- | --- | --- |
+| User / evaluator | `README.md` | what it does, the quickstart, why it exists |
+| Contributor | `CONTRIBUTING.md` | workflow, commands, conventions, releasing |
+| AI agent | `AGENTS.md` (`CLAUDE.md` loads it) | behavioural rules, decision framework |
+
+**CONTRIBUTING is not a quickstart.** The README's `## How` section *is* the
+quickstart — the minimal run example a user or evaluator needs. `CONTRIBUTING.md`
+starts one step later, at the contributor workflow (branches, commits, pre-merge
+checks): it assumes the reader already has the thing running and never repeats
+the README's run example. A repo complex enough to need its own `docs/quickstart.md`
+links it from the README's `## How`, same front-door rule — `## How` stays minimal
+and defers depth.
+
 ## Releasing
 
 For repos that cut versioned releases (skip for profile / docs / action-only repos). Semi-automatic by design — a **human-authored** bump PR (so the merge is a real-user event, sidestepping the bot `action_required` gotcha), then automatic tagging and a one-command publish. SemVer; the version source of truth lives in the package manifest, mirrored in the README version badge (`-blue`).
