@@ -3,7 +3,7 @@ name: KR Eval Gate
 # Pre-commitment gate (the operating-model bedrock — see docs/operating-model.md):
 # a PR that *closes* a `goal`-labelled KR Issue must not merge unless that Issue
 # carries a non-empty `eval:` line written BEFORE the work (anti-goalpost-moving;
-# your missing reviewer). For Complex KRs the eval is a probe question, not a metric.
+# your missing reviewer). For spike KRs the eval is a probe question, not a metric.
 #
 # Dormant until adopted: a PR with no goal-labelled closing issues passes.
 
