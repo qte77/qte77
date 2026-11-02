@@ -19,4 +19,4 @@ goal_id: G0x
 
 eval:
 
-**Cynefin:** clear | complicated | complex | chaotic
+**Kind:** metric | spike
