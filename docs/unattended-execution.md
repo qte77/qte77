@@ -113,6 +113,51 @@ Or stop after 40 turns.
 
 This recipe is untested in the estate so far — record the first real run in `AGENT_LEARNINGS.md`.
 
+## Cloud offload
+
+A long fan-out (hundreds of subagents over a data set) should not live inside the interactive session:
+a session restart or a closed terminal kills its in-flight workflows. Move it out, one of two ways,
+chosen by where the data is allowed to go. Facts below were checked against the linked docs on
+2026-11-02.
+
+- **Detached local headless.** Start `claude -p` from a process that outlives the session
+  (`setsid nohup … &`, output redirected to a log). It still runs on this machine's CPU and disk.
+  Usage counts against the logged-in subscription unless `ANTHROPIC_API_KEY` is set, which `-p`
+  always prefers ([authentication](https://code.claude.com/docs/en/authentication#authentication-precedence)).
+  From v2.1.302 a `-p` run with no permission mode starts in Manual mode and denies unapproved calls,
+  so pass `--allowedTools` and `--permission-mode`
+  ([permission modes](https://code.claude.com/docs/en/permission-modes#tool-calls-denied-in-claude-p-and-agent-sdk-runs)).
+  A workflow run allows up to 16 concurrent agents, fewer on a machine with fewer CPUs;
+  `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` (1-256, v2.1.269+) changes that
+  ([workflows](https://code.claude.com/docs/en/workflows#behavior-and-limits)). The estate has also
+  observed that the cap applies per run, so splitting a fan-out into several runs over disjoint
+  slices raises total parallelism.
+- **Watch the disk.** Session transcripts and workflow journals are written under `~/.claude`, and the
+  journals are where a headless run's results are collected from. Check free space before each slice
+  and abort under a threshold; one estate run stopped without a traceback while its disk was nearly
+  full (cause not confirmed).
+- **Cloud sessions.** Each runs in a fresh Anthropic-hosted VM, roughly 4 vCPUs, 16 GB RAM and 30 GB
+  disk, limits that may change
+  ([resource limits](https://code.claude.com/docs/en/cloud-environments#resource-limits)). The
+  environment takes environment variables, readable by anyone who uses it, and **network secrets**,
+  which a proxy adds to requests for the listed hosts so the key never enters the VM
+  ([network secrets](https://code.claude.com/docs/en/cloud-environments#add-network-secrets)). The
+  **Trusted** access level allows package registries, GitHub and cloud SDK hosts, including
+  `api.github.com` and `*.r2.cloudflarestorage.com`
+  ([default allowed domains](https://code.claude.com/docs/en/cloud-environments#default-allowed-domains)),
+  so inputs and outputs can move through a GitHub repo or an R2 bucket. Changes come back as a push to
+  a branch; `claude --teleport` pulls a pushed session into a local terminal, one way only
+  ([continue in your terminal](https://code.claude.com/docs/en/claude-code-on-the-web#continue-a-cloud-session-in-your-terminal)).
+  The workflows page does not list cloud sessions among its surfaces, though it notes that a cloud
+  session keeps a run's results with its conversation history
+  ([how a workflow runs](https://code.claude.com/docs/en/workflows#how-a-workflow-runs)), so confirm
+  workflow support with a small run before relying on it.
+- **Choosing.** Private or personal data goes to a cloud session only through stores that stay
+  private: a private repo, or a private bucket reached through short-lived pre-signed URLs. A public
+  repo is never the channel. When the data must not leave the machine, run detached locally.
+- **Canary first, either way.** Run one small slice, confirm its output landed where you collect it,
+  then launch the rest.
+
 ## Quality gates
 
 - **One canonical gate == CI.** Run the exact CI gate locally, whole, before pushing — the repo's
