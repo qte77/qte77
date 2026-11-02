@@ -18,13 +18,14 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+REPO = "qte77/qte77"
 
 
-def issue_state(number: int) -> str:
+def issue_state(number: int, repo: str = REPO) -> str:
     """Return 'open' / 'closed' / 'unknown' for a GitHub issue via gh."""
     try:
         out = subprocess.run(
-            ["gh", "issue", "view", str(number), "--json", "state", "--jq", ".state"],
+            ["gh", "issue", "view", str(number), "--repo", repo, "--json", "state", "--jq", ".state"],
             capture_output=True, text=True, check=True,
         )
         return out.stdout.strip().lower() or "unknown"
@@ -48,23 +49,54 @@ def render(goals: list) -> str:
         return "\n".join(lines) + "\n"
     for g in goals:
         krs = g.get("key_results", [])
-        done = sum(
-            1 for kr in krs
-            if kr.get("issue") and issue_state(kr["issue"]) == "closed"
-        )
-        pct = round(100 * done / len(krs)) if krs else 0
+        resolved = 0
+        achieved = 0
+        not_achieved = 0
+        inconclusive = 0
+        unknown_outcome = 0
+        for kr in krs:
+            num = kr.get("issue")
+            state = issue_state(num) if num else "no-issue"
+            outcome = kr.get("outcome")
+            if outcome == "achieved":
+                achieved += 1
+            if state != "closed":
+                continue
+            resolved += 1
+            if outcome == "not-achieved":
+                not_achieved += 1
+            elif outcome == "inconclusive":
+                inconclusive += 1
+            elif outcome != "achieved":
+                unknown_outcome += 1
+        pct = round(100 * achieved / len(krs)) if krs else 0
+        resolution_bits = []
+        if not_achieved:
+            resolution_bits.append(f"{not_achieved} not-achieved")
+        if inconclusive:
+            resolution_bits.append(f"{inconclusive} inconclusive")
+        if unknown_outcome:
+            resolution_bits.append(f"{unknown_outcome} outcome unknown")
+        resolution_suffix = f" ({', '.join(resolution_bits)})" if resolution_bits else ""
         lines += [
             f"## {g.get('id', '?')} — {g.get('objective', '')}",
             "",
-            f"**{pct}%** — {done}/{len(krs)} KRs achieved",
+            f"**{pct}%** — {achieved}/{len(krs)} KRs achieved  ·  "
+            f"{resolved}/{len(krs)} resolved{resolution_suffix}",
             "",
         ]
         for kr in krs:
             num = kr.get("issue")
             state = issue_state(num) if num else "no-issue"
-            mark = "x" if state == "closed" else " "
+            outcome = kr.get("outcome")
+            mark = "x" if outcome == "achieved" else " "
             ref = f"#{num}" if num else "(unlinked)"
-            lines.append(f"- [{mark}] `{kr.get('id', '?')}` {ref} — {kr.get('statement', '')}")
+            suffix = ""
+            if state == "closed" and outcome != "achieved":
+                suffix = f" _(closed, {outcome or 'outcome unknown'})_"
+            lines.append(
+                f"- [{mark}] `{kr.get('id', '?')}` {ref} — {kr.get('statement', '')}{suffix}"
+            )
         lines.append("")
     return "\n".join(lines) + "\n"
 
