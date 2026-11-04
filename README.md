@@ -73,8 +73,8 @@ Apache-2.0 — see [LICENSE](LICENSE).
 ## Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Ledgerline — the Blocker Isn’t Capability, It’s the Audit Answer](https://qte77.github.io/ledgerline-governed-sync-agent/)
 - [An Open Agentic Coding Harness — the Loop, the Plugins, the Senses, the Eval](https://qte77.github.io/open-agentic-coding-harness/)
 - [Building a Trustworthy Agent Loop for a Physical Lab](https://qte77.github.io/open-self-driving-lab-agent-loop/)
 - [A $150 Pipetting Robot from a Stock 3D Printer](https://qte77.github.io/pipettebot-sub-150-pipetting-robot/)
-- [GraphJudge — Measuring How Agents Collaborate](https://qte77.github.io/agentx-agentbeats-writeup/)
 <!-- BLOG-POST-LIST:END -->
