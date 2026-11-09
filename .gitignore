@@ -50,3 +50,6 @@
 /.vscode
 # session-deployed CC memory file (per-repo MEMORY.md is a runtime artifact)
 /MEMORY.md
+
+# Personal Claude Code settings, never shared
+.claude/settings.local.json

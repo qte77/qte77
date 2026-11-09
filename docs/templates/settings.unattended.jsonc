@@ -59,4 +59,7 @@
   // Permissions: grow .claude/settings.local.json as an allowlist from real runs (the friction-remover
   // for true hands-off). For scraper / untrusted-input repos keep it NARROW — broad read-only Bash
   // widens prompt-injection blast radius. See ../unattended-execution.md "The unattended tax".
+  // Keep that file out of git with a .claude/settings.local.json line in the repo's own .gitignore.
+  // Claude Code also adds it to the machine-wide git ignore (default ~/.config/git/ignore), but other
+  // clones and CI runners lack that file, so only the repo line protects them.
 }
