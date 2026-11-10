@@ -56,7 +56,7 @@ DATA: Decls = [
     ("--data-negative", "negative"),
     ("--data-alt", "alt"),
 ]
-VARIANTS: tuple[str, ...] = ("green", "blublock", "dusk", "saas")
+VARIANTS: tuple[str, ...] = ("green", "blublock", "dusk", "saas", "terracotta", "plum")
 
 HEADER = """\
 /*

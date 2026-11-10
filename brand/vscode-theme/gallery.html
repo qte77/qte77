@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EyeRest VS Code Theme Gallery</title>
+<meta name="description" content="Every EyeRest VS Code color theme, side by side — swatches plus a live editor chrome mockup for light and dark.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /*
+   * Color: page chrome reuses qte77's own flagship EyeRest tokens 1:1 (bg/surface/border/text/text-muted/accent/link).
+   * Type: Inter (display + body) / JetBrains Mono (hex values + the mockup code pane) — the brand's own pair.
+   * Layout: a responsive card grid, one card per variant, each holding a light+dark VS Code chrome mockup plus a swatch strip.
+   */
+  :root {
+    --bg: #ece8d8;
+    --surface: #e2dec8;
+    --border: #c8c4b0;
+    --text: #2c2818;
+    --text-muted: #686040;
+    --accent: #7a6010;
+    --link: #755c0f;
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1a14; --surface: #242018; --border: #383428;
+      --text: #d8d0b8; --text-muted: #a89878; --accent: #c8a858; --link: #c8a858;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c1a14; --surface: #242018; --border: #383428;
+    --text: #d8d0b8; --text-muted: #a89878; --accent: #c8a858; --link: #c8a858;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    padding: 32px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  header.page { margin-bottom: 28px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--link);
+  }
+  h1 {
+    font-size: clamp(26px, 4vw, 36px); font-weight: 700; margin: 6px 0 10px;
+    text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .lede { max-width: 640px; color: var(--text-muted); line-height: 1.6; font-size: 15px; margin: 0 0 4px; }
+  .lede code, footer.page code { font-family: var(--font-mono); font-size: 0.92em; }
+  .rule { height: 3px; width: 48px; background: var(--accent); border-radius: 2px; margin: 18px 0 20px; }
+
+  .data-arc {
+    display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+    font-size: 12px; color: var(--text-muted); margin-bottom: 32px;
+  }
+  .data-arc .label { font-weight: 600; color: var(--text); margin-right: 4px; }
+  .arc-chip { display: inline-flex; align-items: center; gap: 6px; }
+  .arc-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .arc-hex { font-family: var(--font-mono); font-size: 10.5px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 1px 2px rgba(28,26,20,0.06), 0 4px 12px rgba(28,26,20,0.08);
+  }
+  .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+  .card-head h2 { font-size: 17px; font-weight: 600; margin: 0; }
+  .card-head .character { font-size: 12px; color: var(--text-muted); font-style: italic; }
+
+  .mockups { display: flex; gap: 12px; margin: 12px 0; flex-wrap: wrap; }
+  .mockup-col { flex: 1 1 190px; min-width: 0; }
+  .scheme-label {
+    font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 4px; display: block;
+  }
+
+  .mockup {
+    border: 1px solid var(--m-border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--m-bg);
+    color: var(--m-text);
+    font-family: var(--font-mono);
+    font-size: 10px;
+  }
+  .mockup .titlebar {
+    background: var(--m-bg);
+    color: var(--m-textMuted);
+    padding: 3px 8px;
+    border-bottom: 1px solid var(--m-border);
+    font-size: 9px;
+  }
+  .mockup .body { display: flex; height: 128px; }
+  .mockup .activity {
+    width: 20px; background: var(--m-surface); border-right: 1px solid var(--m-border);
+    display: flex; flex-direction: column; align-items: center; padding-top: 8px; gap: 8px;
+  }
+  .mockup .activity .ind { width: 3px; height: 14px; border-radius: 2px; background: var(--m-primary); }
+  .mockup .activity .ind.off { background: var(--m-textMuted); opacity: 0.5; }
+  .mockup .sidebar {
+    width: 56px; background: var(--m-surface); border-right: 1px solid var(--m-border);
+    padding: 5px 4px; font-size: 8.5px; color: var(--m-textMuted); line-height: 1.8;
+    overflow: hidden;
+  }
+  .mockup .sidebar .f.active { color: var(--m-text); }
+  .mockup .editor { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .mockup .tabs { display: flex; background: var(--m-surface); border-bottom: 1px solid var(--m-border); }
+  .mockup .tab {
+    padding: 3px 8px; font-size: 8.5px; color: var(--m-textMuted);
+    border-right: 1px solid var(--m-border);
+  }
+  .mockup .tab.active {
+    background: var(--m-bg); color: var(--m-text); border-top: 2px solid var(--m-primary);
+    margin-top: -1px;
+  }
+  .mockup .code { flex: 1; padding: 6px 0; overflow: hidden; }
+  .mockup .ln {
+    display: flex; padding: 0 8px; line-height: 1.65; white-space: pre;
+  }
+  .mockup .ln.hl { background: var(--m-surface); }
+  .mockup .ln .no { color: var(--m-textMuted); width: 14px; display: inline-block; text-align: right; margin-right: 8px; }
+  .mockup .ln .src { position: relative; }
+  .mockup .ln .cur {
+    display: inline-block; width: 1px; height: 11px; background: var(--m-primary);
+    position: relative; top: 2px; margin-left: 1px;
+  }
+  .mockup .status {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--m-bg); border-top: 1px solid var(--m-border);
+    padding: 2px 8px; font-size: 8px; color: var(--m-textMuted);
+  }
+  .mockup .status .git { display: flex; align-items: center; gap: 4px; }
+  .mockup .status .gdot { width: 6px; height: 6px; border-radius: 50%; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
+  .swatch-row { display: flex; gap: 6px; align-items: flex-start; }
+  .swatch-row .swatch-label {
+    font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-muted); width: 34px; padding-top: 6px; flex: none;
+  }
+  .chip { text-align: center; }
+  .chip .sq { width: 20px; height: 20px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.12); display: block; }
+  .chip .hx { font-family: var(--font-mono); font-size: 7.5px; color: var(--text-muted); display: block; margin-top: 2px; }
+
+  footer.page { margin-top: 36px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer.page a { color: var(--link); text-decoration: underline; }
+
+  @media (max-width: 460px) {
+    .grid { grid-template-columns: 1fr; }
+    .mockups { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">qte77 / brand / vscode-theme</div>
+    <h1>EyeRest VS Code Theme Gallery</h1>
+    <p class="lede">Every EyeRest color variant, side by side — swatches plus a live VS Code chrome mockup for light and dark, so you can compare hue and contrast without installing seven themes.</p>
+    <div class="rule"></div>
+    <p class="lede">All seven are zero-blue and pass WCAG AA on text/muted/link in both schemes. The mockups show exactly what the generated <code>brand/vscode-theme/</code> ships today — workbench chrome only. No <code>tokenColors</code> are defined yet, so code text renders flat in one color; only line numbers, the active-line highlight, the cursor, and the status-bar git dot are themed.</p>
+    <p class="lede">See <a href="README.md">README.md</a> for install instructions, or <a href="https://github.com/qte77/qte77/blob/main/brand/DESIGN.md">DESIGN.md</a> for the token source of truth.</p>
+  </header>
+
+  <div class="data-arc" id="dataArc"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer class="page">
+    Source of truth: <code>brand/DESIGN.md</code> → generated into <code>brand/ui-kit/eyerest.css</code> and <code>brand/vscode-theme/</code> by <code>make -C brand ui_kit vscode_theme</code>. Terracotta and Plum were derived with Adobe Color's Analogous and Triad harmony rules around the brand's zero-blue exclusion band — see DESIGN.md "Palette derivation".
+  </footer>
+</div>
+
+<script>
+  const DATA = {
+    light: { positive: '#4a6818', caution: '#787010', negative: '#983828', alt: '#587818' },
+    dark:  { positive: '#8aa860', caution: '#c8b868', negative: '#c08060', alt: '#a8b870' },
+  };
+
+  const VARIANTS = [
+    { key: 'eyerest', name: 'EyeRest (flagship)', character: 'warm umber / parchment',
+      light: { bg:'#ece8d8', surface:'#e2dec8', border:'#c8c4b0', text:'#2c2818', textMuted:'#686040', primary:'#7a6010', link:'#755c0f' },
+      dark:  { bg:'#1c1a14', surface:'#242018', border:'#383428', text:'#d8d0b8', textMuted:'#a89878', primary:'#c8a858', link:'#c8a858' } },
+    { key: 'green', name: 'Green', character: 'forest / yellow-green',
+      light: { bg:'#f0f6ee', surface:'#e8f0e6', border:'#c0d4bc', text:'#2a4a2a', textMuted:'#4a6a4a', primary:'#2a6a2a', link:'#2a6a2a' },
+      dark:  { bg:'#0c1610', surface:'#12201a', border:'#2a3e2c', text:'#8cb888', textMuted:'#7aa878', primary:'#3a6a3a', link:'#539853' } },
+    { key: 'blublock', name: 'BluBlock', character: 'zero-blue amber — blue-filter lenses',
+      light: { bg:'#f5ecd8', surface:'#ede3cc', border:'#c8b898', text:'#3d2e18', textMuted:'#6b5838', primary:'#c06010', link:'#964b0c' },
+      dark:  { bg:'#1a1208', surface:'#231a0e', border:'#3d2e1a', text:'#e8d5b0', textMuted:'#a08b6d', primary:'#e89030', link:'#e89030' } },
+    { key: 'dusk', name: 'Dusk', character: 'plum-gray / sage, earth tones',
+      light: { bg:'#eaece2', surface:'#e0e3d7', border:'#c8cac0', text:'#2c2622', textMuted:'#6a6058', primary:'#7a5820', link:'#7a5820' },
+      dark:  { bg:'#1f1b22', surface:'#2a2630', border:'#3a343e', text:'#d8ccbc', textMuted:'#b0a498', primary:'#c8a468', link:'#c8a468' } },
+    { key: 'saas', name: 'SaaS', character: 'de-blued flat/modern spruce',
+      light: { bg:'#f4f6f4', surface:'#e9ece9', border:'#ccd2cc', text:'#1a201c', textMuted:'#5a635c', primary:'#1f6e4c', link:'#1f6e4c' },
+      dark:  { bg:'#0f1512', surface:'#161d19', border:'#28322c', text:'#e6ece8', textMuted:'#9aa8a0', primary:'#4fae82', link:'#4fae82' } },
+    { key: 'terracotta', name: 'Terracotta', character: 'clay / brick-red (analogous)',
+      light: { bg:'#f5e9e2', surface:'#ecdcd0', border:'#cfb8a8', text:'#3a2018', textMuted:'#7a5248', primary:'#9c3d1f', link:'#9c3d1f' },
+      dark:  { bg:'#1d130f', surface:'#271a14', border:'#4a3426', text:'#e8d2c0', textMuted:'#b8927a', primary:'#e8824c', link:'#e8824c' } },
+    { key: 'plum', name: 'Plum', character: 'muted violet / mulberry (triadic)',
+      light: { bg:'#f2e8ef', surface:'#e8dce6', border:'#c8b4c4', text:'#2e1a2a', textMuted:'#6a4a62', primary:'#7a2e68', link:'#7a2e68' },
+      dark:  { bg:'#1a1119', surface:'#241a22', border:'#3e2e3a', text:'#e4d0dc', textMuted:'#ab8aa0', primary:'#d072b8', link:'#d072b8' } },
+  ];
+
+  const FILES = { active: 'theme.ts', others: ['index.ts', 'tokens.css'] };
+
+  function cssVars(p) {
+    return `--m-bg:${p.bg};--m-surface:${p.surface};--m-border:${p.border};--m-text:${p.text};--m-textMuted:${p.textMuted};--m-primary:${p.primary};`;
+  }
+
+  function codeLines(v, scheme) {
+    const p = v[scheme];
+    return [
+      `// ${v.key}.theme.ts`,
+      `export const ${v.key} = {`,
+      `  bg: "${p.bg}",`,
+      `  primary: "${p.primary}",`,
+      `};`,
+    ];
+  }
+
+  function mockup(v, scheme) {
+    const p = v[scheme];
+    const lines = codeLines(v, scheme);
+    const linesHtml = lines.map((l, i) => {
+      const hl = i === 2 ? ' hl' : '';
+      const cursor = i === 2 ? '<span class="cur"></span>' : '';
+      return `<span class="ln${hl}"><span class="no">${i + 1}</span><span class="src">${l.replace(/</g, '&lt;')}${cursor}</span></span>`;
+    }).join('');
+    const gdot = scheme === 'light' ? DATA.light.positive : DATA.dark.positive;
+    return `
+      <div class="mockup" style="${cssVars(p)}">
+        <div class="titlebar">${v.key}.theme.ts — EyeRest ${v.name}</div>
+        <div class="body">
+          <div class="activity">
+            <div class="ind"></div>
+            <div class="ind off"></div>
+            <div class="ind off"></div>
+          </div>
+          <div class="sidebar">
+            <div class="f active">${FILES.active}</div>
+            ${FILES.others.map(f => `<div class="f">${f}</div>`).join('')}
+          </div>
+          <div class="editor">
+            <div class="tabs">
+              <div class="tab active">${FILES.active}</div>
+              <div class="tab">${FILES.others[0]}</div>
+            </div>
+            <div class="code">${linesHtml}</div>
+          </div>
+        </div>
+        <div class="status">
+          <span class="git"><span class="gdot" style="background:${gdot}"></span> main</span>
+          <span>Ln 3, Col 14</span>
+        </div>
+      </div>`;
+  }
+
+  function swatchRow(label, p) {
+    const entries = [['bg', p.bg], ['surf', p.surface], ['line', p.border], ['text', p.text], ['muted', p.textMuted], ['acc', p.primary], ['link', p.link]];
+    return `
+      <div class="swatch-row">
+        <span class="swatch-label">${label}</span>
+        ${entries.map(([k, hex]) => `
+          <div class="chip">
+            <span class="sq" style="background:${hex}" title="${k}: ${hex}"></span>
+            <span class="hx">${hex.replace('#', '')}</span>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  function card(v) {
+    return `
+      <div class="card">
+        <div class="card-head">
+          <h2>${v.name}</h2>
+          <span class="character">${v.character}</span>
+        </div>
+        <div class="mockups">
+          <div class="mockup-col">
+            <span class="scheme-label">Light</span>
+            ${mockup(v, 'light')}
+          </div>
+          <div class="mockup-col">
+            <span class="scheme-label">Dark</span>
+            ${mockup(v, 'dark')}
+          </div>
+        </div>
+        <div class="swatches">
+          ${swatchRow('light', v.light)}
+          ${swatchRow('dark', v.dark)}
+        </div>
+      </div>`;
+  }
+
+  document.getElementById('grid').innerHTML = VARIANTS.map(card).join('');
+
+  document.getElementById('dataArc').innerHTML = `
+    <span class="label">Data arc (shared across every variant)</span>
+    ${['positive', 'caution', 'negative', 'alt'].map(k => `
+      <span class="arc-chip">
+        <span class="arc-dot" style="background:${DATA.light[k]}"></span>${k}
+        <span class="arc-hex">${DATA.light[k]} / ${DATA.dark[k]}</span>
+      </span>`).join('')}
+  `;
+</script>
+
+</body>
+</html>

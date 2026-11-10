@@ -1,0 +1,93 @@
+{
+  "name": "qte77-eyerest-theme",
+  "displayName": "EyeRest (qte77)",
+  "description": "qte77's zero-blue, low-fatigue EyeRest color theme for VS Code \u2014 the flagship palette plus every brand variant, light and dark. UI chrome only for now; syntax highlighting is a tracked follow-up. Generated from brand/DESIGN.md.",
+  "version": "0.1.0",
+  "publisher": "qte77",
+  "license": "Apache-2.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qte77/qte77",
+    "directory": "brand/vscode-theme"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "EyeRest Light",
+        "uiTheme": "vs",
+        "path": "./themes/eyerest-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/eyerest-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest Green Light",
+        "uiTheme": "vs",
+        "path": "./themes/green-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest Green Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/green-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest BluBlock Light",
+        "uiTheme": "vs",
+        "path": "./themes/blublock-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest BluBlock Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/blublock-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest Dusk Light",
+        "uiTheme": "vs",
+        "path": "./themes/dusk-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest Dusk Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dusk-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest SaaS Light",
+        "uiTheme": "vs",
+        "path": "./themes/saas-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest SaaS Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/saas-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest Terracotta Light",
+        "uiTheme": "vs",
+        "path": "./themes/terracotta-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest Terracotta Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/terracotta-dark-color-theme.json"
+      },
+      {
+        "label": "EyeRest Plum Light",
+        "uiTheme": "vs",
+        "path": "./themes/plum-light-color-theme.json"
+      },
+      {
+        "label": "EyeRest Plum Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/plum-dark-color-theme.json"
+      }
+    ]
+  }
+}

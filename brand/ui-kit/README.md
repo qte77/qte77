@@ -49,7 +49,7 @@ Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
 ## Docs in this kit
 
 - **`README.md`** (you are here) — how to adopt & use the kit.
-- [`BASELINE.md`](BASELINE.md) — the *why*: branding split, decisions (D1–D13), gotchas, roadmap.
+- [`BASELINE.md`](BASELINE.md) — the *why*: branding split, decisions (D1–D15), gotchas, roadmap.
 - [`DISCOVERABILITY.md`](DISCOVERABILITY.md) — SEO / GEO / ASO.
 - [`../DESIGN.md`](../DESIGN.md) — token source of truth.
 
@@ -58,7 +58,7 @@ Locally, export `NODE_AUTH_TOKEN` as a classic PAT (or fine-grained token) with
 | File | From `DESIGN.md` | What |
 |---|---|---|
 | `tailwind/tokens.css` | `colors` · `data` · `variants` · `typography` · `rounded` | Tailwind v4 `@theme` tokens + `data-variant` overrides — the `@qte77/ui-theme` npm package (see above) |
-| `eyerest.css` | `colors` · `variants` · `data` | color tokens (default + 4 variants incl. SaaS, light/dark, data arc, `--shadow-card`) |
+| `eyerest.css` | `colors` · `variants` · `data` | color tokens (default + 6 variants incl. SaaS/Terracotta/Plum, light/dark, data arc, `--shadow-card`) |
 | `layout.css` | `spacing` · `rounded` · `shapes` · `components` | spacing/shape tokens + component bindings |
 | `fonts.css` | `typography` | `@font-face` (WOFF2 + TTF fallback) + type tokens |
 | `theme.js` | — | no-build cycler: `resolveTheme`/`nextTheme`/`THEME_CYCLE` + `themechange` |
