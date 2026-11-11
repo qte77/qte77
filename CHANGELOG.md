@@ -127,6 +127,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- `.github/workflows/repo-registry.yml`: dropped the unused `models: read` permission (the registry run doesn't enable gha-repo-index's AI summaries, and GitHub Models is retired)
+- `README.md`: the GitHub Models icon is gone from the tech-stack row; the estate's actions now call Cloudflare Workers AI. The `gh-models-*.svg` assets stay as icon examples
 - `.claude/rules/{compound-learning,context-management,core-principles,unattended-execution}.md`: dropped the repo's local copies — they now load once at user level from `~/.claude/rules/`, symlinked into the qte77/claude-code-plugins rules SoT, same change as `ai-agents-research#689`. The local `core-principles.md` and `compound-learning.md` were older than the SoT versions, so sessions now get the current text; `context-management.md` and `unattended-execution.md` were already identical
 - `docs/templates/handoff.template.md` and `docs/handoffs/{001,003,004}-*.md`: the handoff template and the three existing per-arc handoffs are removed — each handoff's still-relevant content is folded into the matching plan's new opening `## Status` section (`docs/plans/{001,003,004}-*.md`), per the one-file-per-arc contract
 
