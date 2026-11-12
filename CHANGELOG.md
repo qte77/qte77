@@ -21,8 +21,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.github/workflows/publish-ui-theme.yml`, `.github/workflows/repo-registry.yml`:
   set `persist-credentials: false` on `actions/checkout`, surfaced by the new
   zizmor gate (`artipacked`). `blog-post-workflow.yml` keeps persisted credentials —
-  its next step pushes via the default git CLI with no explicit token — so the gate
-  still reports one `artipacked` warning there pending an owner decision.
+  its next step pushes via the default git CLI with no explicit token — owner
+  reviewed and approved this as a scoped exception, recorded in
+  `.github/zizmor.yml` (`artipacked` ignore, that file only, with a reason comment).
+- `.github/workflows/blog-post-workflow.yml`: fix the `gautamkrishnar/blog-post-workflow`
+  pin's version comment (`v1.9.6` → `1.9.6`) to match the action's actual tag name,
+  clearing a zizmor `ref-version-mismatch` warning the new gate also surfaced.
 
 ### Added
 

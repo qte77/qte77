@@ -1,0 +1,9 @@
+---
+# Scoped zizmor exceptions. Keep each entry narrow (one rule, one file) with a reason.
+rules:
+  artipacked:
+    ignore:
+      # blog-post-workflow.yml's "Create update branch" step pushes via the default git
+      # CLI (not an explicit GH_TOKEN remote), so it needs the checkout's persisted
+      # credentials on purpose. Owner-approved exception (qte77/qte77#223).
+      - blog-post-workflow.yml
