@@ -13,6 +13,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `.github/workflows/lint-actions.yml`: adopt the shared `qte77/.github` reusable
+  `lint-actions` gate (actionlint + yamllint + zizmor) on push/PR/dispatch to `main`.
+
+### Security
+
+- `.github/workflows/publish-ui-theme.yml`, `.github/workflows/repo-registry.yml`:
+  set `persist-credentials: false` on `actions/checkout`, surfaced by the new
+  zizmor gate (`artipacked`). `blog-post-workflow.yml` keeps persisted credentials —
+  its next step pushes via the default git CLI with no explicit token — owner
+  reviewed and approved this as a scoped exception, recorded in
+  `.github/zizmor.yml` (`artipacked` ignore, that file only, with a reason comment).
+- `.github/workflows/blog-post-workflow.yml`: fix the `gautamkrishnar/blog-post-workflow`
+  pin's version comment (`v1.9.6` → `1.9.6`) to match the action's actual tag name,
+  clearing a zizmor `ref-version-mismatch` warning the new gate also surfaced.
+
+### Added
+
 - `docs/unattended-execution.md`: a **"Cloud offload"** section — moving a long fan-out out of the interactive session, either as a detached local headless `claude -p` run (subscription vs `ANTHROPIC_API_KEY`, Manual-mode default, the workflow concurrency cap and its env var, a free-disk check before each slice) or as a cloud session (VM limits, env vars vs proxy-injected network secrets, the Trusted allowlist incl. GitHub and R2, push/teleport return path, workflow support unconfirmed in the docs); private data only through private stores; canary one slice first. Facts checked against code.claude.com on 2026-11-02
 - `brand/DESIGN.md` + `brand/ui-kit/{eyerest.css,tailwind/tokens.css}`: two new color
   variants — **Terracotta** (clay/brick-red) and **Plum** (muted violet/mulberry) — derived
