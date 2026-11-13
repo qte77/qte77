@@ -32,8 +32,8 @@ onboarding — read it first.
 - **Watch-outs:** the kit is contract-only — resist adding a runnable `ui_sweep.py` / `workflow.js`
   here; that belongs downstream per the META -> MECHANISM split (a new engine/plugin arc, not this
   one). `settings.unattended.jsonc` is a template **with comments** — real `settings.json` is strict
-  JSON; strip the comments when merging into a repo. Prefix every `git`/`gh` with
-  `env -u GH_TOKEN -u GITHUB_TOKEN`; commit `--no-gpg-sign` and `-F` (not `-m`). Full list:
+  JSON; strip the comments when merging into a repo. Commit with `-F` (not `-m`); credential
+  and signing hazards are in the full list:
   [unattended tax](../unattended-execution.md#the-unattended-tax).
 
 ## Why

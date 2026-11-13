@@ -34,16 +34,16 @@ the onboarding — read it first, then "Source map" and "REMAINING" below.
   security always.
 - **Owner-gates:** everything lands on `experiment/*` test branches (the estate's may-not-merge
   prefix); PRs open for validation but **merge waits for the owner** — the three consumer repos
-  enforce `required_signatures`, so each merge is a per-PR `--admin` decision (`a2ui-agui-kit` /
-  `protocols` instead use rulesets — no `--admin` bypass there; squash normally once CodeFactor is
+  enforce `required_signatures`, so each merge is a per-PR owner decision (`a2ui-agui-kit` /
+  `protocols` instead use rulesets — no bypass there; squash normally once CodeFactor is
   green). P4/P5 additionally need the owner to add an `NPM_READ_TOKEN` (`read:packages` PAT) secret to
   `agenthud-agui-a2ui` and `ldnmxx-hack` before their CI goes green at install — verify locally first,
   tokenless, via `npm pack` tarballs (see "Token constraint" below).
 - **Commands:** see "Verification (per phase)" below for the exact per-repo gate commands.
-- **Watch-outs:** prefix every git/gh with `env -u GH_TOKEN -u GITHUB_TOKEN` (both vars are invalid and
-  shadow the real credential → 403 on writes); commit `--no-gpg-sign`, identity
-  `qte77 <93844790+qte77@users.noreply.github.com>`; `--admin` merges bypass ONLY the signature gate,
-  never a failing/absent status check; plain-text docs — no emoji/checkmarks/glyphs; azure has no
+- **Watch-outs:** stale token variables in the environment can shadow the real credential (403 on
+  writes); see [the unattended tax](../unattended-execution.md#the-unattended-tax). Identity
+  `qte77 <93844790+qte77@users.noreply.github.com>`; an owner-approved bypass merge gets past ONLY the
+  signature gate, never a failing/absent status check; plain-text docs — no emoji/checkmarks/glyphs; azure has no
   typechecker in CI — flag, don't fix; arc memory: `project_ui_engine_unification.md`.
 
 ## Why
@@ -65,22 +65,22 @@ Two problems, found by comparing the repos:
 | Local path | GitHub | Role |
 | --- | --- | --- |
 | `/workspaces/qte77/qte77` | `qte77/qte77` | Estate hub; brand SSOT (`brand/DESIGN.md`); publishes `@qte77/ui-theme` from `brand/ui-kit` |
-| `/workspaces/qte77/a2ui-agui-kit` | `qte77/a2ui-agui-kit` | NEW. `@qte77/a2ui-agui-kit` shared bridge (core + React + styles). I own it. Ruleset-protected — squash only, no `--admin` bypass (see note) |
-| `/workspaces/qte77/protocols` | `qte77/protocols` | NEW. `workflow-definition/v1` JSON Schema + fixtures. Ruleset-protected — squash only, no `--admin` bypass (see note) |
+| `/workspaces/qte77/a2ui-agui-kit` | `qte77/a2ui-agui-kit` | NEW. `@qte77/a2ui-agui-kit` shared bridge (core + React + styles). I own it. Ruleset-protected — squash only, no bypass (see note) |
+| `/workspaces/qte77/protocols` | `qte77/protocols` | NEW. `workflow-definition/v1` JSON Schema + fixtures. Ruleset-protected — squash only, no bypass (see note) |
 | `/workspaces/qte77/agenthud-agui-a2ui` | `qte77/agenthud-agui-a2ui` | Canonical UI base (superset). Consumer (Phase 4). `required_signatures` → admin merge |
 | `/workspaces/qte77/ldnmxx-hack` | `qte77/ldnmxx-hack` | Fork "groundwork" + TS worker. Consumer (Phase 5 ui, Phase 8 worker). Admin merge |
 | `/workspaces/qte77/claude-azure-workflows-gui` | `qte77/azure-doc-workflows` | Python doc-workflows engine. Consumer (Phase 7). Admin merge |
 
-Estate conventions (apply everywhere): prefix all git/gh with `env -u GH_TOKEN -u GITHUB_TOKEN`;
-identity `qte77 <93844790+qte77@users.noreply.github.com>`; commits `--no-gpg-sign`; conventional
-commits; branch per topic; squash-merge on green CI then prune remote+local; plain-text docs, no
+Estate conventions (apply everywhere): credential and signing workarounds per
+[the unattended tax](../unattended-execution.md#the-unattended-tax), never written into repo files;
+identity `qte77 <93844790+qte77@users.noreply.github.com>`; conventional commits; branch per topic; squash-merge on green CI then prune remote+local; plain-text docs, no
 emoji/glyphs. The three consumer repos use classic protection with `required_signatures` → their PRs need a
-per-PR `--admin` merge (unsigned commits are the estate norm; only the signature gate is
+per-PR owner-approved bypass merge (unsigned commits are the estate norm; only the signature gate is
 bypassed, never a failing/absent check). `a2ui-agui-kit` and `protocols` now use branch
 **rulesets** (0 bypass actors) enforcing `required_signatures` + CodeFactor `strict=true`:
-`--admin` bypasses classic protection only, NOT rulesets. **Do not modify the rulesets:** once
+A bypass merge works on classic protection only, NOT rulesets. **Do not modify the rulesets:** once
 CodeFactor is green, squash normally — GitHub signs the squash commit, satisfying
-`required_signatures` (confirm on the next PR). Reserve `--admin` for the classic-protection
+`required_signatures` (confirm on the next PR). Reserve bypass merges for the classic-protection
 repos (qte77/qte77 + the three consumers).
 
 ## DONE and published (do not redo)

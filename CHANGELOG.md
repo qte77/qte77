@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.github/workflows/lint-actions.yml`: adopt the shared `qte77/.github` reusable
   `lint-actions` gate (actionlint + yamllint + zizmor) on push/PR/dispatch to `main`.
 
+### Changed
+
+- `docs/templates/plan.template.md`, `docs/unattended-execution.md`, `docs/plans/001`, `003`, `004`:
+  replace written-out operator commands (the token-unset wrapper, the admin merge flag, the no-sign
+  commit flag) with neutral wording. Per-machine credential and signing workarounds stay in private
+  memory; the template no longer seeds them into new plans. Prohibitions ("never bypass") are kept.
+
 ### Security
 
 - `.github/workflows/publish-ui-theme.yml`, `.github/workflows/repo-registry.yml`:

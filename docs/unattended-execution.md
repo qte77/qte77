@@ -380,11 +380,11 @@ with the fix.
 
 | Hazard | Fix |
 | --- | --- |
-| Bare `git`/`gh` 403 on writes (`GH_TOKEN`/`GITHUB_TOKEN` shadow the real credential) | Prefix `gh` calls and git network calls (`fetch`/`push`/`ls-remote`) with `env -u GH_TOKEN -u GITHUB_TOKEN`. Keep `GITHUB_TOKEN` set for `git commit -S` — the Codespaces signer needs it and stripping it fails with `gpg: ... No secret key`. Never wrap the whole agent process in `env -u GITHUB_TOKEN` |
+| Bare `git`/`gh` 403 on writes (a stale `GH_TOKEN`/`GITHUB_TOKEN` in the environment shadows the stored credential) | Fix the environment: remove or replace the stale variable, or rebuild the container if its config already dropped it. A per-session workaround the owner approves for one machine stays in private memory, not in repo docs. Keep `GITHUB_TOKEN` set for `git commit -S` — the Codespaces signer needs it and removing it fails with `gpg: ... No secret key`; never remove it for the whole agent process |
 | `git commit -m` shell-substitutes backticks / `$()` in the message | Commit with `-F <file>`, never `-m` |
 | Codespace commit lands unsigned, or the signer answers `403 Author is invalid` | Check `~/.gitconfig` for a stray `user.name` that does not match the GitHub profile name, and for a repo-local `commit.gpgsign false` left by an old workaround; remove both and a plain `git commit` + `git push` comes back GitHub-verified. Never reach for `--no-gpg-sign` or `-c commit.gpgsign=false` as the fix |
-| Merge classifier / branch protection blocks agent auto-merge | Merge is an owner gate — park the green PR for approval; `--admin` bypasses only the signature gate, never a failing check; never relax protection |
-| Stuck required check (e.g. `CodeFactor: ERROR`) | Update the branch to `main` for a fresh signed SHA; never nudge-commit, never `--admin` past a genuinely absent check |
+| Merge classifier / branch protection blocks agent auto-merge | Merge is an owner gate — park the green PR for approval; any bypass of branch protection is the owner's call and never gets past a failing check; never relax protection |
+| Stuck required check (e.g. `CodeFactor: ERROR`) | Update the branch to `main` for a fresh signed SHA; never nudge-commit, never bypass protection past a genuinely absent check |
 | Deploy-race / edge cache serves the old build | Settle wait + asset-hash/MIME poll before verifying; never start a sweep in the same breath as the deploy |
 | Session/container death loses uncommitted work | git is the only durable SOT; commit-as-you-go; long runs use resume-from-run-id |
 | Broad Bash allowlist widens prompt-injection blast radius (acute for scrapers) | Keep the allowlist narrow; use `Read`/`Grep`/`Glob` + `uv run python` one-liners over `cat`/`grep` |

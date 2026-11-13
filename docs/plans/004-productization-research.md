@@ -41,8 +41,8 @@ executes without re-exploring; the status below is the onboarding — read it fi
   issues, commit `goals.json`, or contact anyone before that owner sitting.
 - **Commands:** `markdownlint $(git ls-files '*.md')` + `lychee $(git ls-files '*.md')` — see
   "Verification" below.
-- **Watch-outs:** prefix every `git`/`gh` with `env -u GH_TOKEN -u GITHUB_TOKEN`; commit
-  `--no-gpg-sign` and `-F <file>` (never `-m` — backticks/`$()` get shell-substituted). Cross-repo: the
+- **Watch-outs:** credential and signing hazards per
+  [the unattended tax](../unattended-execution.md#the-unattended-tax); commit with `-F <file>` (never `-m` — backticks/`$()` get shell-substituted). Cross-repo: the
   orchestrators are sibling repos — do not `Read` their files from a qte77 session for content work
   (the implicit `CLAUDE.md` cascade fires on `Read`); the source map below already carries what you
   need, delegate to a subagent inside the target repo for more. Do not create a second tracking
