@@ -62,3 +62,17 @@ description: Non-obvious patterns that prevent repeated mistakes across sprints
 - **Problem**: A branch ruleset requires status checks by name. Some rulesets still require a context named `codefactor.io`, while CodeFactor now reports as a check run named `CodeFactor`, so the requirement can never be met (found 2026-10-29 in 5 of 26 rulesets with required checks).
 - **Solution**: Before re-running anything, compare the ruleset's required contexts (`gh api repos/<owner>/<repo>/rules/branches/<branch>`) with the check names on the PR. A mismatch is an owner fix to the ruleset; agents never edit rulesets and never merge past it with `--admin`.
 - **References**: [`docs/unattended-execution.md`](docs/unattended-execution.md) ("The unattended tax").
+
+### Merge an approved PR pinned to the commit that was reviewed
+
+- **Context**: Squash-merging a batch of owner-approved PRs (bot bumps, agent fixes) across estate repos.
+- **Problem**: A push that lands between review and merge gets merged unreviewed. Bot PRs often conflict on `CHANGELOG.md` once a sibling merges. Superseded bot PRs and their branches pile up.
+- **Solution**: Record the full head SHA when the PR is reviewed and merge with `gh pr merge <n> --squash --match-head-commit <sha>`; a moved head makes the merge fail instead of slipping through. On a conflict, merge `main` into the PR branch, keep both changelog entries and push normally (squash keeps `main` linear); don't rewrite a shared PR branch. Close superseded bot PRs with a one-line reason and delete their branches in the same pass.
+- **References**: gha-repo-index#23 (changelog conflict resolved this way), [`ci-status-checks.md`](https://github.com/qte77/claude-code-plugins/blob/main/.claude/rules/ci-status-checks.md).
+
+### Look for an existing checkout before cloning
+
+- **Context**: A sweep or fix needs a repo that the workspace may already hold.
+- **Problem**: Cloning a second copy wastes disk and splits state; a match by folder name misses checkouts whose folder name differs from the repo name (renamed repos, prefixes). Seen twice.
+- **Solution**: Find the checkout by remote URL (`git -C <dir> remote get-url origin`) before cloning. Work in a new worktree made from it on a fresh `origin/main`; never switch, pull, stash or reset the existing checkout, which may hold another session's work.
+- **References**: [`docs/unattended-execution.md`](docs/unattended-execution.md).

@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `AGENT_LEARNINGS.md`: merge pinned to the reviewed head commit; look for an existing checkout
+  before cloning.
 - `.github/workflows/lint-actions.yml`: adopt the shared `qte77/.github` reusable
   `lint-actions` gate (actionlint + yamllint + zizmor) on push/PR/dispatch to `main`.
 
