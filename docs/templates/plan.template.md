@@ -37,9 +37,9 @@ re-exploring. The status below is the onboarding — read it first.>
 ## Repo + role map
 
 <Only for cross-repo arcs; drop for single-repo. Local path | GitHub | Role. Restate estate git
-conventions once: `env -u GH_TOKEN -u GITHUB_TOKEN` for `gh`/git network calls — see
-[the unattended tax](../unattended-execution.md#the-unattended-tax) for the commit-signing exception;
-branch per topic; merge is an owner gate.>
+conventions once: branch per topic; merge is an owner gate; credential or signing workarounds for one
+machine stay in private memory, never in the plan — see
+[the unattended tax](../unattended-execution.md#the-unattended-tax).>
 
 ## Owner decisions (locked, YYYY-MM-DD)
 
