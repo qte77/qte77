@@ -89,6 +89,7 @@
     --primary: #3a6a3a;
     --primary-on: #c4e8c0;
     --link: #539853;
+    --focus: #539853;
   }
 }
 
@@ -101,6 +102,7 @@
   --primary: #3a6a3a;
   --primary-on: #c4e8c0;
   --link: #539853;
+  --focus: #539853;
 }
 
 /* Variant: EyeRest BluBlock */

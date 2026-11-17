@@ -30,6 +30,8 @@ from pathlib import Path
 
 import yaml
 
+from contrast import indicator_color
+
 BRAND = Path(__file__).resolve().parent.parent
 DESIGN_FILE = BRAND / "DESIGN.md"
 OUT_FILE = BRAND / "ui-kit" / "eyerest.css"
@@ -94,6 +96,18 @@ def _decls(colors: dict, keys: Decls, *, dark: bool) -> Decls:
     return [(var, colors[f"{prefix}{key}"]) for var, key in keys]
 
 
+def _focus(colors: dict, var: str, *, dark: bool) -> Decls:
+    """`var` for state indicators, emitted only where primary is under 3:1 on bg (#214).
+
+    Consumers read it with a primary fallback, e.g. `var(--focus, var(--primary))`, so
+    schemes where primary already reaches 3:1 need no declaration and stay unchanged.
+    """
+    prefix = "dark-" if dark else ""
+    primary, bg = colors[f"{prefix}primary"], colors[f"{prefix}bg"]
+    chosen = indicator_color(primary, colors[f"{prefix}link"], bg)
+    return [] if chosen == primary else [(var, chosen)]
+
+
 def css_eyerest(spec: dict) -> str:
     """Render the full eyerest.css cascade from a parsed DESIGN.md spec."""
     colors = spec["colors"]
@@ -101,8 +115,9 @@ def css_eyerest(spec: dict) -> str:
     elevation = spec.get("elevation", {})
 
     light = [("color-scheme", "light dark"), *_decls(colors, BASE, dark=False)]
+    light += _focus(colors, "--focus", dark=False)
     light += [(var, data[key]) for var, key in DATA]
-    dark = _decls(colors, BASE, dark=True)
+    dark = _decls(colors, BASE, dark=True) + _focus(colors, "--focus", dark=True)
     dark += [(var, data_dark[key]) for var, key in DATA]
     # Functional elevation as a plain custom property for the no-build kit (Tailwind gets it too).
     # It lives on the default :root; variants inherit it (they only override the base palette).
@@ -121,8 +136,9 @@ def css_eyerest(spec: dict) -> str:
 
     for name in VARIANTS:
         variant = spec["variants"][name]
-        vlight = _decls(variant["colors"], BASE, dark=False)
-        vdark = _decls(variant["colors"], BASE, dark=True)
+        vc = variant["colors"]
+        vlight = _decls(vc, BASE, dark=False) + _focus(vc, "--focus", dark=False)
+        vdark = _decls(vc, BASE, dark=True) + _focus(vc, "--focus", dark=True)
         sel = f':root[data-variant="{name}"]'
         parts += [
             f'/* Variant: {variant["name"]} */',
@@ -162,13 +178,15 @@ TW_HEADER = """\
 def _tw_color_decls(colors: dict, data: dict, *, dark: bool) -> Decls:
     """Tailwind --color-* declarations for a scheme (base palette + data arc)."""
     base = [(f"--color-{key}", colors[f'{"dark-" if dark else ""}{key}']) for _, key in BASE]
+    base += _focus(colors, "--color-focus", dark=dark)
     arc = [(f"--color-data-{key}", data[key]) for _, key in DATA]
     return base + arc
 
 
 def _tw_variant_decls(vcolors: dict, *, dark: bool) -> Decls:
     """Tailwind --color-* base overrides for a variant scheme (data arc stays global)."""
-    return [(f"--color-{key}", vcolors[f'{"dark-" if dark else ""}{key}']) for _, key in BASE]
+    base = [(f"--color-{key}", vcolors[f'{"dark-" if dark else ""}{key}']) for _, key in BASE]
+    return base + _focus(vcolors, "--color-focus", dark=dark)
 
 
 def css_tailwind(spec: dict) -> str:

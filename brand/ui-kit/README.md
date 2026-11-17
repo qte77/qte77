@@ -32,7 +32,10 @@ This registers the utilities the apps use — `bg-bg`, `bg-surface`, `text-text`
 any primary-colored text — see `../DESIGN.md` Colors / Accessibility. Fonts are the
 consumer's concern (`@fontsource/*` or self-host); the package only names the
 family stacks. It also ships **`--shadow-card`** (light/dark) for subtle functional
-elevation — see `../DESIGN.md` "Motion & effects".
+elevation — see `../DESIGN.md` "Motion & effects". For focus rings and other state
+indicators use `var(--color-focus, var(--color-primary))` (`--focus` in `eyerest.css`):
+it is declared only where `primary` is under 3:1 on the background — see
+`../DESIGN.md` Accessibility.
 
 GitHub Packages requires an auth token even to *install* a public package. Add an
 `.npmrc` next to your `package.json`:

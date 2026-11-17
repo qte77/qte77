@@ -310,6 +310,15 @@ values, not silently adjusted:
 
 `data-negative` is never the only signal — pair it with a label or icon.
 
+**State indicators** (focus ring, cursor, active tab or panel border, progress
+bar) carry state on their own, so they need 3:1 against `bg` (WCAG 1.4.11).
+They use `primary` where it reaches that and `link` where it doesn't. Today that
+is Green dark only (`primary` 2.9:1, `link` 5.3:1); the generators apply the
+rule (`scripts/contrast.py`), and fills such as buttons and badges keep
+`primary`. The ui-kit exposes the result as `--focus` (Tailwind:
+`--color-focus`), declared only where it differs from `primary`, so read it as
+`var(--focus, var(--primary))`.
+
 ## Palette derivation
 
 New variants are derived with standard color-wheel harmony rules, not picked

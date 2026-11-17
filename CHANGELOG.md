@@ -162,6 +162,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Brand: state indicators reach 3:1 in every variant (#214). Green dark `primary` is 2.9:1 on its
+  background, so its focus ring, cursor, active tab/panel/input-option borders and progress bar now use `link`
+  (5.3:1). The rule is computed in the generators (`brand/scripts/contrast.py`), so only the Green dark VS Code
+  theme and the Green dark ui-kit blocks change; the ui-kit adds `--focus` / `--color-focus` there, and
+  `a11y.css` reads `var(--focus, var(--primary))`. Fills (buttons, badges) keep `primary`
 - `.gitignore` lists `.claude/settings.local.json`, which was ignored only by the machine-wide global git ignore; `docs/templates/settings.unattended.jsonc` says why the repo line is needed
 - `docs/unattended-execution.md`: the `/goal` headless one-liner had no permission mode set, so every unapproved tool call would be denied — from v2.1.302, a headless `claude -p` run starts in Manual mode in that case ([headless docs](https://code.claude.com/docs/en/headless)). Adds `--permission-mode auto --permission-prompts none`; also notes exit codes don't distinguish goal met / impossible / bounded, so check the PR state the final turn prints instead ([CC-goal-analysis.md](https://github.com/qte77/ai-agents-research/blob/main/docs/cc-native/sessions/CC-goal-analysis.md))
 - `brand/scripts/install_fonts.py`, `brand/README.md`, `brand/Makefile`: corrected the inaccurate "all fonts are SIL OFL 1.1" claim — the downloader pulls three license families (OFL 1.1, Ubuntu Font Licence 1.0 for Ubuntu Mono, Bitstream Vera + Arev for the canonical DejaVu bake font); docs now list every downloaded font with its actual license and point to `fonts/LICENSES/`
