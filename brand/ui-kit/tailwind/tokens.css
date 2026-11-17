@@ -100,6 +100,7 @@
     --color-primary: #3a6a3a;
     --color-primary-on: #c4e8c0;
     --color-link: #539853;
+    --color-focus: #539853;
   }
 }
 
@@ -112,6 +113,7 @@
   --color-primary: #3a6a3a;
   --color-primary-on: #c4e8c0;
   --color-link: #539853;
+  --color-focus: #539853;
 }
 
 /* Variant: EyeRest BluBlock */

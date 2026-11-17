@@ -34,6 +34,8 @@ from pathlib import Path
 
 import yaml
 
+from contrast import indicator_color
+
 BRAND = Path(__file__).resolve().parent.parent
 DESIGN_FILE = BRAND / "DESIGN.md"
 OUT_DIR = BRAND / "vscode-theme"
@@ -71,6 +73,8 @@ def workbench_colors(colors: dict, data: dict, *, dark: bool) -> dict[str, str]:
     primary = _c(colors, "primary", dark=dark)
     primary_on = _c(colors, "primary-on", dark=dark)
     link = _c(colors, "link", dark=dark)
+    # State indicators need 3:1 on the background (WCAG 1.4.11); fills keep primary (#214).
+    indicator = indicator_color(primary, link, bg)
     positive, caution, negative, alt = data["positive"], data["caution"], data["negative"], data["alt"]
 
     return {
@@ -78,7 +82,7 @@ def workbench_colors(colors: dict, data: dict, *, dark: bool) -> dict[str, str]:
         "editor.foreground": text,
         "editorLineNumber.foreground": text_muted,
         "editorLineNumber.activeForeground": text,
-        "editorCursor.foreground": primary,
+        "editorCursor.foreground": indicator,
         "editor.selectionBackground": border,
         "editor.lineHighlightBackground": surface,
         "editorIndentGuide.background1": border,
@@ -110,24 +114,24 @@ def workbench_colors(colors: dict, data: dict, *, dark: bool) -> dict[str, str]:
         "tab.inactiveBackground": surface,
         "tab.inactiveForeground": text_muted,
         "tab.border": border,
-        "tab.activeBorderTop": primary,
+        "tab.activeBorderTop": indicator,
         "editorGroupHeader.tabsBackground": surface,
         "editorGroupHeader.tabsBorder": border,
         "editorGroup.border": border,
         "panel.background": surface,
         "panel.border": border,
         "panelTitle.activeForeground": text,
-        "panelTitle.activeBorder": primary,
+        "panelTitle.activeBorder": indicator,
         "panelTitle.inactiveForeground": text_muted,
         "input.background": bg,
         "input.foreground": text,
         "input.border": border,
         "input.placeholderForeground": text_muted,
-        "inputOption.activeBorder": primary,
+        "inputOption.activeBorder": indicator,
         "dropdown.background": surface,
         "dropdown.foreground": text,
         "dropdown.border": border,
-        "focusBorder": primary,
+        "focusBorder": indicator,
         "widget.border": border,
         "editorWidget.background": surface,
         "editorWidget.foreground": text,
@@ -151,7 +155,7 @@ def workbench_colors(colors: dict, data: dict, *, dark: bool) -> dict[str, str]:
         "scrollbar.shadow": border,
         "terminal.background": bg,
         "terminal.foreground": text,
-        "progressBar.background": primary,
+        "progressBar.background": indicator,
         "notificationCenterHeader.background": surface,
         "notifications.background": surface,
         "notifications.foreground": text,
