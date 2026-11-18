@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Tests workflow (`.github/workflows/tests.yml`) running `python3 -m unittest discover -s tests` on pull requests
+  to `main` and on demand; stock runner Python, no installs.
 - CodeQL workflow (`.github/workflows/codeql.yaml`) scanning `javascript-typescript`, `python`, `actions` on every
   push, weekly and on demand; actions pinned to full commit SHAs.
 - `AGENT_LEARNINGS.md`: merge pinned to the reviewed head commit; look for an existing checkout

@@ -1,0 +1,24 @@
+---
+name: Tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Reason: tests/ uses stdlib unittest only; the runner's stock python3 is enough, no installs
+      - name: Run tests/
+        run: python3 -m unittest discover -s tests -v
