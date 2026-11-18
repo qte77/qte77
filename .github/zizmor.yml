@@ -7,3 +7,9 @@ rules:
       # CLI (not an explicit GH_TOKEN remote), so it needs the checkout's persisted
       # credentials on purpose. Owner-approved exception (qte77/qte77#223).
       - blog-post-workflow.yml
+  use-trusted-publishing:
+    ignore:
+      # publish-ui-theme.yml publishes to GitHub Packages (npm.pkg.github.com) with the
+      # short-lived per-run GITHUB_TOKEN, not a long-lived npm token; npm trusted
+      # publishing (OIDC) targets npmjs.com only. Owner-approved exception (qte77/qte77#224).
+      - publish-ui-theme.yml

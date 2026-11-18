@@ -35,6 +35,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   its next step pushes via the default git CLI with no explicit token — owner
   reviewed and approved this as a scoped exception, recorded in
   `.github/zizmor.yml` (`artipacked` ignore, that file only, with a reason comment).
+- `.github/zizmor.yml`: owner-approved `use-trusted-publishing` ignore for
+  `publish-ui-theme.yml` only (#224). It publishes to GitHub Packages with the per-run
+  `GITHUB_TOKEN`; npm trusted publishing (OIDC) targets npmjs.com.
 - `.github/workflows/blog-post-workflow.yml`: fix the `gautamkrishnar/blog-post-workflow`
   pin's version comment (`v1.9.6` → `1.9.6`) to match the action's actual tag name,
   clearing a zizmor `ref-version-mismatch` warning the new gate also surfaced.
