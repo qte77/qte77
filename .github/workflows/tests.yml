@@ -19,6 +19,8 @@ jobs:
         with:
           persist-credentials: false
 
-      # Reason: tests/ uses stdlib unittest only; the runner's stock python3 is enough, no installs
+      # Reason: tests/ runs on stdlib unittest with the runner's stock python3, no installs.
+      # One non-stdlib dependency: tests/test_brand_contrast.py loads brand/scripts/gen_vscode_theme.py,
+      # which imports yaml (PyYAML). That comes from the runner image's system Python, not an install step.
       - name: Run tests/
         run: python3 -m unittest discover -s tests -v
