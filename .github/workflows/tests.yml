@@ -1,0 +1,26 @@
+---
+name: Tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Reason: tests/ runs on stdlib unittest with the runner's stock python3, no installs.
+      # One non-stdlib dependency: tests/test_brand_contrast.py loads brand/scripts/gen_vscode_theme.py,
+      # which imports yaml (PyYAML). That comes from the runner image's system Python, not an install step.
+      - name: Run tests/
+        run: python3 -m unittest discover -s tests -v
