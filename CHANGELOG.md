@@ -32,6 +32,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+- `.github/workflows/publish-ui-theme.yml` hardened: a read-only `verify` job runs the
+  `gen_ui_kit.py --check` gate, and only the `publish` job (needs `verify`) gets
+  `packages: write`; top-level permissions are empty. The `pip install pyyaml` step is gone
+  (the runner's system Python ships PyYAML). Checkout is pinned to v7.0.1 and Node to
+  24.22.2 via SHA-pinned `actions/setup-node` v7.1.0, and `npm publish` runs with `--ignore-scripts`.
 - `.github/workflows/publish-ui-theme.yml`, `.github/workflows/repo-registry.yml`:
   set `persist-credentials: false` on `actions/checkout`, surfaced by the new
   zizmor gate (`artipacked`). `blog-post-workflow.yml` keeps persisted credentials —
