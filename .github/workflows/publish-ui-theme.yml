@@ -50,11 +50,16 @@ jobs:
           node-version: '24.22.2'
           package-manager-cache: false
 
+      # This step publishes to GitHub Packages (npm.pkg.github.com) with the short-lived
+      # per-run GITHUB_TOKEN, not a long-lived npm token. npm trusted publishing (OIDC) is
+      # documented for npmjs.com only; no OIDC is documented for GitHub Packages. The
+      # use-trusted-publishing ignore below covers this step only. Owner-approved
+      # exception (qte77/qte77#224).
       - name: Publish to GitHub Packages (skip if version unchanged)
         working-directory: brand/ui-kit
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+        run: |  # zizmor: ignore[use-trusted-publishing]
           set -euo pipefail
           # Scope @qte77 to GitHub Packages; npm (not the shell) expands the token ref.
           {
