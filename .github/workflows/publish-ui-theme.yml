@@ -51,10 +51,10 @@ jobs:
           package-manager-cache: false
 
       # This step publishes to GitHub Packages (npm.pkg.github.com) with the short-lived
-      # per-run GITHUB_TOKEN, not a long-lived npm token. npm trusted publishing (OIDC) is
-      # documented for npmjs.com only; no OIDC is documented for GitHub Packages. The
-      # use-trusted-publishing ignore below covers this step only. Owner-approved
-      # exception (qte77/qte77#224).
+      # per-run GITHUB_TOKEN, not a long-lived npm token. npm's trusted-publishing (OIDC)
+      # docs cover npmjs.com; GitHub's npm-registry docs for GitHub Packages list token
+      # authentication only. The use-trusted-publishing ignore below covers this step
+      # only. Owner-approved exception (qte77/qte77#224).
       - name: Publish to GitHub Packages (skip if version unchanged)
         working-directory: brand/ui-kit
         env:
