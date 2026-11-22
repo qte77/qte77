@@ -21,7 +21,7 @@ GitHub profile repository. Two surfaces:
 - `docs/` — supporting documentation (image theming, gh-endpoints catalog)
 
 No application code. Python scripts use PEP 723 inline deps via `uv run`. A small stdlib
-`unittest` suite in `tests/` (brand contrast, goal rollup) runs in CI (`tests.yml`).
+`unittest` suite in `tests/` (brand contrast, goal rollup) runs in CI (`tests.yml`); the brand-contrast test needs PyYAML (present on the GitHub runner).
 
 ## Commands
 
