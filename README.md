@@ -12,11 +12,15 @@
 
 ## What
 
-qte77 runs an agentic estate as a governed loop — intent flows down, proof flows up:
-
 <img src="assets/images/governed-loop.svg" alt="qte77 — the governed loop: GOALS (goals.json OKRs, each KR a pre-committed eval) steer down through ENFORCE + TRACE (the governance spine — eval-gate enforces, goal_id links, rollup proves %) to CODE (the cadence engine — agents open PRs that close KRs); achievement traces back up." width="100%" />
 
-Built from [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) (dev loop) and [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) (office loop), reusable engines ([doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape)), and [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) driving the autonomous build-and-improve cycle. Agents propose; humans approve and steer. For how responsibility maps across repos, see the [authority chain](docs/architecture.md).
+- **A governed loop:** intent flows down and proof flows up, as the diagram shows.
+- **Dev loop:** [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator).
+- **Office loop:** [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator).
+- **Reusable engines:** [doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine) and [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape).
+- **Shared kernel:** [claude-code-plugins](https://github.com/qte77/claude-code-plugins), the rules, skills and plugins every session loads; [qte77/.github](https://github.com/qte77/.github) holds the org defaults and reusable CI workflows.
+- **Build cycle:** [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) drives the autonomous build-and-improve cycle.
+- **Humans steer:** agents propose; humans approve and steer. How responsibility maps across repos: the [authority chain](docs/architecture.md).
 
 ## How
 
@@ -41,7 +45,7 @@ Built in the open, honestly: the rails ship before the goals, and what's live ve
 - [Doc-structure contract](docs/doc-structure.md) · [Unattended execution](docs/unattended-execution.md)
 - [Contributing](CONTRIBUTING.md) · [Agent instructions](AGENTS.md)
 - [Profile](PROFILE.md) · [Lineage](docs/lineage.md) · [Hackathons](docs/hackathons.md) · [Agent reliability](docs/agent-reliability.md)
-- [Agent-native surface](https://qte77.github.io) — where this estate is actually machine-discoverable (this repo's README can't be: GitHub strips `<script>`/JSON-LD from rendered READMEs and `github.com` isn't an origin qte77 controls)
+- [Agent-native surface](https://qte77.github.io) — where this estate is machine-discoverable ([why not here](brand/ui-kit/DISCOVERABILITY.md))
 
 ## License
 
@@ -50,19 +54,20 @@ Apache-2.0 — see [LICENSE](LICENSE).
 ## Tools
 
 <div><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="32" height="32"/><!--
+  --><img src="assets/images/icons/python.svg" title="Python" alt="Python" width="32" height="32"/><!--
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/astral-dark.svg"><img src="assets/images/icons/astral-light.svg" title="Astral (uv · ruff)" alt="Astral" width="32" height="32"/></picture><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TypeScript" alt="TypeScript" width="32" height="32"/><!--
+  --><img src="assets/images/icons/typescript.svg" title="TypeScript" alt="TypeScript" width="32" height="32"/><!--
+  --><img src="assets/images/icons/nodejs.svg" title="Node.js" alt="Node.js" width="32" height="32"/><!--
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/markdown-dark.svg"><img src="assets/images/icons/markdown-light.svg" title="Markdown" alt="Markdown" width="32" height="32"/></picture><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="Linux" width="32" height="32"/><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/bash/bash-original.svg" title="Bash" alt="Bash" width="32" height="32"/><!--
-  --><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/devicons/devicon/blob/master/icons/git/git-plain.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="32" height="32"/></picture><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/githubactions/githubactions-original.svg" title="GitHub Actions" alt="GitHub Actions" width="32" height="32"/><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg" title="Docker" alt="Docker" width="32" height="32"/><!--
+  --><img src="assets/images/icons/linux.svg" title="Linux" alt="Linux" width="32" height="32"/><!--
+  --><img src="assets/images/icons/bash.svg" title="Bash" alt="Bash" width="32" height="32"/><!--
+  --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/git-dark.svg"><img src="assets/images/icons/git-light.svg" title="Git" alt="Git" width="32" height="32"/></picture><!--
+  --><img src="assets/images/icons/githubactions.svg" title="GitHub Actions" alt="GitHub Actions" width="32" height="32"/><!--
+  --><img src="assets/images/icons/docker.svg" title="Docker" alt="Docker" width="32" height="32"/><!--
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/devcontainers-dark.svg"><img src="assets/images/icons/devcontainers-light.svg" title="Dev Containers" alt="Dev Containers" width="32" height="32"/></picture><!--
-  --><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/devicons/devicon/blob/master/icons/azure/azure-original.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/azure/azure-plain.svg" title="Azure" alt="Azure" width="32" height="32"/></picture><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/amazonwebservices/amazonwebservices-plain.svg" title="AWS" alt="AWS" width="32" height="32"/><!--
-  --><img src="https://github.com/devicons/devicon/blob/master/icons/googlecloud/googlecloud-plain.svg" title="Google Cloud" alt="Google Cloud" width="32" height="32"/><!--
+  --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/azure-dark.svg"><img src="assets/images/icons/azure-light.svg" title="Azure" alt="Azure" width="32" height="32"/></picture><!--
+  --><img src="assets/images/icons/aws.svg" title="AWS" alt="AWS" width="32" height="32"/><!--
+  --><img src="assets/images/icons/googlecloud.svg" title="Google Cloud" alt="Google Cloud" width="32" height="32"/><!--
   --><picture><source media="(prefers-color-scheme: dark)" srcset="assets/images/icons/ros-dark.svg"><img src="assets/images/icons/ros-light.svg" title="ROS" alt="ROS" width="32" height="32"/></picture><!--
   --><img src="assets/images/icons/huggingface.svg" title="Hugging Face" alt="Hugging Face" width="32" height="32"/><!--
   --><img src="assets/images/icons/claude.svg" title="Claude" alt="Claude" width="32" height="32"/><!--

@@ -12,7 +12,7 @@ Two scopes, one codebase:
 
 The cross-repo sweep audits each deployed UI's *live computed tokens* against the canonical
 EyeRest set (synced from brand/DESIGN.md) — this is what establishes the baseline and
-prevents drift. It is the GUI analogue of repo-baseline's audit.sh.
+prevents drift. It is the GUI analogue of the private baseline repo's audit.sh.
 
 Run via the shared env:
   uv run --directory /workspaces/qte77/polyfetch-scrape patchright install chromium   # once

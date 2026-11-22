@@ -16,6 +16,16 @@ owner; inclusion here does not imply endorsement.
   the other monochrome marks, and consumed by
   [`../../../brand/ui-kit/github-links.html`](../../../brand/ui-kit/github-links.html).
 
+## Devicon marks
+
+`python.svg`, `typescript.svg`, `nodejs.svg`, `linux.svg`, `bash.svg`, `git-dark.svg` /
+`git-light.svg`, `githubactions.svg`, `docker.svg`, `azure-dark.svg` / `azure-light.svg`,
+`aws.svg` and `googlecloud.svg` are copied unmodified from [devicon](https://github.com/devicons/devicon)
+release `v2.18.0` (**MIT**, Copyright (c) 2015 konpa; full notice in [`LICENSE-devicon`](LICENSE-devicon)), so the profile README no longer
+hotlinks them. The `-dark` files are devicon's `plain` or `original` variant that reads on dark
+backgrounds (`git-plain`, `azure-original`); the `-light` files are the other variant. Each logo
+remains the trademark of its owner and is used nominatively.
+
 ## Other marks
 
 `claude.svg`, `huggingface.svg`, `astral-*.svg`, `gh-models-*.svg`, `devcontainers-*.svg`,

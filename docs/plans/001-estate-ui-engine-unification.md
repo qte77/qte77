@@ -23,7 +23,7 @@ the onboarding — read it first, then "Source map" and "REMAINING" below.
   P5 and P8 both edit the `ldnmxx-hack` clone — run them sequentially, not in parallel. First actions
   on resume: reset the stale, empty `experiment/adopt-shared-packages` branch in `agenthud-agui-a2ui`
   (`git checkout main`; delete the branch) before starting P4; start P7 on branch
-  `experiment/workflow-definition-contract` off `claude-azure-workflows-gui` main, vendor the
+  `experiment/workflow-definition-contract` off the private repo's main, vendor the
   schema+fixtures via `sync.sh` at tag `workflow-definition/v1.0.0`, write the contract tests red,
   then green.
 - **The loop:** P7/P8 are genuinely test-first (write the contract-validation tests red, then wire the
@@ -55,10 +55,10 @@ Two problems, found by comparing the repos:
    ~90%), the presentational trio (`A2UISurface`/`CatalogViewer`/`EventStream`), and the
    EyeRest `@theme` token block (hand-copied from `brand/DESIGN.md`) were duplicated and
    silently drifting. Executes `agenthud-agui-a2ui#211` / its plan 013 Wave 2.
-2. **Engine duplication.** `qte77/azure-doc-workflows` (Python) and `ldnmxx-hack/worker`
+2. **Engine duplication.** A private repo (Python) and `ldnmxx-hack/worker`
    (TS Cloudflare Worker) independently converged on "workflow = id + ordered named stages
    defined out-of-code" (YAML vs JSON). Hard language boundary → unify the **definition
-   schema**, not the runtime. Relates to `azure-doc-workflows#68` / plan 018.
+   schema**, not the runtime. Relates to an issue and plan in that private repo.
 
 ## Repo + role map
 
@@ -69,7 +69,7 @@ Two problems, found by comparing the repos:
 | `/workspaces/qte77/protocols` | `qte77/protocols` | NEW. `workflow-definition/v1` JSON Schema + fixtures. Ruleset-protected — squash only, no bypass (see note) |
 | `/workspaces/qte77/agenthud-agui-a2ui` | `qte77/agenthud-agui-a2ui` | Canonical UI base (superset). Consumer (Phase 4). `required_signatures` → admin merge |
 | `/workspaces/qte77/ldnmxx-hack` | `qte77/ldnmxx-hack` | Fork "groundwork" + TS worker. Consumer (Phase 5 ui, Phase 8 worker). Admin merge |
-| `/workspaces/qte77/claude-azure-workflows-gui` | `qte77/azure-doc-workflows` | Python doc-workflows engine. Consumer (Phase 7). Admin merge |
+| (a private repo's local clone) | a private repo | Python doc-workflows engine. Consumer (Phase 7). Admin merge |
 
 Estate conventions (apply everywhere): credential and signing workarounds per
 [the unattended tax](../unattended-execution.md#the-unattended-tax), never written into repo files;

@@ -20,7 +20,8 @@ GitHub profile repository. Two surfaces:
 - `brand/` — visual identity (palette, SVGs, avatar PNGs) and the Python tooling that produces them
 - `docs/` — supporting documentation (image theming, gh-endpoints catalog)
 
-No application code, no test suite. Python scripts use PEP 723 inline deps via `uv run`.
+No application code. Python scripts use PEP 723 inline deps via `uv run`. A small stdlib
+`unittest` suite in `tests/` (brand contrast, goal rollup) runs in CI (`tests.yml`); the brand-contrast test needs PyYAML (present on the GitHub runner).
 
 ## Commands
 
@@ -28,6 +29,7 @@ No application code, no test suite. Python scripts use PEP 723 inline deps via `
 make -C brand help               # brand tooling targets
 markdownlint $(git ls-files '*.md')
 lychee $(git ls-files '*.md')    # add --offline to skip network
+python3 -m unittest discover -s tests -v   # stdlib unittest; brand-contrast test needs PyYAML
 ```
 
 ## Conventional Commits
@@ -63,5 +65,6 @@ generated from `brand/DESIGN.md`.
 1. `markdownlint $(git ls-files '*.md')` clean
 2. `lychee --offline $(git ls-files '*.md')` clean
 3. `uv run brand/scripts/gen_ui_kit.py --check` clean (if `brand/DESIGN.md` or `brand/ui-kit/` changed)
-4. CHANGELOG `[Unreleased]` updated
-5. Conventional Commits title
+4. `python3 -m unittest discover -s tests` passes
+5. CHANGELOG `[Unreleased]` updated
+6. Conventional Commits title

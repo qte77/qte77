@@ -190,6 +190,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Docs drift: the README What bullets link claude-code-plugins (the shared kernel) and
+  qte77/.github; the Refs line keeps only the link to the agent-native surface,
+  and the reason moves to `brand/ui-kit/DISCOVERABILITY.md`. CONTRIBUTING no longer says "no test
+  suite" and lists `python3 -m unittest discover -s tests` in Commands and Pre-merge.
+  `docs/architecture.md` no longer calls `contributions.json` machine-derived (it is maintained by
+  hand). Private repo names are replaced with generic wording in plan 001, `BASELINE.md` and
+  `gui-check.py`.
+- README contract (owner, R63): the What section is a diagram plus 7 bullets, and the 12
+  devicon files (10 logos) the Tools row hotlinked are now self-hosted under `assets/images/icons/` (devicon
+  v2.18.0, MIT, noted in that folder's README, licence text in `LICENSE-devicon`), with a Node.js icon
+  added (13 SVG files, 11 logos).
 - Brand: state indicators reach 3:1 in every variant (#214). Green dark `primary` is 2.9:1 on its
   background, so its focus ring, cursor, active tab/panel/input-option borders and progress bar now use `link`
   (5.3:1). The rule is computed in the generators (`brand/scripts/contrast.py`), so only the Green dark VS Code

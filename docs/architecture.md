@@ -22,7 +22,7 @@ each decision lives prevents the drift and keeps the estate DRY.
 - **META** — policy + strategic intent, human-authored: `AGENTS.md` rules and `goals.json` OKRs. Lives in `qte77/qte77`; records decisions, runs no mechanism.
 - **KERNEL** — the invariant, reusable capability package: rules + skills + plugins, canonically in [claude-code-plugins](https://github.com/qte77/claude-code-plugins).
 - **MECHANISM** — what runs the kernel across the estate: the orchestrators ([polyforge](https://github.com/qte77/polyforge-orchestrator), [office-forge](https://github.com/qte77/office-forge-orchestrator)) plus the GHA automation.
-- **STATE** — machine-derived data the system reads and writes: GitHub Issues (task SOT), `contributions.json`, `ontology.json`.
+- **STATE** — data the system reads and writes: GitHub Issues (task SOT), `contributions.json` (maintained by hand, see the task-tracking table in [AGENTS.md](../AGENTS.md)), `ontology.json`.
 - **CONSUMERS** — where agents land the work: the sibling repos.
 
 <details>
