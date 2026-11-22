@@ -16,7 +16,7 @@ qte77 runs an agentic estate as a governed loop — intent flows down, proof flo
 
 <img src="assets/images/governed-loop.svg" alt="qte77 — the governed loop: GOALS (goals.json OKRs, each KR a pre-committed eval) steer down through ENFORCE + TRACE (the governance spine — eval-gate enforces, goal_id links, rollup proves %) to CODE (the cadence engine — agents open PRs that close KRs); achievement traces back up." width="100%" />
 
-Built from [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) (dev loop) and [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) (office loop), reusable engines ([doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape)), and [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) driving the autonomous build-and-improve cycle. Agents propose; humans approve and steer. For how responsibility maps across repos, see the [authority chain](docs/architecture.md).
+Built from [polyforge-orchestrator](https://github.com/qte77/polyforge-orchestrator) (dev loop) and [office-forge-orchestrator](https://github.com/qte77/office-forge-orchestrator) (office loop), reusable engines ([doc-pipeline-engine](https://github.com/qte77/doc-pipeline-engine), [polyfetch-scrape](https://github.com/qte77/polyfetch-scrape)), [claude-code-plugins](https://github.com/qte77/claude-code-plugins) (the shared rules, skills and plugins every session loads), [qte77/.github](https://github.com/qte77/.github) (org defaults and reusable CI workflows), and [ralph-loop](https://github.com/qte77/ralph-loop-cc-tdd-wt-vibe-kanban-template) driving the autonomous build-and-improve cycle. Agents propose; humans approve and steer. For how responsibility maps across repos, see the [authority chain](docs/architecture.md).
 
 ## How
 
@@ -41,7 +41,7 @@ Built in the open, honestly: the rails ship before the goals, and what's live ve
 - [Doc-structure contract](docs/doc-structure.md) · [Unattended execution](docs/unattended-execution.md)
 - [Contributing](CONTRIBUTING.md) · [Agent instructions](AGENTS.md)
 - [Profile](PROFILE.md) · [Lineage](docs/lineage.md) · [Hackathons](docs/hackathons.md) · [Agent reliability](docs/agent-reliability.md)
-- [Agent-native surface](https://qte77.github.io) — where this estate is actually machine-discoverable (this repo's README can't be: GitHub strips `<script>`/JSON-LD from rendered READMEs and `github.com` isn't an origin qte77 controls)
+- [Agent-native surface](https://qte77.github.io) — where this estate is machine-discoverable ([why not here](brand/ui-kit/DISCOVERABILITY.md))
 
 ## License
 

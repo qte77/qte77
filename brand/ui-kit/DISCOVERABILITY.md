@@ -13,6 +13,12 @@ machine-readability layer.
 None of the three are kit *units* yet, but the ui-kit already lays incidental foundations,
 and GEO + ASO overlap enough to share one convention.
 
+## Why the profile README is not the discovery surface
+
+The `qte77/qte77` profile README cannot carry this layer: GitHub strips `<script>` and JSON-LD
+from rendered READMEs, and `github.com` is not an origin qte77 controls. The machine-discoverable
+surface is [qte77.github.io](https://qte77.github.io); the README only links to it.
+
 ## What the ui-kit already contributes
 
 - **a11y baseline** ([`a11y.css`](a11y.css), [`theme-toggle.html`](theme-toggle.html)) — the

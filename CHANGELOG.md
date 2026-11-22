@@ -186,6 +186,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Docs drift: the README's "Built from" list adds claude-code-plugins (the shared rules, skills
+  and plugins) and qte77/.github; the Refs line keeps only the link to the agent-native surface,
+  and the reason moves to `brand/ui-kit/DISCOVERABILITY.md`. CONTRIBUTING no longer says "no test
+  suite" and lists `python3 -m unittest discover -s tests` in Commands and Pre-merge.
+  `docs/architecture.md` no longer calls `contributions.json` machine-derived (it is maintained by
+  hand). Private repo names are replaced with generic wording in plan 001, `BASELINE.md` and
+  `gui-check.py`.
 - Brand: state indicators reach 3:1 in every variant (#214). Green dark `primary` is 2.9:1 on its
   background, so its focus ring, cursor, active tab/panel/input-option borders and progress bar now use `link`
   (5.3:1). The rule is computed in the generators (`brand/scripts/contrast.py`), so only the Green dark VS Code

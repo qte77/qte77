@@ -141,7 +141,7 @@ had, until a 2026-10-25 reconciliation). Everything else originally listed here 
 the `make ui-kit` generator, `install_fonts.py` WOFF2, the favicon (D7), and kit adoption
 across all four GUIs (paperverse, analyze-stock-kpi, agenthud-agui-a2ui,
 agentic-job-offer-to-application-kit — all closed). Remaining on #111: promoting
-`gui-check.py` to `repo-baseline/tools/`, and the GEO/ASO machine-readability convention (see
+`gui-check.py` to the private baseline repo's `tools/`, and the GEO/ASO machine-readability convention (see
 [`DISCOVERABILITY.md`](DISCOVERABILITY.md)).
 
 `ci-verify.example.yml` is an optional, per-adopter CI gate — not planned work on our side, so
