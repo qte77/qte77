@@ -9,9 +9,11 @@ hierarchy, see [CONTRIBUTING.md](CONTRIBUTING.md). For project overview, see
 **External References:**
 
 - @CONTRIBUTING.md - Workflows, coding standards, doc hygiene
-- @AGENT_REQUESTS.md - Escalation and human collaboration
-- @AGENT_LEARNINGS.md - Pattern discovery and knowledge sharing
-- @CHANGELOG.md - Notable changes by version
+- [AGENT_REQUESTS.md](AGENT_REQUESTS.md) - add a request here when you need the owner or ops
+- [AGENT_LEARNINGS.md](AGENT_LEARNINGS.md) - read before solving a problem
+- [CHANGELOG.md](CHANGELOG.md) - releases
+
+Only CONTRIBUTING.md is imported into every session; the other three are links, read when needed.
 
 ## Claude Code Infrastructure
 

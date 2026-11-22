@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `AGENTS.md` imports only `CONTRIBUTING.md`; `AGENT_REQUESTS.md`, `AGENT_LEARNINGS.md` and `CHANGELOG.md` are plain links now, which cuts about 48 KB (roughly 12k tokens) from every session's context.
+
 - Chart palette (`data:` / `data-dark:` in `brand/DESIGN.md`, regenerated into `eyerest.css`, `tokens.css`, the
   VS Code themes and the gallery): re-stepped so every data colour is at least 18 dE76 from every variant's
   `primary` in both schemes (was 7.1 to 14.3 for 5 pairs), with 3.7:1 or more against `bg` and `surface`. The brand
