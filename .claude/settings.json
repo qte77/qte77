@@ -17,7 +17,7 @@
     }
   },
   "model": "opusplan",
-  "advisorModel": "claude-fable-5-1",
+  "advisorModel": "claude-fable-5-2",
   "hooks": {
     "SessionStart": [
       {
