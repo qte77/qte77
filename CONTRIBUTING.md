@@ -29,7 +29,7 @@ No application code. Python scripts use PEP 723 inline deps via `uv run`. A smal
 make -C brand help               # brand tooling targets
 markdownlint $(git ls-files '*.md')
 lychee $(git ls-files '*.md')    # add --offline to skip network
-python3 -m unittest discover -s tests -v   # stdlib only, no installs
+python3 -m unittest discover -s tests -v   # stdlib unittest; brand-contrast test needs PyYAML
 ```
 
 ## Conventional Commits
