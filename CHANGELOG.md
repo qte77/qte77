@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Chart palette (`data:` / `data-dark:` in `brand/DESIGN.md`, regenerated into `eyerest.css`, `tokens.css`, the
+  VS Code themes and the gallery): re-stepped so every data colour is at least 18 dE76 from every variant's
+  `primary` in both schemes (was 7.1 to 14.3 for 5 pairs), with 3.7:1 or more against `bg` and `surface`. The brand
+  colour is unchanged. `tests/test_brand_contrast.py` now enforces 15 dE76 and 3:1. Closes #213.
 - Claude Code `.claude/settings.json` adds `BASH_MAX_OUTPUT_LENGTH` `15000` next to the existing
   `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` `50` ([docs](https://code.claude.com/docs/en/env-vars));
   `.claude/scripts/statusline.sh` is refreshed from claude-code-plugins 60388b9e: it shows context

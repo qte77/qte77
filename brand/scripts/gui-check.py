@@ -38,15 +38,15 @@ CANONICAL = {
         "--bg": "#ece8d8", "--surface": "#e2dec8", "--border": "#c8c4b0",
         "--text": "#2c2818", "--text-muted": "#686040",
         "--primary": "#7a6010", "--primary-on": "#ece8d8",
-        "--data-positive": "#4a6818", "--data-caution": "#787010",
-        "--data-negative": "#983828", "--data-alt": "#587818",
+        "--data-positive": "#44580c", "--data-caution": "#707400",
+        "--data-negative": "#843830", "--data-alt": "#4c7c14",
     },
     "dark": {
         "--bg": "#1c1a14", "--surface": "#242018", "--border": "#383428",
         "--text": "#d8d0b8", "--text-muted": "#a89878",
         "--primary": "#c8a858", "--primary-on": "#1c1a14",
-        "--data-positive": "#8aa860", "--data-caution": "#c8b868",
-        "--data-negative": "#c08060", "--data-alt": "#a8b870",
+        "--data-positive": "#88a860", "--data-caution": "#c4c870",
+        "--data-negative": "#c08060", "--data-alt": "#b4c488",
     },
 }
 

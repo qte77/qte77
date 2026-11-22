@@ -25,15 +25,15 @@ colors:                        # DEFAULT — EyeRest flagship (warm, amber prima
   dark-primary-on: "#1c1a14"
   dark-link: "#c8a858"          # aliases dark-primary — already clears AA as text (7.1-7.6:1)
 data:                          # zero-blue categorical arc (charts, KPI heatmap)
-  positive: "#4a6818"          # dark: #8aa860
-  caution:  "#787010"          # dark: #c8b868
-  negative: "#983828"          # dark: #c08060
-  alt:      "#587818"          # dark: #a8b870
+  positive: "#44580c"          # dark: #88a860
+  caution:  "#707400"          # dark: #c4c870
+  negative: "#843830"          # dark: #c08060
+  alt:      "#4c7c14"          # dark: #b4c488
 data-dark:                     # dark scheme of the data arc (machine-readable; read by gen_ui_kit.py)
-  positive: "#8aa860"
-  caution:  "#c8b868"
+  positive: "#88a860"
+  caution:  "#c4c870"
   negative: "#c08060"
-  alt:      "#a8b870"
+  alt:      "#b4c488"
 typography:
   sans: { fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif", fontSize: "16px", lineHeight: "1.6" }
   mono: { fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', monospace", fontSize: "14px", lineHeight: "1.5" }
@@ -206,6 +206,11 @@ constraint, not a stylistic preference. The `data` arc (positive/caution/
 negative/alt) is the categorical palette for charts and KPI heatmaps; it maps
 directly onto good/neutral/bad cell coloring.
 
+Every `data` colour sits at least 15 ΔE76 (CIELAB) from every variant's
+`primary` in the same scheme, so an accent never reads as a gain, loss or
+caution in a chart; `tests/test_brand_contrast.py` enforces it, plus 3:1 against
+`bg` and `surface`. Keep that distance when re-stepping either side.
+
 `primary` has two jobs that need two different values. As a **fill** (buttons,
 icons, large/bold elements, the Index Rule) the swatch is correct everywhere.
 As **text** (an inline link, a small primary-colored label) it falls short of
@@ -302,10 +307,10 @@ values, not silently adjusted:
 - **`primary-on` on a BluBlock `primary` fill** is 3.6:1 in light theme —
   clears the 3:1 large/bold floor, not 4.5:1. Keep BluBlock `button-primary`
   labels at `body` weight 600+ or `h3`+ size.
-- **`data-caution` / `data-alt`, light theme only** are 3.8:1 as small text on
-  `surface` (4.2:1 on `bg`) — `surface` is the binding case: fine for a chart
+- **`data-caution` / `data-alt`, light theme only** are 3.7:1 as small text on
+  `surface` (4.1:1 on `bg`) — `surface` is the binding case: fine for a chart
   fill, dot, or icon (3:1 floor), but a KPI delta or axis label needs bold or
-  16px+/weight 600 to clear AA there. Both are 7.5–8.7:1 in dark theme,
+  16px+/weight 600 to clear AA there. Both are 7.9–9.8:1 in dark theme,
   unrestricted.
 
 `data-negative` is never the only signal — pair it with a label or icon.

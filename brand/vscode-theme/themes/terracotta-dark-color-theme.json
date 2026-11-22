@@ -12,7 +12,7 @@
     "editorIndentGuide.background1": "#4a3426",
     "editorWhitespace.foreground": "#4a3426",
     "editorError.foreground": "#c08060",
-    "editorWarning.foreground": "#c8b868",
+    "editorWarning.foreground": "#c4c870",
     "editorInfo.foreground": "#e8824c",
     "activityBar.background": "#271a14",
     "activityBar.foreground": "#e8d2c0",
@@ -84,10 +84,10 @@
     "notifications.background": "#271a14",
     "notifications.foreground": "#e8d2c0",
     "notifications.border": "#4a3426",
-    "gitDecoration.addedResourceForeground": "#8aa860",
-    "gitDecoration.modifiedResourceForeground": "#c8b868",
+    "gitDecoration.addedResourceForeground": "#88a860",
+    "gitDecoration.modifiedResourceForeground": "#c4c870",
     "gitDecoration.deletedResourceForeground": "#c08060",
-    "gitDecoration.untrackedResourceForeground": "#a8b870",
+    "gitDecoration.untrackedResourceForeground": "#b4c488",
     "gitDecoration.ignoredResourceForeground": "#b8927a",
     "gitDecoration.conflictingResourceForeground": "#c08060"
   }
