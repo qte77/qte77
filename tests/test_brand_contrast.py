@@ -60,5 +60,35 @@ class IndicatorColorTests(unittest.TestCase):
                     self.assertGreaterEqual(contrast.contrast_ratio(chosen, bg), 3.0)
 
 
+def _lab(hex_color: str) -> tuple[float, float, float]:
+    r, g, b = (int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    r, g, b = (((c + 0.055) / 1.055) ** 2.4 if c > 0.04045 else c / 12.92 for c in (r, g, b))
+    x, y, z = (0.4124 * r + 0.3576 * g + 0.1805 * b) / 0.95047, 0.2126 * r + 0.7152 * g + 0.0722 * b, (
+        0.0193 * r + 0.1192 * g + 0.9505 * b) / 1.08883
+    f = lambda t: t ** (1 / 3) if t > 0.008856 else 7.787 * t + 16 / 116
+    return 116 * f(y) - 16, 500 * (f(x) - f(y)), 200 * (f(y) - f(z))
+
+
+def _delta_e76(a: str, b: str) -> float:
+    return sum((p - q) ** 2 for p, q in zip(_lab(a), _lab(b))) ** 0.5
+
+
+class DataArcTests(unittest.TestCase):
+    """#213: a chart colour must not read as a variant's accent (>= 15 dE76) and must stay visible (3:1)."""
+
+    def test_data_arc_is_distinct_from_every_primary_and_visible(self):
+        spec = gen_vscode_theme.load_design()
+        for key, _name, colors in gen_vscode_theme._profiles(spec):
+            for dark, arc in ((False, spec["data"]), (True, spec["data-dark"])):
+                prefix = "dark-" if dark else ""
+                for role, hex_color in arc.items():
+                    with self.subTest(variant=key, dark=dark, role=role):
+                        self.assertGreaterEqual(_delta_e76(hex_color, colors[f"{prefix}primary"]), 15.0)
+                        for surface in ("bg", "surface"):
+                            self.assertGreaterEqual(
+                                contrast.contrast_ratio(hex_color, colors[f"{prefix}{surface}"]), 3.0
+                            )
+
+
 if __name__ == "__main__":
     unittest.main()
