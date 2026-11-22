@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- `.github/workflows/blog-post-workflow.yml`: the weekly `schedule` trigger is commented out (five
+  scheduled runs in a row failed and there is no post to publish); `workflow_dispatch` stays.
 - `.claude/settings.json`: the `ANTHROPIC_DEFAULT_OPUS_MODEL` (`claude-fable-5-1`) and `ANTHROPIC_DEFAULT_SONNET_MODEL`
   (`claude-sonnet-5`) overrides, so `opus` and `sonnet` resolve to the current models in this repo too.
   `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` stays at 50 in project settings.
