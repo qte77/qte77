@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- `.claude/settings.json`: the `ANTHROPIC_DEFAULT_OPUS_MODEL` (`claude-fable-5-1`) and `ANTHROPIC_DEFAULT_SONNET_MODEL`
+  (`claude-sonnet-5`) overrides, so `opus` and `sonnet` resolve to the current models in this repo too.
+  `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` stays at 50 in project settings.
+
+### Changed
+
+- `.claude/settings.json`: `advisorModel` pinned to the current Fable, `claude-fable-5-2` (was `claude-fable-5-1`); re-pin when a newer Fable ships.
+
 ### Added
 
 - Tests workflow (`.github/workflows/tests.yml`) running `python3 -m unittest discover -s tests` on pull requests

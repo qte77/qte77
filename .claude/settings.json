@@ -1,8 +1,6 @@
 {
   "env": {
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-fable-5-1"
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
   },
   "attribution": {
     "commit": "Co-Authored-By: Claude <noreply@anthropic.com>",
@@ -22,7 +20,7 @@
     }
   },
   "model": "opusplan",
-  "advisorModel": "claude-fable-5-1",
+  "advisorModel": "claude-fable-5-2",
   "hooks": {
     "SessionStart": [
       {
