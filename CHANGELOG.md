@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Claude Code `.claude/settings.json` adds `BASH_MAX_OUTPUT_LENGTH` `15000` next to the existing
+  `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` `50` ([docs](https://code.claude.com/docs/en/env-vars));
+  `.claude/scripts/statusline.sh` is refreshed from claude-code-plugins 60388b9e: it shows context
+  used and the autocompact point, and guards non-numeric input
 - `.claude/settings.json`: `advisorModel` pinned to the current Fable, `claude-fable-5-2` (was `claude-fable-5-1`); re-pin when a newer Fable ships.
 
 ### Added
