@@ -11,8 +11,8 @@
     "editor.lineHighlightBackground": "#e9ece9",
     "editorIndentGuide.background1": "#ccd2cc",
     "editorWhitespace.foreground": "#ccd2cc",
-    "editorError.foreground": "#843830",
-    "editorWarning.foreground": "#707400",
+    "editorError.foreground": "#803028",
+    "editorWarning.foreground": "#a07010",
     "editorInfo.foreground": "#1f6e4c",
     "activityBar.background": "#e9ece9",
     "activityBar.foreground": "#1a201c",
@@ -84,11 +84,11 @@
     "notifications.background": "#e9ece9",
     "notifications.foreground": "#1a201c",
     "notifications.border": "#ccd2cc",
-    "gitDecoration.addedResourceForeground": "#44580c",
-    "gitDecoration.modifiedResourceForeground": "#707400",
-    "gitDecoration.deletedResourceForeground": "#843830",
-    "gitDecoration.untrackedResourceForeground": "#4c7c14",
+    "gitDecoration.addedResourceForeground": "#284818",
+    "gitDecoration.modifiedResourceForeground": "#a07010",
+    "gitDecoration.deletedResourceForeground": "#803028",
+    "gitDecoration.untrackedResourceForeground": "#688820",
     "gitDecoration.ignoredResourceForeground": "#5a635c",
-    "gitDecoration.conflictingResourceForeground": "#843830"
+    "gitDecoration.conflictingResourceForeground": "#803028"
   }
 }

@@ -4,6 +4,7 @@
  * GENERATED from ../DESIGN.md by scripts/gen_ui_kit.py — DO NOT HAND-EDIT.
  * Source of truth: brand/DESIGN.md (`colors` / `data` / `data-dark` / `variants`).
  * Regenerate: `make -C brand ui_kit`. Token values are audited by gui-check.py.
+ * kit version: 0.5.0 (brand/ui-kit/package.json)
  *
  * COLOR only. Pair with layout.css (spacing/shape) and fonts.css (type).
  * Cascade: System = no [data-theme] (prefers-color-scheme); Light/Dark =
@@ -23,10 +24,10 @@
   --primary: #7a6010;
   --primary-on: #ece8d8;
   --link: #755c0f;
-  --data-positive: #44580c;
-  --data-caution: #707400;
-  --data-negative: #843830;
-  --data-alt: #4c7c14;
+  --data-positive: #284818;
+  --data-caution: #a07010;
+  --data-negative: #803028;
+  --data-alt: #688820;
   --shadow-card: 0 1px 2px rgba(28, 26, 20, 0.06), 0 4px 12px rgba(28, 26, 20, 0.08);
 }
 
@@ -42,10 +43,10 @@
     --primary: #c8a858;
     --primary-on: #1c1a14;
     --link: #c8a858;
-    --data-positive: #88a860;
-    --data-caution: #c4c870;
-    --data-negative: #c08060;
-    --data-alt: #b4c488;
+    --data-positive: #709840;
+    --data-caution: #d0a838;
+    --data-negative: #b86038;
+    --data-alt: #d8f880;
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55);
   }
 }
@@ -59,10 +60,10 @@
   --primary: #c8a858;
   --primary-on: #1c1a14;
   --link: #c8a858;
-  --data-positive: #88a860;
-  --data-caution: #c4c870;
-  --data-negative: #c08060;
-  --data-alt: #b4c488;
+  --data-positive: #709840;
+  --data-caution: #d0a838;
+  --data-negative: #b86038;
+  --data-alt: #d8f880;
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55);
 }
 
