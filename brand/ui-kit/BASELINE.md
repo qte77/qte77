@@ -35,7 +35,7 @@ UI is conformant when it:
    `.sr-only` announce region, a width-sizer (no reflow on cycle), `prefers-reduced-motion`,
    keyboard + Escape.
 6. Emits a `themechange` event so charts/canvases recolour on flip.
-7. Sources tokens from the generated `eyerest.css` — no per-repo vendored copy.
+7. Sources tokens from the generated `eyerest.css`. A repo with no build step commits an unedited copy of the generated file (its header carries the kit version) and checks it against the kit; hand-copied or edited token values are not allowed.
 
 The reference implementation for the cycler + a11y is `analyze-stock-kpi`; the apply
 mechanism + inline guard come from qte77.github.io / paperverse. The kit must stay
