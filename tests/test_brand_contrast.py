@@ -128,8 +128,10 @@ def _delta_e2000(lab1: tuple[float, float, float], lab2: tuple[float, float, flo
 
 class DeltaE2000Tests(unittest.TestCase):
     def test_matches_sharma_reference_pairs(self):
-        # Sharma et al. 2005 test data, pairs 1, 7 and 17 (published to 4 places).
+        # Four pairs from the Sharma et al. 2005 test data (published to 4 places). The
+        # first has hues more than 180 degrees apart, which exercises the mean-hue wrap.
         cases = (
+            ((50.0, -0.001, 2.49), (50.0, 0.0009, -2.49), 4.8045),
             ((50.0, 2.6772, -79.7751), (50.0, 0.0, -82.7485), 2.0425),
             ((50.0, 2.5, 0.0), (50.0, 0.0, -2.5), 4.3065),
             ((60.2574, -34.0099, 36.2677), (60.4626, -34.1751, 39.4387), 1.2644),
