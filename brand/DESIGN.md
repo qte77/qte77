@@ -25,15 +25,15 @@ colors:                        # DEFAULT — EyeRest flagship (warm, amber prima
   dark-primary-on: "#1c1a14"
   dark-link: "#c8a858"          # aliases dark-primary — already clears AA as text (7.1-7.6:1)
 data:                          # zero-blue categorical arc (charts, KPI heatmap)
-  positive: "#44580c"          # dark: #88a860
-  caution:  "#707400"          # dark: #c4c870
-  negative: "#843830"          # dark: #c08060
-  alt:      "#4c7c14"          # dark: #b4c488
+  positive: "#284818"          # dark: #709840
+  caution:  "#a07010"          # dark: #d0a838
+  negative: "#803028"          # dark: #b86038
+  alt:      "#688820"          # dark: #d8f880
 data-dark:                     # dark scheme of the data arc (machine-readable; read by gen_ui_kit.py)
-  positive: "#88a860"
-  caution:  "#c4c870"
-  negative: "#c08060"
-  alt:      "#b4c488"
+  positive: "#709840"
+  caution:  "#d0a838"
+  negative: "#b86038"
+  alt:      "#d8f880"
 typography:
   sans: { fontFamily: "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif", fontSize: "16px", lineHeight: "1.6" }
   mono: { fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', monospace", fontSize: "14px", lineHeight: "1.5" }
@@ -307,11 +307,12 @@ values, not silently adjusted:
 - **`primary-on` on a BluBlock `primary` fill** is 3.6:1 in light theme —
   clears the 3:1 large/bold floor, not 4.5:1. Keep BluBlock `button-primary`
   labels at `body` weight 600+ or `h3`+ size.
-- **`data-caution` / `data-alt`, light theme only** are 3.7:1 as small text on
-  `surface` (4.1:1 on `bg`) — `surface` is the binding case: fine for a chart
-  fill, dot, or icon (3:1 floor), but a KPI delta or axis label needs bold or
-  16px+/weight 600 to clear AA there. Both are 7.9–9.8:1 in dark theme,
-  unrestricted.
+- **`data-caution` / `data-alt`, light theme only** are 3.2:1 / 3.0:1 as small
+  text on `surface` (3.6:1 / 3.3:1 on `bg`) — `surface` is the binding case: fine
+  for a chart fill, dot, or icon (3:1 floor), but a KPI delta or axis label needs
+  bold or 16px+/weight 600 to count as large
+  text (3:1 AA floor). In dark theme `data-negative` is 3.7:1 on `surface` (same
+  fill/icon-only rule); the other three are 4.8:1 or more.
 
 `data-negative` is never the only signal — pair it with a label or icon.
 

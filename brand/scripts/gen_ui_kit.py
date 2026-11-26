@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -34,6 +35,7 @@ from contrast import indicator_color
 
 BRAND = Path(__file__).resolve().parent.parent
 DESIGN_FILE = BRAND / "DESIGN.md"
+PACKAGE_FILE = BRAND / "ui-kit" / "package.json"
 OUT_FILE = BRAND / "ui-kit" / "eyerest.css"
 OUT_TAILWIND = BRAND / "ui-kit" / "tailwind" / "tokens.css"
 
@@ -67,12 +69,18 @@ HEADER = """\
  * GENERATED from ../DESIGN.md by scripts/gen_ui_kit.py — DO NOT HAND-EDIT.
  * Source of truth: brand/DESIGN.md (`colors` / `data` / `data-dark` / `variants`).
  * Regenerate: `make -C brand ui_kit`. Token values are audited by gui-check.py.
+ * kit version: @KIT_VERSION@ (brand/ui-kit/package.json)
  *
  * COLOR only. Pair with layout.css (spacing/shape) and fonts.css (type).
  * Cascade: System = no [data-theme] (prefers-color-scheme); Light/Dark =
  * html[data-theme]; Variant = html[data-variant], combine with data-theme.
  * Zero blue in any accent — the brand's core rule.
  */"""
+
+
+def kit_version() -> str:
+    """The published @qte77/ui-theme version, stamped into the eyerest.css header."""
+    return json.loads(PACKAGE_FILE.read_text(encoding="utf-8"))["version"]
 
 
 def load_design() -> dict:
@@ -126,7 +134,7 @@ def css_eyerest(spec: dict) -> str:
         dark.append(("--shadow-card", elevation["dark-shadow-card"]))
 
     parts = [
-        HEADER,
+        HEADER.replace("@KIT_VERSION@", kit_version()),
         "/* Default (EyeRest flagship) — light */",
         _rule(":root", light),
         "/* Default — dark (system-dark, then the explicit attribute) */",

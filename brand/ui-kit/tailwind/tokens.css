@@ -26,10 +26,10 @@
   --color-primary: #7a6010;
   --color-primary-on: #ece8d8;
   --color-link: #755c0f;
-  --color-data-positive: #44580c;
-  --color-data-caution: #707400;
-  --color-data-negative: #843830;
-  --color-data-alt: #4c7c14;
+  --color-data-positive: #284818;
+  --color-data-caution: #a07010;
+  --color-data-negative: #803028;
+  --color-data-alt: #688820;
   --font-sans: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
   --radius-sm: 4px;
@@ -51,10 +51,10 @@
     --color-primary: #c8a858;
     --color-primary-on: #1c1a14;
     --color-link: #c8a858;
-    --color-data-positive: #88a860;
-    --color-data-caution: #c4c870;
-    --color-data-negative: #c08060;
-    --color-data-alt: #b4c488;
+    --color-data-positive: #709840;
+    --color-data-caution: #d0a838;
+    --color-data-negative: #b86038;
+    --color-data-alt: #d8f880;
     --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55);
   }
 }
@@ -68,10 +68,10 @@
   --color-primary: #c8a858;
   --color-primary-on: #1c1a14;
   --color-link: #c8a858;
-  --color-data-positive: #88a860;
-  --color-data-caution: #c4c870;
-  --color-data-negative: #c08060;
-  --color-data-alt: #b4c488;
+  --color-data-positive: #709840;
+  --color-data-caution: #d0a838;
+  --color-data-negative: #b86038;
+  --color-data-alt: #d8f880;
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.55);
 }
 

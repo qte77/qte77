@@ -90,5 +90,72 @@ class DataArcTests(unittest.TestCase):
                             )
 
 
+def _delta_e2000(lab1: tuple[float, float, float], lab2: tuple[float, float, float]) -> float:
+    """CIEDE2000 (Sharma, Wu, Dalal 2005) between two CIELAB colours; stdlib only."""
+    import math
+
+    l1, a1, b1 = lab1
+    l2, a2, b2 = lab2
+    c_bar = ((math.hypot(a1, b1) + math.hypot(a2, b2)) / 2) ** 7
+    g = 0.5 * (1 - math.sqrt(c_bar / (c_bar + 25 ** 7)))
+    a1p, a2p = (1 + g) * a1, (1 + g) * a2
+    c1, c2 = math.hypot(a1p, b1), math.hypot(a2p, b2)
+    h1 = math.degrees(math.atan2(b1, a1p)) % 360 if c1 else 0.0
+    h2 = math.degrees(math.atan2(b2, a2p)) % 360 if c2 else 0.0
+    dl, dc = l2 - l1, c2 - c1
+    if c1 * c2 == 0:
+        dh = 0.0
+    else:
+        dh = h2 - h1
+        dh -= 360 if dh > 180 else 0
+        dh += 360 if dh < -180 else 0
+    dhh = 2 * math.sqrt(c1 * c2) * math.sin(math.radians(dh) / 2)
+    lp, cp = (l1 + l2) / 2, (c1 + c2) / 2
+    if c1 * c2 == 0:
+        hp = h1 + h2
+    elif abs(h1 - h2) <= 180:
+        hp = (h1 + h2) / 2
+    else:
+        hp = (h1 + h2 + (360 if h1 + h2 < 360 else -360)) / 2
+    t = (1 - 0.17 * math.cos(math.radians(hp - 30)) + 0.24 * math.cos(math.radians(2 * hp))
+         + 0.32 * math.cos(math.radians(3 * hp + 6)) - 0.20 * math.cos(math.radians(4 * hp - 63)))
+    sl = 1 + 0.015 * (lp - 50) ** 2 / math.sqrt(20 + (lp - 50) ** 2)
+    sc, sh = 1 + 0.045 * cp, 1 + 0.015 * cp * t
+    rc = 2 * math.sqrt(cp ** 7 / (cp ** 7 + 25 ** 7))
+    rt = -math.sin(math.radians(60 * math.exp(-(((hp - 275) / 25) ** 2)))) * rc
+    return math.sqrt((dl / sl) ** 2 + (dc / sc) ** 2 + (dhh / sh) ** 2 + rt * (dc / sc) * (dhh / sh))
+
+
+class DeltaE2000Tests(unittest.TestCase):
+    def test_matches_sharma_reference_pairs(self):
+        # Four pairs from the Sharma et al. 2005 test data (published to 4 places). The
+        # first has hues more than 180 degrees apart, which exercises the mean-hue wrap.
+        cases = (
+            ((50.0, -0.001, 2.49), (50.0, 0.0009, -2.49), 4.8045),
+            ((50.0, 2.6772, -79.7751), (50.0, 0.0, -82.7485), 2.0425),
+            ((50.0, 2.5, 0.0), (50.0, 0.0, -2.5), 4.3065),
+            ((60.2574, -34.0099, 36.2677), (60.4626, -34.1751, 39.4387), 1.2644),
+        )
+        for lab1, lab2, expected in cases:
+            self.assertAlmostEqual(_delta_e2000(lab1, lab2), expected, places=3)
+
+
+class DataArcSeparationTests(unittest.TestCase):
+    """The four arc colours must be told apart from each other, not only from the accents."""
+
+    MIN_DE2000 = 20.0
+
+    def test_every_pair_in_each_scheme_is_clearly_distinguishable(self):
+        spec = gen_vscode_theme.load_design()
+        for scheme, arc in (("light", spec["data"]), ("dark", spec["data-dark"])):
+            roles = sorted(arc)
+            for i, a in enumerate(roles):
+                for b in roles[i + 1:]:
+                    with self.subTest(scheme=scheme, pair=(a, b)):
+                        self.assertGreaterEqual(
+                            _delta_e2000(_lab(arc[a]), _lab(arc[b])), self.MIN_DE2000
+                        )
+
+
 if __name__ == "__main__":
     unittest.main()

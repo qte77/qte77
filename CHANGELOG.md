@@ -21,6 +21,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `brand/DESIGN.md` (`data`, `data-dark`): the four chart colours are re-stepped so every pair is at
+  least 20 CIEDE2000 apart in each scheme (smallest about 24; it was 10.8 light and 6.8 dark), still
+  zero-blue and still clear of every variant accent. Light: positive `#284818`, caution `#a07010`,
+  negative `#803028`, alt `#688820`. Dark: positive `#709840`, caution `#d0a838`, negative `#b86038`,
+  alt `#d8f880`. Light `data-caution` and `data-alt` are now 3.2:1 and 3.0:1 on `surface`
+  (fill and icon use only, as before). Regenerated `brand/ui-kit/eyerest.css`,
+  `brand/ui-kit/tailwind/tokens.css` and `brand/vscode-theme/`; `brand/scripts/gui-check.py` and
+  `brand/vscode-theme/gallery.html` carry the new values; `tests/test_brand_contrast.py` guards the
+  separation with a stdlib CIEDE2000 check. `@qte77/ui-theme` bumped `0.4.0` -> `0.5.0` (colour values change)
+- `brand/scripts/gen_ui_kit.py`: the `eyerest.css` header carries `kit version: X.Y.Z` from
+  `brand/ui-kit/package.json`, so a repo that commits a copy can tell which kit version it holds
+- `brand/ui-kit/BASELINE.md`: item 7 now allows a repo with no build step to commit an unedited copy of
+  the generated `eyerest.css` (kit version in its header) and check it against the kit; hand-copied or
+  edited token values stay disallowed
+
 - `AGENTS.md` imports only `CONTRIBUTING.md`; `AGENT_REQUESTS.md`, `AGENT_LEARNINGS.md` and `CHANGELOG.md` are plain links now, which cuts about 48 KB (roughly 12k tokens) from every session's context.
 
 - Chart palette (`data:` / `data-dark:` in `brand/DESIGN.md`, regenerated into `eyerest.css`, `tokens.css`, the
